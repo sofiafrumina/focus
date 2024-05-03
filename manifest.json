@@ -1,26 +1,21 @@
 {
-    "manifest_version": 2,
-    "name": "Optimal Reader",
+    "manifest_version": 3,
+    "name": "Focus",
     "version": "1.0",
     "description": "Optimize your reading experience",
-    "permissions": ["activeTab"],
-    "browser_action": {
-      "default_icon": {
-        "16": "images/E16.png",
-        "48": "images/E48.png",
-        "128": "images/E128.png"
-      },
-      "default_title": "Optimal Reader",
-      "default_popup": "popup.html"
-    },
+    "permissions": ["contentSettings", "activeTab"],
     "icons": {
-      "16": "images/E16.png",
-      "48": "images/E48.png",
-      "128": "images/E128.png"
+        "16": "images/icon16.png",
+        "32": "images/icon32.png",
+        "48": "images/icon48.png",
+        "128": "images/icon128.png"
+    },
+    "action": {
+      "default_popup":"popup.html"
     },
     "background": {
       "scripts": ["background.js"],
-      "persistent": false
+      "type": "module"
     },
     "content_scripts": [
       {

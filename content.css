@@ -1,5 +1,16 @@
-html body {
-    background-color: rgb(248, 248, 248);
+body {
+    background-color: white;
     color: black;
-    text-size-adjust: 13;
-}
+    text-align: center;
+    line-height: 1.5;
+   }
+   
+   p, li, div {
+    text-indent: 1em;
+    font-size: 13px;
+   }
+   
+   h1, h2, h3, h4, h5, h6 {
+    font-size: 14px;
+    font-weight: bold;
+   }

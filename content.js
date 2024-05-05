@@ -1,31 +1,35 @@
-chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
-    if (request.action === 'applyChanges') {
-      const { styles } = request;
-  
-      document.body.style.backgroundColor = styles.backgroundColor;
-      document.body.style.color = styles.textColor;
-      document.body.style.fontSize = styles.fontSize;
-      document.body.style.lineHeight = styles.lineHeight;
-  
-      const paragraphs = document.querySelectorAll('p');
-      paragraphs.forEach(paragraph => {
-        paragraph.style.transition = `color ${styles.readingSpeed}s`;
-      });
+let isEnabled = false;
+
+chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
+ if (request.action === 'toggleFocus') {
+    isEnabled = !isEnabled;
+    if (isEnabled) {
+      // Inject the stylesheet
+      chrome.runtime.sendMessage({ action: 'injectCSS', file: 'focus.css' });
+    } else {
+      // Remove the stylesheet
+      chrome.runtime.sendMessage({ action: 'removeCSS', file: 'focus.css' });
     }
-  });
+ }
+});
+// `document.querySelector` may return null if the selector doesn't match anything.
+const article = document.querySelector("article");
+if (article) {
+  const text = article.textContent;
+  const wordMatchRegExp = /[^\s]+/g; // Regular expression
+  const words = text.matchAll(wordMatchRegExp);
+  // matchAll returns an iterator, convert to array to get word count
+  const wordCount = [...words].length;
+  const readingTime = Math.round(wordCount / 200);
+  const badge = document.createElement("p");
+  // Use the same styling as the publish information in an article's header
+  badge.classList.add("color-secondary-text", "type--caption");
+  badge.textContent = `⏱️ ${readingTime} min read`;
 
-  // Если нужна замедленность прокрутки, добавьте следующий код:
+  // Support for API reference docs
+  const heading = article.querySelector("h1");
+  // Support for article docs with date
+  const date = article.querySelector("time")?.parentNode;
 
-// var scrollSpeed = styles.readingSpeed * 100; // Преобразование скорости в миллисекунды
-// var pageHeight = document.body.scrollHeight;
-// var scrollPosition = 0;
-
-// function scroll() {
-//   if (scrollPosition < pageHeight) {
-//     window.scrollBy(0, 1);
-//     scrollPosition++;
-//     setTimeout(scroll, scrollSpeed);
-//   }
-// }
-
-// scroll();
+  (date ?? heading).insertAdjacentElement("afterend", badge);
+}

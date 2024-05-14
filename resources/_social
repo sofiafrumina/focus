@@ -1,0 +1,2662 @@
+﻿!! It is a sublist of Yet another small uBlock filter list
+! See https://github.com/mtxadmin/ublock for details
+!
+! Absolute hosts see in _telemetry
+!
+
+!! Facebook
+!
+! hosts
+! comments are preferably inline with  #
+!
+api.facebook.com$third-party  # from Anti-Facebook
+badge.facebook.com$third-party  # from Anti-Facebook
+graph.facebook.com$third-party,xmlhttprequest  # from Anti-Facebook
+||graph.facebook.com/?id=$third-party  # from Anti-Facebook
+lithium.facebook.com  # from ShadowWhisperer's Chats
+edge.mqtt.facebook.com$third-party  # from AdAway
+socialplugin.facebook.net  # from ShadowWhisperer's Chats
+!
+! urls
+! comments are preferably inline with  # 
+! general first, specific last
+!
+/cdn-cgi/pe/bag2?*connect.facebook.com  # from Anti-Facebook
+/cdn-cgi/pe/bag2?*connect.facebook.net  # from Anti-Facebook
+||facebook.com/ajax/bnzai*__comet_req=  # Adguard rule
+||facebook.com/connect/$third-party  # from Anti-Facebook
+||facebook.com/csp/reporting/
+||facebook.com/dialog/oauth?display=popup$popup,domain=humorhub.org  # from Anti-Facebook
+||facebook.com^*/like.php$important,domain=~facebook.com  # from Fanboy's
+||facebook.com/*/plugins/$important,domain=~facebook.com  # from Adguard
+||facebook.com/plugins/$important,domain=~facebook.com  # from Adguard and Anti-Facebook
+||facebook.com/restserver.php?*.getStats&$third-party  # from Anti-Facebook
+||api-read.facebook.com/restserver.php?api_key=$third-party  # from Anti-Facebook
+||facebook.com/share/$third-party
+||facebook.com/sharer/sharer.php$important,third-party  # from Adguard
+||facebook.com/sharer.php$important,third-party  # from Adguard
+||facebook.com/tr/  # from Ru AdList
+||facebook.com/whitepages/wpminiprofile.php$third-party  # from Anti-Facebook
+||facebook.com/widgets/$third-party  # from Adguard and Anti-Facebook
+!
+! facebook pixels
+/hsts-pixel.gif
+||facebook.com/security/
+||fbsbx.com/security/
+||fbcdn.net/security/
+!
+/angular-facebook.js$important
+/facebook$image,domain=~facebook.com|~fb.com|~votesmart.appspot.com
+    /assets/facebook-$image  # is in Fanboy's and Ru AdList
+    /facebook-16.  # is in Fanboy's
+    /facebook.gif
+    /facebook.png
+    /facebook.svg$domain=~votesmart.appspot.com
+    /facebook-icon.png
+    /footer/facebook.  # is in Fanboy's
+    /images/facebook  # from Fanboy's
+    /img/facebook-  # from Fanboy's
+    /resources/facebook.  # is in Fanboy's
+_facebook_icon.  # from Fanboy's and Ru AdList
+-facebook.js$domain=~king.com  # is in Fanboy's
+/facebook.js$important
+/facebook_pixel.js
+/facebook-tracking/*  # ad scripts  # is in EasyPrivacy
+/fb.$image,domain=~fb.ru
+    /fb.jpg
+    /fb.png
+    /fb.svg
+    /img/fb.  # is in Fanboy's
+/fb-$image,domain=~twitter.com|~x.com
+    /fb-logo.  # from Fanboy's
+    /images/fb-  # is in Fanboy's
+/fb_$image
+    /fb-icon$important
+.fbshare.js  # from Ru AdList
+/icon-facebook.
+/icon_fb.
+/like_fb.  # from Ru AdList
+/soc_facebook.svg
+_social_fb.  # from Fanboy’s
+||facebook.com/audiencenetwork/$third-party  # from EasyList
+||facebook.com/plugins/$important,domain=~facebook.com|~fb.com|~freepresets.com  # from Adguard Social Media
+||facebook.com/*/plugins/$important,domain=~facebook.com|~fb.com|~freepresets.com  # from Adguard Social Media
+||facebook.com/tr?$important  # is in Adguard
+!
+! cosmetic filters
+! general first, specific last
+! comments is in separate line(s) before the string (as uBlock Origin editor says, inline is not correct)
+!
+! is in Adguard
+##a[href^="fb-messenger://share"]
+! from Adguard
+##a[href^="javascript:window.open('http://www.facebook.com/sharer.php"]
+! is in Adguard
+~facebook.com##a[href^="https://www.facebook.com/dialog/send"]
+! is in Adguard
+~facebook.com##a[href^="https://www.facebook.com/share.php"]
+! is in Ru AdList and Fanboy's
+~facebook.com##a[href^="http://www.facebook.com/sharer.php"]
+! is in Adguard
+~facebook.com,~votesmart.appspot.com##a[href^="http://www.facebook.com/sharer.php?"]
+! from Adguard and Fanboy's
+~facebook.com,~votesmart.appspot.com##a[href^="https://www.facebook.com/sharer/sharer.php"]
+! from Adguard
+~facebook.com,~votesmart.appspot.com##a[href^="https://www.facebook.com/sharer.php"]
+! from Fanboy's
+~facebook.com,~votesmart.appspot.com##a[href^="https://www.facebook.com/sharer.php?"]
+! from Fanboy's
+~facebook.com,~votesmart.appspot.com##a[href*="facebook.com/sharer/sharer.php?"]
+! is in Ru AdList and Fanboy's
+##[aria-label^="Follow on Facebook"]
+! from Adguard
+##a[onclick^="window.open('//www.facebook.com/sharer.php"]
+! is in RU AdList
+~facebook.com##a[onclick*="facebook.com/sharer.php?"]
+! is in Adguard
+~facebook.com##a[onclick^="window.open('https://www.facebook.com/sharer.php"]
+! is in Fanboy's
+##.facebook.icon
+! from Web Annoyances Ultralist
+##.fa-facebook
+! from Web Annoyances Ultralist (modified)
+~belarus2020.org##.fa-facebook-f
+##iframe[src*="facebook.com/plugins/"]
+    ! is in Ru AdList and Fanboy's
+    !##iframe[src*="//www.facebook.com/plugins/like.php?"]
+    ! from Adguard
+    !zaytung.com#?#font > div:has(> iframe[src^="http://www.facebook.com/plugins/likebox.php"])
+    ! from Adguard
+    !flyblog.cc,maxfoodfun.com##iframe[src*="facebook.com/plugins/"]  # from Adguard
+    ! from Adguard
+    !maxfoodfun.com##iframe[src*="facebook.com/plugins/"]
+    ! from Adguard
+    !flyblog.cc##iframe[src*="facebook.com/plugins/"]
+! from Adguard, modified
+||facebook.com/*/plugins/$domain=~facebook.com|~fb.com,important
+~facebook.com,~fb.com##[class*="Facebook"]:not(html):not(body):not(article)
+~facebook.com,~fb.com##[id*="Facebook"]:not(html):not(body):not(article)
+~facebook.com,~fb.com,~belarus2020.org,~techgenix.com##[class*="facebook"]:not(html):not(body):not(article)
+~facebook.com,~fb.com##[id*="facebook"]:not(html):not(body):not(article)
+    ! is in Fanboy's
+    ##.header-facebook
+    ! from Fanboy's
+    ###iframe-facebook
+    !##.sharify-btn-facebook
+    ! is in Ru AdList and Fanboy's
+    !##.sidebar-facebook
+    ! is in Ru AdList and Fanboy's
+    !##.social-facebook
+    ! is in Fanboy's
+    !##.socicon-facebook
+~facebook.com,~fb.com,~onetwotrip.com,~ozon.ru,~ozon.by,~ozon.com##[class^="FB"]:not(html):not(body):not(article)
+~facebook.com,~fb.com,~onetwotrip.com,~ozon.ru,~ozon.by,~ozon.com##[id^="FB"]:not(html):not(body):not(article)
+~facebook.com,~fb.com,~google.com,~onetwotrip.com,~ozon.ru,~ozon.by,~ozon.com##[class$="FB"]:not(html):not(body):not(article)
+~facebook.com,~fb.com,~ozon.ru,~ozon.by,~ozon.com##[id$="FB"]:not(html):not(body):not(article)
+~facebook.com,~fb.com,~aliexpress.com,~aliexpress.ru,~alfamiles.com,~belarus2020.org,~bite-byte.ru,~doma-karkas.ru,~linkedin.com,~onetwotrip.com,~medium.com,~betterprogramming.pub,~faun.pub,~jetruby.com,~itnext.io,~towardsdatascience.com,~ozon.ru,~ozon.by,~ozon.com##[class^="fb"]:not(html):not(body):not(article):not([class^="fb2"]):not([class^="fbtn"])
+    ! Exclusions:
+    ! medium.com,betterprogramming.pub,faun.pub,jetruby.com,itnext.io,towardsdatascience.com - random two-letter classes, medium engine
+    ! ozon - random two-letter and other classes
+~facebook.com,~fb.com,~aliexpress.com,~alfamiles.com,~microsoft.com,~onetwotrip.com,~ozon.ru,~ozon.by,~ozon.com##[id^="fb"]:not(html):not(body):not(article):not(.fb-post)
+    ! is in Ru AdList and Fanboy's
+    ###fb_icon
+    ! from Adguard
+    ###fb-root:not(body):not(html)
+~facebook.com,~fb.com,~alfamiles.com,~onetwotrip.com,~ozon.ru,~ozon.by,~ozon.com##[class*="-fb"]:not(html):not(body):not(article):not([class^=css-fb]):not(h1):not(h2):not(h3)
+~facebook.com,~fb.com,~alfamiles.com,~onetwotrip.com,~ozon.ru,~ozon.by,~ozon.com##[id*="-fb"]:not(html):not(body):not(article)
+    ! is in Fanboy's
+    ##.icn-fb
+~facebook.com,~fb.com,~alfabank.ru,~alfamiles.com,~onetwotrip.com,~ozon.ru,~ozon.by,~ozon.com##[class*="_fb"]:not(html):not(body):not(article)
+~facebook.com,~fb.com,~alfabank.ru,~alfamiles.com,~onetwotrip.com,~ozon.ru,~ozon.by,~ozon.com##[id*="_fb"]:not(html):not(body):not(article)
+~facebook.com,~fb.com##[class*="FBLIKE"]:not(html):not(body):not(article)
+~facebook.com,~fb.com##[id*="FBLIKE"]:not(html):not(body):not(article)
+~facebook.com,~fb.com##[class*="FBLike"]:not(html):not(body):not(article)
+~facebook.com,~fb.com##[id*="FBLike"]:not(html):not(body):not(article)
+~facebook.com,~fb.com##[class*="FbLike"]:not(html):not(body):not(article)
+~facebook.com,~fb.com##[id*="FbLike"]:not(html):not(body):not(article)
+~facebook.com,~fb.com##[class*="fblike"]:not(html):not(body):not(article)
+~facebook.com,~fb.com##[id*="fblike"]:not(html):not(body):not(article)
+! exclusions from Adguard. Didn't recheck.
+facebook.com,facebookcorewwwi.onion#@#.AdBox
+facebook.com,facebookcorewwwi.onion#@#.Ad
+facebook.com,facebookcorewwwi.onion#@#.advert
+facebook.com,facebookcorewwwi.onion#@#.post-ads
+facebook.com,facebookcorewwwi.onion#$#body > .AdBox.Ad.advert { display:block!important; }
+! exclusions end
+##.facebook
+~belarus2020.org,~medium.com,~betterprogramming.pub,~faun.pub,~jetruby.com,~itnext.io,~towardsdatascience.com,~ozon.ru,~ozon.by,~ozon.com##.fb
+    ! Exclusions:
+    ! medium.com,betterprogramming.pub,faun.pub,jetruby.com,itnext.io,towardsdatascience.com - random two-letter classes, medium engine
+    ! ozon - random two-letter and other classes
+! is in 3 lists
+##.fb-like
+! is in Adguard and Fanboy's
+##.fb-like-box
+! from Adguard and Fanboy's
+##.fb-page
+! from Fanboy's, modified
+##.fb-xfbml-parse-ignore:not(blockquote)
+! from Fanboy's
+##a[title="Facebook"]
+! from Adguard, modified
+~facebook.com##iframe[src*="facebook.com/plugins/"]
+    ! from Adguard, modified
+    ! ##iframe[src^="https://www.facebook.com/plugins/"]
+! from Adguard, modified
+##iframe[data-src^="//www.facebook.com/plugins/like"]
+! from Fanboy's
+##iframe[src^="https://fb.com/plugins/page.php?href="]
+! from Fanboy's
+##img[alt="Facebook"]
+! is in Web Annoyances Ultralist
+##.icon-facebook
+! is in 3 lists
+##.share-facebook
+##.td-icon-facebook
+facebook.com##._3ob9
+facebook.com###mobile_login_bar
+! from https://www.reddit.com/r/uBlockOrigin/comments/bghc9n/facebook_filter_list/
+facebook.com##div[id^="hyperfeed_story_id_"]:not(div:contains(/^[class="timestampContent"])):not(span:contains(/^m$/)):not(span:contains(/^M$/)):not(span:contains(/^h$/)):not(span:contains(/^:$/)):not(span:contains(/^J$/)):has(span:contains(/^S$/))
+facebook.com##:xpath(//div[starts-with(@id, 'pagelet') and (.//a[.='Sponsored'])]  )
+facebook.com###pagelet_ego_pane
+facebook.com###pagelet_video_home_watch_list_rhc
+! logo
+facebook.com##[href="https://www.facebook.com/"]
+! unfix
+! don't - header jumps
+!facebook.com##div:matches-css(position:fixed):style(position:static !important)
+! and again
+facebook.com##*:matches-css(position:fixed):style(position:static !important)
+facebook.com##[aria-label="Not Logged In"]
+    ! popups
+facebook.com##[role="dialog"]:has-text(cookies)
+facebook.com##[class^=__fb-light-mode]
+
+
+
+!! VK
+!
+! hosts
+! comments are preferably inline with  #
+!
+!
+! urls
+! comments are preferably inline with  # 
+! general first, specific last
+!
+/footer_vk.png
+/ico_vk.
+/ico-vk.
+/ico_vkontakte.gif
+/icon_vk.
+/soc_vk.svg
+/vc.jpg
+/vk.$image,domain=~vk.com|~votesmart.appspot.com
+    /vk.gif
+    /vk.jpg
+    /vk.png
+    /vk.svg$domain=~votesmart.appspot.com
+/vk_$image,domain=~vk.com|~votesmart.appspot.com
+    /vk_icon.png
+    /vk_logo.png
+/vk2.png
+/vk24.png
+/vk-desktop.png
+/vk_easy.js
+/vkontakt$image,domain=~vk.com|~votesmart.appspot.com
+    /vkontakte-16.
+    /vkontakt_30.jpg
+    /vkontakte.gif
+    /vkontakte.png
+    /vkontakte.svg
+    /img/vkontakte
+_vkontakte.png  # from Ru AdList
+||userapi.com/js/api/$domain=~vk.com,important
+||vk.com/js^$third-party,important,domain=~senler.ru|~vse.fm
+||vk.com/js/api/openapi.js$third-party,important,domain=~senler.ru|~vse.fm  # disabled rule from AdList RU
+||vk.com/js/al/aes_light.js$third-party  # from Adguard
+||vk.com/js/al/mrtarg.js  # "banners to inspect"
+||vk.com/js/cmodules/web/notifier$third-party
+||vk.com/dist/web/chunks/ny-  # new year trash
+||vk.com/dist/web/jobs_devtools_notification  # spam to console
+||vk.com/dist/web/performance_observers
+||vk.com/dist/web/raven_logger
+||vk.com/mp3/bb*.mp3  # https://vk.com/mp3/bb2.mp3
+||vk.com/rtrg?  # from EasyPrivacy
+||vk.com/share.php$third-party  # from Adguard
+||vk.com/videostats.php?  # from Ru AdList
+||vk.com/widget_$domain=~vk.com,important  # modified filter from Adguard
+||vk.com/widget_comments.php$domain=~vk.com,important
+||vk.com/widget_community.php$domain=~vk.com,important
+!
+! cosmetic filters
+! general first, specific last
+! comments is in separate line(s) before the string (as uBlock Origin editor says, inline is not correct)
+!
+! Oh, yes! Long-awaited feature! https://github.com/uBlockOrigin/uBlock-issues/issues/2531
+vk.com,vk.ru##+js(href-sanitizer, a[href^="/away.php?to="]:not([title]))
+vk.com,vk.ru##+js(href-sanitizer, a[href^="/away.php?to="][title], [title])
+! and Ru AdList variant
+vk.com,vk.ru##+js(href-sanitizer, a[href*="/away.php?to="], ?to)
+!
+    ! popups
+! vk.com##.box_body:has(.vk_connect_policy_notice_box)  # test remove 2020-07
+!
+! popup class. In general, do not block it, popups are used in GUI
+!vk.com###box_layer_wrap
+vk.com###box_layer_wrap:has(.UnauthActionBoxContainer)
+||vk.com/images/layer_bg_black.png
+vk.com##.UnauthActionBoxContainer
+vk.com###notifiers_wrap
+!
+! this is empty backdrop, safe to remove
+vk.com###box_layer_bg
+!
+!vk.com##.scroll_fix_wrap - don't, that's not
+! is in Ru AdList and Adguard
+vk.com###cookies_policy_wrap
+! Ru AdList exclusion
+vk.com#@#div[id$="notifiers_wrap"]
+    ! banners and promos
+vk.com##.audio_promo
+    ! share scripts and buttons
+! here will be some exclusion sites, yes
+! Ru Adlist and Fanboy's rule
+##a[onclick^="window.open('http"][onclick*="://vk.com/share.php?"]
+! from Fanboy's
+##a[href^="//vk.com/share.php?"]
+! from Adguard
+##a[href^="//vk.com/share.php"]
+! also, is in Fanboy's (maybe duplicate)
+##a[href^="http://vk.com/share.php?"]
+! is in Adguard
+~votesmart.appspot.com##a[href^="https://vk.com/share.php"]
+! from Fanboy's
+~votesmart.appspot.com##a[href^="https://vk.com/share.php?"]
+! is in Adguard
+##a[href^="http://vkontakte.ru/share.php"]
+! is in Ru AdList and Fanboy's
+##a[href^="http://vkontakte.ru/share.php?"]
+! is in Adguard. Old domain but suprisingly still actual and working in 2020
+##a[href^="https://vkontakte.ru/share.php"]
+    ! browser popups
+! from Fanboy's
+##a[title="ВКонтакте"]
+! is in Adguard
+vk.com##.OldBrowser
+||vk.com/badbrowser_stat
+    ! promos
+vk.com###groups_donut_module
+vk.com###donation_app_widget
+    ! other
+~vk.com,~belarus2020.org##[class$="-vk"]:not(html):not(body):not(article)
+~vk.com##[id$="-vk"]:not(html):not(body):not(article)
+!
+! Notifications: title is flickering. Very annoying.
+!vk.com##+js(set, document.title, undefined)
+! update: this triggers inner script error on VK. Disabled. No flickering now, but maybe todo
+!
+! is in Ru AdList
+##div[id^="vk_comments"]
+! is in Ru AdList
+##div[id^="vk_group"]
+! from Adguard
+##div[id^="vk_like"]
+! from Ru AdList
+###com_vk
+##.fa-vk
+! is in Fanboy's
+##.icon-vk
+##.icon-VK
+##.icon-vk-24
+! from Ru AdList
+##.icon_vkontakte
+##.ico-vkontakte
+##.icon-vkontakte
+~belarus2020.org,~medium.com,~betterprogramming.pub,~faun.pub,~jetruby.com,~itnext.io,~towardsdatascience.com,~ozon.ru,~ozon.by,~ozon.com,~vk.com##.vk
+    ! Exclusions:
+    ! medium.com,betterprogramming.pub,faun.pub,jetruby.com,itnext.io,towardsdatascience.com - random two-letter classes, medium engine
+    ! ozon - random two-letter and other classes
+###vk
+!##[class$="-vk"]
+! is in Adguard
+###vk_group
+##.vk-group-block
+###vk_groups
+##.vk_icon
+! from Ru AdList
+###vk_like
+! from Ru AdList
+~vk.com###vkMsg
+! is in Ru AdList and Fanboy's
+##.vkontakte
+###vkontakte
+! from Ru AdList
+###vkshare0
+! from Ru AdList
+~vk.com###vk_subscribe
+##.vk-white-icon
+! from Adguard
+vk.com##+js(set-constant, noAdsAtAll, true)
+! is in Adguard
+vk.com###ads_left
+! vk.com###bottom_nav  # test remove 2020-07
+! vk.com###index_footer_wrap  # test remove 2020-07
+! vk.com###layer_bg  # test remove 2020-07
+! is in Adguard and EasyList
+vk.com###system_msg
+vk.com##.PushNotifierPopup__popup-box_type--suggest
+vk.com##.article_layer__top_actions
+vk.com##.article_layer__up
+vk.com##.article_layer__simple_footer
+! logo
+vk.com##.TopHomeLink
+
+
+
+!! Instagram
+!
+! hosts
+! comments are preferably inline with  #
+!
+!
+! urls
+! comments are preferably inline with  # 
+! general first, specific last
+!
+/by-insta.jpg
+/footer/instagram.  # is in Fanboy's
+/images/instagram_  # from Fanboy's
+/img/instagram
+/inst.jpg
+/insta.jpg
+/insta.png
+/insta.svg
+/instafeed.min.js$important
+/instag.png
+/instagram.png
+/instagram2.png
+/instagram.svg  # from Fanboy's
+/instalogo.$image
+/nt_instagram.min.js
+/public/instagram-  # from Fanboy's
+_social_insta.svg
+||instagram.com/embed.js$third-party,important
+||instagram.com/*/embeds.js$third-party,important
+||instagram.com/ajax/bz
+||instagram.com/client_error/
+!||instagram.com/graphql/ - don't
+||instagram.com^*/users/$3p,important  # from Fanboy’s and RU AdList
+!
+! cosmetic filters
+! general first, specific last
+! comments is in separate line(s) before the string (as uBlock Origin editor says, inline is not correct)
+!
+~instagram.com##[class*="Instagram"]:not(html):not(body):not(article)
+~instagram.com##[id*="Instagram"]:not(html):not(body):not(article)
+~instagram.com,~belarus2020.org,~livejournal.com##[class*="instagram"]:not(html):not(body):not(article)
+~instagram.com##[id*="instagram"]:not(html):not(body):not(article)
+##a[href^="https://www.instagram.com/"]
+! from Fanboy's
+##a[title="Instagram"]
+##.icon-insta
+! is in Fanboy's
+##.icon-instagram
+##.insta
+! is in Fanboy's and Ru AdList
+~instagram.com##img[alt="Instagram"]
+##.td-icon-instagram
+
+
+
+!! Odnoklassniki
+!
+! hosts
+! comments are preferably inline with  #
+!
+#api.ok.ru  # api.ok.ru$domain=~ok.ru|~odnoklassniki.ru  # update: don't. It needed for OK app
+connect.ok.ru$important  # from hpHosts’ Ad and tracking servers 
+!
+!
+! urls
+! comments are preferably inline with  # 
+! general first, specific last
+!
+/footer_ok.png
+/ico_odnok.gif
+/ico_ok.png
+/img/ok-$image
+/odnoklassniki$image,domain=~ok.ru|~odnoklassniki.ru|~votesmart.appspot.com
+    /odnoklassniki.png
+    /odnoklassniki.svg
+/ok.$image,domain=~ok.ru|~odnoklassniki.ru|~votesmart.appspot.com
+    /ok.png
+    /ok.svg$domain=~votesmart.appspot.com
+/ok_icon.png
+/ok-icon.png
+/soc_ok.svg
+||odnoklassniki.ru^$~stylesheet,domain=~odnoklassniki.ru|~ok.ru  # from Fanboy's
+||odnoklassniki.ru/share/$third-party,domain=~mail.ru|~odnoklassniki.ru  # from Adguard
+||ok.ru/dk/?st.cmd=extLike$3p
+||ok.ru/dk?cmd=videoStatNew
+||ok.ru/gwtlog
+||ok.ru/mapi?$domain=~ok.ru|~odnoklassniki.ru
+! don't block, it needed by embedded video player
+!ok.ru/res/js/
+||ok.ru/web-api/pixel
+!
+! cosmetic filters
+! general first, specific last
+! comments is in separate line(s) before the string (as uBlock Origin editor says, inline is not correct)
+!
+! is in Adguard
+~votesmart.appspot.com##a[href^="https://connect.ok.ru/offer?url="]
+! is in Adguard
+##a[href^="http://connect.ok.ru/offer?url="]
+!todo: blocking window
+!ok.ru##.media-layer_close_ovr
+ok.ru##.invite-block
+!ok.ru###mtLayer
+~belarus2020.org##.fa-odnoklassniki
+##.icon-odnoklassniki
+##.icons-ok
+##.like-od
+##.odnoklassniki
+~belarus2020.org,~medium.com,~betterprogramming.pub,~faun.pub,~jetruby.com,~itnext.io,~towardsdatascience.com,~ozon.ru,~ozon.by,~ozon.com,~ok.ru##.ok
+    ! Exclusions:
+    ! flagma.cz - not odnoklassniki, OK button
+    ! belarus2020.org - voting platform (not very successful, but)
+    ! medium.com,betterprogramming.pub,faun.pub,jetruby.com,itnext.io,towardsdatascience.com - random classes, medium engine
+    ! ozon - random two-letter and other classes
+    !
+    !argumenti.ru##.ok
+    !splav.ru##.ok
+    !torex.ru##.ok
+##.ok_icon
+##.socmedia-odnoklassniki
+ok.ru##[class*=__second_line_for_social]
+ok.ru##[class*=__landing__]
+ok.ru##[class*=modal-layer__]
+
+
+
+!! Tiktok
+!
+! hosts
+! comments are preferably inline with  #
+!
+||mon*-*.tiktokv.us^  # Adguard rule
+mon16-normal-useast5.tiktokv.us
+!
+! urls
+! comments are preferably inline with  # 
+! general first, specific last
+!
+||tiktokv.us/monitor_browser/
+||tiktokw.eu/web/report
+!
+! cosmetic filters
+! general first, specific last
+! comments is in separate line(s) before the string (as uBlock Origin editor says, inline is not correct)
+!
+! tiktok.com##[class*=DivModalContainer] - don't. It doesn't play without login, really
+
+
+
+!! Twitter
+!
+! hosts
+! comments are preferably inline with  #
+syndication.twitter.com
+syndication.twimg.com
+cdn.syndication.twimg.com
+!
+!
+! urls
+! comments are preferably inline with  # 
+! general first, specific last
+!
+||cloudflare.com/ajax/libs/twitter-bootstrap/~$css
+/footer/twitter.  # is in Fanboy's
+/icon-twitter.
+/images/*twitter.png  # from Fanboy's
+/images/twitter  # from Fanboy's
+/jquery.tweetscroll.js
+/tw.jpg
+/tw.png
+/tw.svg
+/tw-button  # from Ru AdList, modified
+-tweet.png  # from Ru AdList
+/tweetbutton.  # from Ru AdList
+/tweet-button.  # from Ru AdList
+/tweet_button.  # from Fanboy's
+/tweet_button2.  # from Ru AdList
+/tweetcount.  # from Ru AdList
+/tweeter.png
+/tweetfeed.min.js$important
+/tweet_footer.  # from Ru AdList
+/tweetgrid.  # from Ru AdList
+/tweet-ico.  # from Ru AdList
+/tweeticon-  # from Ru AdList
+/tweetn.  # from Ru AdList
+/tweets.js  # from Ru AdList
+/tweets.min.js  # from Ru AdList
+/tweetshare.  # from Ru AdList
+/tweet-this.  # from Ru AdList
+/twfollowfp.  # from Ru AdList
+/twfooter.  # from Ru AdList
+/tw-ico.  # from Ru AdList
+/tw-icon.  # from Ru AdList
+/tw_icon.  # from Ru AdList
+/tw-icons.  # from Ru AdList
+/tw_follow.  # from Ru AdList
+/tw_footer.  # from Ru AdList
+/twitbadge.  # from Ru AdList
+/twitbutton.  # from Ru AdList
+/twit-button-  # from Ru AdList
+/twiter-icon.  # from Ru AdList
+/twiticon.  # from Ru AdList
+/twit-icon.  # from Ru AdList
+/twit_icon.  # from Ru AdList
+/twittbutton.  # from Ru AdList
+/twitter.js$important
+-twitter.js  # from Ru AdList
+/twitter.png
+/twitter.svg$domain=~votesmart.appspot.com
+/twitter-$~css
+    ! exclusion: https://secretmag.ru/news/twitter-zakhotel-zashititsya-ot-ilona-maska-otravlennoi-pilyulei-15-04-2022.htm
+    @@/news/twitter-
+    ! /assets/twitter-$image  # is in Fanboy's and Ru AdList
+    ! /img/twitter-  # from Fanboy's
+    ! /twitter-1-  # from Ru AdList
+    ! /twitter-16px.  # from Ru AdList
+    ! /twitter-16x  # from Ru AdList
+    ! /twitter-32.  # from Ru AdList
+    ! /twitter-32px.  # from Ru AdList
+    ! /twitter-32x  # from Ru AdList
+    ! /twitter-64.  # from Ru AdList
+    ! /twitter-85.  # from Ru AdList
+    ! /twitter-after-  # from Ru AdList
+    ! /twitter-big.  # from Ru AdList
+    ! /twitter-bt-  # from Ru AdList
+    ! /twitter-button-  # from Ru AdList
+    ! /twitter-button.  # from Ru AdList
+    ! /twitter-button2.  # from Ru AdList
+    ! /twitter-Buttons-  # from Ru AdList
+    ! /twitter-buttons.  # from Ru AdList
+    ! /twitter-buttons3.  # from Ru AdList
+    ! /twitter-custom-  # from Ru AdList
+    ! /twitter-custom.  # from Ru AdList
+    ! /twitter-follow-  # from Ru AdList
+    ! /twitter-footer-  # from Ru AdList
+    ! /twitter-home.  # from Ru AdList
+    ! /twitter-ico.  # from Ru AdList
+    ! /twitter-icon-  # from Ru AdList
+    ! /twitter-icon.  # from Ru AdList
+    ! /twitter-icon_  # from Ru AdList
+    ! /twitter-iconheader.  # from Ru AdList
+    ! /twitter-link.  # from Ru AdList
+    ! /twitter-link1.  # from Ru AdList
+    ! /twitter-module.  # from Ru AdList
+    ! /twitter-over.  # from Ru AdList
+    ! /twitter-plugin/*  # from Ru AdList
+    ! /twitter-share-  # from Ru AdList
+    ! /twitter-share.  # from Ru AdList
+    ! /twitter-small.  # from Ru AdList
+    ! /twitter-social-  # from Ru AdList
+    ! /twitter-space.  # from Ru AdList
+    ! /twitter-v2.  # from Ru AdList
+    ! /uploads/twitter-  # from Ru AdList
+/twitter_
+    ! /twitter_12.  # from Ru AdList
+    ! /twitter_16.  # from Ru AdList
+    ! /twitter_16x16.  # from Ru AdList
+    ! /twitter_18x18_  # from Ru AdList
+    ! /twitter_24.  # from Ru AdList
+    ! /twitter_24x24.  # from Ru AdList
+    ! /twitter_29.  # from Ru AdList
+    ! /twitter_30.  # from Ru AdList
+    ! /twitter_32  # from Ru AdList
+    ! /twitter_32x  # from Ru AdList
+    ! /twitter_36.  # from Ru AdList
+    ! /twitter_42.  # from Ru AdList
+    ! /twitter_48  # from Ru AdList
+    ! /twitter_64.  # from Ru AdList
+    ! /twitter_64x  # from Ru AdList
+    ! /twitter_add.  # from Ru AdList
+    ! /twitter_alt.  # from Ru AdList
+    ! /twitter_aqu_48.  # from Ru AdList
+    ! /twitter_badge.  # from Ru AdList
+    ! /twitter_bird.  # from Ru AdList
+    ! /twitter_bird_  # from Ru AdList
+    ! /twitter_btn.  # from Ru AdList
+    ! /twitter_bubble_  # from Ru AdList
+    ! /twitter_button  # from Ru AdList
+    ! /twitter_circle-  # from Ru AdList
+    ! /twitter_circle.  # from Ru AdList
+    ! /twitter_follow.  # from Ru AdList
+    ! /twitter_footer.  # from Ru AdList
+    ! /twitter_header.  # from Ru AdList
+    ! /twitter_ico2.  # from Ru AdList
+    ! /twitter_icon.  # from Ru AdList
+    ! /twitter_icon2.  # from Ru AdList
+    ! /twitter_icon_  # from Ru AdList
+    ! /twitter_inc.  # from Ru AdList
+    ! /twitter_menu_  # from Ru AdList
+    ! /twitter_out.  # from Ru AdList
+    ! /twitter_share.  # from Ru AdList
+    ! /twitter_share_  # from Ru AdList
+    ! /twitter_social.  # from Ru AdList
+    ! /twitter_social_  # from Ru AdList
+    ! /twitter_sprite.  # from Ru AdList
+    ! /twitter_square.  # from Ru AdList
+    ! /twitter_subscribe.  # from Ru AdList
+    ! /twitter_tasto_  # from Ru AdList
+    ! /twitter_title_  # from Ru AdList
+    ! /twitter_top_icon.  # from Ru AdList
+/twitter16x16.  # from Ru AdList
+/twitter232.  # from Ru AdList
+/twitter25x25.  # from Ru AdList
+/twitter2_icon.  # from Ru AdList
+/twitter3.  # from Ru AdList
+/twitter300.  # from Ru AdList
+/twitter32.  # from Ru AdList
+/twitter32px.  # from Ru AdList
+/twitter3gif.  # from Ru AdList
+/twitter40x40.  # from Ru AdList
+/twitter42x42.  # from Ru AdList
+/twitter45.  # from Ru AdList
+/twitter48.  # from Ru AdList
+/twitter72.  # from Ru AdList
+/twitter80a.  # from Ru AdList
+/twitterbadge.  # from Ru AdList
+/twitterbadge/*  # from Ru AdList
+/twitterbigicon.  # from Ru AdList
+/twitterbtmicon.  # from Ru AdList
+/twitterbtn.  # from Ru AdList
+/twitterbutton-  # from Ru AdList
+/twitterbutton.  # from Ru AdList
+/twittered.  # from Ru AdList
+/twitterfetcher_  # from Ru AdList
+/twitterfloat.js  # from Ru AdList
+/twitterfollow.  # from Ru AdList
+/twitterfollowbadge/*  # from Ru AdList
+/twittericn.  # from Ru AdList
+/twittericon.  # from Ru AdList
+/twittericon32.  # from Ru AdList
+/twittericon_  # from Ru AdList
+/twitterlib.  # from Ru AdList
+/twitteron.  # from Ru AdList
+/twitterpin.  # from Ru AdList
+/twitterprev.  # from Ru AdList
+/twittersmall.  # from Ru AdList
+/twittersmall2.  # from Ru AdList
+/twittersquare.  # from Ru AdList
+/twitterwidget.  # from Ru AdList
+/twitterwidgetheader.  # from Ru AdList
+/twitter/facebook_  # from Ru AdList
+/twitter/lookup?  # from Ru AdList
+/twitter/twitter_  # from Ru AdList
+/twitter-timeline$important
+    ! /twitter-timeline.min.js$important
+    ! /twitter-timeline-  # from Ru AdList
+/twitter-widget$important
+    ! /twitter-widget-  # from Ru AdList
+    ! /twitter-widget.  # from Ru AdList
+-twitter.js  # from Ru AdList
+_twitter.png  # from Ru AdList
+_twitter_icon.
+/twitterfeed/*
+/twitthis_  # from Ru AdList
+/tw_share_  # from Ru AdList
+/tw_small.  # from Ru AdList
+/tw_top.  # from Ru AdList
+/twt_icon.  # from Ru AdList
+/twt-icon.  # from Ru AdList
+/twt-share.  # from Ru AdList
+/twt_side.  # from Ru AdList
+/twtr_icon_  # from Ru AdList
+||twitter.com/*/client_event.json  # is in EasyPrivacy
+||twitter.com/oct.js$important  # from EasyPrivacy
+platform.twitter.com/widgets.js$important,domain=~threadreaderapp.com
+	! Exclusions:
+	! threadreaderapp.com - service to display twitter threads
+!
+! cosmetic filters
+! general first, specific last
+! comments is in separate line(s) before the string (as uBlock Origin editor says, inline is not correct)
+!
+! Oh, yes! Long-awaited feature! https://github.com/uBlockOrigin/uBlock-issues/issues/2531
+twitter.com##+js(href-sanitizer, a[href^="https://t.co/"])
+!
+~twitter.com,~x.com##[class*="Tweet"]:not(html):not(body):not(article)
+~twitter.com,~x.com##[id*="Tweet"]:not(html):not(body):not(article)
+~twitter.com,~x.com,~livejournal.com##[class*="tweet"]:not(html):not(body):not(article)
+~twitter.com,~x.com##[id*="tweet"]:not(html):not(body):not(article)
+~twitter.com,~x.com##[class*="Twitter"]:not(html):not(body):not(article)
+~twitter.com,~x.com##[id*="Twitter"]:not(html):not(body):not(article)
+~twitter.com,~x.com,~belarus2020.org,~livejournal.com,~addons.opera.com##[class*="twitter"]:not(html):not(body):not(article)
+    ! Exclusions:
+    ! addons.opera.com - ".twitter-typeahead" is a search form there
+~twitter.com,~x.com##[id*="twitter"]:not(html):not(body):not(article)
+    ! from Fanboy's
+    !###advanced-twitter-widget
+    !~belarus2020.org##.fa-twitter
+    !##.fa-twitter-square
+    ! is in Ru AdList and Fanboy's
+    !##.footer-twitter
+    ! is in Fanboy's and Web Annoyances Ultralist
+    !##.icon-twitter
+    !##.icon-twitter-circle
+    ! is in 3 lists
+    !##.share-twitter
+    ! is in Fanboy's
+    !##.sharify-btn-twitter
+    ! is in Ru AdList and Fanboy's
+    !##.sidebar-twitter
+    ! is in Ru AdList and Fanboy's
+    !##.social-twitter
+    ! is in Fanboy's
+    !##.socicon-twitter
+    !##.td-icon-twitter
+    ! is in Ru AdList and Fanboy's
+    !##.twitter
+    ! is in Fanboy's and Web Annoyances Ultralist
+    ! is in Fanboy's
+    ##.twitter-follow-button
+    ##.twitter-share-button
+    ! is in Adguard
+    !##body .twitter-share-button
+    ! is in Fanboy's
+    !##.twitter-timeline
+    ! is in Fanboy's
+    !###twitter_timeline-2
+    ! is in Fanboy's
+    !##.widget_twitter_timeline
+! from Fanboy's
+##[href^="//twitter.com/share"]
+! from Web Annoyances Ultralist
+##[href*="twitter.com/share"]
+! is in Ru AdList, Adguard, Fanboy's
+##a[href^="http://twitter.com/home?"]
+! from Adguard and Fanboy's
+~votesmart.appspot.com##a[href^="https://twitter.com/intent/tweet?"]
+! is in Fanboy's
+~votesmart.appspot.com##a[href^="https://twitter.com/intent/tweet/"]
+! is in Adguard
+~votesmart.appspot.com##a[href^="https://twitter.com/intent/tweet/?"]
+! is in Fanboy's
+##a[href^="http://twitter.com/share"]
+! is in Fanboy's and Adguard
+##a[href^="http://twitter.com/share?"]
+! is in Adguard
+##a[href^="https://twitter.com/share"]
+! is in Fanboy's, RU AdList - Adguard's is about the same
+##a[href^="https://twitter.com/share?"]
+! is in Adguard
+##a[onclick^="window.open('https://twitter.com/share"]
+! from Fanboy's
+##a[title="Twitter"]
+! from Fanboy's
+##img[alt="Twitter"]
+##.iconTw
+##.icon-tw
+##.icon-tw-footer
+##.icon-TWITTER
+##.icon-tw-white
+##.ico-tw
+##.ico-twttr
+##.like-tw
+~belarus2020.org,~fandom.com,~medium.com,~betterprogramming.pub,~faun.pub,~jetruby.com,~itnext.io,~towardsdatascience.com,~ozon.ru,~ozon.by,~ozon.com##.tw
+    ! Exclusions:
+    ! fandom.com: false-positive, there are no socials in wikis
+    ! medium.com,betterprogramming.pub,faun.pub,jetruby.com,itnext.io,towardsdatascience.com - random two-letter classes, medium engine
+    ! ozon - random two-letter and other classes
+    !
+    !argumenti.ru##.tw
+    !torex.ru##.tw
+    !vesti.ru##.tw
+twitter.com,x.com###layers:has-text(Something wrong)
+! bottom sticky bar
+twitter.com,x.com##[data-testid="BottomBar"]
+twitter.com,x.com##[data-testid="sheetDialog"]:has-text(Turn on notifications)
+twitter.com,x.com##[role="dialog"]:has-text(Turn on notifications)
+
+
+
+!! Pinterest
+!
+! hosts
+! comments are preferably inline with  #
+!
+pinimg.com$script,domain=~pinterest.com|~pinterest.co.uk  # Pinterest domains  # don't block entirely, sometime images are used on 3p sites. Maybe, scripts?
+!
+! urls
+! comments are preferably inline with  # 
+! general first, specific last
+!
+/img/pinterest
+_pinterest_icon.png
+-pinterest.
+||pinterest.com^$script,3p  # from Web Annoyances Ultralist, modified
+||pinterest.com/images/$third-party  # from Ru AdList
+||pinterest.com/js/pinit.js^$3p  # from Adguard, modified
+||pinterest.com/js/pinit_main.js$third-party  # from Ru AdList
+||pinterest.com/v1/urls/count.json$third-party  # from Ru AdList
+||s.pinimg.com/ct/core.js  # is in Adguard
+!
+! cosmetic filters
+! general first, specific last
+! comments is in separate line(s) before the string (as uBlock Origin editor says, inline is not correct)
+!
+~pinterest.com,~livejournal.com##[class*="pinterest"]:not(html):not(body):not(article)
+~pinterest.com##[id*="pinterest"]:not(html):not(body):not(article)
+    ! is in Adguard, Fanboy's and Web Annoyances Ultralist
+    ##.icon-pinterest
+    ##.icon-pinterest-share
+    ##.icon-pintrest
+    ##.pinterest-share
+    ! is in 3 lists
+    ##.share-pinterest
+! is in Adguard and Fanboy's
+##a[href^="http://pinterest.com/pin/create/button/"]
+! is in Adguard
+##a[href^="https://pinterest.com/pin/create/button/"]
+! is in Adguard and Fanboy's
+##a[href^="https://pinterest.com/pin/create/"]
+##.iconPinterest
+
+pinterest.com##div[data-test-id="fullPageSignupModal"]
+pinterest.com##.active.noButtonStyles > div
+
+
+
+!! Viber
+/icon_viber.
+/img/vib.jpg
+/viber.png
+/viber.svg
+/viber-icon.png
+! is in Adguard and Fanboy's
+##a[href^="viber://forward?text="]
+##.viber
+
+
+
+!! Mail.ru (yes, it is a some sort of social network too :-) )
+!
+! hosts
+! comments are preferably inline with  #
+!
+mediator.imgsmail.ru  # from Adguard Tracking Protection
+!
+! urls
+! comments are preferably inline with  # 
+! general first, specific last
+!
+||mail.ru/k?  # from EasyPrivacy
+||mail.ru/share_button  # from Adguard: ||connect.mail.ru/share_button
+imgsmail.ru/gstat?  # from EasyPrivacy
+!
+! cosmetic filters
+! general first, specific last
+! comments is in separate line(s) before the string (as uBlock Origin editor says, inline is not correct)
+!
+! from Ru AdList
+light.mail.ru##+js(href-sanitizer, [href^="https://checklink.mail.ru/proxy?"], ?url)
+! from Ru AdList
+light.mail.ru##+js(href-sanitizer, [href^="https://click.mail.ru/redir?u="], ?u)
+!
+! is in Adguard
+##a[href^="https://connect.mail.ru/share"]
+! is in RU AdList
+##a[href*="//top.mail.ru/jump?"]
+! is in Adguard
+##a[href^="http://top.mail.ru/jump"]
+! is in Adguard
+##a[href^="https://top.mail.ru/jump"]
+games.mail.ru##.strim
+games.mail.ru###pm-gc-btn
+games.mail.ru##.pm-logo
+games.mail.ru##.b-pc__right-action
+games.mail.ru##.b-footer__list__button_download
+hi-tech.mail.ru##.js-module.bar
+hi-tech.mail.ru##.sticky__inner_bottom
+hi-tech.mail.ru##.link-holder
+hi-tech.mail.ru##.p-article-conversionlink
+hi-tech.mail.ru##.link-hdr
+hi-tech.mail.ru##.note
+hi-tech.mail.ru##.js-module.block_collapse_hor
+otvet.mail.ru###portal-menu__toolbar
+otvet.mail.ru##.column_right
+otvet.mail.ru##.slide-start
+otvet.mail.ru###portal-menu
+otvet.mail.ru##.fixedsticky
+wf.mail.ru###header
+!
+! disable strange exceptions from Ru AdList
+! В одном из тестовых браузеров поехала верстка после удаления, но по выяснению, это не из-за отсутствия исключений, а из-за запрета куки, похоже. Без исключений работает.
+@@||auto.mail.ru^$generichide,badfilter
+@@||deti.mail.ru^$generichide,badfilter
+@@||health.mail.ru^$generichide,badfilter
+@@||kino.mail.ru^$generichide,badfilter
+@@||lady.mail.ru^$generichide,badfilter
+@@||realty.mail.ru^$generichide,badfilter
+@@||news.mail.ru^$generichide,badfilter
+@@||otvet.mail.ru^$generichide,badfilter
+@@||e.mail.ru^$generichide,badfilter
+@@||octavius.mail.ru^$generichide,badfilter
+@@||sportmail.ru^$generichide,badfilter
+@@||sport.mail.ru^$generichide,badfilter
+
+
+
+!! Rambler (no comments also :-) )
+! is in RU AdList
+##[alt="Rambler's Top100"]
+! is in RU AdList
+##a[href*="top100.rambler.ru/"]
+
+
+
+!! Yandex Zen
+!
+! hosts
+! comments are preferably inline with  #
+!
+!
+! urls
+! comments are preferably inline with  # 
+! general first, specific last
+!
+/dzen.$image
+/yandex-zen.$image
+/yandex_zen.$image
+/zen.$image
+/zen_18.$image
+!
+!
+! cosmetic filters
+! general first, specific last
+! comments is in separate line(s) before the string (as uBlock Origin editor says, inline is not correct)
+!
+! is in Ru AdList
+##[title="Яндекс Дзен"]
+##.zen
+##.zen-button
+##.zen-invite-block
+##.zenlink
+##.zen-ui-popup
+##.zen-ui-popup__main
+##.zen-ui-popup__content
+##.zen-ui-popup__wrapper
+
+
+
+!! Linkedin
+!
+! hosts
+! comments are preferably inline with  #
+!
+!
+! urls
+! comments are preferably inline with  # 
+! general first, specific last
+!
+/assets/linkedin-$image
+/assets/linked-in-$image
+/footer/linkedin.
+/icon-linkedin
+/img/*linkedin.png$domain=~github.io  # from Fanboy's
+/linkdin.svg
+/linkedin-$domain=~arkoselabs.com|~linkedin.com  # is in Fanboy's
+/linkedin.png
+/linkedin.svg
+/linkedin2.png
+/social-in.png
+||linkedin.com/countserv/$third-party  # from Ru AdList
+||linkedin.com/img/$third-party  # from Ru AdList
+||linkedin.com/uas/js/userspace?$third-party # from Ru AdList
+!
+! cosmetic filters
+! general first, specific last
+! comments is in separate line(s) before the string (as uBlock Origin editor says, inline is not correct)
+!
+~cogmento.com,~expats.cz,~linkedin.com##[class*="linkedin"]:not(html):not(body):not(article)
+    ! Exclusions:
+    ! cogmento.com - save button (sic!) is "ui linkedin button"
+    ! expats.cz - job service
+~europa.eu,~linkedin.com##[id*="linkedin"]:not(html):not(body):not(article)
+    ! europa.eu: CV service
+! is in Adguard
+##a[href^="http://www.linkedin.com/shareArticle"]
+! is in Adguard
+##a[href^="https://www.linkedin.com/shareArticle"]
+! is in Ru AdList and Fanboy's
+##a[href^="http://www.linkedin.com/shareArticle?"]
+! is in Fanboy's
+##a[href^="https://www.linkedin.com/shareArticle?"]
+! from Fanboy's
+##a[href^="https://www.linkedin.com/cws/share?"]
+! from Adguard
+##a[href^="https://www.linkedin.com/cws/share?url="]
+! from Fanboy's
+##a[title="LinkedIn"]
+! from Web Annoyances Ultralist
+##.fa-linkedin
+##.icon_linkedIn
+##.icon-link-share
+! is in Fanboy's and Ru AdList
+##img[alt="LinkedIn"]
+! is in Ru AdList and Fanboy's
+###in_icon
+! is in 3 lists
+##.share-linkedin
+
+
+
+!! Livejournal
+! also see many cosmetic rules for lj in _sites
+! from RU AdList
+livejournal.com##[lj-widget-fb-page]
+_livejournal.gif  # from Ru AdList
+/livejournal.png$domain=~livejournal.com  # from Ru AdList
+! from RU AdList
+~livejournal.com##a[href^="http://www.livejournal.com/update.bml?subject="]
+! from RU AdList, modified
+livejournal.com##a[href*="offer"][target="_blank"]
+! from Ru AdList
+##.lj-like
+! from Ru AdList
+##.lj-like-item:not(.lj-like-item-repost)
+
+
+
+!! Digg
+! is in Fanboy's
+##img[title="Share on Digg"]
+! is in Adguard and Fanboy's
+##a[href^="http://digg.com/submit?"]
+##.icon_digg
+##.icon-digg
+/digg.png  # from Fanboy's
+||diggstatic.com/img/badges/$domain=~digg.com  # from Adguard
+
+
+
+!! Google
+!
+! hosts
+! comments are preferably inline with  #
+plus.google.com
+!
+! Also see many hosts in _marketing_doobleclick&integralads
+!
+! urls
+! comments are preferably inline with  # 
+! general first, specific last
+!
+/assets/google-button-$image
+/google2.png
+/google-color.svg
+-googleplus.
+/google-plus.png  # from Fanboy's
+/googleplus-sign-in.js$important
+/plusone.js$important
+    ||google.com/js/client:plusone.js$third-party  # from Anti-Facebook
+    ||google.com/js/plusone.js$third-party  # from Anti-Facebook
+/social/google.  # from Fanboy's
+||apis.google.com/_/apps-static/_/js/gapi/*plusone/$third-party  # from Ru AdList
+||apis.google.com/js/plusone.js$domain=~blogger.com|~blogspot.com|~blogspot.ru|~pikucha.ru|~googleblog.com|~abcnews.go.com  # from Adguard
+||apis.google.com/_/scs/apps-static/*=page,plusone/$third-party  # from Ru AdList
+||news.google.com/swg/js/v1/swg.js$script  # is in Fanboy's
+!
+! cosmetic filters
+! general first, specific last
+! comments is in separate line(s) before the string (as uBlock Origin editor says, inline is not correct)
+!
+##[class*="GooglePlus"]:not(html):not(body):not(article)
+##[id*="GooglePlus"]:not(html):not(body):not(article)
+##[class*="Googleplus"]:not(html):not(body):not(article)
+##[id*="Googleplus"]:not(html):not(body):not(article)
+##[class*="googlePlus"]:not(html):not(body):not(article)
+##[id*="googlePlus"]:not(html):not(body):not(article)
+##[class*="googleplus"]:not(html):not(body):not(article)
+    ! is in Fanboy's and Web Annoyances Ultralist
+    !##.googleplus
+##[id*="googleplus"]:not(html):not(body):not(article)
+##[class*="google_plus"]:not(html):not(body):not(article)
+##[id*="google_plus"]:not(html):not(body):not(article)
+##[class*="google-plus"]:not(html):not(body):not(article)
+##[id*="google-plus"]:not(html):not(body):not(article)
+    ! is in Fanboy's
+    !##.header-google-plus
+    ! is in Adguard
+    !##.icon-google-plus
+##[class*="GPlus"]:not(html):not(body):not(article)
+##[id*="GPlus"]:not(html):not(body):not(article)
+##[class*="gplus"]:not(html):not(body):not(article)
+##[id*="gplus"]:not(html):not(body):not(article)
+    ! is in Fanboy's
+    !##.sharify-btn-gplus
+##[class*="plusone"]:not(html):not(body):not(article)
+##[id*="plusone"]:not(html):not(body):not(article)
+! is in Fanboy's
+##[href^="//plus.google.com/share"]
+! is in Ru AdList and Fanboy's
+##a[href^="http://www.google.com/bookmarks"]
+! is in Adguard
+##a[href^="http://www.google.com/bookmarks/mark?"]
+! from Adguard and Fanboy's
+##a[href^="https://plus.google.com/share"]
+! from Fanboy's
+##a[title="Google+"]
+! from Fanboy's
+##a[title="Google +"]
+##.bg-google
+##.fa-google-plus
+##.google-icon
+##.icn-ggl
+##.icn-google
+##.icon__square--google
+##.icon-circle-google
+##.iconGoogle
+##.icon-google
+##.icon-google-32
+##.icon-gp
+##.icon-g-plus
+meet.google.com##div[aria-live]
+
+
+
+!! Telegram
+! To not change Telegram Instant View debug field
+@@instantview.telegram.org$ghide
+@@ivwebcontent.telegram.org$ghide
+! В порядке эксперимента включены обратно телеграммные иконки. В принципе, большая их часть есть в других подписках
+! Виджеты и шаринг остаются отключенными.
+! Update later: да, оптимально
+!/icon-telegram$image
+!/icon_telegram$image
+!/telegram$image
+    !/telegram.gif
+    !/telegram.jpg
+    !/telegram.png
+    !/telegram.svg
+    !/telegram2.png
+    !/telegram_ic.png
+    !/telegram-icon-32.png
+!/telegram-widget.js - don't. At least, not for telegram.org etc, but it seems, it is used only there  # ||tg.dev/js/telegram-widget.js
+||telegram.org/js/telegram-widget.js$domain=~t.me|telegram.org|~combot.org
+||telegram.org/js/widget-frame.js$3p
+||tg.dev/js/telegram-widget.js$3p
+!/tg.jpg
+!/tg.png
+!/tl.jpg
+! ||telegram.org/js/widget-frame.js - maybe, don't
+||web.telegram.org/a/notification.mp3  # inbound message sound
+||web.telegram.org/z/notification.mp3
+||telegram.im/widget-button/  # is in Adguard
+! is in Adguard and Fanboy's
+~votesmart.appspot.com,~telegram.org##a[href^="https://t.me/share/url?"]
+! is in Fanboy's
+##a[href^="tg://msg_url?url="]
+!##a[href^="https://teleg.run/joinchat/"]
+! is in Fanboy's and Adguard
+##a[href^="https://telegram.me/share/url?"]
+!##.b_telegram
+!##.fa-telegram
+!##.icon-telegram
+!##.telegram
+! .telegram-button is annoying and exists in-the-wild
+##.telegram-button
+!##.telegram_sub
+! from Adguard
+##.telegram_subscribe
+!##.telegram-white-icon
+##.telegram-widget
+!##.tlg-link
+##.tlg-msg
+!
+!     Rules for Telegram Web
+!
+! Notifications: title is flickering. Very annoying.
+! web.telegram.org##+js(set, document.title, undefined) - video chat joining error
+!
+! standard Telegram ads
+web.telegram.org##.Message.SponsoredMessage
+web.telegram.org##.is-sponsored
+!
+!
+! f..ng stories
+web.telegram.org###StoryRibbon
+!
+!
+!   Hide messages that contain:
+!
+! ads - non-public channels
+!web.telegram.org##.message-list-item.Message:has(a[href^="https://t.me/+"]) - don't!
+!there are many useful non-public channels, and also they may have home links in messages
+!
+! ads - bizon365 (webinars)
+web.telegram.org##.message-list-item.Message:has(a[href^="https://start.bizon365.ru"])
+!
+! ads - otus (overpriced paid IT courses and annoying ads)
+web.telegram.org##.message-list-item.Message:has(a[href^="https://otus.pw"])
+web.telegram.org##.message-list-item.Message:has(.text-content:has-text(/OTUS/))
+!
+! ads - slurm (overpriced paid IT courses and annoying ads)
+web.telegram.org##.message-list-item.Message:has(a[href^="https://slurm.club"])
+!
+! ads - zavodit.ru (hackatons)
+web.telegram.org##.message-list-item.Message:has(a[href^="https://www.zavodit.ru/"])
+!
+!
+! URL shorteners. Typically ads, ads, ads...
+!
+web.telegram.org##.message-list-item.Message:has(a[href^="http://bit.ly/"])
+web.telegram.org##.message-list-item.Message:has(a[href^="https://bit.ly/"])
+!
+web.telegram.org##.message-list-item.Message:has(a[href^="https://clc.to/"])
+!
+web.telegram.org##.message-list-item.Message:has(a[href^="https://clck.ru/"])
+!
+web.telegram.org##.message-list-item.Message:has(a[href^="http://e42.link/"])
+web.telegram.org##.message-list-item.Message:has(a[href^="http://a.e42.link/"])
+web.telegram.org##.message-list-item.Message:has(a[href^="https://e42.link/"])
+!
+web.telegram.org##.message-list-item.Message:has(a[href^="https://lnkd.in/"])
+!
+web.telegram.org##.message-list-item.Message:has(a[href^="https://tiny.cc/"])
+!
+
+
+
+!! Tumblr
+/tumbler-icon-  # from Ru AdList
+/tumblr
+    ! /tumblr.jpg
+    ! /tumblr-25x25.  # from Ru AdList
+    ! /tumblr-48x  # from Ru AdList
+    ! /tumblr-follow.  # from Ru AdList
+    ! /tumblr-footer-  # from Ru AdList
+    ! /tumblr-icon-  # from Ru AdList
+    ! /tumblr-icon.  # from Ru AdList
+    ! /tumblr-share.  # from Ru AdList
+    ! /tumblr1.  # from Ru AdList
+    ! /tumblr80.  # from Ru AdList
+    ! /tumblr_badge_  # from Ru AdList
+    ! /tumblr_circle-  # from Ru AdList
+    ! /tumblr_icon.  # from Ru AdList
+    ! /tumblr_share.  # from Ru AdList
+    ! /tumblrbigicon.  # from Ru AdList
+    ! /tumblrbutton_  # from Ru AdList
+##.fodicon-tumblr
+##.icn-tumblr
+##.icomoon-tumblr
+##.icon-circle-tumblr
+##.iconTumblr
+##.icon-tumblr
+##.icon-tumblr-01
+##.icon-tumblr-box
+##.icon-tumblr-circle
+##.icon-tumblr-square
+##.icon-tumblr-white
+##.ico_tumblr
+
+
+
+!! Whatsapp
+/whatsapp.svg
+/whatsapp-button.  # ad scripts  # is in Fanboy’s and RU AdList
+/whatsapp-icon.png
+||dit.whatsapp.net/deidentified_telemetry
+||web.whatsapp.com/notification  # mp3s
+! from Fanboy's
+~votesmart.appspot.com##a[href^="https://api.whatsapp.com/send?"]
+! from Adguard
+~votesmart.appspot.com##a[href^="whatsapp://send"]
+! from Fanboy's - narrower
+~votesmart.appspot.com##a[href^="whatsapp://send?text="]
+! is in Adguard
+##a[href^="https://api.whatsapp.com/send?text="]
+!##a[href^="https://wa.me/"] - seems too broad
+##.fa-whatsapp
+##.icon-whatsapp
+##.whatsapp
+##.whatsapp-btn
+###whatsapp-button
+! is in Fanboy's
+##.whatsapp-share-btn
+
+
+
+!! Youtube
+/footer/youtube.
+/soc_youtube.svg
+/youtube.jpg
+/youtube.png
+/youtube.svg
+/youtube2.png
+/youtube24.png
+/youtube-gray.png
+! from Fanboy's
+##a[title="Youtube"]
+! is in Fanboy's
+##a[title="YouTube"]
+##.bg-youtube
+##.fa-youtube
+##.fa-youtube-play
+##.icn-footer-youtube
+##.icn-youtube
+##.icn_youtube
+##.ico--youtube
+##.ico-youtube
+##.ico__youtube
+##.icomoon-youtube
+##.icon--youtube
+##.icon-YOUTUBE
+##.icon-circle-youtube
+##.icon-footer-youtube
+##.icon-logo-youtube
+##.icon-youtube
+##.icon-youtube-24
+##.icon-youtube-alt
+##.icon-youtube-play-2
+##.icon-youtube-sign
+##.icon-youtube-white
+##.icon-youtube_master
+##.icon-yt
+##.iconYT
+##.iconYt
+##.icon_circle_youtube
+##.icon_youTube
+##.icon_youtube
+##.icons-youtube
+##.iconyoutube
+! is in Fanboy's
+##.social-youtube
+##.td-icon-youtube
+##.youtube-white-icon
+
+
+
+! block from Ru Adlist
+! = Определение логина в популярных сервисах ==================================
+! Подробнее: https://robinlinus.github.io/socialmedia-leak/
+||academia.edu/login?$image
+||amazon.com/ap/signin/*?$image
+||battle.net/login/*/index?$image
+||bitbucket.org/account/signin/?$image
+||carbonmade.com/signin?$image
+||com/login.php?$image
+||com/login/?$image
+||com/login?$image
+||disqus.com/profile/login/?$image
+||edx.org/login?$image
+||expedia.de/user/login?$image
+||flickr.com/signin/yahoo/?$image
+||google.com/ServiceLogin?$image,3p  # 3p only!
+||indeed.com/account/login?$image
+||khanacademy.org/login?$image
+||medium.com/m/signin?$image
+||paypal.com/signin?$image
+||plus.google.com/up/?$image
+||plus.google.com/up/accounts/upgrade/?$image
+||spotify.com/*/login/?$image
+
+
+
+
+!! General: like, share, social, etc
+!
+! hosts
+! comments are preferably inline with  #
+!
+!
+! urls
+! comments are preferably inline with  # 
+!
+/bitrix/js/socialservices/*
+/follow-us-on-  # from Fanboy's
+-footer-social-  # from Fanboy's
+-footer-social.  # from Fanboy's
+-footer_social.  # from Fanboy's
+/footer-social  # from Fanboy's
+-header-social-  # from Fanboy's
+/head-social.  # from Fanboy's
+/icon-share.  # is in Fanboy's
+/icons/share-  # is in Fanboy's
+/icons/social/*  # is in Fanboy's
+/images/share_  # is in Adguard and Fanboy's
+/images/social.  # is in Ru AdList and Fanboy's
+/img/*/social.  # is in Fanboy's and Ru AdList
+/img/soc/*
+/img/social_  # is in Ru AdList and Fanboy's
+! /jssocials.min.js - all block moved to _plugins
+!     ! is in Fanboy's
+!     ##.jssocials
+!     ! is in Fanboy's
+!     ##.jssocials-share-logo
+!     ! is in Adguard and Fanboy's
+!     ##.jssocials-shares
+!     ! is in Fanboy's
+!     ##.jssocials-share-facebook
+!     ! is in Fanboy's
+!     ##.jssocials-share-link
+-likebutton.js
+/nav-social-  # is in Fanboy's
+/ndnapps-sociallogin-script.js$important
+/share.png  # from Fanboy's
+/share.js$domain=~dns-shop.ru
+/share32.  # from Ru AdList
+/share42-  # from Ru AdList
+/share42/*  # is in Ru AdList and Fanboy's
+/share42.js
+-sharebar.  # from Fanboy's
+/sharedaddy/*$image  # from Fanboy's
+/sharedaddy/*$script,important
+    ! is in 3 lists
+    ##.sharedaddy
+/share-icon$image
+/share-link/*  # is in Ru AdList and Fanboy's
+/share-link.min.js
+/sendtofriend.  # from Fanboy's
+/soc/*$image
+/social/*$image
+-social.js
+/social.png  # from Fanboy's
+/social-bookmarks/*  # is in Fanboy's
+/socialbutton.  # is in Fanboy's
+-social-buttons-  # is in Fanboy's
+/social-buttons.js$important
+-social-icon-  # is in Fanboy's and Ru AdList
+/social-likes.  # from EasyList, modified
+/social-likes.min.js$important,domain=~sk-desantnik.ru
+/social1.  # is in Fanboy’s, RU AdList
+/social-logos/*$important
+/social_plugins/*
+/social-proof/*
+/social-proof-
+/socials.png  # from Fanboy's
+/socials.min.js
+/socialshare.$important  # is in Fanboy’s and Ru AdList
+/socialshare/*$important  # is in Fanboy's
+/social-share-$important  # is in Fanboy's
+-social-share/$important  # is in Fanboy's and Ru AdList
+/social_shares-min.js
+/soc_icons/*
+/ya-share.$important  # is in Fanboy's and Ru AdList
+!
+!
+! cosmetic filters
+! general first, specific last
+! comments is in separate line(s) before the string (as uBlock Origin editor says, inline is not correct)
+!
+##[class*="Follow"]:not(html):not(body):not(article)
+##[id*="Follow"]:not(html):not(body):not(article)
+~medtehno.ru,~timepad.ru##[class*="follow"]:not(html):not(body):not(article):not(.main-container)
+    ! Exclusions:
+    ! timepad.ru - .mfollowedbyicon* in the booking form
+~facebook.com,~vk.com##[id*="follow"]:not(html):not(body):not(article)
+
+~support.google.com,~officeapps.live.com,~joom.com##[class*="Share"]:not(html):not(body):not(article):not(.selectionShareable)
+    ! Exclusions:
+    ! .selectionShareable - see /plugins/selection-sharer/*
+        ! oracle.com - there are many elements with class="selectionShareable"
+    ! support.google.com - main div (scSharedMaterialcardroot scSharedMaterialcardelevated scSharedMaterialcardborder etc.)
+##[title^="Follow me on "]
+##[id*="Share"]:not(html):not(body):not(article):not(:matches-path(\^/phpvirtualbox\/))
+    ! Exclusions:
+    ! phpVirtualBox instances - Shared folders
+! Too many exclusions. Disabled. 
+!~microsoft.com,~sketchup.com,~topsharepoint.com,~joom.com,~gfycat.com##[class*="share"]:not(html):not(body):not(article)
+~etutorium.com,~facebook.com,~host.io,~steamcommunity.com,~vesti.ru,~vk.com,votesmart.navalny-team.org##[id*="share"]:not(html):not(body):not(article)
+##[title^="Share on "]
+    ! from Adguard
+    !##a[title="Share on Facebook"]
+    ! from Fanboy's
+    !##[title^="Share on Facebook"]
+    ! is in Adguard
+    !##a[title="Share on Facebook"]
+    ! is in Fanboy's
+    !##[title^="Share on LinkedIn"]
+    ! from Fanboy's
+    !##[title^="Share on Google+"]
+    ! from Fanboy's
+    !##a[title^="Share on Google"]
+    ! is in Adguard
+    !##a[title="Share on LinkedIn"]
+    ! from Adguard
+    !##a[title="Share on Pinterest"]
+    ! from Fanboy's
+    !##a[title^="Share on Pinterest"]    
+    ! is in Adguard
+    !##[title="Share on Reddit"]
+    ! is in Fanboy's
+    !##a[title^="Share on Reddit"]
+    ! is in Fanboy's
+    !##[title^="Share on Twitter"]
+    ! from Fanboy's
+    !##a[title="Share on Twitter"]
+! is in Fanboy's
+##a[title^="Share this article"]
+##[class^=et_social]
+    ! is in Fanboy's
+    !##.et_social_mobile
+    ! is in Adguard and Fanboy's
+    !##.et_social_sidebar_networks
+    ! is in Fanboy's
+    !##.et_social_fadein
+! from Fanboy's
+##img[alt^="Share on "]
+! from Fanboy's
+##img[alt^="Share this"]
+! from Fanboy's
+##img[alt^="Share This"]
+~clickmeeting.com,~votesmart.appspot.com##[class*="Sharing"]:not(html):not(body):not(article)
+~clickmeeting.com,~votesmart.appspot.com##[id*="Sharing"]:not(html):not(body):not(article)
+~clickmeeting.com,~votesmart.appspot.com,~linkedin.com,~drive.google.com##[class*="sharing"]:not(html):not(body):not(article):not(.sharing-enabled)
+~clickmeeting.com,~votesmart.appspot.com,~linkedin.com##[id*="sharing"]:not(html):not(body):not(article)
+!
+!
+! ends with -soc
+##[class$="-soc"]:not(html):not(body):not(article)
+##[id$="-soc"]:not(html):not(body):not(article)
+! don't: very slow with spaces! ##[class*="-soc "]:not(html):not(body):not(article)
+! don't: very slow with spaces! ##[id*="-soc "]:not(html):not(body):not(article)
+!
+! ends with _soc
+##[class$="_soc"]:not(html):not(body):not(article)
+##[id$="_soc"]:not(html):not(body):not(article)
+! don't: very slow with spaces! ##[class*="_soc "]:not(html):not(body):not(article)
+! don't: very slow with spaces! ##[id*="_soc "]:not(html):not(body):not(article)
+!
+! begins with soc_
+##[class^="soc_"]:not(html):not(body):not(article)
+##[id^="soc_"]:not(html):not(body):not(article):not(#soc_body)
+! don't: very slow with spaces! ##[class*=" soc_"]:not(html):not(body):not(article)
+! don't: very slow with spaces! ##[id*=" soc_"]:not(html):not(body):not(article)
+!
+! begins with soc-
+##[class^="soc-"]:not(html):not(body):not(article)
+##[id^="soc-"]:not(html):not(body):not(article)
+! don't: very slow with spaces! ##[class*=" soc-"]:not(html):not(body):not(article)
+! don't: very slow with spaces! ##[id*=" soc-"]:not(html):not(body):not(article)
+!
+! contains soc
+##[class*="-soc-"]:not(html):not(body):not(article):not([class^="mvp-post-soc-"])
+##[id*="-soc-"]:not(html):not(body):not(article)
+##[class*="_soc_"]:not(html):not(body):not(article)
+##[id*="_soc_"]:not(html):not(body):not(article)
+!
+!
+! on nalog.ru it is not social buttons, it is a tax name
+~nalog.ru##[class*="Social"]:not(html):not(body):not(article)
+    !from Fanboy's: Bug in uBo: https://github.com/gorhill/uBlock/issues/1885
+    !##div[class^="SocialIcons_"]
+~nalog.ru##[id*="Social"]:not(html):not(body):not(article)
+! too many exclusions (not all here). Disabled.
+!~github.com,~koofr.eu,~lamoda.ru,~passport.yandex.ru,~business2community.com##[class*="social"]:not(html):not(body):not(article)
+! on nalog.ru it is not social buttons, it is a tax name
+~nalog.ru##[id*="social"]:not(html):not(body):not(article)
+##[class*="Sociaux"]:not(html):not(body):not(article)
+##[id*="Sociaux"]:not(html):not(body):not(article)
+##[class*="sociaux"]:not(html):not(body):not(article)
+##[id*="sociaux"]:not(html):not(body):not(article)
+##[class*="zocial"]:not(html):not(body):not(article)
+##[id*="zocial"]:not(html):not(body):not(article)
+!
+!
+! from Fanboy's
+##.abh_social
+##.a-icon--share
+! is in Adguard and Fanboy's
+##amp-social-share
+! is in Fanboy's
+##AMP-SOCIAL-SHARE
+! is in Adguard and Fanboy's
+##.article-share
+! is in Fanboy's
+##.article-share__item
+! is in Ru AdList and Fanboy's
+##.article-social
+! is in Fanboy's
+##.article_sharing
+! is in Adguard and Fanboy's
+##.b-article__social
+##.bio-social
+! is in Adguard
+##.block_social
+! is in Ru AdList and Fanboy's
+###block_social_open
+##.b-social-list
+##.b-socials__sharing
+##.b-soc_icons
+! is in 3 lists
+##.btn_share
+! is in Fanboy's and Ru AdList
+##button[title="Share"]
+##.button-like
+##.c-social
+! from Fanboy's
+###donate-social
+! is in Fanboy's
+##.et-social-icon
+! is in Fanboy's
+##.et-social-icons
+! is in Fanboy's
+##.feed-links
+! is in Fanboy's
+##.follow-btn
+##.footer_bottom_social
+##.footersoc
+! is in Fanboy's
+##.footerSocial
+##[class*=footer__social]:not(body)
+##[id*=footer__social]:not(body)
+    ! See some examples at backups/_socials_examples
+##[class*=footer_social]:not(body)
+    ! See some examples at backups/_socials_examples
+##[class*=footer-social]:not(body)
+##[id*=footer-social]:not(body)
+    ! See some examples at backups/_socials_examples
+##[class*=header-share]:not(body)
+    ! See some examples at backups/_socials_examples
+##[class*=header-social]:not(body)
+##[id*=header-social]:not(body)
+    ! See some examples at backups/_socials_examples
+##[class*=header__social]:not(body)
+    ! See some examples at backups/_socials_examples
+##[id*=head-social]:not(body)
+##[class*=head-social]:not(body)
+    ! See some examples at backups/_socials_examples
+##[class^=social-icon]:not(body)
+    ! See some examples at backups/_socials_examples
+##[class^=social-likes]:not(body)
+    ! See some examples at backups/_socials_examples
+##[class^=social-links]:not(body)
+    ! See some examples at backups/_socials_examples
+!
+
+##.links__socials
+
+! from Fanboy's
+##.bp-share-btn
+! from Fanboy's
+##.bp-share-button
+##.b-share
+! is in Fanboy's
+##.b-sidebar-menu__socials
+##.b-socials
+! is in Fanboy's
+##.b-socials-subscribe
+! is in Adguard
+##.b-socials__sharing
+! from Fanboy's
+##.footer_head_social
+! is in Adguard and Fanboy's
+##.goodshare
+! from Fanboy's
+##.header-social
+##.head_socials
+! From Fanboy's: Google share icon
+##KNO-SHARE-BUTTON
+! is in Fanboy's and Web Annoyances Ultralist
+##.icon-social
+##.liker
+! is in Fanboy's
+##.lsi-social-icons
+! from Fanboy's
+##.main-head__social-2
+##.poll-share
+! is in Fanboy's
+##.post_share
+! is in Adguard and Fanboy's
+##.post-share-buttons
+! is in Fanboy's
+##.react-share__ShareButton
+! is in Fanboy's
+##.saboxplugin-socials
+! is in Fanboy's
+##.save-share
+! is in Fanboy's
+##.sc-button-share
+! is in Fanboy's
+##.sd-social-icon-text
+~gtricks.com,~bastyon.com,~imageban.ru,~pocketnet.app##.share
+    ! Exclusions:
+    ! gtricks.com: main content block class: "entry themeform share"
+    ! bastyon.com, pocketnet.app - a social platform - not shares, but some content blocks
+    ! imageban.ru - main img class "img-fluid img-thumbnail share"
+###share
+##.share-area
+##.share-bar
+! is in Adguard
+##.share-button
+! is in Ru AdList, Fanboy's
+##.share_button
+###share-button
+! is in Adguard and Fanboy's
+##.share-buttons
+###sharebuttons
+! from Fanboy's
+##.share-buttons-widget
+##.share-buttons-wrapper
+##.share-content
+! is in Adguard and Fanboy's
+##.shared
+##.share-dropdown
+###ShareEntryPoint
+! is in Fanboy's and Web Annoyances Ultralist
+##.share-icons
+! is in Fanboy's and Web Annoyances Ultralist
+##.share-item
+! is in Fanboy's
+##.share-left
+! is in Fanboy's, Adguard
+##.share-link
+! is in Fanboy's
+##.share-link-facebook
+##.share-links
+! is in Adguard and Fanboy's
+##.share-list
+! is in Ru AdList, Fanboy's
+##.share_list
+! is in Fanboy's
+##.share-more
+! is in Adguard and Fanboy's
+##.shareit
+! is in 3 lists
+##.sharePage
+##.share-this
+###share-this
+! is in Fanboy's
+##.share-title
+! is in Ru AdList, Adguard, Fanboy's
+##.share_tools
+! is in Fanboy's
+###shareUrl
+##.sharewrap
+! is in Adguard and Fanboy's
+##.sharify-container
+##.sidebarSoc
+! is in Fanboy's
+##.single-social
+! from Fanboy's
+##.siteFooter_social
+! from Fanboy's
+##.siteFooter_socialCon
+! from Fanboy's
+##.siteFooter_socialHeader
+! from Fanboy's
+##.siteFooter_socialItem
+! initially it was Aliexpress socials. Is in Ru AdList and Fanboy's
+##.soc
+! is in Ru AdList
+###social
+! is in Fanboy's and Ru AdList. Also is in Adguard.
+##.social:not(body)
+! from Fanboy's
+##.Social
+! is in Fanboy's
+###social-bar
+! is in Fanboy's, Adguard and Web Annoyances Ultralist
+##.social-block
+! is in Adguard and Fanboy's
+##.social-buttons
+! is in Adguard and Fanboy's
+##.socialbuttons
+! is in Fanboy's
+##.social-circle
+! is in Ru AdList and Fanboy's
+##.social-container
+! is in Adguard, Ru AdList and Fanboy's
+##.social-count
+! is in Adguard and Fanboy's
+! is in Ru AdList and Fanboy's
+##.social-large
+! is in Fanboy's
+##.social__link
+!##.social-links - see above
+##.socialLinks
+! is in Fanboy's
+##.social-list:not(html):not(body)
+##.social-list__link
+! is in Adguard
+##.social-media
+! is in Fanboy's
+##.social-media:not(html):not(body)
+! is in Fanboy's
+##.social-media__link
+! is in Adguard and Fanboy's
+##.social-media-sharing
+! is in Adguard and Fanboy's
+##.social-networks
+! is in Fanboy's
+##.social-post
+! is in Fanboy's
+##.social-profile-icons
+! is in Fanboy's
+##.social-profiles
+##.social_rm
+##.social-share
+! is in Web Annoyances Ultralist
+###social-share_1-0
+! is in Fanboy's and Web Annoyances Ultralist
+##.social-share-block
+! is in Web Annoyances Ultralist
+###social-share-block_1-0
+! is in Adguard and Fanboy's
+##.social-sharing
+! is in Ru AdList and Fanboy's
+##.social-small
+##.social-snippet
+! is in Adguard and Fanboy's
+##.social-tab
+! is in Fanboy's
+##.social-top:not(html):not(body)
+! is in Adguard and Fanboy's
+##.social-widget
+##.socials-after_post
+! is in Adguard
+##.socials-link
+! from Fanboy's
+##.swf-social-site
+! is in Fanboy's and Adguard
+##.td_block_social_counter
+! is in Ru AdList and Fanboy's
+##.td-post-sharing
+##.td-post-sharing-bottom
+! is in Fanboy's
+##.td-post-sharing-top
+##.td-post-sharing-visible
+##.td-social-icon-wrap
+! is in Fanboy's
+##.td-social-list
+###td_social_sharing_article_top
+! is in Fanboy's
+##.td_social_type
+###top-share
+! is in Adguard
+##.social-snippet
+
+
+
+
+!! todo
+    
+    ! is in Fanboy’s and Ru AdList
+    ##.icon-share
+    ##.login_with_social
+    ! from Fanboy's
+    ##.pswp__button--share
+    ! is in Ru AdList and Fanboy's
+    ##.share-bar
+    ! in 3 lists
+    ##.share-block
+    ! is in Adguard, RU AdList, Fanboy's
+    ##.share-button
+    ! from Fanboy's
+    ##.share-email
+    ##.share__icon
+    ! from Adguard and Fanboy's
+    ##.share-icon
+    ! from Fanboy's
+    ##.share-label
+    ! from Fanboy's
+    ##.share-menu
+    ! from Adguard
+    ##:not(.sharingOptionsGroup) > .share-menu
+    ! is in Fanboy's and Ru AdList
+    ##.share-popups-component
+    ! is in 3 lists
+    ##.share-reddit
+    ! from Fanboy's
+    ##.share-service-visible
+    ! from Fanboy's
+    ##.share-tumblr
+    ! is in Adguard, RU AdList, Fanboy's
+    ##.sidebar-share
+    ! from Adguard & Fanboy's
+    ##.ytp-share-button
+    ! is in Adguard and Fanboy's
+    ###share-block
+    ! is in Fanboy's, RU AdList
+    !###sharelist
+    ##.ya-share
+    ##.ya-share-label
+    ! is in Ru AdList and Fanboy's, generalized. In Adguard is generalized already.
+    ##.ya-share2
+    ##.ya-share2__container
+    ##.ya-share2__icon
+    ! from Adguard
+    ##.ya-share2_inited
+    ! from Adguard
+    ##.ya-share2__list
+    ! from Adguard
+    ##.ya-share2__link
+
+    ! is in Fanboy's and Ru AdList
+    ##.fusion-social-network-icon
+    ! is in Ru AdList and Fanboy's
+    ##.header_social
+    ! from Fanboy's
+    ##.sd-social
+    ! from Web Annoyances Ultralist
+    ##.sd-social-icon
+    ##.sidebar-block-links__social
+    ! from Fanboy's: intel.com (and regional sites)
+    ##.social.footer-links
+    ##.social-btn
+    ##.social-button
+    ##.social-groups
+    ! from Fanboy's
+    ##.social-header
+    ##.social_icon
+    ! is in Fanboy's and Web Annoyances Ultralist
+    ##.social_icons
+    ! is in Ru AdList and Fanboy's
+    ##.social__item
+    ! from Fanboy's
+    ##.social-item
+    ! is in Fanboy's and Web Annoyances Ultralist
+    ##.social-link
+    ! from Fanboy's
+    ##.social-link-email
+    ! is in Fanboy's 
+    ##.social-link-fb
+    ! from Fanboy's
+    !##.social-links - see above
+    ! is in Fanboy's 
+    ##.social-link-tw
+    ! is in Fanboy's
+    ##.social-link-twitter
+    ! is in Adguard and Web Annoyances Ultralist
+    ##.socialite
+    ! is in Adguard, Fanboy's, Web Annoyances Ultralist
+    ##.social-menu
+    ! is in Adguard, Fanboy’s and Ru AdList
+    ##.socials
+    ! is in Fanboy's and Ru AdList
+    ##.social-section
+    ! is in Ru AdList and Adguard, generalized
+    ##.social-teasers
+    ! from Fanboy's
+    ##.social-tooltip
+    ! from EasyList and Fanboy's
+    ##.s-social
+    ! from EasyList and Fanboy's
+    ##.s-social-item
+    ! from Fanboy's
+    ##div[class^="style__social"]
+    ! from Fanboy's
+    !###top-social
+! from Ru AdList and Fanboy's
+##button[title="Share"]
+! from Fanboy's
+##[title^="Follow me on "]
+! from Fanboy's
+##[title^="Follow us at "]
+! from EasyList and Fanboy's
+##[title^="Follow us on "]
+! from Fanboy's
+##[title^="Follow Us on "]
+! from Fanboy's
+##[title^="Follow Us to "]
+! from Fanboy's
+##img[alt^="Share this"]
+! from Fanboy's
+##img[alt^="Share with"]
+! other
+! is in Ru AdList and Fanboy's
+##.et_pb_social_media_follow
+/ig.svg
+/ico_tg.
+/icon-ig.png
+/icon_mr.
+/icon-stumbleupon.
+/icon_ya.
+! from Fanboy's
+/reddit.png
+/skype.png
+/skype.svg
+/usocial/*
+/watch.js$domain=~rosreestr.ru|~youtube.com
+/wordpress-social-login/*$important
+/yt.svg
+##.footer_socs
+##.hp_sociaisIcons
+##.ic_shr
+##.ic_tw
+##.icn_fcbk
+##.icn_twtr
+##.icn-stumbleupon
+##.icn-twit
+##.ico__beatport
+##.ico__soundcloud
+##.ico_google
+##.ico_pinit
+##.ico_shr
+##.ico-livejournal
+##.icomoon-mail
+##.icon_delicious
+##.icon2-vimeo
+##.icon--app-store
+##.icon-delicious
+##.icon-fackbook
+##.icon-fark
+##.iconFb
+##.iconFB
+##.icon-flickr
+##.icon--flickr
+##.icon-flipboard
+##.icon-github
+##.icon-hacker-news
+##.iconli
+##.icon-ln
+##.icon-mixcloud
+##.icon-pocket
+##.icon-polyvore
+##.icon-reddit
+##.icon-reddit2
+##.icons-dribbble
+##.icons-flickr
+##.icon-sina-weibo
+##.icon-soundcloud
+##.icons-stumbleupon
+##.icon-stumbleupon
+##.icons-vimeo
+##.icon-vimeo
+##.icon--vine
+##.icon-wechat
+##.icon-witter
+##.icon-ya
+##.ico-spotify
+##.icon-ok
+##.icon-tamtam
+##.icon-yandex
+~facebook.com,~vk.com##.like
+##.like-view
+##.like-com
+##.like-fav
+! ~kudago.com##.likes - don't, there are many false positives
+##.likes-block
+##.likes-block_left
+##.likes-box
+##.like-slider
+##.like-us
+##.likeUsLayer
+##.likes-widget-placeholder
+~medium.com,~betterprogramming.pub,~faun.pub,~jetruby.com,~itnext.io,~towardsdatascience.com,~ozon.ru,~ozon.by,~ozon.com,~livejournal.com##.lj
+    ! Exclusions:
+    ! medium.com,betterprogramming.pub,faun.pub,jetruby.com,itnext.io,towardsdatascience.com - random two-letter classes, medium engine
+    ! ozon - random two-letter and other classes
+##.lj-like
+
+##.menu-icon-tw
+##.menu-icon-go
+##.repost-button
+~belarus2020.org,~medium.com,~betterprogramming.pub,~faun.pub,~jetruby.com,~itnext.io,~towardsdatascience.com,~nnmclub.to,~ozon.ru,~ozon.by,~ozon.com##.tg
+    ! Exclusions:
+    ! medium.com,betterprogramming.pub,faun.pub,jetruby.com,itnext.io,towardsdatascience.com - random two-letter classes, medium engine
+    ! nnmclub.to - main table
+    ! ozon - random two-letter and other classes
+##.tips
+###uLogin
+##.ulogin_block
+##.ulogin-buttons-container
+##.w2bslikebox
+
+! is in Ru AdList and Fanboy's
+##a[href^="http://www.livejournal.com/update.bml?"]
+
+##.ico-ytube
+
+! is in Adguard and Fanboy's
+##a[href^="https://wa.me/?text="]
+
+##.icons-tw
+##.icons-mail
+##.foot_menu-social
+
+! in 3 lists
+##.sd-sharing
+! from Web Annoyances Ultralist
+##.sd-sharing-enabled
+
+! from Fanboy's and Web Annoyances Ultralist
+##.share-widget
+
+! is in Fanboy's
+##.ShareThisMainPanel
+
+! is in Adguard
+##a[href^="http://www.stumbleupon.com/submit?url"]
+! is in Fanboy's
+##a[href^="http://www.stumbleupon.com/submit?"]
+
+! is in Adguard and Fanboy's
+##a[href^="https://www.stumbleupon.com/submit?url="]
+
+! is in Adguard and Fanboy's
+##a[href^="http://www.reddit.com/submit"]
+
+! is in Adguard
+##a[href^="http://www.myspace.com/Modules/PostTo/Pages/?u="]
+
+! is in Fanboy's
+##a[href^="http://technorati.com/faves/?add="]
+
+! is in Adguard and Fanboy's
+##a[href^="http://del.icio.us/post?url="]
+! is in Fanboy's
+##a[href^="http://del.icio.us/post"]
+
+! is in Adguard and Fanboy's
+##a[href^="https://reddit.com/submit?"]
+
+! "Social sharing buttons"
+! https://github.com/NikolayRys/Likely
+! is in Adguard
+##.likely
+##.likely__icon
+! is in Fanboy's
+##.likely__widget
+! is in Adguard
+/likely.css
+/likely.js
+/likely.min.js
+
+! is in Ru AdList, Adguard and Fanboy's
+##.rambler-share
+
+! is in RuAdList, Adguard, Fanboy's
+##.essb_share
+! is in RuAdList, Fanboy's
+##.essb_links_list
+! is in RuAdList, Adguard, Fanboy's
+##.essb_links
+! is in RuAdList, Fanboy's
+##.essb_link_twitter
+! is in RuAdList, Fanboy's
+##.essb_item
+
+/flamp_color.svg
+##.flamp
+
+garant.ru##popup-social
+garant.ru##.popup-social
+
+! is in Fanboy's
+##.subscribe_link
+
+! is in Fanboy's
+##.in-article-subscribe
+
+! is in Adguard and Fanboy's
+##a[href^="https://getpocket.com/save?url="]
+
+##.box-subscribe
+
+! is in Adguard and Fanboy's
+##.rrssb-buttons
+
+! is in Adguard and Fanboy's
+##.sharer
+
+! is in Fanboy's
+###enhancedsharer
+
+! is in Fanboy's
+##.wc_social_plugin_wrapper
+
+! is in Adguard, Fanboy's, Web Annoyances Ultralist
+##.the_champ_sharing_container
+! is in Fanboy's
+##.the_champ_sharing_ul
+
+! is in Fanboy's
+##.product-share
+! is in Adguard and Fanboy's
+##.social-share
+
+! is in Fanboy's
+##.social-follow
+! is in Fanboy's
+##.social-follow-list
+
+##.anycomment-odnoklassniki
+##.anycomment-vkontakte
+##.anycomment-social
+
+appleid.cdn-apple.com  # appleid.cdn-apple.com/appleauth/static/jsapi/appleid/1/en_US/appleid.auth.js
+
+socauth.privatbank.ua
+
+##.t-sociallinks
+##.t-sociallinks__item
+##.t-sociallinks__svg
+
+##.flikes
+
+! is in Fanboy's
+##.zoom-social-icons-widget
+
+##.bx-socialsidebar
+
+! is in Adguard and Fanboy's
+##.swp_social_panel
+
+! is in Fanboy's
+##.solid-social-icons
+
+! is in 3 lists
+##.socialMediaIcon
+! from Fanboy's
+##.socialMediaIconlg
+! from Fanboy's
+##.socialMediaIcons
+! from Fanboy's
+##.socialMediaIconsSection
+
+##.tamtam
+
+/discord.svg
+||discord.com/widget
+! from Fanboy's
+###DiscordButton
+! from Fanboy's
+discord.me##li.menu-link.d-xl-inline-block
+
+##.apps__icon
+
+! is in Fanboy's
+##.simple-social-icons
+
+! is in Adguard and Fanboy's
+##.dpsp-network-btn
+! is in Fanboy's
+##.dpsp-networks-btns-share
+! is in Adguard and Fanboy's
+##.dpsp-total-share-wrapper
+! is in Adguard and Fanboy's
+##.dpsp-networks-btns-sidebar
+
+! is in Fanboy's
+##.dpsp-pinterest
+
+/google-play.png
+/app-store.png
+
+##.soc_list
+##.socnet
+
+##.main-footer__social-link
+    ! dns-shop.ru,technopoint.ru##.main-footer__social-link
+    ! livejournal.com##.main-footer__social-link
+
+##.sharelist__item
+##.sharelist__count
+##.rambler-share
+##.article__share-wrapper
+
+/sharer.min.js
+
+.share.dossierheader.  # from Ru AdList
+.share.lead.  # from Ru AdList
+.share.utils.  # from Ru AdList
+.sharebar.js  # from Ru AdList
+.sharing.js  # from Ru AdList
+
+_social_linkedin.svg
+
+##.icon-like
+##.icon-dislike
+
+##.socnetblock
+
+/img/icon/share_  # from Adguard
+
+/share-widget.
+
+##.fa-tumblr
+
+/social-sign-in/*  # nexusmedia-ua
+
+##.article-social-btn
+##.social_button
+##.social-button
+
+##.open-share-toolbar
+##.p-articleShare
+
+##.socialArea
+##.social-area
+
+##.tw_btn
+
+##.social-bottom
+##.social_button
+##.social-holder
+##.socials
+##.social-share
+
+~europa.eu##.fa-share-alt
+    !europa.eu: CV service
+    ! from Adguard
+    qiita.com#?#div[id^="PersonalArticlePage-"] > .p-items_wrapper + div[class^="css-"] > div[class^="css-"] > div[class^="css-"]:has(> .fa-share-alt)
+
+##.fab-btn
+
+###article_share
+##.post__share
+~shutok.ru##.share-content
+##share-action
+##.share-this
+##.sharing
+
+    ! sns
+##.article-sns
+##.sns
+##.snsArea
+##.sns-btns
+##.SNSButton
+##.snsShare
+##.btn-sns
+##.m-sns
+##.p-sns
+##.sns-btn
+##.sns-wrapper
+! from Adguard
+sp.live.nicovideo.jp##button[class^="___sns-share-button_"]
+! from Adguard
+sp.nttxstore.jp##.sns_mainitem
+! from Adguard
+newsdigest.jp##.post-sns
+! from Adguard
+yutori.co.jp##.block-goods-sns
+! from Adguard
+benesse.co.jp##.sns__listUpper
+! from Adguard
+orangepage.net##.articleDetailSns
+! from Adguard
+gamebiz.jp##.share-sns
+! from Adguard
+fujinkoron.jp##.article-bottom-sns-wrap
+! from Adguard
+diskunion.net##.sidenav__snsArea
+! from Adguard
+eigahitottobi.com##.lead_sns_box
+! from Adguard
+ggoorr.net##.to_sns
+! from Adguard
+ananweb.jp##.footer-sns-wrap
+
+###like-it
+
+##amp-addthis
+
+##.floating-wpp
+
+! from Adguard
+~autosalon.tv##.article-line
+
+! from Adguard
+##.paylas
+
+##.socialicon
+##.socialList
+##.social_list
+##.sociaPayLasim
+
+##.o-actionControl__item--social
+
+##a[data-share-url]
+##.listShare
+##.shareIcon
+##.sharelink
+##.share-toolbox
+
+
+! from Adguard
+##.social-line
+! from Adguard
+##.social-love
+
+##.soc_box
+    ! from Fanboy's
+    !onlineprnews.com##.soc_box[style="margin-bottom:10px; border:solid 1px #EEEEEE; clear:both"]
+##.soc-box
+
+! is in Adguard
+##button[aria-label^="Share on "]
+
+##.icon-twitch
+##.bg-twitch
+
+! from Ru AdList
+##.socials-button_webnavoz
+
+! from Ru AdList
+##.social-zen
+/img/zen$image
+##.dzen
+
+! from Ru AdList
+##.social_fixed
+
+/footer/rutube
+/rutube.$image
+
+/vkvideo.$image
+
+_liveinternet.gif  # from Ru AdList
+
+##.event-share
+    ! ict2go.ru##.event-share
+    ! ticket4me.ru##.event-share
+
+##.w_socials
+
+_follow_me-b.png  # from Adguard
+
+! from Ru AdList
+##.d-comment__action--share
+
+! from Ru AdList
+##.custom_block_sociallinks_beta
+
+! from Ru AdList
+##.custom_fb_button
+
+! from Ru AdList
+##.custom_share
+
+! from Ru AdList
+##.custom_social
+
+! from Ru AdList
+##.custom_socialnet
+
+! from Ru AdList
+##.custombtnsociaux
+
+! from Ru AdList
+##.customfollow-us
+
+! from Ru AdList
+##.customsocial
+
+! from Ru AdList
+##.customsocialmod
+
+! from Ru AdList
+##.cw51social
+
+! from Ru AdList
+##.cwshare
+
+! from Ru AdList
+##.d-post-share-btns
+
+! from Ru AdList
+##.d-share
+
+! from Ru AdList
+##.d-share-buttons
+
+! from Ru AdList
+##.custom-fb-button
+
+! from Ru AdList
+##.custom-follow-bar
+
+! from Ru AdList
+##.custom-follow-button
+
+! from Ru AdList
+##.custom-google-plus-button
+
+! from Ru AdList
+##.custom-nav-social-media
+
+! from Ru AdList
+##.custom-share-button
+
+! from Ru AdList
+##.custom-shareFb
+
+! from Ru AdList
+##.custom-sharing
+
+! from Ru AdList
+##.custom-sharing-link
+
+! from Ru AdList
+##.custom-soc
+
+! from Ru AdList
+##.custom-social
+
+! from Ru AdList
+##.custom-social-buttons
+
+! from Ru AdList
+##.custom-social-icon
+
+! from Ru AdList
+##.custom-social-media
+
+! from Ru AdList
+##.custom-social-share
+
+! from Ru AdList
+##.custom-social-share-wrapper
+
+! from Ru AdList
+##.custom-social-widgets
+
+! from Ru AdList
+##.custom-tweet-button
+
+! from Ru AdList
+##.d-social-list
+
+! from Ru AdList
+##.d-social-widjets
+
+! from Ru AdList
+##.d1-social-article
+
+! from Ru AdList
+##.dSocialBtn
+
+! from Ru AdList
+##.dSocialButton
+
+! from Ru AdList
+##.dc-social-float
+
+! from Ru AdList
+##.dc-social-slick
+
+! from Ru AdList
+##.dc-social-slick-content
+
+/social2s.min.js  # from Fanboy's
+
+/public/social/*  # from Fanboy's
+
+/sharer.js$important
+    ! ||jsdelivr.net/npm/sharer.js$important
+
+||download.skype.com/share/skypebuttons/js/skypecheck.js  # is in Adguard
+
+/social-bar-  # is in Ru AdList and Fanboy's
+
+! from Adguard
+##.mc-comment-share
+
+! is in RuAdList and Fanboy's
+##.gplusone

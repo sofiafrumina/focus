@@ -1,0 +1,116 @@
+﻿!! It is a sublist of Yet another small uBlock filter list
+! See https://github.com/mtxadmin/ublock for details
+!
+!
+
+! https://github.com/gorhill/uBlock/wiki/Resources-Library
+! todo: but allow https://www.google.com/recaptcha/
+! google.*##+js(remove-attr.js, onlick|onmousedown)$first-party
+
+! Recaptcha
+!@@google.*/recaptcha/*
+!@@/assets/js/advertisement.js$~third-party
+!@@google.*/recaptcha/*
+! Some Youtube scripts, all works without it. Later it turned out, that is Google recaptcha and it needs to be unblocked to post comments to some sites
+!google.com/js/bg/$script
+
+! old random classes
+!google.*###Rzn5id
+!google.*###_L8b
+!google.*###rhs
+!google.*##.fbar:has-text(Отправить отзыв)
+!google.*###gbw > div:has-text(Войти)
+!google.*##div.fbar:nth-of-type(2)
+!translate.google.com##.gb_g.gb_Vc.gb_wd
+
+!play.google.com##+js(ra,data-p) - don't, it breaks screenshots
+!play.google.com##+js(ra,jsaction) - don't, it breaks search
+! seems fine
+play.google.com##+js(ra,jsdata)
+! seems fine
+play.google.com##+js(ra,jslog)
+
+!translate.googleapis.com$domain=~translate.google.com - don't, it can be called when translating urls
+
+||youtube.com/pixel
+
+! from Fanboy's
+||contributor.google.com^*/loader.js$third-party
+
+||google.com/log?$important
+
+!/cleardot.gif  # with this form google drive sometimes grays down filenames.
+/cleardot.gif$redirect=1x1.gif  #  updated version
+    ! ||google.com/images/cleardot.gif$3p
+    ! ||gstatic.com/docs/common/cleardot.gif
+
+! is in Ru Adlist and Fanboy's
+||apis.google.com/js/platform.js$3p,important
+
+! google captcha logos
+||gstatic.com/recaptcha/api2/logo$image
+
+! is in EasyPrivacy
+||gstatic.com/wcm/loader.js
+
+! from EasyPrivacy
+||google.com/insights/$script
+
+google.com##.header:style(position:static !important)
+
+! from uBlock filters
+!||docs.google.com/*/logimpressions?$xmlhttprequest,domain=docs.google.com
+! https://github.com/uBlockOrigin/uAssets/pull/5997
+!||docs.google.com/*/logImpressions?$xhr,redirect=nooptext,domain=docs.google.com
+! Update: this not only on docs, on drive too. Updated version:
+||google.com/*/logImpressions?$xhr,redirect=nooptext
+
+! "old browser" notification, may be other
+docs.google.com##.docs-butterbar-container
+
+    ! google drive
+! popup
+one.google.com##div:has(>img[src*="/subscriptions/"])
+
+support.google.com##.survey
+
+mail.google.com###talk_roster
+
+! is in Fanboy's
+||pay.google.com/gp/p/ui/payframe
+
+google.com##.devsite-banner
+
+google.com##.devsite-top-logo-row-wrapper-wrapper:style(position:static !important)
+google.com##devsite-header:style(position:static !important)
+google.com##.devsite-collapsible-section:style(transform:none !important)
+!google.com##.devsite-nav:style(position:static !important)
+!google.com##devsite-book-nav:style(position:static !important)
+google.com###gc-wrapper:style(margin-top:0px !important)
+
+||google.com/js/bg/$script,3p  # seen on youtube and other sites (youtube embedded). Videos are working.
+! update: редко бывают баги со встроенным плеером на сайтах. Но точно не из-за этого правила.
+
+youtube.com##.yt-upsell-dialog-renderer
+youtube.com###consent-bump
+
+! is in uBlock. Applies to google recaptcha as well, ok.
+www.google.*##+js(remove-attr, onmousedown|ping, a[href][onmousedown]\, a[href][ping])
+
+! Adguard rule
+www.google.*##+js(remove-attr, ping, div[id="search"] a[data-ved][ping])
+
+! is in EasyList
+##iframe[id^="google_ads_frame"]
+
+! Adguard rule
+||play.google.com/log?$xmlhttprequest,redirect-rule=noop.txt
+! EasyPrivacy rule
+||google.com^*/log?  # play.google.com/play/log?format=json&...
+!||play.google.com/_/PlayStoreUi/browserinfo? - generalized
+
+! cookies popup
+!google.*##div:matches-css(position:fixed) - don't?
+google.*##div[aria-modal="true"]:has-text(cookies)
+
+||cse.google.com/cse.js?cx=partner-pub$important

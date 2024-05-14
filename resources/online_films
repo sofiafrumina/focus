@@ -1,0 +1,2284 @@
+﻿!! It is a sublist of Yet another small uBlock filter list
+! See https://github.com/mtxadmin/ublock for details
+!
+!
+! This is a list of Russian online film sites. 
+! They are mostly based on moonwalk.cc|hdgo.cc|vio.to|streamguard.cc|mastarti.com|kodik.biz base
+! and from site to site there are only cosmetic changes.
+
+! And see
+! http://wiki.forkplayer.tv/wiki/Заглавная_страница
+
+! "пользователи давно привыкли, что половина плееров не работает. Помимо блокировки сайтов самих онлайн-кинотеатров РКН, ещё и балансеры блокируются для геолокаций NL, GB, и пр. - которые устанавливаются расширениями вроде "Browsec VPN" и "Обход блокировок Рунета", применяемыми пользователями."  # https://github.com/easylist/ruadlist/issues/22#issuecomment-892039208
+
+!! Disable stats for sources
+mastarti.com/stats/$important
+!c1.hdgo.cc$important  # transfered to hosts
+vio.to/stat_date/$important
+streamguard.cc/stats/$important
+alforenao.com/stats/
+!hbplatform.com  # is in Ru AdList and Adguard  # transfered to hosts
+! from EasyPricacy
+||streamango.com/log
+!||streamango.com/googlead.js$important
+||streamtojupiter.me/stats/
+! from AdGuard
+://*.*.com/xj/$important
+! from AdGuard
+/j/v.php?id=*&url=$domain=hdgo.cc|vio.to
+! from RuAdlist
+/src/u_*.js|$first-party,script
+! from EasyList
+##[id*="ScriptRoot"]
+! from AdGuard
+##div[id*="ScriptRootC"]
+! from RuAdlist
+*$third-party,xmlhttprequest,domain=streamguard.cc
+
+! todo: https://github.com/PopcornTimeCommunity/desktop
+! todo: yohoho.cc  yohoho.online
+
+! Remove body backgrounds(transferred to _headers file) and margins(transferred to _headers file)
+
+animego.org,baskino.me,bazr.ru,bigcinema-hd.club,boeviki-online.net,bonestv.ru,dokonlin.online,fast-torrent.ru,filmatika.ru,filmets.cc,filmi-hd.ru,filmive-hd1080.net,filmy-onlain.net,hdfilmlenta.com,hdrezka.tv,hdrezka-ag.com,intermovis.ucoz.net,kinoblog.tv,kinoboom.su,kino-cccp.net,kinoglobe.ru,kinogo.biz,kinogo.cc,kinogo.la,kinogoby.zone,kinogovno.net,kinokrad.co,kinokrolik.ru,kinoliza.pro,kinopod.ru,kinopovtor.cc,kinoprostor.pro,kinotochka.co,kino-ussr.ru,lamafilm.club,moviexk.biz,new-kino.net,oktovid.ru,onlinelifetv.com,pb.wtf,pickfilm.ru,popcornhd.ru,posmotri-online.com,rezka.ag,rukinotv.net,ruserialy.net,serial2go.com,sherlock-tv.ru,studiohd.org,timehd.org,topfile.tj,tv-show.live,vse-chasti-kino.ru,westernfilm.ru,x-film.sbs,x-film.tech,zevka.com,zfilme-hd1.site##html:style(padding-top:0px !important; margin-top: 0px !important; overflow:auto !important)
+
+animego.org,baskino.me,bazr.ru,bigcinema-hd.club,boeviki-online.net,bonestv.ru,dokonlin.online,fast-torrent.ru,filmatika.ru,filmets.cc,filmi-hd.ru,filmive-hd1080.net,filmy-onlain.net,hdfilmlenta.com,hdrezka.tv,hdrezka-ag.com,intermovis.ucoz.net,kinoblog.tv,kinoboom.su,kino-cccp.net,kinoglobe.ru,kinogo.biz,kinogo.cc,kinogo.la,kinogoby.zone,kinogovno.net,kinokrad.co,kinokrolik.ru,kinoliza.pro,kinopod.ru,kinopovtor.cc,kinoprostor.pro,kinotochka.co,kino-ussr.ru,lamafilm.club,moviexk.biz,new-kino.net,oktovid.ru,onlinelifetv.com,pb.wtf,pickfilm.ru,popcornhd.ru,posmotri-online.com,rezka.ag,rukinotv.net,ruserialy.net,serial2go.com,sherlock-tv.ru,studiohd.org,timehd.org,topfile.tj,tv-show.live,vse-chasti-kino.ru,westernfilm.ru,x-film.sbs,x-film.tech,zevka.com,zfilme-hd1.site###main:style(overflow:auto !important)
+
+animego.org,baskino.me,bazr.ru,bigcinema-hd.club,boeviki-online.net,bonestv.ru,dokonlin.online,fast-torrent.ru,filmatika.ru,filmets.cc,filmi-hd.ru,filmive-hd1080.net,filmy-onlain.net,hdfilmlenta.com,hdrezka.tv,hdrezka-ag.com,intermovis.ucoz.net,kinoblog.tv,kinoboom.su,kino-cccp.net,kinoglobe.ru,kinogo.biz,kinogo.cc,kinogo.la,kinogoby.zone,kinogovno.net,kinokrad.co,kinokrolik.ru,kinoliza.pro,kinopod.ru,kinopovtor.cc,kinoprostor.pro,kinotochka.co,kino-ussr.ru,lamafilm.club,moviexk.biz,new-kino.net,oktovid.ru,onlinelifetv.com,pb.wtf,pickfilm.ru,popcornhd.ru,posmotri-online.com,rezka.ag,rukinotv.net,ruserialy.net,serial2go.com,sherlock-tv.ru,studiohd.org,timehd.org,topfile.tj,tv-show.live,vse-chasti-kino.ru,westernfilm.ru,x-film.sbs,x-film.tech,zevka.com,zfilme-hd1.site##.wrap:style(padding-top:0px !important; margin-top: 0px !important; overflow:auto !important)
+
+animego.org,baskino.me,bazr.ru,bigcinema-hd.club,boeviki-online.net,bonestv.ru,dokonlin.online,fast-torrent.ru,filmatika.ru,filmets.cc,filmi-hd.ru,filmive-hd1080.net,filmy-onlain.net,hdfilmlenta.com,hdrezka.tv,hdrezka-ag.com,intermovis.ucoz.net,kinoblog.tv,kinoboom.su,kino-cccp.net,kinoglobe.ru,kinogo.biz,kinogo.cc,kinogo.la,kinogoby.zone,kinogovno.net,kinokrad.co,kinokrolik.ru,kinoliza.pro,kinopod.ru,kinopovtor.cc,kinoprostor.pro,kinotochka.co,kino-ussr.ru,lamafilm.club,moviexk.biz,new-kino.net,oktovid.ru,onlinelifetv.com,pb.wtf,pickfilm.ru,popcornhd.ru,posmotri-online.com,rezka.ag,rukinotv.net,ruserialy.net,serial2go.com,sherlock-tv.ru,studiohd.org,timehd.org,topfile.tj,tv-show.live,vse-chasti-kino.ru,westernfilm.ru,x-film.sbs,x-film.tech,zevka.com,zfilme-hd1.site##.wrapper:style(padding-top:0px !important; margin-top: 0px !important; overflow:auto !important)
+
+
+! Remove header backgrounds(transferred to _headers file) and margins. And unfix it(transferred to _headers file)
+
+animego.org,baskino.me,bazr.ru,bigcinema-hd.club,boeviki-online.net,bonestv.ru,dokonlin.online,fast-torrent.ru,filmatika.ru,filmets.cc,filmi-hd.ru,filmive-hd1080.net,filmy-onlain.net,hdfilmlenta.com,hdrezka.tv,hdrezka-ag.com,intermovis.ucoz.net,kinoblog.tv,kinoboom.su,kino-cccp.net,kinoglobe.ru,kinogo.biz,kinogo.cc,kinogo.la,kinogoby.zone,kinogovno.net,kinokrad.co,kinokrolik.ru,kinoliza.pro,kinopod.ru,kinopovtor.cc,kinoprostor.pro,kinotochka.co,kino-ussr.ru,lamafilm.club,moviexk.biz,new-kino.net,oktovid.ru,onlinelifetv.com,pb.wtf,pickfilm.ru,popcornhd.ru,posmotri-online.com,rezka.ag,rukinotv.net,ruserialy.net,serial2go.com,sherlock-tv.ru,studiohd.org,timehd.org,topfile.tj,tv-show.live,vse-chasti-kino.ru,westernfilm.ru,x-film.sbs,x-film.tech,zevka.com,zfilme-hd1.site##[class^=head]:style(background-image:none !important; position:static !important; height:auto !important; margin-top:0px !important; overflow:auto !important)
+
+animego.org,baskino.me,bazr.ru,bigcinema-hd.club,boeviki-online.net,bonestv.ru,dokonlin.online,fast-torrent.ru,filmatika.ru,filmets.cc,filmi-hd.ru,filmive-hd1080.net,filmy-onlain.net,hdfilmlenta.com,hdrezka.tv,hdrezka-ag.com,intermovis.ucoz.net,kinoblog.tv,kinoboom.su,kino-cccp.net,kinoglobe.ru,kinogo.biz,kinogo.cc,kinogo.la,kinogoby.zone,kinogovno.net,kinokrad.co,kinokrolik.ru,kinoliza.pro,kinopod.ru,kinopovtor.cc,kinoprostor.pro,kinotochka.co,kino-ussr.ru,lamafilm.club,moviexk.biz,new-kino.net,oktovid.ru,onlinelifetv.com,pb.wtf,pickfilm.ru,popcornhd.ru,posmotri-online.com,rezka.ag,rukinotv.net,ruserialy.net,serial2go.com,sherlock-tv.ru,studiohd.org,timehd.org,topfile.tj,tv-show.live,vse-chasti-kino.ru,westernfilm.ru,x-film.sbs,x-film.tech,zevka.com,zfilme-hd1.site##[id^=head]:style(background-image:none !important; position:static !important; height:auto !important; margin-top:0px !important; overflow:auto !important)
+
+animego.org,baskino.me,bazr.ru,bigcinema-hd.club,boeviki-online.net,bonestv.ru,dokonlin.online,fast-torrent.ru,filmatika.ru,filmets.cc,filmi-hd.ru,filmive-hd1080.net,filmy-onlain.net,hdfilmlenta.com,hdrezka.tv,hdrezka-ag.com,intermovis.ucoz.net,kinoblog.tv,kinoboom.su,kino-cccp.net,kinoglobe.ru,kinogo.biz,kinogo.cc,kinogo.la,kinogoby.zone,kinogovno.net,kinokrad.co,kinokrolik.ru,kinoliza.pro,kinopod.ru,kinopovtor.cc,kinoprostor.pro,kinotochka.co,kino-ussr.ru,lamafilm.club,moviexk.biz,new-kino.net,oktovid.ru,onlinelifetv.com,pb.wtf,pickfilm.ru,popcornhd.ru,posmotri-online.com,rezka.ag,rukinotv.net,ruserialy.net,serial2go.com,sherlock-tv.ru,studiohd.org,timehd.org,topfile.tj,tv-show.live,vse-chasti-kino.ru,westernfilm.ru,x-film.sbs,x-film.tech,zevka.com,zfilme-hd1.site##header:style(overflow:auto !important)
+
+animego.org,baskino.me,bazr.ru,bigcinema-hd.club,boeviki-online.net,bonestv.ru,dokonlin.online,fast-torrent.ru,filmatika.ru,filmets.cc,filmi-hd.ru,filmive-hd1080.net,filmy-onlain.net,hdfilmlenta.com,hdrezka.tv,hdrezka-ag.com,intermovis.ucoz.net,kinoblog.tv,kinoboom.su,kino-cccp.net,kinoglobe.ru,kinogo.biz,kinogo.cc,kinogo.la,kinogoby.zone,kinogovno.net,kinokrad.co,kinokrolik.ru,kinoliza.pro,kinopod.ru,kinopovtor.cc,kinoprostor.pro,kinotochka.co,kino-ussr.ru,lamafilm.club,moviexk.biz,new-kino.net,oktovid.ru,onlinelifetv.com,pb.wtf,pickfilm.ru,popcornhd.ru,posmotri-online.com,rezka.ag,rukinotv.net,ruserialy.net,serial2go.com,sherlock-tv.ru,studiohd.org,timehd.org,topfile.tj,tv-show.live,vse-chasti-kino.ru,westernfilm.ru,x-film.sbs,x-film.tech,zevka.com,zfilme-hd1.site###site-navigation:style(position:static !important; height:auto !important; margin-top:0px !important; overflow:auto !important)
+
+
+! Remove logo
+
+animego.org,baskino.me,bazr.ru,bigcinema-hd.club,boeviki-online.net,bonestv.ru,dokonlin.online,fast-torrent.ru,filmatika.ru,filmets.cc,filmi-hd.ru,filmive-hd1080.net,filmy-onlain.net,hdfilmlenta.com,hdrezka.tv,hdrezka-ag.com,intermovis.ucoz.net,kinoblog.tv,kinoboom.su,kino-cccp.net,kinoglobe.ru,kinogo.biz,kinogo.cc,kinogo.la,kinogoby.zone,kinogovno.net,kinokrad.co,kinokrolik.ru,kinoliza.pro,kinopod.ru,kinopovtor.cc,kinoprostor.pro,kinotochka.co,kino-ussr.ru,lamafilm.club,moviexk.biz,new-kino.net,oktovid.ru,onlinelifetv.com,pb.wtf,pickfilm.ru,popcornhd.ru,posmotri-online.com,rezka.ag,rukinotv.net,ruserialy.net,serial2go.com,sherlock-tv.ru,studiohd.org,timehd.org,topfile.tj,tv-show.live,vse-chasti-kino.ru,westernfilm.ru,x-film.sbs,x-film.tech,zevka.com,zfilme-hd1.site##[class*=logo]
+
+animego.org,baskino.me,bazr.ru,bigcinema-hd.club,boeviki-online.net,bonestv.ru,dokonlin.online,fast-torrent.ru,filmatika.ru,filmets.cc,filmi-hd.ru,filmive-hd1080.net,filmy-onlain.net,hdfilmlenta.com,hdrezka.tv,hdrezka-ag.com,intermovis.ucoz.net,kinoblog.tv,kinoboom.su,kino-cccp.net,kinoglobe.ru,kinogo.biz,kinogo.cc,kinogo.la,kinogoby.zone,kinogovno.net,kinokrad.co,kinokrolik.ru,kinoliza.pro,kinopod.ru,kinopovtor.cc,kinoprostor.pro,kinotochka.co,kino-ussr.ru,lamafilm.club,moviexk.biz,new-kino.net,oktovid.ru,onlinelifetv.com,pb.wtf,pickfilm.ru,popcornhd.ru,posmotri-online.com,rezka.ag,rukinotv.net,ruserialy.net,serial2go.com,sherlock-tv.ru,studiohd.org,timehd.org,topfile.tj,tv-show.live,vse-chasti-kino.ru,westernfilm.ru,x-film.sbs,x-film.tech,zevka.com,zfilme-hd1.site##[id*=logo]
+
+
+! Remove footer
+
+animego.org,baskino.me,bazr.ru,bigcinema-hd.club,boeviki-online.net,bonestv.ru,dokonlin.online,fast-torrent.ru,filmatika.ru,filmets.cc,filmi-hd.ru,filmive-hd1080.net,filmy-onlain.net,hdfilmlenta.com,hdrezka.tv,hdrezka-ag.com,intermovis.ucoz.net,kinoblog.tv,kinoboom.su,kino-cccp.net,kinoglobe.ru,kinogo.biz,kinogo.cc,kinogo.la,kinogoby.zone,kinogovno.net,kinokrad.co,kinokrolik.ru,kinoliza.pro,kinopod.ru,kinopovtor.cc,kinoprostor.pro,kinotochka.co,kino-ussr.ru,lamafilm.club,moviexk.biz,new-kino.net,oktovid.ru,onlinelifetv.com,pb.wtf,pickfilm.ru,popcornhd.ru,posmotri-online.com,rezka.ag,rukinotv.net,ruserialy.net,serial2go.com,sherlock-tv.ru,studiohd.org,timehd.org,topfile.tj,tv-show.live,vse-chasti-kino.ru,westernfilm.ru,x-film.sbs,x-film.tech,zevka.com,zfilme-hd1.site##footer
+
+animego.org,baskino.me,bazr.ru,bigcinema-hd.club,boeviki-online.net,bonestv.ru,dokonlin.online,fast-torrent.ru,filmatika.ru,filmets.cc,filmi-hd.ru,filmive-hd1080.net,filmy-onlain.net,hdfilmlenta.com,hdrezka.tv,hdrezka-ag.com,intermovis.ucoz.net,kinoblog.tv,kinoboom.su,kino-cccp.net,kinoglobe.ru,kinogo.biz,kinogo.cc,kinogo.la,kinogoby.zone,kinogovno.net,kinokrad.co,kinokrolik.ru,kinoliza.pro,kinopod.ru,kinopovtor.cc,kinoprostor.pro,kinotochka.co,kino-ussr.ru,lamafilm.club,moviexk.biz,new-kino.net,oktovid.ru,onlinelifetv.com,pb.wtf,pickfilm.ru,popcornhd.ru,posmotri-online.com,rezka.ag,rukinotv.net,ruserialy.net,serial2go.com,sherlock-tv.ru,studiohd.org,timehd.org,topfile.tj,tv-show.live,vse-chasti-kino.ru,westernfilm.ru,x-film.sbs,x-film.tech,zevka.com,zfilme-hd1.site##[class^=foot]
+
+animego.org,baskino.me,bazr.ru,bigcinema-hd.club,boeviki-online.net,bonestv.ru,dokonlin.online,fast-torrent.ru,filmatika.ru,filmets.cc,filmi-hd.ru,filmive-hd1080.net,filmy-onlain.net,hdfilmlenta.com,hdrezka.tv,hdrezka-ag.com,intermovis.ucoz.net,kinoblog.tv,kinoboom.su,kino-cccp.net,kinoglobe.ru,kinogo.biz,kinogo.cc,kinogo.la,kinogoby.zone,kinogovno.net,kinokrad.co,kinokrolik.ru,kinoliza.pro,kinopod.ru,kinopovtor.cc,kinoprostor.pro,kinotochka.co,kino-ussr.ru,lamafilm.club,moviexk.biz,new-kino.net,oktovid.ru,onlinelifetv.com,pb.wtf,pickfilm.ru,popcornhd.ru,posmotri-online.com,rezka.ag,rukinotv.net,ruserialy.net,serial2go.com,sherlock-tv.ru,studiohd.org,timehd.org,topfile.tj,tv-show.live,vse-chasti-kino.ru,westernfilm.ru,x-film.sbs,x-film.tech,zevka.com,zfilme-hd1.site##[id^=foot]
+
+
+! Remove overlay icons
+
+animego.org,baskino.me,bazr.ru,bigcinema-hd.club,boeviki-online.net,bonestv.ru,dokonlin.online,fast-torrent.ru,filmatika.ru,filmets.cc,filmi-hd.ru,filmive-hd1080.net,filmy-onlain.net,hdfilmlenta.com,hdrezka.tv,hdrezka-ag.com,intermovis.ucoz.net,kinoblog.tv,kinoboom.su,kino-cccp.net,kinoglobe.ru,kinogo.biz,kinogo.cc,kinogo.la,kinogoby.zone,kinogovno.net,kinokrad.co,kinokrolik.ru,kinoliza.pro,kinopod.ru,kinopovtor.cc,kinoprostor.pro,kinotochka.co,kino-ussr.ru,lamafilm.club,moviexk.biz,new-kino.net,oktovid.ru,onlinelifetv.com,pb.wtf,pickfilm.ru,popcornhd.ru,posmotri-online.com,rezka.ag,rukinotv.net,ruserialy.net,serial2go.com,sherlock-tv.ru,studiohd.org,timehd.org,topfile.tj,tv-show.live,vse-chasti-kino.ru,westernfilm.ru,x-film.sbs,x-film.tech,zevka.com,zfilme-hd1.site##.fa
+
+animego.org,baskino.me,bazr.ru,bigcinema-hd.club,boeviki-online.net,bonestv.ru,dokonlin.online,fast-torrent.ru,filmatika.ru,filmets.cc,filmi-hd.ru,filmive-hd1080.net,filmy-onlain.net,hdfilmlenta.com,hdrezka.tv,hdrezka-ag.com,intermovis.ucoz.net,kinoblog.tv,kinoboom.su,kino-cccp.net,kinoglobe.ru,kinogo.biz,kinogo.cc,kinogo.la,kinogoby.zone,kinogovno.net,kinokrad.co,kinokrolik.ru,kinoliza.pro,kinopod.ru,kinopovtor.cc,kinoprostor.pro,kinotochka.co,kino-ussr.ru,lamafilm.club,moviexk.biz,new-kino.net,oktovid.ru,onlinelifetv.com,pb.wtf,pickfilm.ru,popcornhd.ru,posmotri-online.com,rezka.ag,rukinotv.net,ruserialy.net,serial2go.com,sherlock-tv.ru,studiohd.org,timehd.org,topfile.tj,tv-show.live,vse-chasti-kino.ru,westernfilm.ru,x-film.sbs,x-film.tech,zevka.com,zfilme-hd1.site##.add-fav
+
+animego.org,baskino.me,bazr.ru,bigcinema-hd.club,boeviki-online.net,bonestv.ru,dokonlin.online,fast-torrent.ru,filmatika.ru,filmets.cc,filmi-hd.ru,filmive-hd1080.net,filmy-onlain.net,hdfilmlenta.com,hdrezka.tv,hdrezka-ag.com,intermovis.ucoz.net,kinoblog.tv,kinoboom.su,kino-cccp.net,kinoglobe.ru,kinogo.biz,kinogo.cc,kinogo.la,kinogoby.zone,kinogovno.net,kinokrad.co,kinokrolik.ru,kinoliza.pro,kinopod.ru,kinopovtor.cc,kinoprostor.pro,kinotochka.co,kino-ussr.ru,lamafilm.club,moviexk.biz,new-kino.net,oktovid.ru,onlinelifetv.com,pb.wtf,pickfilm.ru,popcornhd.ru,posmotri-online.com,rezka.ag,rukinotv.net,ruserialy.net,serial2go.com,sherlock-tv.ru,studiohd.org,timehd.org,topfile.tj,tv-show.live,vse-chasti-kino.ru,westernfilm.ru,x-film.sbs,x-film.tech,zevka.com,zfilme-hd1.site##.to-fav
+
+animego.org,baskino.me,bazr.ru,bigcinema-hd.club,boeviki-online.net,bonestv.ru,dokonlin.online,fast-torrent.ru,filmatika.ru,filmets.cc,filmi-hd.ru,filmive-hd1080.net,filmy-onlain.net,hdfilmlenta.com,hdrezka.tv,hdrezka-ag.com,intermovis.ucoz.net,kinoblog.tv,kinoboom.su,kino-cccp.net,kinoglobe.ru,kinogo.biz,kinogo.cc,kinogo.la,kinogoby.zone,kinogovno.net,kinokrad.co,kinokrolik.ru,kinoliza.pro,kinopod.ru,kinopovtor.cc,kinoprostor.pro,kinotochka.co,kino-ussr.ru,lamafilm.club,moviexk.biz,new-kino.net,oktovid.ru,onlinelifetv.com,pb.wtf,pickfilm.ru,popcornhd.ru,posmotri-online.com,rezka.ag,rukinotv.net,ruserialy.net,serial2go.com,sherlock-tv.ru,studiohd.org,timehd.org,topfile.tj,tv-show.live,vse-chasti-kino.ru,westernfilm.ru,x-film.sbs,x-film.tech,zevka.com,zfilme-hd1.site##.rollover
+
+
+! Remove local ratings
+
+animego.org,baskino.me,bazr.ru,bigcinema-hd.club,boeviki-online.net,bonestv.ru,dokonlin.online,fast-torrent.ru,filmatika.ru,filmets.cc,filmi-hd.ru,filmive-hd1080.net,filmy-onlain.net,hdfilmlenta.com,hdrezka.tv,hdrezka-ag.com,intermovis.ucoz.net,kinoblog.tv,kinoboom.su,kino-cccp.net,kinoglobe.ru,kinogo.biz,kinogo.cc,kinogo.la,kinogoby.zone,kinogovno.net,kinokrad.co,kinokrolik.ru,kinoliza.pro,kinopod.ru,kinopovtor.cc,kinoprostor.pro,kinotochka.co,kino-ussr.ru,lamafilm.club,moviexk.biz,new-kino.net,oktovid.ru,onlinelifetv.com,pb.wtf,pickfilm.ru,popcornhd.ru,posmotri-online.com,rezka.ag,rukinotv.net,ruserialy.net,serial2go.com,sherlock-tv.ru,studiohd.org,timehd.org,topfile.tj,tv-show.live,vse-chasti-kino.ru,westernfilm.ru,x-film.sbs,x-film.tech,zevka.com,zfilme-hd1.site##.rating
+
+animego.org,baskino.me,bazr.ru,bigcinema-hd.club,boeviki-online.net,bonestv.ru,dokonlin.online,fast-torrent.ru,filmatika.ru,filmets.cc,filmi-hd.ru,filmive-hd1080.net,filmy-onlain.net,hdfilmlenta.com,hdrezka.tv,hdrezka-ag.com,intermovis.ucoz.net,kinoblog.tv,kinoboom.su,kino-cccp.net,kinoglobe.ru,kinogo.biz,kinogo.cc,kinogo.la,kinogoby.zone,kinogovno.net,kinokrad.co,kinokrolik.ru,kinoliza.pro,kinopod.ru,kinopovtor.cc,kinoprostor.pro,kinotochka.co,kino-ussr.ru,lamafilm.club,moviexk.biz,new-kino.net,oktovid.ru,onlinelifetv.com,pb.wtf,pickfilm.ru,popcornhd.ru,posmotri-online.com,rezka.ag,rukinotv.net,ruserialy.net,serial2go.com,sherlock-tv.ru,studiohd.org,timehd.org,topfile.tj,tv-show.live,vse-chasti-kino.ru,westernfilm.ru,x-film.sbs,x-film.tech,zevka.com,zfilme-hd1.site##.frate
+
+animego.org,baskino.me,bazr.ru,bigcinema-hd.club,boeviki-online.net,bonestv.ru,dokonlin.online,fast-torrent.ru,filmatika.ru,filmets.cc,filmi-hd.ru,filmive-hd1080.net,filmy-onlain.net,hdfilmlenta.com,hdrezka.tv,hdrezka-ag.com,intermovis.ucoz.net,kinoblog.tv,kinoboom.su,kino-cccp.net,kinoglobe.ru,kinogo.biz,kinogo.cc,kinogo.la,kinogoby.zone,kinogovno.net,kinokrad.co,kinokrolik.ru,kinoliza.pro,kinopod.ru,kinopovtor.cc,kinoprostor.pro,kinotochka.co,kino-ussr.ru,lamafilm.club,moviexk.biz,new-kino.net,oktovid.ru,onlinelifetv.com,pb.wtf,pickfilm.ru,popcornhd.ru,posmotri-online.com,rezka.ag,rukinotv.net,ruserialy.net,serial2go.com,sherlock-tv.ru,studiohd.org,timehd.org,topfile.tj,tv-show.live,vse-chasti-kino.ru,westernfilm.ru,x-film.sbs,x-film.tech,zevka.com,zfilme-hd1.site##[class*=u-star-rating]
+
+
+! Remove login blocks
+
+animego.org,baskino.me,bazr.ru,bigcinema-hd.club,boeviki-online.net,bonestv.ru,dokonlin.online,fast-torrent.ru,filmatika.ru,filmets.cc,filmi-hd.ru,filmive-hd1080.net,filmy-onlain.net,hdfilmlenta.com,hdrezka.tv,hdrezka-ag.com,intermovis.ucoz.net,kinoblog.tv,kinoboom.su,kino-cccp.net,kinoglobe.ru,kinogo.biz,kinogo.cc,kinogo.la,kinogoby.zone,kinogovno.net,kinokrad.co,kinokrolik.ru,kinoliza.pro,kinopod.ru,kinopovtor.cc,kinoprostor.pro,kinotochka.co,kino-ussr.ru,lamafilm.club,moviexk.biz,new-kino.net,oktovid.ru,onlinelifetv.com,pb.wtf,pickfilm.ru,popcornhd.ru,posmotri-online.com,rezka.ag,rukinotv.net,ruserialy.net,serial2go.com,sherlock-tv.ru,studiohd.org,timehd.org,topfile.tj,tv-show.live,vse-chasti-kino.ru,westernfilm.ru,x-film.sbs,x-film.tech,zevka.com,zfilme-hd1.site##[class*=login]
+
+animego.org,baskino.me,bazr.ru,bigcinema-hd.club,boeviki-online.net,bonestv.ru,dokonlin.online,fast-torrent.ru,filmatika.ru,filmets.cc,filmi-hd.ru,filmive-hd1080.net,filmy-onlain.net,hdfilmlenta.com,hdrezka.tv,hdrezka-ag.com,intermovis.ucoz.net,kinoblog.tv,kinoboom.su,kino-cccp.net,kinoglobe.ru,kinogo.biz,kinogo.cc,kinogo.la,kinogoby.zone,kinogovno.net,kinokrad.co,kinokrolik.ru,kinoliza.pro,kinopod.ru,kinopovtor.cc,kinoprostor.pro,kinotochka.co,kino-ussr.ru,lamafilm.club,moviexk.biz,new-kino.net,oktovid.ru,onlinelifetv.com,pb.wtf,pickfilm.ru,popcornhd.ru,posmotri-online.com,rezka.ag,rukinotv.net,ruserialy.net,serial2go.com,sherlock-tv.ru,studiohd.org,timehd.org,topfile.tj,tv-show.live,vse-chasti-kino.ru,westernfilm.ru,x-film.sbs,x-film.tech,zevka.com,zfilme-hd1.site##[id*=login]
+
+animego.org,baskino.me,bazr.ru,bigcinema-hd.club,boeviki-online.net,bonestv.ru,dokonlin.online,fast-torrent.ru,filmatika.ru,filmets.cc,filmi-hd.ru,filmive-hd1080.net,filmy-onlain.net,hdfilmlenta.com,hdrezka.tv,hdrezka-ag.com,intermovis.ucoz.net,kinoblog.tv,kinoboom.su,kino-cccp.net,kinoglobe.ru,kinogo.biz,kinogo.cc,kinogo.la,kinogoby.zone,kinogovno.net,kinokrad.co,kinokrolik.ru,kinoliza.pro,kinopod.ru,kinopovtor.cc,kinoprostor.pro,kinotochka.co,kino-ussr.ru,lamafilm.club,moviexk.biz,new-kino.net,oktovid.ru,onlinelifetv.com,pb.wtf,pickfilm.ru,popcornhd.ru,posmotri-online.com,rezka.ag,rukinotv.net,ruserialy.net,serial2go.com,sherlock-tv.ru,studiohd.org,timehd.org,topfile.tj,tv-show.live,vse-chasti-kino.ru,westernfilm.ru,x-film.sbs,x-film.tech,zevka.com,zfilme-hd1.site##.commReg
+
+animego.org,baskino.me,bazr.ru,bigcinema-hd.club,boeviki-online.net,bonestv.ru,dokonlin.online,fast-torrent.ru,filmatika.ru,filmets.cc,filmi-hd.ru,filmive-hd1080.net,filmy-onlain.net,hdfilmlenta.com,hdrezka.tv,hdrezka-ag.com,intermovis.ucoz.net,kinoblog.tv,kinoboom.su,kino-cccp.net,kinoglobe.ru,kinogo.biz,kinogo.cc,kinogo.la,kinogoby.zone,kinogovno.net,kinokrad.co,kinokrolik.ru,kinoliza.pro,kinopod.ru,kinopovtor.cc,kinoprostor.pro,kinotochka.co,kino-ussr.ru,lamafilm.club,moviexk.biz,new-kino.net,oktovid.ru,onlinelifetv.com,pb.wtf,pickfilm.ru,popcornhd.ru,posmotri-online.com,rezka.ag,rukinotv.net,ruserialy.net,serial2go.com,sherlock-tv.ru,studiohd.org,timehd.org,topfile.tj,tv-show.live,vse-chasti-kino.ru,westernfilm.ru,x-film.sbs,x-film.tech,zevka.com,zfilme-hd1.site##.need-reg
+
+
+! Remove seo descs
+
+animego.org,baskino.me,bazr.ru,bigcinema-hd.club,boeviki-online.net,bonestv.ru,dokonlin.online,fast-torrent.ru,filmatika.ru,filmets.cc,filmi-hd.ru,filmive-hd1080.net,filmy-onlain.net,hdfilmlenta.com,hdrezka.tv,hdrezka-ag.com,intermovis.ucoz.net,kinoblog.tv,kinoboom.su,kino-cccp.net,kinoglobe.ru,kinogo.biz,kinogo.cc,kinogo.la,kinogoby.zone,kinogovno.net,kinokrad.co,kinokrolik.ru,kinoliza.pro,kinopod.ru,kinopovtor.cc,kinoprostor.pro,kinotochka.co,kino-ussr.ru,lamafilm.club,moviexk.biz,new-kino.net,oktovid.ru,onlinelifetv.com,pb.wtf,pickfilm.ru,popcornhd.ru,posmotri-online.com,rezka.ag,rukinotv.net,ruserialy.net,serial2go.com,sherlock-tv.ru,studiohd.org,timehd.org,topfile.tj,tv-show.live,vse-chasti-kino.ru,westernfilm.ru,x-film.sbs,x-film.tech,zevka.com,zfilme-hd1.site##.desc-text
+
+animego.org,baskino.me,bazr.ru,bigcinema-hd.club,boeviki-online.net,bonestv.ru,dokonlin.online,fast-torrent.ru,filmatika.ru,filmets.cc,filmi-hd.ru,filmive-hd1080.net,filmy-onlain.net,hdfilmlenta.com,hdrezka.tv,hdrezka-ag.com,intermovis.ucoz.net,kinoblog.tv,kinoboom.su,kino-cccp.net,kinoglobe.ru,kinogo.biz,kinogo.cc,kinogo.la,kinogoby.zone,kinogovno.net,kinokrad.co,kinokrolik.ru,kinoliza.pro,kinopod.ru,kinopovtor.cc,kinoprostor.pro,kinotochka.co,kino-ussr.ru,lamafilm.club,moviexk.biz,new-kino.net,oktovid.ru,onlinelifetv.com,pb.wtf,pickfilm.ru,popcornhd.ru,posmotri-online.com,rezka.ag,rukinotv.net,ruserialy.net,serial2go.com,sherlock-tv.ru,studiohd.org,timehd.org,topfile.tj,tv-show.live,vse-chasti-kino.ru,westernfilm.ru,x-film.sbs,x-film.tech,zevka.com,zfilme-hd1.site##.mob-trailer
+
+animego.org,baskino.me,bazr.ru,bigcinema-hd.club,boeviki-online.net,bonestv.ru,dokonlin.online,fast-torrent.ru,filmatika.ru,filmets.cc,filmi-hd.ru,filmive-hd1080.net,filmy-onlain.net,hdfilmlenta.com,hdrezka.tv,hdrezka-ag.com,intermovis.ucoz.net,kinoblog.tv,kinoboom.su,kino-cccp.net,kinoglobe.ru,kinogo.biz,kinogo.cc,kinogo.la,kinogoby.zone,kinogovno.net,kinokrad.co,kinokrolik.ru,kinoliza.pro,kinopod.ru,kinopovtor.cc,kinoprostor.pro,kinotochka.co,kino-ussr.ru,lamafilm.club,moviexk.biz,new-kino.net,oktovid.ru,onlinelifetv.com,pb.wtf,pickfilm.ru,popcornhd.ru,posmotri-online.com,rezka.ag,rukinotv.net,ruserialy.net,serial2go.com,sherlock-tv.ru,studiohd.org,timehd.org,topfile.tj,tv-show.live,vse-chasti-kino.ru,westernfilm.ru,x-film.sbs,x-film.tech,zevka.com,zfilme-hd1.site##.fplayer-title
+
+animego.org,baskino.me,bazr.ru,bigcinema-hd.club,boeviki-online.net,bonestv.ru,dokonlin.online,fast-torrent.ru,filmatika.ru,filmets.cc,filmi-hd.ru,filmive-hd1080.net,filmy-onlain.net,hdfilmlenta.com,hdrezka.tv,hdrezka-ag.com,intermovis.ucoz.net,kinoblog.tv,kinoboom.su,kino-cccp.net,kinoglobe.ru,kinogo.biz,kinogo.cc,kinogo.la,kinogoby.zone,kinogovno.net,kinokrad.co,kinokrolik.ru,kinoliza.pro,kinopod.ru,kinopovtor.cc,kinoprostor.pro,kinotochka.co,kino-ussr.ru,lamafilm.club,moviexk.biz,new-kino.net,oktovid.ru,onlinelifetv.com,pb.wtf,pickfilm.ru,popcornhd.ru,posmotri-online.com,rezka.ag,rukinotv.net,ruserialy.net,serial2go.com,sherlock-tv.ru,studiohd.org,timehd.org,topfile.tj,tv-show.live,vse-chasti-kino.ru,westernfilm.ru,x-film.sbs,x-film.tech,zevka.com,zfilme-hd1.site##+js(remove-attr.js,oncopy)
+
+
+! Remove recaptcha
+
+google.com/recaptcha/$important,domain=animego.org|baskino.me|bazr.ru|bigcinema-hd.club|boeviki-online.net|bonestv.ru|dokonlin.online|fast-torrent.ru|filmatika.ru|filmets.cc|filmi-hd.ru|filmive-hd1080.net|filmy-onlain.net|hdfilmlenta.com|hdrezka.tv|hdrezka-ag.com|intermovis.ucoz.net|kinoblog.tv|kinoboom.su|kino-cccp.net|kinoglobe.ru|kinogo.biz|kinogo.cc|kinogo.la|kinogoby.zone|kinogovno.net|kinokrad.co|kinokrolik.ru|kinoliza.pro|kinopod.ru|kinopovtor.cc|kinoprostor.pro|kinotochka.co|kino-ussr.ru|lamafilm.club|moviexk.biz|new-kino.net|oktovid.ru|onlinelifetv.com|pb.wtf|pickfilm.ru|popcornhd.ru|posmotri-online.com|rezka.ag|rukinotv.net|ruserialy.net|serial2go.com|sherlock-tv.ru|studiohd.org|timehd.org|topfile.tj|tv-show.live|vse-chasti-kino.ru|westernfilm.ru|x-film.sbs|x-film.tech|zevka.com|zfilme-hd1.site
+
+gstatic.com/recaptcha/$important,domain=animego.org|baskino.me|bazr.ru|bigcinema-hd.club|boeviki-online.net|bonestv.ru|dokonlin.online|fast-torrent.ru|filmatika.ru|filmets.cc|filmi-hd.ru|filmive-hd1080.net|filmy-onlain.net|hdfilmlenta.com|hdrezka.tv|hdrezka-ag.com|intermovis.ucoz.net|kinoblog.tv|kinoboom.su|kino-cccp.net|kinoglobe.ru|kinogo.biz|kinogo.cc|kinogo.la|kinogoby.zone|kinogovno.net|kinokrad.co|kinokrolik.ru|kinoliza.pro|kinopod.ru|kinopovtor.cc|kinoprostor.pro|kinotochka.co|kino-ussr.ru|lamafilm.club|moviexk.biz|new-kino.net|oktovid.ru|onlinelifetv.com|pb.wtf|pickfilm.ru|popcornhd.ru|posmotri-online.com|rezka.ag|rukinotv.net|ruserialy.net|serial2go.com|sherlock-tv.ru|studiohd.org|timehd.org|topfile.tj|tv-show.live|vse-chasti-kino.ru|westernfilm.ru|x-film.sbs|x-film.tech|zevka.com|zfilme-hd1.site
+
+
+! Remove statistics
+
+/stat/*$domain=animego.org|baskino.me|bazr.ru|bigcinema-hd.club|boeviki-online.net|bonestv.ru|dokonlin.online|fast-torrent.ru|filmatika.ru|filmets.cc|filmi-hd.ru|filmive-hd1080.net|filmy-onlain.net|hdfilmlenta.com|hdrezka.tv|hdrezka-ag.com|intermovis.ucoz.net|kinoblog.tv|kinoboom.su|kino-cccp.net|kinoglobe.ru|kinogo.cc|kinogo.la|kinogoby.zone|kinogovno.net|kinokrad.co|kinokrolik.ru|kinoliza.pro|kinopod.ru|kinopovtor.cc|kinoprostor.pro|kinotochka.co|kino-ussr.ru|lamafilm.club|moviexk.biz|new-kino.net|oktovid.ru|onlinelifetv.com|pb.wtf|pickfilm.ru|popcornhd.ru|posmotri-online.com|rezka.ag|rukinotv.net|ruserialy.net|serial2go.com|sherlock-tv.ru|studiohd.org|timehd.org|topfile.tj|tv-show.live|vse-chasti-kino.ru|westernfilm.ru|x-film.sbs|x-film.tech|zevka.com|zfilme-hd1.site
+
+/stats/*$domain=animego.org|baskino.me|bazr.ru|bigcinema-hd.club|boeviki-online.net|bonestv.ru|dokonlin.online|fast-torrent.ru|filmatika.ru|filmets.cc|filmi-hd.ru|filmive-hd1080.net|filmy-onlain.net|hdfilmlenta.com|hdrezka.tv|hdrezka-ag.com|intermovis.ucoz.net|kinoblog.tv|kinoboom.su|kino-cccp.net|kinoglobe.ru|kinogo.cc|kinogo.la|kinogoby.zone|kinogovno.net|kinokrad.co|kinokrolik.ru|kinoliza.pro|kinopod.ru|kinopovtor.cc|kinoprostor.pro|kinotochka.co|kino-ussr.ru|lamafilm.club|moviexk.biz|new-kino.net|oktovid.ru|onlinelifetv.com|pb.wtf|pickfilm.ru|popcornhd.ru|posmotri-online.com|rezka.ag|rukinotv.net|ruserialy.net|serial2go.com|sherlock-tv.ru|studiohd.org|timehd.org|topfile.tj|tv-show.live|vse-chasti-kino.ru|westernfilm.ru|x-film.sbs|x-film.tech|zevka.com|zfilme-hd1.site
+
+
+! Remove side blocks
+
+animego.org,baskino.me,bazr.ru,bigcinema-hd.club,boeviki-online.net,bonestv.ru,dokonlin.online,fast-torrent.ru,filmatika.ru,filmets.cc,filmi-hd.ru,filmive-hd1080.net,filmy-onlain.net,hdfilmlenta.com,hdrezka.tv,hdrezka-ag.com,intermovis.ucoz.net,kinoblog.tv,kinoboom.su,kino-cccp.net,kinoglobe.ru,kinogo.biz,kinogo.cc,kinogo.la,kinogoby.zone,kinogovno.net,kinokrad.co,kinokrolik.ru,kinoliza.pro,kinopod.ru,kinopovtor.cc,kinoprostor.pro,kinotochka.co,kino-ussr.ru,lamafilm.club,moviexk.biz,new-kino.net,oktovid.ru,onlinelifetv.com,pb.wtf,pickfilm.ru,popcornhd.ru,posmotri-online.com,rezka.ag,rukinotv.net,ruserialy.net,serial2go.com,sherlock-tv.ru,studiohd.org,timehd.org,topfile.tj,tv-show.live,vse-chasti-kino.ru,westernfilm.ru,x-film.sbs,x-film.tech,zevka.com,zfilme-hd1.site##.side-box:has-text(/Соц. сети|Мы В(К|к)онтакте|(К|к)оммент|КОММЕНТ|ОТЗЫВ|Скоро (на|в)|Сейчас смотрят|Календарь|Советуем|Про Нас|Хит Сезона|Популярное|Ожидаемые|Не пропустите|ЭТО ИНТЕРЕСНО|Статистика|Правообладателям|Форма входа|Гость|Вход|Регистрация|Касса|Стол Заказов|Друзья сайта|Теги|Блок №|БЛОК №|НАША ГРУППА|СЛУЧАЙНЫЕ ТВ-КАНАЛЫ/)
+
+animego.org,baskino.me,bazr.ru,bigcinema-hd.club,boeviki-online.net,bonestv.ru,dokonlin.online,fast-torrent.ru,filmatika.ru,filmets.cc,filmi-hd.ru,filmive-hd1080.net,filmy-onlain.net,hdfilmlenta.com,hdrezka.tv,hdrezka-ag.com,intermovis.ucoz.net,kinoblog.tv,kinoboom.su,kino-cccp.net,kinoglobe.ru,kinogo.biz,kinogo.cc,kinogo.la,kinogoby.zone,kinogovno.net,kinokrad.co,kinokrolik.ru,kinoliza.pro,kinopod.ru,kinopovtor.cc,kinoprostor.pro,kinotochka.co,kino-ussr.ru,lamafilm.club,moviexk.biz,new-kino.net,oktovid.ru,onlinelifetv.com,pb.wtf,pickfilm.ru,popcornhd.ru,posmotri-online.com,rezka.ag,rukinotv.net,ruserialy.net,serial2go.com,sherlock-tv.ru,studiohd.org,timehd.org,topfile.tj,tv-show.live,vse-chasti-kino.ru,westernfilm.ru,x-film.sbs,x-film.tech,zevka.com,zfilme-hd1.site##.sidebox:has-text(/Соц. сети|Мы В(К|к)онтакте|(К|к)оммент|КОММЕНТ|ОТЗЫВ|Скоро (на|в)|Сейчас смотрят|Календарь|Советуем|Про Нас|Хит Сезона|Популярное|Ожидаемые|Не пропустите|ЭТО ИНТЕРЕСНО|Статистика|Правообладателям|Форма входа|Гость|Вход|Регистрация|Касса|Стол Заказов|Друзья сайта|Теги|Блок №|БЛОК №|НАША ГРУППА|СЛУЧАЙНЫЕ ТВ-КАНАЛЫ/)
+
+animego.org,baskino.me,bazr.ru,bigcinema-hd.club,boeviki-online.net,bonestv.ru,dokonlin.online,fast-torrent.ru,filmatika.ru,filmets.cc,filmi-hd.ru,filmive-hd1080.net,filmy-onlain.net,hdfilmlenta.com,hdrezka.tv,hdrezka-ag.com,intermovis.ucoz.net,kinoblog.tv,kinoboom.su,kino-cccp.net,kinoglobe.ru,kinogo.biz,kinogo.cc,kinogo.la,kinogoby.zone,kinogovno.net,kinokrad.co,kinokrolik.ru,kinoliza.pro,kinopod.ru,kinopovtor.cc,kinoprostor.pro,kinotochka.co,kino-ussr.ru,lamafilm.club,moviexk.biz,new-kino.net,oktovid.ru,onlinelifetv.com,pb.wtf,pickfilm.ru,popcornhd.ru,posmotri-online.com,rezka.ag,rukinotv.net,ruserialy.net,serial2go.com,sherlock-tv.ru,studiohd.org,timehd.org,topfile.tj,tv-show.live,vse-chasti-kino.ru,westernfilm.ru,x-film.sbs,x-film.tech,zevka.com,zfilme-hd1.site##.sidebox:has-text(/Соц. сети|Мы В(К|к)онтакте|(К|к)оммент|КОММЕНТ|ОТЗЫВ|Скоро (на|в)|Сейчас смотрят|Календарь|Советуем|Про Нас|Хит Сезона|Популярное|Ожидаемые|Не пропустите|ЭТО ИНТЕРЕСНО|Статистика|Правообладателям|Форма входа|Гость|Вход|Регистрация|Касса|Стол Заказов|Друзья сайта|Теги|Блок №|БЛОК №|НАША ГРУППА|СЛУЧАЙНЫЕ ТВ-КАНАЛЫ/)
+
+animego.org,baskino.me,bazr.ru,bigcinema-hd.club,boeviki-online.net,bonestv.ru,dokonlin.online,fast-torrent.ru,filmatika.ru,filmets.cc,filmi-hd.ru,filmive-hd1080.net,filmy-onlain.net,hdfilmlenta.com,hdrezka.tv,hdrezka-ag.com,intermovis.ucoz.net,kinoblog.tv,kinoboom.su,kino-cccp.net,kinoglobe.ru,kinogo.biz,kinogo.cc,kinogo.la,kinogoby.zone,kinogovno.net,kinokrad.co,kinokrolik.ru,kinoliza.pro,kinopod.ru,kinopovtor.cc,kinoprostor.pro,kinotochka.co,kino-ussr.ru,lamafilm.club,moviexk.biz,new-kino.net,oktovid.ru,onlinelifetv.com,pb.wtf,pickfilm.ru,popcornhd.ru,posmotri-online.com,rezka.ag,rukinotv.net,ruserialy.net,serial2go.com,sherlock-tv.ru,studiohd.org,timehd.org,topfile.tj,tv-show.live,vse-chasti-kino.ru,westernfilm.ru,x-film.sbs,x-film.tech,zevka.com,zfilme-hd1.site##.boxTable:has-text(/Соц. сети|Мы В(К|к)онтакте|(К|к)оммент|КОММЕНТ|ОТЗЫВ|Скоро (на|в)|Сейчас смотрят|Календарь|Советуем|Про Нас|Хит Сезона|Популярное|Ожидаемые|Не пропустите|ЭТО ИНТЕРЕСНО|Статистика|Правообладателям|Форма входа|Гость|Вход|Регистрация|Касса|Стол Заказов|Друзья сайта|Теги|Блок №|БЛОК №|НАША ГРУППА|СЛУЧАЙНЫЕ ТВ-КАНАЛЫ/)
+
+animego.org,baskino.me,bazr.ru,bigcinema-hd.club,boeviki-online.net,bonestv.ru,dokonlin.online,fast-torrent.ru,filmatika.ru,filmets.cc,filmi-hd.ru,filmive-hd1080.net,filmy-onlain.net,hdfilmlenta.com,hdrezka.tv,hdrezka-ag.com,intermovis.ucoz.net,kinoblog.tv,kinoboom.su,kino-cccp.net,kinoglobe.ru,kinogo.biz,kinogo.cc,kinogo.la,kinogoby.zone,kinogovno.net,kinokrad.co,kinokrolik.ru,kinoliza.pro,kinopod.ru,kinopovtor.cc,kinoprostor.pro,kinotochka.co,kino-ussr.ru,lamafilm.club,moviexk.biz,new-kino.net,oktovid.ru,onlinelifetv.com,pb.wtf,pickfilm.ru,popcornhd.ru,posmotri-online.com,rezka.ag,rukinotv.net,ruserialy.net,serial2go.com,sherlock-tv.ru,studiohd.org,timehd.org,topfile.tj,tv-show.live,vse-chasti-kino.ru,westernfilm.ru,x-film.sbs,x-film.tech,zevka.com,zfilme-hd1.site##.left-block:has-text(/Соц. сети|Мы В(К|к)онтакте|(К|к)оммент|КОММЕНТ|ОТЗЫВ|Скоро (на|в)|Сейчас смотрят|Календарь|Советуем|Про Нас|Хит Сезона|Популярное|Ожидаемые|Не пропустите|ЭТО ИНТЕРЕСНО|Статистика|Правообладателям|Форма входа|Гость|Вход|Регистрация|Касса|Стол Заказов|Друзья сайта|Теги|Блок №|БЛОК №|НАША ГРУППА|СЛУЧАЙНЫЕ ТВ-КАНАЛЫ/)
+
+animego.org,baskino.me,bazr.ru,bigcinema-hd.club,boeviki-online.net,bonestv.ru,dokonlin.online,fast-torrent.ru,filmatika.ru,filmets.cc,filmi-hd.ru,filmive-hd1080.net,filmy-onlain.net,hdfilmlenta.com,hdrezka.tv,hdrezka-ag.com,intermovis.ucoz.net,kinoblog.tv,kinoboom.su,kino-cccp.net,kinoglobe.ru,kinogo.biz,kinogo.cc,kinogo.la,kinogoby.zone,kinogovno.net,kinokrad.co,kinokrolik.ru,kinoliza.pro,kinopod.ru,kinopovtor.cc,kinoprostor.pro,kinotochka.co,kino-ussr.ru,lamafilm.club,moviexk.biz,new-kino.net,oktovid.ru,onlinelifetv.com,pb.wtf,pickfilm.ru,popcornhd.ru,posmotri-online.com,rezka.ag,rukinotv.net,ruserialy.net,serial2go.com,sherlock-tv.ru,studiohd.org,timehd.org,topfile.tj,tv-show.live,vse-chasti-kino.ru,westernfilm.ru,x-film.sbs,x-film.tech,zevka.com,zfilme-hd1.site##.bochok-box:has-text(/Соц. сети|Мы В(К|к)онтакте|(К|к)оммент|КОММЕНТ|ОТЗЫВ|Скоро (на|в)|Сейчас смотрят|Календарь|Советуем|Про Нас|Хит Сезона|Популярное|Ожидаемые|Не пропустите|ЭТО ИНТЕРЕСНО|Статистика|Правообладателям|Форма входа|Гость|Вход|Регистрация|Касса|Стол Заказов|Друзья сайта|Теги|Блок №|БЛОК №|НАША ГРУППА|СЛУЧАЙНЫЕ ТВ-КАНАЛЫ/)
+
+
+! Remove some general elements
+
+/.s/*$image,domain=animego.org|baskino.me|bazr.ru|bigcinema-hd.club|boeviki-online.net|bonestv.ru|dokonlin.online|fast-torrent.ru|filmatika.ru|filmets.cc|filmi-hd.ru|filmive-hd1080.net|filmy-onlain.net|hdfilmlenta.com|hdrezka.tv|hdrezka-ag.com|intermovis.ucoz.net|kinoblog.tv|kinoboom.su|kino-cccp.net|kinoglobe.ru|kinogo.biz|kinogo.cc|kinogo.la|kinogoby.zone|kinogovno.net|kinokrad.co|kinokrolik.ru|kinoliza.pro|kinopod.ru|kinopovtor.cc|kinoprostor.pro|kinotochka.co|kino-ussr.ru|lamafilm.club|moviexk.biz|new-kino.net|oktovid.ru|onlinelifetv.com|pb.wtf|pickfilm.ru|popcornhd.ru|posmotri-online.com|rezka.ag|rukinotv.net|ruserialy.net|serial2go.com|sherlock-tv.ru|studiohd.org|timehd.org|topfile.tj|tv-show.live|vse-chasti-kino.ru|westernfilm.ru|x-film.sbs|x-film.tech|zevka.com|zfilme-hd1.site
+
+/(tnt.png|discl.png|complaint.png|rating.png|plus_fav.gif)/$domain=animego.org|baskino.me|bazr.ru|bigcinema-hd.club|boeviki-online.net|bonestv.ru|dokonlin.online|fast-torrent.ru|filmatika.ru|filmets.cc|filmi-hd.ru|filmive-hd1080.net|filmy-onlain.net|hdfilmlenta.com|hdrezka.tv|hdrezka-ag.com|intermovis.ucoz.net|kinoblog.tv|kinoboom.su|kino-cccp.net|kinoglobe.ru|kinogo.biz|kinogo.cc|kinogo.la|kinogoby.zone|kinogovno.net|kinokrad.co|kinokrolik.ru|kinoliza.pro|kinopod.ru|kinopovtor.cc|kinoprostor.pro|kinotochka.co|kino-ussr.ru|lamafilm.club|moviexk.biz|new-kino.net|oktovid.ru|onlinelifetv.com|pb.wtf|pickfilm.ru|popcornhd.ru|posmotri-online.com|rezka.ag|rukinotv.net|ruserialy.net|serial2go.com|sherlock-tv.ru|studiohd.org|timehd.org|topfile.tj|tv-show.live|vse-chasti-kino.ru|westernfilm.ru|x-film.sbs|x-film.tech|zevka.com|zfilme-hd1.site
+
+animego.org,baskino.me,bazr.ru,bigcinema-hd.club,boeviki-online.net,bonestv.ru,dokonlin.online,fast-torrent.ru,filmatika.ru,filmets.cc,filmi-hd.ru,filmive-hd1080.net,filmy-onlain.net,hdfilmlenta.com,hdrezka.tv,hdrezka-ag.com,intermovis.ucoz.net,kinoblog.tv,kinoboom.su,kino-cccp.net,kinoglobe.ru,kinogo.biz,kinogo.cc,kinogo.la,kinogoby.zone,kinogovno.net,kinokrad.co,kinokrolik.ru,kinoliza.pro,kinopod.ru,kinopovtor.cc,kinoprostor.pro,kinotochka.co,kino-ussr.ru,lamafilm.club,moviexk.biz,new-kino.net,oktovid.ru,onlinelifetv.com,pb.wtf,pickfilm.ru,popcornhd.ru,posmotri-online.com,rezka.ag,rukinotv.net,ruserialy.net,serial2go.com,sherlock-tv.ru,studiohd.org,timehd.org,topfile.tj,tv-show.live,vse-chasti-kino.ru,westernfilm.ru,x-film.sbs,x-film.tech,zevka.com,zfilme-hd1.site##.berrors
+
+animego.org,baskino.me,bazr.ru,bigcinema-hd.club,boeviki-online.net,bonestv.ru,dokonlin.online,fast-torrent.ru,filmatika.ru,filmets.cc,filmi-hd.ru,filmive-hd1080.net,filmy-onlain.net,hdfilmlenta.com,hdrezka.tv,hdrezka-ag.com,intermovis.ucoz.net,kinoblog.tv,kinoboom.su,kino-cccp.net,kinoglobe.ru,kinogo.biz,kinogo.cc,kinogo.la,kinogoby.zone,kinogovno.net,kinokrad.co,kinokrolik.ru,kinoliza.pro,kinopod.ru,kinopovtor.cc,kinoprostor.pro,kinotochka.co,kino-ussr.ru,lamafilm.club,moviexk.biz,new-kino.net,oktovid.ru,onlinelifetv.com,pb.wtf,pickfilm.ru,popcornhd.ru,posmotri-online.com,rezka.ag,rukinotv.net,ruserialy.net,serial2go.com,sherlock-tv.ru,studiohd.org,timehd.org,topfile.tj,tv-show.live,vse-chasti-kino.ru,westernfilm.ru,x-film.sbs,x-film.tech,zevka.com,zfilme-hd1.site##.netrek
+
+animego.org,baskino.me,bazr.ru,bigcinema-hd.club,boeviki-online.net,bonestv.ru,dokonlin.online,fast-torrent.ru,filmatika.ru,filmets.cc,filmi-hd.ru,filmive-hd1080.net,filmy-onlain.net,hdfilmlenta.com,hdrezka.tv,hdrezka-ag.com,intermovis.ucoz.net,kinoblog.tv,kinoboom.su,kino-cccp.net,kinoglobe.ru,kinogo.biz,kinogo.cc,kinogo.la,kinogoby.zone,kinogovno.net,kinokrad.co,kinokrolik.ru,kinoliza.pro,kinopod.ru,kinopovtor.cc,kinoprostor.pro,kinotochka.co,kino-ussr.ru,lamafilm.club,moviexk.biz,new-kino.net,oktovid.ru,onlinelifetv.com,pb.wtf,pickfilm.ru,popcornhd.ru,posmotri-online.com,rezka.ag,rukinotv.net,ruserialy.net,serial2go.com,sherlock-tv.ru,studiohd.org,timehd.org,topfile.tj,tv-show.live,vse-chasti-kino.ru,westernfilm.ru,x-film.sbs,x-film.tech,zevka.com,zfilme-hd1.site##.grnd
+
+animego.org,baskino.me,bazr.ru,bigcinema-hd.club,boeviki-online.net,bonestv.ru,dokonlin.online,fast-torrent.ru,filmatika.ru,filmets.cc,filmi-hd.ru,filmive-hd1080.net,filmy-onlain.net,hdfilmlenta.com,hdrezka.tv,hdrezka-ag.com,intermovis.ucoz.net,kinoblog.tv,kinoboom.su,kino-cccp.net,kinoglobe.ru,kinogo.biz,kinogo.cc,kinogo.la,kinogoby.zone,kinogovno.net,kinokrad.co,kinokrolik.ru,kinoliza.pro,kinopod.ru,kinopovtor.cc,kinoprostor.pro,kinotochka.co,kino-ussr.ru,lamafilm.club,moviexk.biz,new-kino.net,oktovid.ru,onlinelifetv.com,pb.wtf,pickfilm.ru,popcornhd.ru,posmotri-online.com,rezka.ag,rukinotv.net,ruserialy.net,serial2go.com,sherlock-tv.ru,studiohd.org,timehd.org,topfile.tj,tv-show.live,vse-chasti-kino.ru,westernfilm.ru,x-film.sbs,x-film.tech,zevka.com,zfilme-hd1.site##.sorry-rek
+
+animego.org,baskino.me,bazr.ru,bigcinema-hd.club,boeviki-online.net,bonestv.ru,dokonlin.online,fast-torrent.ru,filmatika.ru,filmets.cc,filmi-hd.ru,filmive-hd1080.net,filmy-onlain.net,hdfilmlenta.com,hdrezka.tv,hdrezka-ag.com,intermovis.ucoz.net,kinoblog.tv,kinoboom.su,kino-cccp.net,kinoglobe.ru,kinogo.biz,kinogo.cc,kinogo.la,kinogoby.zone,kinogovno.net,kinokrad.co,kinokrolik.ru,kinoliza.pro,kinopod.ru,kinopovtor.cc,kinoprostor.pro,kinotochka.co,kino-ussr.ru,lamafilm.club,moviexk.biz,new-kino.net,oktovid.ru,onlinelifetv.com,pb.wtf,pickfilm.ru,popcornhd.ru,posmotri-online.com,rezka.ag,rukinotv.net,ruserialy.net,serial2go.com,sherlock-tv.ru,studiohd.org,timehd.org,topfile.tj,tv-show.live,vse-chasti-kino.ru,westernfilm.ru,x-film.sbs,x-film.tech,zevka.com,zfilme-hd1.site##.middle-rkl
+
+animego.org,baskino.me,bazr.ru,bigcinema-hd.club,boeviki-online.net,bonestv.ru,dokonlin.online,fast-torrent.ru,filmatika.ru,filmets.cc,filmi-hd.ru,filmive-hd1080.net,filmy-onlain.net,hdfilmlenta.com,hdrezka.tv,hdrezka-ag.com,intermovis.ucoz.net,kinoblog.tv,kinoboom.su,kino-cccp.net,kinoglobe.ru,kinogo.biz,kinogo.cc,kinogo.la,kinogoby.zone,kinogovno.net,kinokrad.co,kinokrolik.ru,kinoliza.pro,kinopod.ru,kinopovtor.cc,kinoprostor.pro,kinotochka.co,kino-ussr.ru,lamafilm.club,moviexk.biz,new-kino.net,oktovid.ru,onlinelifetv.com,pb.wtf,pickfilm.ru,popcornhd.ru,posmotri-online.com,rezka.ag,rukinotv.net,ruserialy.net,serial2go.com,sherlock-tv.ru,studiohd.org,timehd.org,topfile.tj,tv-show.live,vse-chasti-kino.ru,westernfilm.ru,x-film.sbs,x-film.tech,zevka.com,zfilme-hd1.site##.skots
+
+animego.org,baskino.me,bazr.ru,bigcinema-hd.club,boeviki-online.net,bonestv.ru,dokonlin.online,fast-torrent.ru,filmatika.ru,filmets.cc,filmi-hd.ru,filmive-hd1080.net,filmy-onlain.net,hdfilmlenta.com,hdrezka.tv,hdrezka-ag.com,intermovis.ucoz.net,kinoblog.tv,kinoboom.su,kino-cccp.net,kinoglobe.ru,kinogo.biz,kinogo.cc,kinogo.la,kinogoby.zone,kinogovno.net,kinokrad.co,kinokrolik.ru,kinoliza.pro,kinopod.ru,kinopovtor.cc,kinoprostor.pro,kinotochka.co,kino-ussr.ru,lamafilm.club,moviexk.biz,new-kino.net,oktovid.ru,onlinelifetv.com,pb.wtf,pickfilm.ru,popcornhd.ru,posmotri-online.com,rezka.ag,rukinotv.net,ruserialy.net,serial2go.com,sherlock-tv.ru,studiohd.org,timehd.org,topfile.tj,tv-show.live,vse-chasti-kino.ru,westernfilm.ru,x-film.sbs,x-film.tech,zevka.com,zfilme-hd1.site##.player-warning
+
+animego.org,baskino.me,bazr.ru,bigcinema-hd.club,boeviki-online.net,bonestv.ru,dokonlin.online,fast-torrent.ru,filmatika.ru,filmets.cc,filmi-hd.ru,filmive-hd1080.net,filmy-onlain.net,hdfilmlenta.com,hdrezka.tv,hdrezka-ag.com,intermovis.ucoz.net,kinoblog.tv,kinoboom.su,kino-cccp.net,kinoglobe.ru,kinogo.biz,kinogo.cc,kinogo.la,kinogoby.zone,kinogovno.net,kinokrad.co,kinokrolik.ru,kinoliza.pro,kinopod.ru,kinopovtor.cc,kinoprostor.pro,kinotochka.co,kino-ussr.ru,lamafilm.club,moviexk.biz,new-kino.net,oktovid.ru,onlinelifetv.com,pb.wtf,pickfilm.ru,popcornhd.ru,posmotri-online.com,rezka.ag,rukinotv.net,ruserialy.net,serial2go.com,sherlock-tv.ru,studiohd.org,timehd.org,topfile.tj,tv-show.live,vse-chasti-kino.ru,westernfilm.ru,x-film.sbs,x-film.tech,zevka.com,zfilme-hd1.site##[class*=complaint]
+
+animego.org,baskino.me,bazr.ru,bigcinema-hd.club,boeviki-online.net,bonestv.ru,dokonlin.online,fast-torrent.ru,filmatika.ru,filmets.cc,filmi-hd.ru,filmive-hd1080.net,filmy-onlain.net,hdfilmlenta.com,hdrezka.tv,hdrezka-ag.com,intermovis.ucoz.net,kinoblog.tv,kinoboom.su,kino-cccp.net,kinoglobe.ru,kinogo.biz,kinogo.cc,kinogo.la,kinogoby.zone,kinogovno.net,kinokrad.co,kinokrolik.ru,kinoliza.pro,kinopod.ru,kinopovtor.cc,kinoprostor.pro,kinotochka.co,kino-ussr.ru,lamafilm.club,moviexk.biz,new-kino.net,oktovid.ru,onlinelifetv.com,pb.wtf,pickfilm.ru,popcornhd.ru,posmotri-online.com,rezka.ag,rukinotv.net,ruserialy.net,serial2go.com,sherlock-tv.ru,studiohd.org,timehd.org,topfile.tj,tv-show.live,vse-chasti-kino.ru,westernfilm.ru,x-film.sbs,x-film.tech,zevka.com,zfilme-hd1.site##h1:has-text(/(С|с)мотреть|(О|о)нлайн|бесплатн|в hd|качестве|(К|к)оммент|Скоро (в|на)/)
+
+animego.org,baskino.me,bazr.ru,bigcinema-hd.club,boeviki-online.net,bonestv.ru,dokonlin.online,fast-torrent.ru,filmatika.ru,filmets.cc,filmi-hd.ru,filmive-hd1080.net,filmy-onlain.net,hdfilmlenta.com,hdrezka.tv,hdrezka-ag.com,intermovis.ucoz.net,kinoblog.tv,kinoboom.su,kino-cccp.net,kinoglobe.ru,kinogo.biz,kinogo.cc,kinogo.la,kinogoby.zone,kinogovno.net,kinokrad.co,kinokrolik.ru,kinoliza.pro,kinopod.ru,kinopovtor.cc,kinoprostor.pro,kinotochka.co,kino-ussr.ru,lamafilm.club,moviexk.biz,new-kino.net,oktovid.ru,onlinelifetv.com,pb.wtf,pickfilm.ru,popcornhd.ru,posmotri-online.com,rezka.ag,rukinotv.net,ruserialy.net,serial2go.com,sherlock-tv.ru,studiohd.org,timehd.org,topfile.tj,tv-show.live,vse-chasti-kino.ru,westernfilm.ru,x-film.sbs,x-film.tech,zevka.com,zfilme-hd1.site##h2:has-text(/(С|с)мотреть|(О|о)нлайн|бесплатн|в hd|качестве|(К|к)оммент|Скоро (в|на)/)
+
+animego.org,baskino.me,bazr.ru,bigcinema-hd.club,boeviki-online.net,bonestv.ru,dokonlin.online,fast-torrent.ru,filmatika.ru,filmets.cc,filmi-hd.ru,filmive-hd1080.net,filmy-onlain.net,hdfilmlenta.com,hdrezka.tv,hdrezka-ag.com,intermovis.ucoz.net,kinoblog.tv,kinoboom.su,kino-cccp.net,kinoglobe.ru,kinogo.biz,kinogo.cc,kinogo.la,kinogoby.zone,kinogovno.net,kinokrad.co,kinokrolik.ru,kinoliza.pro,kinopod.ru,kinopovtor.cc,kinoprostor.pro,kinotochka.co,kino-ussr.ru,lamafilm.club,moviexk.biz,new-kino.net,oktovid.ru,onlinelifetv.com,pb.wtf,pickfilm.ru,popcornhd.ru,posmotri-online.com,rezka.ag,rukinotv.net,ruserialy.net,serial2go.com,sherlock-tv.ru,studiohd.org,timehd.org,topfile.tj,tv-show.live,vse-chasti-kino.ru,westernfilm.ru,x-film.sbs,x-film.tech,zevka.com,zfilme-hd1.site##h3:has-text(/(С|с)мотреть|(О|о)нлайн|бесплатн|в hd|качестве|(К|к)оммент|Скоро (в|на)/)
+
+animego.org,baskino.me,bazr.ru,bigcinema-hd.club,boeviki-online.net,bonestv.ru,dokonlin.online,fast-torrent.ru,filmatika.ru,filmets.cc,filmi-hd.ru,filmive-hd1080.net,filmy-onlain.net,hdfilmlenta.com,hdrezka.tv,hdrezka-ag.com,intermovis.ucoz.net,kinoblog.tv,kinoboom.su,kino-cccp.net,kinoglobe.ru,kinogo.biz,kinogo.cc,kinogo.la,kinogoby.zone,kinogovno.net,kinokrad.co,kinokrolik.ru,kinoliza.pro,kinopod.ru,kinopovtor.cc,kinoprostor.pro,kinotochka.co,kino-ussr.ru,lamafilm.club,moviexk.biz,new-kino.net,oktovid.ru,onlinelifetv.com,pb.wtf,pickfilm.ru,popcornhd.ru,posmotri-online.com,rezka.ag,rukinotv.net,ruserialy.net,serial2go.com,sherlock-tv.ru,studiohd.org,timehd.org,topfile.tj,tv-show.live,vse-chasti-kino.ru,westernfilm.ru,x-film.sbs,x-film.tech,zevka.com,zfilme-hd1.site##h4:has-text(/(С|с)мотреть|(О|о)нлайн|бесплатн|в hd|качестве|(К|к)оммент|Скоро (в|на)/)
+
+animego.org,baskino.me,bazr.ru,bigcinema-hd.club,boeviki-online.net,bonestv.ru,dokonlin.online,fast-torrent.ru,filmatika.ru,filmets.cc,filmi-hd.ru,filmive-hd1080.net,filmy-onlain.net,hdfilmlenta.com,hdrezka.tv,hdrezka-ag.com,intermovis.ucoz.net,kinoblog.tv,kinoboom.su,kino-cccp.net,kinoglobe.ru,kinogo.biz,kinogo.cc,kinogo.la,kinogoby.zone,kinogovno.net,kinokrad.co,kinokrolik.ru,kinoliza.pro,kinopod.ru,kinopovtor.cc,kinoprostor.pro,kinotochka.co,kino-ussr.ru,lamafilm.club,moviexk.biz,new-kino.net,oktovid.ru,onlinelifetv.com,pb.wtf,pickfilm.ru,popcornhd.ru,posmotri-online.com,rezka.ag,rukinotv.net,ruserialy.net,serial2go.com,sherlock-tv.ru,studiohd.org,timehd.org,topfile.tj,tv-show.live,vse-chasti-kino.ru,westernfilm.ru,x-film.sbs,x-film.tech,zevka.com,zfilme-hd1.site##h5:has-text(/(С|с)мотреть|(О|о)нлайн|бесплатн|в hd|качестве|(К|к)оммент|Скоро (в|на)/)
+
+animego.org,baskino.me,bazr.ru,bigcinema-hd.club,boeviki-online.net,bonestv.ru,dokonlin.online,fast-torrent.ru,filmatika.ru,filmets.cc,filmi-hd.ru,filmive-hd1080.net,filmy-onlain.net,hdfilmlenta.com,hdrezka.tv,hdrezka-ag.com,intermovis.ucoz.net,kinoblog.tv,kinoboom.su,kino-cccp.net,kinoglobe.ru,kinogo.biz,kinogo.cc,kinogo.la,kinogoby.zone,kinogovno.net,kinokrad.co,kinokrolik.ru,kinoliza.pro,kinopod.ru,kinopovtor.cc,kinoprostor.pro,kinotochka.co,kino-ussr.ru,lamafilm.club,moviexk.biz,new-kino.net,oktovid.ru,onlinelifetv.com,pb.wtf,pickfilm.ru,popcornhd.ru,posmotri-online.com,rezka.ag,rukinotv.net,ruserialy.net,serial2go.com,sherlock-tv.ru,studiohd.org,timehd.org,topfile.tj,tv-show.live,vse-chasti-kino.ru,westernfilm.ru,x-film.sbs,x-film.tech,zevka.com,zfilme-hd1.site##strong:has-text(/(С|с)мотреть|(О|о)нлайн|бесплатн|в hd|качестве|(К|к)оммент|Скоро (в|на)/)
+
+animego.org,baskino.me,bazr.ru,bigcinema-hd.club,boeviki-online.net,bonestv.ru,dokonlin.online,fast-torrent.ru,filmatika.ru,filmets.cc,filmi-hd.ru,filmive-hd1080.net,filmy-onlain.net,hdfilmlenta.com,hdrezka.tv,hdrezka-ag.com,intermovis.ucoz.net,kinoblog.tv,kinoboom.su,kino-cccp.net,kinoglobe.ru,kinogo.biz,kinogo.cc,kinogo.la,kinogoby.zone,kinogovno.net,kinokrad.co,kinokrolik.ru,kinoliza.pro,kinopod.ru,kinopovtor.cc,kinoprostor.pro,kinotochka.co,kino-ussr.ru,lamafilm.club,moviexk.biz,new-kino.net,oktovid.ru,onlinelifetv.com,pb.wtf,pickfilm.ru,popcornhd.ru,posmotri-online.com,rezka.ag,rukinotv.net,ruserialy.net,serial2go.com,sherlock-tv.ru,studiohd.org,timehd.org,topfile.tj,tv-show.live,vse-chasti-kino.ru,westernfilm.ru,x-film.sbs,x-film.tech,zevka.com,zfilme-hd1.site##.bold:has-text(/(С|с)мотреть|(О|о)нлайн|бесплатн|в hd|качестве|(К|к)оммент|Скоро (в|на)/)
+
+animego.org,baskino.me,bazr.ru,bigcinema-hd.club,boeviki-online.net,bonestv.ru,dokonlin.online,fast-torrent.ru,filmatika.ru,filmets.cc,filmi-hd.ru,filmive-hd1080.net,filmy-onlain.net,hdfilmlenta.com,hdrezka.tv,hdrezka-ag.com,intermovis.ucoz.net,kinoblog.tv,kinoboom.su,kino-cccp.net,kinoglobe.ru,kinogo.biz,kinogo.cc,kinogo.la,kinogoby.zone,kinogovno.net,kinokrad.co,kinokrolik.ru,kinoliza.pro,kinopod.ru,kinopovtor.cc,kinoprostor.pro,kinotochka.co,kino-ussr.ru,lamafilm.club,moviexk.biz,new-kino.net,oktovid.ru,onlinelifetv.com,pb.wtf,pickfilm.ru,popcornhd.ru,posmotri-online.com,rezka.ag,rukinotv.net,ruserialy.net,serial2go.com,sherlock-tv.ru,studiohd.org,timehd.org,topfile.tj,tv-show.live,vse-chasti-kino.ru,westernfilm.ru,x-film.sbs,x-film.tech,zevka.com,zfilme-hd1.site##.sub-text
+
+animego.org,baskino.me,bazr.ru,bigcinema-hd.club,boeviki-online.net,bonestv.ru,dokonlin.online,fast-torrent.ru,filmatika.ru,filmets.cc,filmi-hd.ru,filmive-hd1080.net,filmy-onlain.net,hdfilmlenta.com,hdrezka.tv,hdrezka-ag.com,intermovis.ucoz.net,kinoblog.tv,kinoboom.su,kino-cccp.net,kinoglobe.ru,kinogo.biz,kinogo.cc,kinogo.la,kinogoby.zone,kinogovno.net,kinokrad.co,kinokrolik.ru,kinoliza.pro,kinopod.ru,kinopovtor.cc,kinoprostor.pro,kinotochka.co,kino-ussr.ru,lamafilm.club,moviexk.biz,new-kino.net,oktovid.ru,onlinelifetv.com,pb.wtf,pickfilm.ru,popcornhd.ru,posmotri-online.com,rezka.ag,rukinotv.net,ruserialy.net,serial2go.com,sherlock-tv.ru,studiohd.org,timehd.org,topfile.tj,tv-show.live,vse-chasti-kino.ru,westernfilm.ru,x-film.sbs,x-film.tech,zevka.com,zfilme-hd1.site##.gOnline
+
+animego.org,baskino.me,bazr.ru,bigcinema-hd.club,boeviki-online.net,bonestv.ru,dokonlin.online,fast-torrent.ru,filmatika.ru,filmets.cc,filmi-hd.ru,filmive-hd1080.net,filmy-onlain.net,hdfilmlenta.com,hdrezka.tv,hdrezka-ag.com,intermovis.ucoz.net,kinoblog.tv,kinoboom.su,kino-cccp.net,kinoglobe.ru,kinogo.biz,kinogo.cc,kinogo.la,kinogoby.zone,kinogovno.net,kinokrad.co,kinokrolik.ru,kinoliza.pro,kinopod.ru,kinopovtor.cc,kinoprostor.pro,kinotochka.co,kino-ussr.ru,lamafilm.club,moviexk.biz,new-kino.net,oktovid.ru,onlinelifetv.com,pb.wtf,pickfilm.ru,popcornhd.ru,posmotri-online.com,rezka.ag,rukinotv.net,ruserialy.net,serial2go.com,sherlock-tv.ru,studiohd.org,timehd.org,topfile.tj,tv-show.live,vse-chasti-kino.ru,westernfilm.ru,x-film.sbs,x-film.tech,zevka.com,zfilme-hd1.site##.tOnline
+
+animego.org,baskino.me,bazr.ru,bigcinema-hd.club,boeviki-online.net,bonestv.ru,dokonlin.online,fast-torrent.ru,filmatika.ru,filmets.cc,filmi-hd.ru,filmive-hd1080.net,filmy-onlain.net,hdfilmlenta.com,hdrezka.tv,hdrezka-ag.com,intermovis.ucoz.net,kinoblog.tv,kinoboom.su,kino-cccp.net,kinoglobe.ru,kinogo.biz,kinogo.cc,kinogo.la,kinogoby.zone,kinogovno.net,kinokrad.co,kinokrolik.ru,kinoliza.pro,kinopod.ru,kinopovtor.cc,kinoprostor.pro,kinotochka.co,kino-ussr.ru,lamafilm.club,moviexk.biz,new-kino.net,oktovid.ru,onlinelifetv.com,pb.wtf,pickfilm.ru,popcornhd.ru,posmotri-online.com,rezka.ag,rukinotv.net,ruserialy.net,serial2go.com,sherlock-tv.ru,studiohd.org,timehd.org,topfile.tj,tv-show.live,vse-chasti-kino.ru,westernfilm.ru,x-film.sbs,x-film.tech,zevka.com,zfilme-hd1.site##.uOnline
+
+animego.org,baskino.me,bazr.ru,bigcinema-hd.club,boeviki-online.net,bonestv.ru,dokonlin.online,fast-torrent.ru,filmatika.ru,filmets.cc,filmi-hd.ru,filmive-hd1080.net,filmy-onlain.net,hdfilmlenta.com,hdrezka.tv,hdrezka-ag.com,intermovis.ucoz.net,kinoblog.tv,kinoboom.su,kino-cccp.net,kinoglobe.ru,kinogo.biz,kinogo.cc,kinogo.la,kinogoby.zone,kinogovno.net,kinokrad.co,kinokrolik.ru,kinoliza.pro,kinopod.ru,kinopovtor.cc,kinoprostor.pro,kinotochka.co,kino-ussr.ru,lamafilm.club,moviexk.biz,new-kino.net,oktovid.ru,onlinelifetv.com,pb.wtf,pickfilm.ru,popcornhd.ru,posmotri-online.com,rezka.ag,rukinotv.net,ruserialy.net,serial2go.com,sherlock-tv.ru,studiohd.org,timehd.org,topfile.tj,tv-show.live,vse-chasti-kino.ru,westernfilm.ru,x-film.sbs,x-film.tech,zevka.com,zfilme-hd1.site##.dateicon
+
+animego.org,baskino.me,bazr.ru,bigcinema-hd.club,boeviki-online.net,bonestv.ru,dokonlin.online,fast-torrent.ru,filmatika.ru,filmets.cc,filmi-hd.ru,filmive-hd1080.net,filmy-onlain.net,hdfilmlenta.com,hdrezka.tv,hdrezka-ag.com,intermovis.ucoz.net,kinoblog.tv,kinoboom.su,kino-cccp.net,kinoglobe.ru,kinogo.biz,kinogo.cc,kinogo.la,kinogoby.zone,kinogovno.net,kinokrad.co,kinokrolik.ru,kinoliza.pro,kinopod.ru,kinopovtor.cc,kinoprostor.pro,kinotochka.co,kino-ussr.ru,lamafilm.club,moviexk.biz,new-kino.net,oktovid.ru,onlinelifetv.com,pb.wtf,pickfilm.ru,popcornhd.ru,posmotri-online.com,rezka.ag,rukinotv.net,ruserialy.net,serial2go.com,sherlock-tv.ru,studiohd.org,timehd.org,topfile.tj,tv-show.live,vse-chasti-kino.ru,westernfilm.ru,x-film.sbs,x-film.tech,zevka.com,zfilme-hd1.site##.koiialla
+
+
+
+!! paid sites
+
+! remove them from search (see list below)
+                            yandex.*##.serp-item:has(b:has-text(/(^|/|\.)(24h.tv|afisha.ru|afisha.tut.by|allocine.fr|best-trailer.ru|ctc.ru|culture.ru|disney.ru|domashniy.ru|film.ru|filmhd.to|ivi.ru|ivi.tv|1tv.ru|justwatch.com|kinoafisha.info|kinofilms.ua|kinohod.ru|(kino|my).mail.ru|kino-o-voine.(cc|pro)|kinopoisk.ru|kinorium.com|kino-teatr.ru|kino-teatr.ua|kinotut.tv|kinowinx.ru|megafon.tv|megogo.(ru|net)|more.tv|videomore.ru|my-hit.org|myshows.me|okko.(tv|sport)|popcorntime.co|popcorntime-online.ch|premier.one|rutube.ru|smotreshka.(info|tv)|start.ru|sweet.tv|tnt-online.ru|tricolor.tv|tvigle.ru|tvzavr.ru|utorrentfilmi.ru|vsetam.net|wink.rt.ru)/i))
+
+                                   www.google.*##div.g:has-text(/(^|/|\.)(24h.tv|afisha.ru|afisha.tut.by|allocine.fr|best-trailer.ru|ctc.ru|culture.ru|disney.ru|domashniy.ru|film.ru|filmhd.to|ivi.ru|ivi.tv|1tv.ru|justwatch.com|kinoafisha.info|kinofilms.ua|kinohod.ru|(kino|my).mail.ru|kino-o-voine.(cc|pro)|kinopoisk.ru|kinorium.com|kino-teatr.ru|kino-teatr.ua|kinotut.tv|kinowinx.ru|megafon.tv|megogo.(ru|net)|more.tv|videomore.ru|my-hit.org|myshows.me|okko.(tv|sport)|popcorntime.co|popcorntime-online.ch|premier.one|rutube.ru|smotreshka.(info|tv)|start.ru|sweet.tv|tnt-online.ru|tricolor.tv|tvigle.ru|tvzavr.ru|utorrentfilmi.ru|vsetam.net|wink.rt.ru)/i)
+
+                         duckduckgo.com##.result__body:has-text(/(^|/|\.)(24h.tv|afisha.ru|afisha.tut.by|allocine.fr|best-trailer.ru|ctc.ru|culture.ru|disney.ru|domashniy.ru|film.ru|filmhd.to|ivi.ru|ivi.tv|1tv.ru|justwatch.com|kinoafisha.info|kinofilms.ua|kinohod.ru|(kino|my).mail.ru|kino-o-voine.(cc|pro)|kinopoisk.ru|kinorium.com|kino-teatr.ru|kino-teatr.ua|kinotut.tv|kinowinx.ru|megafon.tv|megogo.(ru|net)|more.tv|videomore.ru|my-hit.org|myshows.me|okko.(tv|sport)|popcorntime.co|popcorntime-online.ch|premier.one|rutube.ru|smotreshka.(info|tv)|start.ru|sweet.tv|tnt-online.ru|tricolor.tv|tvigle.ru|tvzavr.ru|utorrentfilmi.ru|vsetam.net|wink.rt.ru)/i)
+duckduckgo.com##.result__body:has(.result__url__domain:has-text(/(^|/|\.)(24h.tv|afisha.ru|afisha.tut.by|allocine.fr|best-trailer.ru|ctc.ru|culture.ru|disney.ru|domashniy.ru|film.ru|filmhd.to|ivi.ru|ivi.tv|1tv.ru|justwatch.com|kinoafisha.info|kinofilms.ua|kinohod.ru|(kino|my).mail.ru|kino-o-voine.(cc|pro)|kinopoisk.ru|kinorium.com|kino-teatr.ru|kino-teatr.ua|kinotut.tv|kinowinx.ru|megafon.tv|megogo.(ru|net)|more.tv|videomore.ru|my-hit.org|myshows.me|okko.(tv|sport)|popcorntime.co|popcorntime-online.ch|premier.one|rutube.ru|smotreshka.(info|tv)|start.ru|sweet.tv|tnt-online.ru|tricolor.tv|tvigle.ru|tvzavr.ru|utorrentfilmi.ru|vsetam.net|wink.rt.ru)$/i))
+        duckduckgo.com##.result__body:has(.result__url:has-text(/(^|/|\.)(24h.tv|afisha.ru|afisha.tut.by|allocine.fr|best-trailer.ru|ctc.ru|culture.ru|disney.ru|domashniy.ru|film.ru|filmhd.to|ivi.ru|ivi.tv|1tv.ru|justwatch.com|kinoafisha.info|kinofilms.ua|kinohod.ru|(kino|my).mail.ru|kino-o-voine.(cc|pro)|kinopoisk.ru|kinorium.com|kino-teatr.ru|kino-teatr.ua|kinotut.tv|kinowinx.ru|megafon.tv|megogo.(ru|net)|more.tv|videomore.ru|my-hit.org|myshows.me|okko.(tv|sport)|popcorntime.co|popcorntime-online.ch|premier.one|rutube.ru|smotreshka.(info|tv)|start.ru|sweet.tv|tnt-online.ru|tricolor.tv|tvigle.ru|tvzavr.ru|utorrentfilmi.ru|vsetam.net|wink.rt.ru)/i))
+                      duckduckgo.com##.result:has(span:has-text(/(^|/|\.)(24h.tv|afisha.ru|afisha.tut.by|allocine.fr|best-trailer.ru|ctc.ru|culture.ru|disney.ru|domashniy.ru|film.ru|filmhd.to|ivi.ru|ivi.tv|1tv.ru|justwatch.com|kinoafisha.info|kinofilms.ua|kinohod.ru|(kino|my).mail.ru|kino-o-voine.(cc|pro)|kinopoisk.ru|kinorium.com|kino-teatr.ru|kino-teatr.ua|kinotut.tv|kinowinx.ru|megafon.tv|megogo.(ru|net)|more.tv|videomore.ru|my-hit.org|myshows.me|okko.(tv|sport)|popcorntime.co|popcorntime-online.ch|premier.one|rutube.ru|smotreshka.(info|tv)|start.ru|sweet.tv|tnt-online.ru|tricolor.tv|tvigle.ru|tvzavr.ru|utorrentfilmi.ru|vsetam.net|wink.rt.ru)/i))
+                           duckduckgo.com##li:has(span:has-text(/(^|/|\.)(24h.tv|afisha.ru|afisha.tut.by|allocine.fr|best-trailer.ru|ctc.ru|culture.ru|disney.ru|domashniy.ru|film.ru|filmhd.to|ivi.ru|ivi.tv|1tv.ru|justwatch.com|kinoafisha.info|kinofilms.ua|kinohod.ru|(kino|my).mail.ru|kino-o-voine.(cc|pro)|kinopoisk.ru|kinorium.com|kino-teatr.ru|kino-teatr.ua|kinotut.tv|kinowinx.ru|megafon.tv|megogo.(ru|net)|more.tv|videomore.ru|my-hit.org|myshows.me|okko.(tv|sport)|popcorntime.co|popcorntime-online.ch|premier.one|rutube.ru|smotreshka.(info|tv)|start.ru|sweet.tv|tnt-online.ru|tricolor.tv|tvigle.ru|tvzavr.ru|utorrentfilmi.ru|vsetam.net|wink.rt.ru)/i))
+     duckduckgo.com##div>article[data-testid="result"]:has-text(/(^|/|\.)(24h.tv|afisha.ru|afisha.tut.by|allocine.fr|best-trailer.ru|ctc.ru|culture.ru|disney.ru|domashniy.ru|film.ru|filmhd.to|ivi.ru|ivi.tv|1tv.ru|justwatch.com|kinoafisha.info|kinofilms.ua|kinohod.ru|(kino|my).mail.ru|kino-o-voine.(cc|pro)|kinopoisk.ru|kinorium.com|kino-teatr.ru|kino-teatr.ua|kinotut.tv|kinowinx.ru|megafon.tv|megogo.(ru|net)|more.tv|videomore.ru|my-hit.org|myshows.me|okko.(tv|sport)|popcorntime.co|popcorntime-online.ch|premier.one|rutube.ru|smotreshka.(info|tv)|start.ru|sweet.tv|tnt-online.ru|tricolor.tv|tvigle.ru|tvzavr.ru|utorrentfilmi.ru|vsetam.net|wink.rt.ru)/i)
+
+
+!24h.tv  # paid movies site  # https://github.com/easylist/ruadlist/issues/168
+
+!afisha.ru  # платный плеер Okko, причём почему-то okko.sport
+
+!||afisha.tut.by/online-cinema/  # ссылка на tvigle.tv
+
+!allocine.fr  # paid non-working French site  # from Adguard: smart.allocine.fr
+
+!best-trailer.ru  # только трейлеры, без фильмов
+
+!ctc.ru  # "Оформить подписку", ага. До свидания.
+
+!culture.ru  # по подписке
+
+!disney.ru
+
+!domashniy.ru  # нет просмотра
+
+film.ru  # paid movies site  # ad xhrs  # paid movies (megogo)  # 3p?
+    ! paid links
+! hochuvkino
+film.ru##.hochuvkino
+film.ru##div > [href="https://hochuvkino.ru"]
+film.ru##[href="/online"]
+! okko
+film.ru###okko
+! is in Ru AdList
+film.ru##a[href*="okko."]
+! wink
+film.ru##.wink
+    ! banners
+film.ru###bseller_right_top
+film.ru###bseller_right_bottom
+    ! other
+||film.ru/*/adult.png
+film.ru##.toolbar
+film.ru##.social-likes__button
+
+!filmhd.to  # не работает
+
+ivi.ru$3p  # paid movies site  # update: not only  # also see: https://pikabu.ru/story/promokod_ot_pyaterochki_dlya_prosmotra_ivi_razobrali_dlya_vas_vse_khitryie_usloviya_aktsii_i_pravil_polzovaniya_ivi_9823724
+ivi.tv$3p
+! with || for subdomains
+||ivi.ru/event/  # from Adguard: ||rocket.ivi.ru/event/
+||ivi.ru/logger/  # is in Adguard: ||l.ivi.ru/logger/
+||ivi.ru/mobileapi/video/watchtime/
+!||ivi.ru/mobileapi/billing/
+||ivi.ru/mobileapi/billing/v1/purchase/
+||ivi.ru/ajax/frontlog/
+||ivi.ru/pausebanner_mts.jpg
+||ivi.ru/track  # is in Adguard: ||g.ivi.ru/track
+||tivision.ru/images/informer/$image
+ivi.ru##.service-notification
+
+!justwatch.com  # "supscription"
+
+kino.1tv.ru  # "по подписке"  # also blocked 1tv.ru as fakenews
+
+!kinoafisha.info  # ссылка на okko.tv
+
+!kinohod.ru  # платно
+
+!kinopoisk.ru  # хорошие там были рецензии, но эффективные менеджеры прикрутили монетизацию
+
+!kinorium.com  # посмотреть нельзя
+
+!kino-teatr.ru  # ссылка на okko.tv
+
+!kino-teatr.ua  # плеер от заблокированной hbplatform.com
+
+!kinotut.tv  # fake, ads
+
+!kinowinx.ru  # this site behaves very strange. There are many others, without such errors.
+
+!megafon.tv  # paid
+
+!megogo.ru  # paid movies site
+!megogo.net  # paid movies site
+
+! videomore.ru now is more.tv
+! site with DRM video. Block completely this site and embedded player ftom it
+more.tv$important  # also see:  https://pikabu.ru/story/yurist_chitaet_dogovoryi_moretv_9793926
+!videomore.ru$important
+! before that
+!videomore.ru##.channels-line
+!videomore.ru##.video-help-link
+!videomore.ru##.widget_branding-.channels
+!videomore.ru##.age-label
+
+!my-hit.org  # не работает. Даже с разблокированными скриптами. Да и ладно.
+! Update 2022-09: error 504
+
+!okko.tv  # paid movies site
+!okko.sport
+
+! fake movies site, and fake comments there
+!popcorntime.co
+
+! it wants to install some extention to browser
+!popcorntime-online.ch
+
+! фильмы? серьезно? там чтобы ролики-то посмотреть, опросы по рекламе замучаешься заполнять
+!rutube.ru
+
+! start.ru now is not free.
+!start.ru  # getblogger.ru - already blocked as wapclick paid tv
+
+!sweet.tv  # платно
+
+!tnt-online.ru  # not free
+
+!tricolor.tv  # not free
+
+! просмотр стал платным. Block it.
+!tvigle.ru
+!!tvigle.ru###body:style(background-image:none !important)
+!tvigle.ru##.main-description.block-description
+!!tvigle.ru##.header:style(position:static !important)
+!tvigle.ru##.layout-wrapper:style(margin-top:0px !important)
+!tvigle.ru##.poster-hover
+!tvigle.ru##.gallery-fullwidth
+!tvigle.ru##.subscribe-payment
+!tvigle.ru##h2:has-text(рекомендует)
+!tvigle.ru##.video-rating
+!tvigle.ru##.paid-content__price
+!tvigle.ru##.popup__subscribe
+!tvigle.ru##.popup-layout
+
+! tvzavr.ru - просмотр стал платным. Block it.
+!tvzavr.ru
+!!tvzavr.ru##body:style(background-image:none !important)
+!!tvzavr.ru##.footer__adult
+!!tvzavr.ru##.header:style(position:static !important)
+!!tvzavr.ru##.seo-info
+!!tvzavr.ru##.catalog__seo
+!tvzavr.ru##.filter__poster
+!mtc.tvzavr.ru
+
+! https://forums.lanik.us/viewtopic.php?f=102&t=43963
+!utorrentfilmi.ru
+
+!vsetam.net  # not free
+
+!wink.rt.ru  # paid movies site
+
+!yandex.ru/efir?
+
+
+
+!! domains
+! (Individual rules for those video sites)
+
+! kinocok.club is now 123serial.com
+!||123serial.com/img/top_bg.png$image
+!||123serial.com/img/header21-.jpg$image
+!123serial.com###head-login
+123serial.com###header
+123serial.com##.classname
+123serial.com##.mat-info
+123serial.com##div.block:has-text(Комментарии)
+||123serial.com/logo123.png
+
+! former 11serial.club
+! Update 2022-09: parked
+!1serial.club##.folders
+!1serial.club##.rate-minus
+!1serial.club##.rate-plus
+!1serial.club##.rate-circle
+
+! push script
+! now it is some Korean site
+!push.kinogo-2018.club
+
+2sub.tv##.bottom-wrap
+!2sub.tv##.foot
+2sub.tv##.clearfix.full-text > fieldset
+2sub.tv##.logo-box
+2sub.tv##.speedbar-wrap
+2sub.tv##.full-compl
+2sub.tv##.full-info
+2sub.tv##.fx-row.main-menu > li:has-text(/Balance|VIP|Affiliate|FeedBack/)
+2sub.tv##.side-title
+2sub.tv##.short-rate
+2sub.tv##.short-time
+2sub.tv##.short-mask
+2sub.tv##.switcher
+
+33bukvi.ru##.side > div.to-mob
+33bukvi.ru##.tabs-sel > span:has-text(Трейлер)
+33bukvi.ru##.fsubtitle
+!33bukvi.ru##div.side-box:has-text(Соц. сети)
+
+! alphacinema.net is offline
+!||alphacinema.net/themes/davos/public/images/ge/top-bg-new6.png
+!alphacinema.net##.unit-rating
+!alphacinema.net###watchLater
+
+60-fps.org##.div_avert
+60-fps.org##div.small > div:has-text(in this forum)
+60-fps.org##[href="https://60-fps.org/donatevip.php"]
+
+6lordserials.xyz##.fsubtitle
+
+! yes, a movies site
+! seo
+adrestyt.ru##.hello-block
+
+agenti-shit.com##.navcontrols
+agenti-shit.com##.b-post-favorite
+
+! that's from Ru AdList (todo: is it really needed?)
+@@||all-episodes.tv^$generichide,badfilter
+@@||all-episodes.tv/retlplayer/downretl.js$script,1p  # from uBlock filters
+! seo
+all-episodes.one###bottom-a
+
+||anistar.org/adblock/
+anistar.org##.img-footer
+
+bazr.ru##.more_btn
+bazr.ru##.ratingblock
+bazr.ru##.unit-rating
+
+! joyshow.info => bigcinema.tv => empty
+!bigcinema.tv##.guest
+!bigcinema.tv##.voting
+!bigcinema.tv##.watch
+!bigcinema.tv##.topic_left_clum > noindex
+
+! Update 2022-09: it is xxx now, not movies
+!bigcinemahd.net##.navigation
+
+! kinoangel.net => bohd.net => ad redirect
+!bohd.net##.bg:style(background-image:none !important)
+!bohd.net##.head-r
+!bohd.net###category-description
+!bohd.net##.ratemain
+!bohd.net##.favorite
+!bohd.net##.adv_kod_frame
+!bohd.net##.rating-buttons
+!bohd.net###right
+!bohd.net##.submiterror
+!bohd.net##.mob-text
+!bohd.net##.uComForm
+
+bonestv.ru##.usrDotted
+! bonestv.ru$inline-script - don`t
+! ||bonestv.ru/uppod.js - don`t
+
+! cinemafilms.org now bubabu.biz
+!bubabu.biz##body:style(background-image:none !important)
+!||bubabu.biz/templates/Default/images/bgr.jpg
+!bubabu.biz##.login
+!bubabu.biz##[id^=bn_]
+bubabu.biz###content > p
+bubabu.biz###lg-dialog > ul
+bubabu.biz##.poster_on_4
+bubabu.biz##.poster_on_5
+bubabu.biz##.trailers2
+bubabu.biz###content > div:has-text(/Выбирайте|Фильмы онлайн/)
+bubabu.biz##.user_block:style(top:0px !important; padding-bottom:0px !important)
+bubabu.biz##.header > .container:style(height:60px !important)
+
+! cinema-24.tv - now cin-24.com
+! Update 2022-09: parked
+!!cinema-24.tv##body:style(background-image:none !important)
+!!||cinema-24.tv/templates/cinema-24/images/background/fon1.jpg$image
+!!cinema-24.tv##.rating
+!cin-24.com##.wrapp > div:nth-of-type(4) > div > div:has-text(Зарегистрируйтесь)
+!! ? ||cinema-24.tv/uploads/cinema-24-logo.png
+!cin-24.com##.advice_box
+!cin-24.com##.nizuha
+!cin-24.com##.zikkurat
+!||cin-24.com/uploads/kategorii/$image
+!cin-24.com##.todayfilms
+!||cin-24.com/templates/cinema-24/images/background/fon1.jpg
+!||cin-24.com/templates/cinema-24/dleimages/play_3_white.png
+
+! don't remove div
+cinema-24.net##div.bon  
+cinema-24.net##.fialka
+
+! cinema-hd.club is offline
+!cinema-hd.club###mob-spoiler
+!cinema-hd.club###sidebar > div:has-text(в закладки)
+!cinema-hd.club##.full-title
+!cinema-hd.club##.entry-title-h2
+!cinema-hd.club##.movie-page.content-inner > div.text-center
+!cinema-hd.club##.zagolovok2
+!cinema-hd.club##[href^="/index/ozhidaemye_filmy"]
+!cinema-hd.club##[href="/index/1"]
+!cinema-hd.club##.movie-options > li:has-text(/Смотреть.*онлайн/)
+!cinema-hd.club##.com-order-block
+
+!cinemaxx.tv##body:style(background-image:none !important)
+!cinemaxx.tv###footerCenter
+!cinemaxx.tv###footerRight
+!cinemaxx.tv###footerLeft
+!cinemaxx.tv###footer
+!cinemaxx.tv###footerContent
+cinemaxx.tv###header
+cinemaxx.tv###columnRight > div.aside-block:has-text(КОММЕНТАТОР)
+cinemaxx.tv###vote-layer
+||cinemaxx.tv/templates/VadaboomEffekt/images/off/led_blue_on.png$image
+cinemaxx.tv##.anim
+!cinemaxx.tv##.rollover
+||cinemaxx.tv/uploads/fotos/$image
+cinemaxx.tv###navigationTop:style(top:0px !important)
+cinemaxx.tv###middler:style(margin-bottom:0px !important)
+cinemaxx.tv###previewPanel:style(top:60px !important)
+cinemaxx.tv###topSpacer:style(height:100px !important)
+cinemaxx.tv##.short_news_card_main_table-dotted-border
+cinemaxx.tv##.center.inside
+cinemaxx.tv##div.aside-block:has-text(/КАЛЕНДАРЬ|ОПРОС/)
+||cinemaxx.tv/engine/classes/tagcloud/
+
+damnserial.ru##.header_head
+damnserial.ru##.header:style(height:auto !important)
+||damnserial.ru/tpl/tpl/img/top.png
+
+||datalock.ru/cdn/oblojka/$image
+datalock.ru/show.php
+||datalock.ru/uppod/*
+
+! Uz cinema site
+daxshat.tv###slider
+
+! dochronika.ru is offline
+!!||dochronika.ru/.s/$image
+!dochronika.ru##body > table > tbody > tr > td:nth-of-type(2) > table:nth-of-type(1)
+!dochronika.ru##td:nth-of-type(2) > table:nth-of-type(2)
+!dochronika.ru##td:nth-of-type(2) > table:nth-of-type(4)
+
+dokonlin.ru###mod_feedback_link
+
+! Update 2022-09: nginx error
+!dokonline.com##.himage
+!dokonline.com##.htmenu
+!dokonline.com###toolbar
+!dokonline.com##.argcoms
+!dokonline.com##.argviews
+!!dokonline.com##.footbox
+!dokonline.com##.pheading
+!dokonline.com###news-arch
+!dokonline.com##div.block:has-text(/Погода|Счетчики|Реклама|Tags|Календарь/)
+
+||doramy.club/wp-content/uploads/img/vk$image
+doramy.club##.header-m::before
+doramy.club##.sid-blok
+doramy.club##.podveska:style(position:static !important)
+doramy.club##.rt-bl
+doramy.club##.otzv
+
+! dostfilms.cc is now dostfilms.biz
+! dostfilms.biz is now dostfilms.co
+dostfilms.co##.centralniy
+dostfilms.co##.movierow__info
+dostfilms.co##.movierow__button
+!dostfilms.biz##.header:style(margin-top:0px !important)
+dostfilms.co##.logo-row
+dostfilms.co##noindex
+dostfilms.co##.zagolovok
+dostfilms.co##.description
+
+! Now parked
+!duralenta.com##.createbtn
+
+! ekranka.org is now ad redirect
+!ekranka.org###pageTitle
+!! ? ||ekranka.org/sys/inc/des/ekranka-logo.png
+!ekranka.org###mainBlock
+!ekranka.org##.pageBodyInner > p
+!!ekranka.org###mainKinoNcomments
+!ekranka.org###pageCopyright
+
+! now closed
+!elithd.top##.current
+
+english-films.com###mainSlider
+english-films.com##.item-eye
+english-films.com##.poster-text
+english-films.com##.sidebar > .block-content
+english-films.com##div.orangeBlock
+english-films.com##div.saladBlock.block:has-text(Заговори на)
+english-films.com##div.saladBlock:has-text(Вопросы по работе сайта)
+english-films.com###mc-link
+english-films.com##.active.tabs-content > p
+english-films.com##.wrp_baner
+english-films.com##.owl-prev
+english-films.com##.owl-next
+english-films.com##.headerSearch-title
+english-films.com##.comercical > .text-center
+english-films.com##.wrapPaymentCommercial:has-text(получаете доступ к платному плееру)
+english-films.com##.yellowBtn.btn
+english-films.com##.news-watch
+english-films.com##.tabs__caption > li:has-text(/English-Films плеер|Трейлер/)
+
+english-films.online##.head-sticky:style(position:static !important)
+english-films.online##.wrap:style(padding-top:0px !important)
+
+! yes, h. todo: looks strange, review
+!h$domain=enota.club,image
+enota.club##.message-avatar
+enota.club##.react_total_bar
+
+epicplus.online  # paid?
+! earlier:
+epicplus.online###adBlock
+epicplus.online##.h-full:has([class*=MainSlider_swiper_container])
+
+ereko.ru##.ream_more
+ereko.ru##p
+ereko.ru##.nextprev
+ereko.ru##button:has-text(Трейлер)
+!ereko.ru##.dateicon
+
+! serial-serial.ru => eserial2.ru => error
+!||eserial2.ru/load.jpg
+!eserial2.ru##.col-mov-left
+!eserial2.ru##.under_img
+
+! fanserials.market is now fanserial.net
+fanserial.net###bg
+fanserial.net##.link-agree
+
+fantasticfilm.ru###MrScrollUp
+fantasticfilm.ru##.slider
+fantasticfilm.ru##.informer
+fantasticfilm.ru##.bg-cont > div > table
+fantasticfilm.ru###rating
+fantasticfilm.ru###like
+fantasticfilm.ru##.poll_niz
+fantasticfilm.ru##div.block:has-text(/Кают-компания|Мы в VK|Наш опрос|Профиль|Статистика/)
+fantasticfilm.ru###bok
+||fantasticfilm.ru/others_images/*.gif$image
+fantasticfilm.ru##.btfrm
+||fantasticfilm.ru/others_images/fantastica_onlajn-min.jpg$image
+
+fast-torrent.ru##.ic-sport_tv
+fast-torrent.ru##.favorite_controll
+fast-torrent.ru###collection_wrap
+fast-torrent.ru##.widget-header:has-text(в коллекциях)
+
+! fhd.watch is offline
+!fhd.watch##.favorites
+!fhd.watch##.sort
+!fhd.watch##.rating-info
+!fhd.watch##.button6
+!fhd.watch##.wrapper:style(padding-top:0px !important)
+!fhd.watch##body:style(padding-top:110px !important)
+!fhd.watch##.text_filmsss
+!fhd.watch##.toop
+!fhd.watch##.gif
+!fhd.watch###topper:style(position:static !important)
+!fhd.watch##.left_blockb
+
+! old flash pleer. Block it.
+! update: sometimes it has other pleers
+! Update 2022-09: now ad redirect
+!filin.tv
+!filin.tv##a[href="http://www.adobe.com/go/getflashplayer"]
+
+film-1080.online/*/kino.png
+film-1080.online/*/logo1.png
+! film-1080.net is now film-1080.online
+film-1080.online##p
+
+filmatika.ru##p > strong
+filmatika.ru##span > strong
+
+! filmets.net is now filmets.cc
+filmets.cc##.info_text
+filmets.cc##.err_fq
+
+!filmi-hd.ru##.comEnt
+filmi-hd.ru##.owl-carousel
+filmi-hd.ru###Login
+filmi-hd.ru##.second-container
+filmi-hd.ru##.first-container
+filmi-hd.ru##.eText > center
+!filmi-hd.ru##.com-order-block
+filmi-hd.ru##center > .none
+filmi-hd.ru##.bg_fotter
+
+filmi-torrents.com##.need-reg.k-fav
+filmi-torrents.com##.sectseo
+
+! filmive-hd.net => filmive-hd1080.net
+filmive-hd1080.net##.link_btn
+
+filmix.ac,filmix.cc##.aside-comments
+filmix.ac,filmix.cc##.android-telegram-main
+filmix.ac,filmix.cc###top
+filmix.ac,filmix.cc##.for-4k
+filmix.ac,filmix.cc##.icon-play.watch
+
+! paid online-tv site
+filmon.com##.subscribe-annotation
+||filmon.com/*/watch-hd-without-ads.png
+
+filmonlayn.com##.foot
+filmonlayn.com##.mb-online
+filmonlayn.com##.comm-two
+
+filmshd.top##.smart-text
+
+filmshd1080.net##div.need-reg
+
+! filmshd.club is now filmshd.fun
+||filmshd.fun/newseries.jpg
+
+film-smile.ru##header
+film-smile.ru##.black-wrapper
+film-smile.ru##aside
+film-smile.ru###postFormContent
+film-smile.ru##footer
+film-smile.ru###rel
+film-smile.ru##table:nth-of-type(2)
+film-smile.ru##.e-author
+film-smile.ru##.e-comments
+film-smile.ru##.rate-stars-wrapper
+film-smile.ru##.e-reads
+film-smile.ru##.e-loads
+
+! kotofilm.net => films-smotret.online => ad redirect
+!!kotofilm.net##body:style(background-image:none !important)
+!!kotofilm.net##.footer
+!!kotofilm.net##.rating
+!!kotofilm.net##[id^=bn_]
+!films-smotret.online##.wrap-center:style(margin-top:0px !important)
+!films-smotret.online##.vrate
+!films-smotret.online##.descript
+!!kotofilm.net##.col-right > div.side-box:has-text(комментарии)
+!!kotofilm.net##.fx-first.col-left > div.side-box:has-text(Скоро в )
+!films-smotret.online##.btn-fav
+!!kotofilm.net##.foot-play
+!!kotofilm.net###dle-comments-form
+!films-smotret.online##.overhang
+
+filmstorrent.ru##.lcomm
+
+filmy-onlain.net##.user_block
+filmy-onlain.net##div.trailers2
+filmy-onlain.net##.description
+filmy-onlain.net##.description-tab
+!filmy-onlain.net##header:style(height:auto !important)
+filmy-onlain.net##.container:style(height:auto !important)
+filmy-onlain.net##.poster_on
+filmy-onlain.net###ratingbar-containter
+
+! closed
+!fimlru.ru###gtb
+!fimlru.ru##p
+!fimlru.ru###stars
+!fimlru.ru##.help
+!fimlru.ru##.insert-code-button
+!!fimlru.ru##.complaint_button
+
+!filmshd.club##.desc-text
+filmshd.club##div.fctrl
+filmshd.club##.smart-text
+
+! firsthd.ru => firsthd1080.ru => parked
+!firsthd1080.ru##p
+!firsthd1080.ru##.vvvvv
+
+! fryd.ru is offline
+!fryd.ru##.mdl-mega-footer--bottom-section
+!fryd.ru##.overflow-h.h-100.content-grid > p
+!fryd.ru##.overflow-h.h-100.content-grid > .color-main.font-w-300
+
+! fullhd1080.net is offline
+! fullhd1080.net##body > table > tbody > tr > td:nth-of-type(1) > .eBlocks1
+! fullhd1080.net##body > .eBlocks1
+! fullhd1080.net##center > .TopLine
+
+fmovies.wtf##.poster::before
+fmovies.wtf##.poster::after
+
+! good-zona.online - now spam
+!good-zona.online##.module-publ > p
+!!good-zona.online##div.sidebox:nth-of-type(1)
+!!good-zona.online##.u-star-rating-20
+!good-zona.online###content > p
+!||good-zona.online/gif/$image
+!good-zona.online##.uComment
+!!good-zona.online##div.sidebox:has-text(/Статистика|Правообладателям/)
+!good-zona.online##.eText > div:has-text(Ctrl+D)
+!!good-zona.online##.commReg
+
+! now closed
+!gotofilms.ru##.dvd-header
+
+||grimm-serial.ru/*/bgs.jpg
+
+! hd720p.net => hd720p.xyz => parked
+!!||hd720p.xyz/*/plus_fav.gif
+!!hd720p.net##.koiialla
+!hd720p.xyz##.icons3
+!!hd720p.xyz##.skots
+
+! hdfilms.zone is offline
+!hdfilms.zone###header
+!!hdfilms.zone##p
+!hdfilms.zone##.owl-wrapper
+!hdfilms.zone###subheader
+!hdfilms.zone##div:nth-of-type(3) > p
+!!hdfilms.zone##.commTable
+
+harry-potter-lordfilm.com###BGImg
+
+hdfilmlenta.com##.error-block
+hdfilmlenta.com/*/favicon.ico
+
+! hdkino.vip is offline
+!hdkino.vip##.pws_tabs_controll > li:has-text(Трейлер)
+!hdkino.vip##div.more-relevance-film
+
+! hdkinomir.cc is offline
+! hdkinomir.com is offline
+!!hdkinomir.com##body:style(background-image:none !important)
+!!hdkinomir.com##.copir
+!! ? ||hdkinomir.com/templates/prokino/images/post-header.jpg$image
+!hdkinomir.com##.menu:style(margin-top:0px !important)
+
+! hdkinoteatr.net - плеер блокирован у провайдеров
+! hdkinoteatr.net now is hdkinoteatr2.net
+hdkinoteatr.net##.zc-embed
+hdkinoteatr.net###intro-cont
+hdkinoteatr.net##[href="/"]
+
+! hdlava.com is offline
+! hdlava.net is offline
+! hdlava.com##.info
+
+! kinoup.org => hdkinoup.online => closed
+!!||kinoup.org/templates/kinoup/images/fon.jpg
+!!kinoup.org##.footer
+!!kinoup.org##.fa-play.fa
+!hdkinoup.online##.dop-text
+!!kinoup.org##div.side-box:has-text(Скоро на )
+!!kinoup.org###dle-comments-form
+!!kinoup.org###full-comms
+!hdkinoup.online##.m-age
+!hdkinoup.online##.new-rating
+!hdkinoup.online##.to-rate
+
+!hdpopcorns.online  # fake video site. Transferred to hosts.
+
+hdreactor.club###footer-vesna2
+||hdreactor.club/templates/tv7.png
+||hdreactor.club/templates/uhd.png
+hdreactor.net###footer-vesna2
+||hdreactor.net/templates/tv7.png
+||hdreactor.net/templates/uhd.png
+
+! hdrezka.ag now is rezka.ag
+! hdrezka.me is offline
+! hdrezka.nl is offline
+!
+||hdrezka.ac/i/hdrezka_premium_top_ru.jpg
+    ! expand [valuable] spoilers in comments
+hdrezka.tv,hdrezka-ag.com,hd-rezkaag5.site,hdrezka.website,rezka.ag##div.text_spoiler:style(display:initial !important)
+hdrezka.tv,hdrezka-ag.com,hd-rezkaag5.site,hdrezka.website,rezka.ag##div.title_spoiler
+    ! other
+hdrezka.tv,hdrezka-ag.com,hd-rezkaag5.site,hdrezka.website,rezka.ag##.b-sidelinks_holder
+hdrezka.tv,hdrezka-ag.com,hd-rezkaag5.site,hdrezka.website,rezka.ag##.b-post__rating
+hdrezka.tv,hdrezka-ag.com,hd-rezkaag5.site,hdrezka.website,rezka.ag##.b-post__rating_table
+hdrezka.tv,hdrezka-ag.com,hd-rezkaag5.site,hdrezka.website,rezka.ag##.b-post__support_holder
+!hdrezka.nl##.add-favorite-un
+hdrezka.tv,hdrezka-ag.com,hd-rezkaag5.site,hdrezka.website,rezka.ag##.b-post__mixedtext
+!||hdrezka.nl/templates/hdrezka/images/post-attention.png
+hdrezka.tv,hdrezka-ag.com,hd-rezkaag5.site,hdrezka.website,rezka.ag##.b-post__lastepisodeout
+hdrezka.tv,hdrezka-ag.com,hd-rezkaag5.site,hdrezka.website,rezka.ag##.b-tracker__main__announce
+hdrezka.tv,hdrezka-ag.com,hd-rezkaag5.site,hdrezka.website,rezka.ag##.b-tophead__register
+hdrezka.tv,hdrezka-ag.com,hd-rezkaag5.site,hdrezka.website,rezka.ag##.b-tophead
+hdrezka.tv,hdrezka-ag.com,hd-rezkaag5.site,hdrezka.website,rezka.ag##.b-post__go_status
+hdrezka.tv,hdrezka-ag.com,hd-rezkaag5.site,hdrezka.website,rezka.ag##.b-post__status_wrapper
+hdrezka.tv,hdrezka-ag.com,hd-rezkaag5.site,hdrezka.website,rezka.ag##.b-post__lastepisodeout
+hdrezka.tv,hdrezka-ag.com,hd-rezkaag5.site,hdrezka.website,rezka.ag##.b-post__mixedtext
+hdrezka.tv,hdrezka-ag.com,hd-rezkaag5.site,hdrezka.website,rezka.ag##.b-post__rating_table
+hdrezka.tv,hdrezka-ag.com,hd-rezkaag5.site,hdrezka.website,rezka.ag##.b-post__social_holder_wrapper
+hdrezka.tv,hdrezka-ag.com,hd-rezkaag5.site,hdrezka.website,rezka.ag##.b-post__support_holder
+hdrezka.tv,hdrezka-ag.com,hd-rezkaag5.site,hdrezka.website,rezka.ag##.ava
+hdrezka.tv,hdrezka-ag.com,hd-rezkaag5.site,hdrezka.website,rezka.ag##.add-favorite-un
+hdrezka.tv,hdrezka-ag.com,hd-rezkaag5.site,hdrezka.website,rezka.ag##tr:has-text(Возраст:)
+hdrezka.tv,hdrezka-ag.com,hd-rezkaag5.site,hdrezka.website,rezka.ag##.play.i-sprt
+hdrezka.tv,hdrezka-ag.com,hd-rezkaag5.site,hdrezka.website,rezka.ag###addcomment-title
+hdrezka.tv,hdrezka-ag.com,hd-rezkaag5.site,hdrezka.website,rezka.ag###ps-overlay-wrap
+!
+! not online, it's a torrent tracker
+rezka.cc###main_wrapper:style(padding-left:0px !important)
+! now offline
+!hdrezka.download##.tlg-link
+!hdrezka.download##.tlg-msg
+!
+hdrezka.website##.b-player__network_issues_holder
+hdrezka.website##.b-content__description
+hdrezka.website##.b-footer__slogan
+hdrezka.website##.b-post__lastepisodeout
+hdrezka.website##.b-post__mixedtext
+hdrezka.website##.b-post__rating_table
+hdrezka.website##.b-post__support_holder
+hdrezka.website##.b-post__support_holder_report
+hdrezka.tv##.show-trailer
+rezka.ag##.show-trailer
+rezka.ag##.cat
+! Adguard rule
+hdrezka.tv,hdrezka.website,rezka.ag##+js(remove-class, active-brand, body)
+! Adguard rule
+hdrezka.tv,hdrezka.website,rezka.ag##+js(set-constant, window.abc, false)
+
+! Update 2022-09: closed
+!hdseason.ru###usermenu
+!!hdseason.ru##.u-star-rating-46
+!hdseason.ru###maincol > i
+
+! hd-serials.pro is now parked
+!||hd-serials.pro/templates/lostfilm/images/chrome.png
+!||hd-serials.pro/templates/lostfilm/images/yandex.png
+!||hd-serials.pro/templates/lostfilm/images/comments.jpg
+!hd-serials.pro##.right
+
+hdsunduk.net##.toptext
+hdsunduk.net##.related.section
+
+! hfilm.net is offline
+!hfilm.net##.header
+!hfilm.net##.column-left > div:has-text(/реклама|Зарегистрируйся/)
+!hfilm.net##.ns.category-text
+!hfilm.net##.rek_top
+
+! injook.com is paid now, tovarro.com
+
+hdzip.tv##.fpage2
+hdzip.tv##.rels-t
+
+! kakafilms.ru is now kakafilm.ru
+kakafilm.ru##.frate
+
+! kapriz.tv is offline
+!kapriz.tv##.topbar
+
+! kinamba.online is offline
+!kinamba.online##.user-btns
+
+kindkino.ru##.head-l
+kindkino.ru##.user-box
+
+! kiniska.com is 403
+!kiniska.com###slider_block
+!kiniska.com##.title_spoiler
+!kiniska.com##.comm_tl
+!kiniska.com##.rec2_tl
+!||kiniska.com/templates/kiniska/images/menu1_ico3.png$image
+!||kiniska.com/templates/kiniska/images/menu1_ico2.png$image
+!kiniska.com##.topline
+!kiniska.com##.post_table_l
+!||kiniska.com/templates/kiniska/images/br.jpg
+
+!kino2018.club###loginbtn
+!kino2018.club##.footer
+!kino2018.club##.full-comms
+kino2018.club##.main-title
+! site breaks copypaste
+kino2018.club$inline-script
+
+! kino2019.club is now kino2019.co
+! now changed again
+
+kino-720.org##.sota
+
+! kino-1080hd.com is now kinoa1080hd.com
+kinoa1080hd.com##.rkl-box
+
+!kinoark.ru##.lastcomm
+kinoark.ru##.ignore-select
+kinoark.ru###main-carousel
+kinoark.ru##.active
+
+! now parked
+!kinoastral.com##.fx-middle.fx-row.ffour
+
+! now parked
+!!kinobliz.net##.rating
+!kinobliz.net##a.knopka
+!!kinobliz.net##.player-warning
+!kinobliz.net##.icons3
+!!kinobliz.net###dle-comments-form
+
+kinoblog.tv##section.aside-block:has-text(Рекомендуем:)
+kinoblog.tv##.ratingarea
+kinoblog.tv##.article-title
+kinoblog.tv##.ht-logo
+kinoblog.tv##.footer
+kinoblog.tv##.film_errors_bar
+kinoblog.tv##.lightSwitcher
+
+! kinobublik.org is offline
+!kinobublik.org##.view_online
+
+!kinocoin.co##.sectseo
+
+! kinoed.club -> kinoed.online -> offline
+!kinoed.club##.btns-log
+!!kinoed.club##div.bochok-box:has-text(Комментируют)
+!kinoed.club##.icon-l.button
+!kinoed.club##.kino-date
+!kinoed.club##.kino-fav-in
+!!kinoed.club##.desc-text
+!!kinoed.club##.grnd
+!kinoed.club##.wrap:style(padding-top:0px !important)
+!!kinoed.club##div.bochok-box:has-text(Скоро на )
+!kinoed.club##.pisec-subtitle
+!kinoed.club##.pisec-compl
+!!kinoed.club##.full-comms
+!kinoed.club##.ignore-select.movie-page > div:nth-of-type(6) > span
+
+! kinodoza.net is offline
+!!kinodoza.net##body:style(background-image:none !important)
+!!kinodoza.net##.footer
+!||kinodoza.net/templates/kinodoza2018-blu/images/bg.jpg$image
+!#kinodoza.net##.fa
+!# ? kinodoza.net##.fa-play
+!kinodoza.net##.sect-views
+!!kinodoza.net##.side2 > div.side-box:has-text(Скоро в)
+
+! kinofanat.club is offline
+!!kinofanat.club##.login-cp
+!kinofanat.club##.btntosee
+!kinofanat.club##.slider-bg:style(top:140px !important)
+
+! now closed
+!kinobum.tv##p
+!kinobum.tv##.description
+!kinobum.tv##.seo-box
+
+kino-dom.org###about_category
+
+!kinofann.ru##footer
+kinofann.ru###ratingBar
+kinofann.ru##.player_h2
+kinofann.ru##div.left_film:has-text(Ожидаемые)
+
+!kinofilms.ua - no player
+
+! now ad redirect
+!kino-for.me##.padd.whatisit
+!kino-for.me##.playbot
+!kino-for.me##.related
+!kino-for.me##.speedbar
+!kino-for.me###les
+
+! kino-fs.me is offline
+! kino-fs.top is offline
+!kino-fs.me##a[href="/"]
+
+kinogo.biz##.blk_header:style(margin-bottom:0px !important)
+kinogo.biz##.last-comments
+kinogo.biz##.kreativno
+
+! kinogorod.net is offline
+!kinogorod.net##.dataBar
+!kinogorod.net##.ldd_nu
+!kinogorod.net###Bod45
+!kinogorod.net##.boxTitle1
+!!kinogorod.net##.commTable
+!!kinogorod.net##.comEnt
+!kinogorod.net##.com-order-block
+!kinogorod.net##.u-star-rating-30
+!kinogorod.net##.boxTable:has-text(КОММЕНТАРИИ)
+
+! kino-hit-online.com is offline
+!kino-hit-online.com##.hdlike_3
+!kino-hit-online.com##.hdlike_2
+!kino-hit-online.com##.hdlike_1
+!kino-hit-online.com##.wrapper:style(padding-top:100px !important)
+
+# kinosklad.net => kinogora.net => closed
+!kinogora.net##.message-block-red.message-block-player
+!kinogora.net##li.alarm_film
+
+! kino-horror.net is now ad redirect
+!||kino-horror.net/images/registracija.jpg
+!||kino-horror.net/images/fon-site.jpg
+!||kino-horror.net/img/puddle-blood.jpg
+!||kino-horror.net/images/panel.jpg
+!kino-horror.net##div.popular.block:has-text(комментарии)
+
+kinoglobe.ru###ja-botslwrap
+kinoglobe.ru##.go_watch
+kinoglobe.ru##.wrapReg
+kinoglobe.ru##.ntitle
+||kinoglobe.ru/templates/cinema/images/header-mask_1.jpg$image
+
+!kinogo.biz lazyload data-src
+
+! kinogorod.com is offline
+!kinogorod.com##.post-data
+!kinogorod.com##.info
+!!kinogorod.com###dle-comments-form
+!kinogorod.com##.block_title
+!!kinogorod.com##h2
+!kinogorod.com##.related-block2
+!kinogorod.com##.post1-data
+!kinogorod.com##.htop
+!kinogorod.com##.custom-label
+!!kinogorod.com##.loginpanel
+!kinogorod.com##.custom-update
+
+kinogo.cc##.hikinogo_wrapper:style(padding-top:0px !important)
+
+kinogovno.net##div > p
+kinogovno.net##.sect-title:has-text(/онлайн|бесплатно/)
+!kinogovno.net##.sub-text
+kinogovno.net##.s-btm
+
+! kinohabr.net now is kinohabrs.com
+||kinohabrs.com/reg-compressor.png
+! don't short it
+kinohabrs.com##article > .mov-desc > .full-text
+
+! kinohdfilm.net now is kinohd-film.net
+
+! kinohleb.com - now spam
+kinohleb.com##.descr
+kinohleb.com##div.section:has-text(Скоро в)
+kinohleb.com##.fav-btn
+kinohleb.com##.main-soc
+kinohleb.com##.trailer-btn
+kinohleb.com##.tabs-sel > span:has-text(Трейлер)
+
+! kinohome.pro is offline
+!kinohome.net##body:style(background-image:none !important)
+!kinohome.net##[src="/templates/kinohome/images/logo_01.png"]
+!||kinohome.net/templates/kinohome/images/footer32.png
+
+kinohome.pro/templates/kinohome/images/footer32.png
+kinohome.pro###Bod45
+kinohome.pro###headers
+kinohome.pro###headerr
+kinohome.pro##.Atop
+kinohome.pro##.eText > center > noindex
+
+kinoknopka.plus###topper:style(position:static !important)
+
+! kinokoza.com is offline
+!!kinokoza.com##.foot-wr
+!!kinokoza.com##.berrors
+!!kinokoza.com##.socvote
+!kinokoza.com##.catf
+!kinokoza.com##.mb-online
+!kinokoza.com##.mb-meta
+!kinokoza.com##.head-one
+!kinokoza.com##.carouside
+!!kinokoza.com##.head-wr:style(position:static !important)
+!kinokoza.com##.top-side
+!kinokoza.com##.full_mob
+!kinokoza.com##.rate3
+!kinokoza.com##.stronk
+!kinokoza.com##.mov-comp3
+!kinokoza.com##.mov-comp2
+!kinokoza.com##.scrolla.mb-online2
+!kinokoza.com##.sector_title
+
+! seo
+kinokrad.cc##.conttext
+kinokrad.cc##.boxsoc
+kinokrad.cc###video-box:style(display:initial !important)
+! Uncaught TypeError: $(...).stick_in_parent is not a function
+kinokrad.cc##+js(set, Object.prototype.stick_in_parent, noopFunc)
+kinokrad.cc##.head:style(position:static !important)
+
+kinokrol.ru##p
+kinokrol.ru##li:has-text(/Ожидаемые|Написать|FAQ|Инфо$/)
+kinokrol.ru##div.art-postcontent.ctr-post:nth-of-type(5)
+kinokrol.ru##.btn_viewfilm
+kinokrol.ru##div.rek2
+kinokrol.ru##.tabset:has-text(Трейлер)
+!kinokrol.ru##.story-complaint
+kinokrol.ru##.dopley
+||kinokrol.ru/templates/KinoKrol/images/postheadericon.png$image
+
+kinokrolik.ru###noselect
+kinokrolik.ru##center > h2
+kinokrolik.ru##.watchlist
+kinokrolik.ru##.recommend-movie
+kinokrolik.ru##.special-block
+
+kinol.online##.ridda
+
+# kinoliza.org, kinoliza.net => kinoliza.me ?=> kinoliza.pro
+kinoliza.pro##.head-menu
+kinoliza.pro##[href="http://kinoliza.net/konkurs.html"]
+kinoliza.pro##.favorites
+kinoliza.pro##.button2
+kinoliza.pro##p
+kinoliza.pro##.disable_select.text
+!kinoliza.me##div.left-block:has-text(НАША ГРУППА)
+kinoliza.pro##.sidebar_favorites
+
+! kinoloy.ru is offline
+!kinoloy.ru##.player-bottom-text
+!kinoloy.ru##.wrap-main:style(margin-top:0px !important)
+!kinoloy.ru##.ftwo
+
+||kinolord.ru/templates/kino/images/desc.png
+||kinolord.ru/uploads/otzyvy_2.png
+!kinolord.ru##p - don't
+
+!kinolyub.com##.fplayer-title
+
+! now closed
+!!kinomaz.com##.fplayer-title
+!!kinomaz.com##.sub-text
+!!kinomaz.com##.to-fav
+!kinomaz.com##.rels
+
+! kinomore.xyz is now kinomoto.xyz
+! kinomovi.xyz is now kinomoto.xyz
+! octoclick, yes, blocked
+
+! kinonix.tv is offline
+!kinonix.tv##.to-register
+!kinonix.tv###modal_trigger
+!kinonix.tv##.buruma.pros
+!kinonix.tv##.brobro
+!kinonix.tv##.menuz > .bx-wrapper
+!kinonix.tv##span.juju:has-text(Ожидаемые)
+
+kinomuza.club##.fpage
+kinomuza.club##.ps-link.button
+
+!kino-o-voine.cc  # "Контент не найден"
+!kino-o-voine.pro  # redirect to kino-o-voine.cc
+
+kinopod.ru##.catalog-desc
+kinopod.ru###favorite-basket-compact-container
+kinopod.ru##.top-show
+kinopod.ru###main-header
+kinopod.ru##.tooltipstered.state-online.state-d
+kinopod.ru##.br-container:style(background-image:none !important)
+kinopod.ru##div.box:has-text(Дни рождения)
+kinopod.ru##.video-right
+kinopod.ru##.age
+!kinopod.ru/videos/stats/
+kinopod.ru##.add-favorite
+
+||s.kinoprofi.io/emo/  # smiles
+    ! top
+kinoprofi.io##.header-absolute:style(position:static !important)
+kinoprofi.io##.content:style(position:static !important)
+    ! seo
+kinoprofi.io##.category-text
+    ! crowns in comments
+||s.kinoprofi.io/t/images/lvl.png
+kinoprofi.io##.lvl
+kinoprofi.io##.comment-block:style(color:initial !important; background-color:initial !important)
+    ! labels
+kinoprofi.io##.btn-tosee
+kinoprofi.io##.playTrailer
+    ! other
+
+! kinoprokat.online => kinoprokat.cc => closed
+!kinoprokat.cc##[href="#favorite"]
+!||kinoprokat.cc/templates/kinolove/images/todosobre2.jpg$image
+!kinoprokat.cc##.home-text
+
+# kinoprostor.com => kinoprostor.net => kinoprostor.pro
+!!kinoprostor.com##.foot-line
+kinoprostor.pro##.short-opiskat
+kinoprostor.pro##.info-i
+!!kinoprostor.com##.head:style(position:static !important)
+
+kinorai.org##.plus
+kinorai.org##[href="/tv-onlajn/"]
+kinorai.org##.sidebar2 > ul > li:nth-of-type(1)
+
+! kino-sayt.net is offline. Update: online again, but parked
+!kino-sayt.net##.cap
+!kino-sayt.net##.header
+!kino-sayt.net##.rollover
+!kino-sayt.net##.u-star-rating-20
+!kino-sayt.net##.u-star-rating-30
+!||kino-sayt.net/images/te.png
+!kino-sayt.net###acform
+
+||kinosezon.tv/*/ulightbox.min.js  # background setting script
+kinosezon.tv###header
+kinosezon.tv###user-box
+!kinosezon.tv##div.sidebox:has-text(/Календарь|Советуем|Про Нас|Хит Сезона|Популярное|Статистика|Форма входа/)
+kinosezon.tv###acform
+kinosezon.tv##.eDetails
+kinosezon.tv###content > fieldset
+kinosezon.tv###rated
+
+! kinosky.org is offline
+!!kinosky.org##.fa-lock.fa
+!!kinosky.org##.fa-play.fa
+!!kinosky.org##.seotop
+!!kinosky.org##.disclamer
+!!kinosky.org##.seo-h2
+!kinosky.org##.top-liders
+!kinosky.org##.ratingshort
+!kinosky.org##.fav-short
+!kinosky.org##.show-login
+!kinosky.org##.add-fav
+!kinosky.org##.speedbar
+!kinosky.org##.noads
+!kinosky.org##.sub-left-item:has-text(Скоро на)
+!kinosky.org##.sub-left-item:has-text(комментарии)
+!kinosky.org##.podval-line
+!!kinosky.org##.vid-complaint
+!!kinosky.org##.player-warning
+!kinosky.org##.ago
+
+! kinosliva.net is offline
+!!kinosliva.net##.player-warning
+!!kinosliva.net##p
+!!kinosliva.net##.news-text-block
+!kinosliva.net##td
+!kinosliva.net##button
+!kinosliva.net##.news-text-block
+!kinosliva.net##.header
+!kinosliva.net##.video-blanked
+!kinosliva.net##.header-c:style(position:static !important)
+!kinosliva.net##.wrapper:style(padding-top:0px !important)
+!kinosliva.net##.contener:style(margin-top:0px !important)
+!kinosliva.net##div.hidden-xs:has-text(Скоро на)
+!kinosliva.net##.c-img
+
+! kinostar.pro now is not cinema
+!kinostar.pro##.line
+
+!kinostuff.com - transferred to hosts
+!# from NoCoin Filter List: ||play.mix.kinostuff.com^
+
+kinosub-online.ru##.slider_box
+!kinosub-online.ru###footer
+
+! kinotan.ru is offline
+!!kinotan.ru##.middle-rkl
+!kinotan.ru###owl-related
+!kinotan.ru##.rel-t
+
+! kinotochka.club => kinotochka.co
+! kinotochka.me - parked
+kinotochka.co###reviews-block
+kinotochka.co##.btn_reg
+||kinotochka.co/templates/tochka/images/host.png
+kinotochka.co##.bottomus-box-foot
+
+! kinotvonline.ru is offline
+!kinotvonline.ru##.header
+!kinotvonline.ru##font
+!kinotvonline.ru##[href="http://kinotvonline.ru/zaiavki-filimi/"]
+!kinotvonline.ru##.post-meta
+!kinotvonline.ru##.tip
+!kinotvonline.ru##.main > p
+!kinotvonline.ru##.main > ul
+!kinotvonline.ru##.post-content-wrapper > b
+
+kino-ussr.ru###right_column
+kino-ussr.ru##.header_1
+
+! now parked
+!kinovam.com##.header
+!kinovam.com##.all_for_look
+!||kinovam.com/templates/vestern/images/left_bottom.png
+!||kinovam.com/templates/vestern/images/right_bottom.png
+!||kinovam.com/templates/vestern/images/left_top.png
+!||kinovam.com/templates/vestern/images/right_top.png
+!||kinovam.com/templates/vestern/images/cont_bg.png
+!||kinovam.com/templates/vestern/images/shortstory_bl_bg.png
+!||kinovam.com/templates/vestern/images/search_bg.jpg
+!||kinovam.com/templates/vestern/images/search_butt.png
+!kinovam.com##.news
+!kinovam.com##.site_help
+!kinovam.com##.popular
+!kinovam.com##.top100
+!kinovam.com##.main_menu
+!kinovam.com##.golosovanie
+!kinovam.com##.stats
+!kinovam.com##.intrist
+!kinovam.com##.page_cont_bl_text
+!kinovam.com##.text_main_bl
+!kinovam.com###dle-content > table
+
+! kinovhod.online is offline
+! kinovhod.org is offline
+!kinovhod.online##.icon-l.btn-filt.button
+!kinovhod.online##.related
+
+!kino-v-online.net##footer
+kino-v-online.net##.log
+kino-v-online.net##.wcom
+
+||kinox.to/cs/themes/default/Header/Default.png
+
+! kinoxa.biz now is kinoxa.ws
+kinoxa.ws##.viewed-box
+
+! kinozachet.net is now kinozabor.net
+! kinoservis.net is now kinozabor.net
+! kinozabor.net is now kinogoby.zone
+kinogoby.zone##.wrap-center:style(margin-top:0px !important)
+kinogoby.zone##.wrp:style(margin-top:0px !important)
+
+! kinozona.online is offline
+!kinozona.online##.sub-text
+!!kinozona.online##.footer
+
+! klipzona.cc is offline
+!klipzona.cc##.info-box
+!klipzona.cc##.advi > div
+!klipzona.cc##.komm
+
+! kmt-max.ru - кривое скачивание: яндекс-браузер, mediaget. Block it.
+! now it blocks by itself
+! kmt-max.ru  # and now it is closed
+! all before it:
+!||kmt-max.ru/templates/Kino/images/offer/
+!kmt-max.ru##.fullstory-age
+!kmt-max.ru###slider-top
+!kmt-max.ru###slider-premiere
+!kmt-max.ru###related-news
+!kmt-max.ru##.fullstory-age
+!kmt-max.ru###slider-top
+!kmt-max.ru###slider-premiere
+!kmt-max.ru###related-news
+
+kion.ru  # spam  # paid mts kinozal  # also see: https://pikabu.ru/story/ozon_kion_i_yepicheskiy_oblom_pikabushniki_razobrali_usloviya_aktsii_2023_chasa_kino_v_onlaynkinoteatre_kion_po_promokodu_9821644
+
+! kolobok.tv => kolobok.store => ad redirect
+kolobok.store##.pohozh-t
+kolobok.store##.vhod-btns
+kolobok.store##.verh-two
+||kolobok.store/*/koloboktvlogo.png
+
+! Update 2022-09: closed
+!kosti-tv.com##.b-season-text
+!!kosti-tv.com##.complaint
+!kosti-tv.com##.favorites
+!kosti-tv.com##.story-text
+!kosti-tv.com##.gp
+!kosti-tv.com##.tw
+!kosti-tv.com###wrapper:style(margin-top:0px !important)
+!||kosti-tv.com/*/sprite.png
+!kosti-tv.com##.b-guest-register
+!kosti-tv.com##.b-rating-small
+
+! pumafilm.club is now lamafilm.club
+lamafilm.club##.otzv
+! lamafilm.club##[href="/"]
+
+legfilm.ru  # megogo
+
+lelang.ru##.bottom_note
+lelang.ru##.up_b
+||lelang.ru/wp-content/uploads/2017/06/donate_lelang.jpg$image
+lelang.ru###respond
+lelang.ru###rightside
+lelang.ru##.menu_pc
+
+leofilm.club##.top
+
+lordfilm.lu##.footer
+lordfilm.lu##.wrap:style(padding-top:0px !important)
+
+! lordfilm.pro is offline
+!!||lordfilm.pro/templates/LordFilm/images/bg.jpg
+
+! lordfilms.tv now is lordfilm7.tv
+!lordfilm7.tv##.need-reg
+! don't short it
+lordfilm7.tv##.fleft > noindex
+lordfilm7.tv##.fx-row.fcols > noindex
+
+! lordfilms.pw now is lordfilms-s.pw
+lordfilms-s.pw##.fleft > p
+!lordfilms-s.pw##.sorry-rek
+
+lords.lat###DidYouLikeIt
+
+lordserial.xyz##.telegraminfo
+lordserial.xyz##.frels-title
+
+!lostfilms.best##.middle-rkl
+lostfilms.biz,lostfilms.best##.vote-box
+
+lordfilms-s.art##h2
+lordfilms-s.art##.ft-desc
+
+! lovekinozal.ru is now lovekino.ru
+lovekino.ru###content > table:nth-of-type(1) > tbody > tr:nth-of-type(1)
+lovekino.ru##table.boxTable:has-text(/Новости сети|Смотрим|интересно/)
+
+!kino.mail.ru  # "выбор тарифного плана", ага
+!my.mail.ru  # https://my.mail.ru/video/channels/cinema : "HD кинотеатр Mail.ru - возможность смотреть кино онлайн бесплатно и без регистрации". По факту там swfobject.js - в 2003 году это позорище
+
+megacritic.ru  # "Смотреть онлайн", по факту нет
+
+mirahdkino.online##.nav-info
+mirahdkino.online##.home-text
+
+mir-kin.com##.multirating-block
+mir-kin.com##.rcoment
+mir-kin.com##.add-bookmark
+mir-kin.com##.vroll
+mir-kin.com##.fa-heart
+mir-kin.com##.r-0.position-absolute.btn-sm.btn-danger
+mir-kin.com##.alert
+
+! mnogohd.com is offline
+!mnogohd.com##p
+!mnogohd.com##.error-btn
+!mnogohd.com###fview > center
+
+! is offline
+!||moviebuster.tv/templates/moview/img/speedbarbanner.png
+!moviebuster.tv##.movie-rating-wrapper
+!moviebuster.tv##.count-rating
+
+! okolokino.org => mirkino.club => closed
+!mirkino.club##.user_block
+!mirkino.club##.dmobile
+!! ? okolokino.org##h1
+!mirkino.club##.f_info > ul > li
+!mirkino.club##.header > .container:style(height:auto !important)
+!mirkino.club##.main:style(margin-bottom:0px !important)
+!mirkino.club##.all:style(padding-bottom:0px !important)
+!mirkino.club##.poster_on
+
+m0vies123.com##.alert
+
+! moviexk.co is redirected to moviexk.biz
+moviexk.biz###moviexk-emailbox
+moviexk.biz##.note
+moviexk.biz###refresh
+moviexk.biz##.blocktitle:has-text(/comment|Subscribe|Tags|Popular Movies/)
+moviexk.biz##p:has-text(to watch movies online)
+moviexk.biz##.tagcloud
+moviexk.biz##div.block > div:has-text(/^$/)
+moviexk.biz###chart
+
+! now parked
+!muvix.org##.bg-height
+!muvix.org##.column-box
+!!muvix.org##.add-com
+!muvix.org##.statistic
+!muvix.org##.tabs > li:has-text(Трейлер)
+
+! my-kino.org is offline
+!!||my-kino.org/templates/Default/images/bg.jpg
+!my-kino.org##.wrap:style(background-image:none !important; padding-top:0px !important)
+!!my-kino.org##div.side-box:has-text(/Комментарии|Скоро на|Сейчас смотрят/)
+!my-kino.org##.ps-link.button
+!my-kino.org##.smart-text
+!!my-kino.org##.fplayer-title
+!my-kino.org##.tabs-sel > span:has-text(Трейлер)
+
+!myshows.me - no player
+
+! new-film.net is offline
+!new-film.net##.carouside.sidebox
+!new-film.net##.scrolla.icon-left.mb-online
+!new-film.net##p
+!new-film.net##.caroubottom
+!new-film.net##.rrange
+!new-film.net##.rates
+
+! serial2019.online is now myserial2019.ru
+myserial2019.ru##.fa-moon
+myserial2019.ru###site-dark
+!serial2019.online###side > div.to-mob.nomb.side-box:has-text(/Комментируют|Не пропустите/)
+!serial2019.online##.frate
+myserial2019.ru##.fmeta
+
+! newfilms.pro is now newfilms.cc
+!newfilms.cc##.add_favorite
+!newfilms.cc##h3:has-text(Скоро в)
+newfilms.cc##.bad_player
+!newfilms.cc##.u-star-rating-36
+newfilms.cc##.rating_wrapper
+
+newfilms.tv##.container-fixed:style(position:static !important)
+newfilms.tv##.mobilestext
+newfilms.tv##.rightcommetns
+newfilms.tv##.leftbarrait
+
+new-kino.net###rcol
+new-kino.net##.addhead
+new-kino.net##.red
+new-kino.net##div.shortstory b
+
+! newstudio-online.tv is offline
+!newstudio-online.tv###ytplayer
+!newstudio-online.tv##.discussion-block
+!||newstudio-online.tv/templates/LF/images/top-menu-back.png
+!newstudio-online.tv##.user-pane
+
+okko.tv  # getblogger.ru  # paid tv, moved to _filters/online_films
+
+on-cinema.com##.on-cinema-header
+on-cinema.com##.on-cinema-nav
+
+# onfilmz.net => onfilmz.site => ad redirect
+!onfilmz.site##.nav_box
+!onfilmz.site##[href="/forum/"]
+!!onfilmz.net##.add-fav2
+!onfilmz.site##.inner_box:has-text(храни вас Бог)
+!onfilmz.site##body > .container_24
+!onfilmz.site##.inner_boxzz
+!||onfilmz.site/anime/kartinki_cytaty/*$image
+!onfilmz.site##.tech_links
+
+online-film24.ru##.CP_buttons
+online-film24.ru##div.item-scoro
+online-film24.ru##.full-title-scoro-block
+online-film24.ru##.watchLaterBlock
+
+onlinefilm-hd.ru###header
+!||onlinefilm-hd.ru/.s/$image
+onlinefilm-hd.ru##table.boxTableRight:nth-of-type(1)
+onlinefilm-hd.ru##table.boxTableRight:nth-of-type(5) > tbody
+!onlinefilm-hd.ru##.gOnline
+!onlinefilm-hd.ru##.tOnline
+!onlinefilm-hd.ru##.uOnline
+onlinefilm-hd.ru##.eDetails
+onlinefilm-hd.ru##.eMessage > div:nth-of-type(1) > span > b
+onlinefilm-hd.ru##.uMenuItem
+||onlinefilm-hd.ru/onlinefilm-hd.jpg
+onlinefilm-hd.ru##.uComForm
+
+onlinefilm-hd.club##.head-r
+!||onlinefilm-hd.club/.s/
+
+! online-film.net is now offline
+!online-film.net###filter
+!online-film.net##.movie-bottom
+!online-film.net##.carouside
+!online-film.net##.movie-full.movie-item > center
+!online-film.net##.tabs-sel
+!!online-film.net##.berrors
+!!online-film.net##.foot-wr
+!online-film.net##.caroubottom
+!online-film.net##.topsbox
+!online-film.net###dialog-message
+!!online-film.net##.full-comms
+!online-film.net###ytplayer
+
+||onlinefilm-hd.club/v11/onlinefilm-hd.jpg
+
+! onefilms.net - now parked
+!onefilms.net##.hmtop
+!onefilms.net##.toolbar
+!onefilms.net##div.bnavi.block:has-text(/Наши друзья|Мы ВКонтакте/)
+!onefilms.net##.binfo
+
+! online-hd.club is offline
+!online-hd.club##.katten
+!online-hd.club##.main:style(padding-top:0px !important)
+!||online-hd.club/ss/zp-com.jpg$image
+!online-hd.club##div#block:has-text(/Правообладателям|Комментарии|Реклама/)
+!online-hd.club##.uSpoilerButton
+!online-hd.club##.small.baseinfo
+!online-hd.club##.content > .title
+!!online-hd.club##.u-star-rating-30
+
+! onlinelife.club is now onlinelifetv.com
+onlinelifetv.com##.block_titlebig
+onlinelifetv.com##h1
+onlinelifetv.com###content > p
+!onlinelife.club##h2
+!onlinelifetv.com##div.left-block:has-text(НАША ГРУППА)
+!onlinelifetv.com##div.left-block:has-text(СЛУЧАЙНЫЕ ТВ-КАНАЛЫ)
+onlinelifetv.com##.extra
+onlinelifetv.com##body > div:nth-of-type(1)
+onlinelifetv.com###left > .block_title
+onlinelifetv.com###left > div:nth-of-type(3)
+onlinelifetv.com##noindex:nth-of-type(2) > .block_title
+onlinelifetv.com##.full-story > noindex
+onlinelifetv.com##.info
+onlinelifetv.com##.full-story > .post-title
+onlinelifetv.com##.post-title
+
+! online-lostfilm.com is offline
+!online-lostfilm.com##.multirating
+!online-lostfilm.com##.multirating-itog
+!online-lostfilm.com##.fullstory-text-title:has-text(Мультирейтинг)
+!online-lostfilm.com##.carousel-wrapper
+!online-lostfilm.com##.zcomm
+!||online-lostfilm.com/templates/Default/dleimages/discl.png
+!online-lostfilm.com###comments
+!online-lostfilm.com##.footer
+
+! onlinemix.top is offline
+!onlinemix.top##.pagedesc
+!onlinemix.top###topmodule
+!onlinemix.top###date
+!onlinemix.top##div.module
+!onlinemix.top##.mshortfilm_t3
+!onlinemix.top##div.modmap
+!onlinemix.top##div.tright
+!onlinemix.top##.loadp_flink.lightSwitcher
+!onlinemix.top##.otzivy
+
+!||online-prosmotra.net/.s/$image
+online-prosmotra.net###contanier > table:nth-of-type(1) > tbody > tr:nth-of-type(1)
+online-prosmotra.net###contanier > table:nth-of-type(1) > tbody > tr:nth-of-type(2) > td:nth-of-type(1) > table > tbody > tr:nth-of-type(1)
+!online-prosmotra.net##td:nth-of-type(2) > table.boxTable:nth-of-type(1)
+online-prosmotra.net###contanier > table:nth-of-type(2)
+online-prosmotra.net##td.centerTable:nth-of-type(2) > p
+online-prosmotra.net##td.centerTable:nth-of-type(2) > center
+online-prosmotra.net##td.centerTable:nth-of-type(2) > table:nth-of-type(3)
+!online-prosmotra.net##table.boxTable:nth-of-type(4)
+!online-prosmotra.net##.eBlock > tbody > tr:nth-of-type(1)
+online-prosmotra.net##.eTitle
+!online-prosmotra.net##tr:nth-of-type(2) > td > table > tbody > tr > td:nth-of-type(2) > table > tbody > tr:nth-of-type(1)
+online-prosmotra.net##hr
+online-prosmotra.net##.eBlock > tbody > tr:nth-of-type(1)
+online-prosmotra.net##tr:nth-of-type(2) > td > table > tbody > tr > td:nth-of-type(2) > table > tbody > tr:nth-of-type(1)
+||online-prosmotra.net/stat/
+
+! online-smotret.net is offline
+!online-smotret.net##.nameblock:has-text(Реклама)
+!! ||online-smotret.net/templates/online/dleimages/noavatar.png
+
+||onlinevideohd.ru/dlyassilki/$image
+!onlinevideohd.ru##.gOnline
+!onlinevideohd.ru##.tOnline
+!onlinevideohd.ru##.uOnline
+onlinevideohd.ru##.groupAdmin
+!onlinevideohd.ru##div.boxTable:has-text(/Статистика|Мы Вконтакте|Ожидаемые/)
+onlinevideohd.ru###navBar
+!/.s/*$domain=onlinevideohd.ru,image
+
+onlol.top##.sub-text
+! site breaks copypaste
+onlol.top##^script:has-text(oncopy)
+
+pickfilm.ru##.top-info
+pickfilm.ru##.inline-rating
+pickfilm.ru###rating_votes
+||veleto.ru/media/theme/pickfilm_ru1.png
+
+! transferred to hosts
+!plrjs.com$xhr
+!lic.plrjs.com
+
+! disable exception from uBlock
+@@||popcornflix.com^$generichide,badfilter
+
+popcornhd.ru##.watching-now
+popcornhd.ru##.navbar-second
+!||popcornhd.ru/images/complaint.png
+
+posmotri-online.com##.online_link
+posmotri-online.com##.home
+
+! pratka.ru is now parked
+!pratka.ru##.top_news_block
+
+premier.one  # https://t.me/zapasaemsyapopkornom/1684
+
+! prosmotr.online is now prosmotr-filmov.online
+prosmotr-filmov.online##.goblock-bottom
+
+! See rezka above at hdrezka
+
+rishd.com##.icons2
+
+! now spam
+!ruashow.com###user-box
+!ruashow.com##.infr
+!ruashow.com##div.sidebox:has-text(/Вход на|Партнеры|ТВ шоу/)
+!! sidebar blocked because it contain text
+!ruashow.com###sidebar
+!ruashow.com##section > center
+
+! ru-kino.com is offline
+!ru-kino.com##.caroubottom
+!ru-kino.com##.meta-date
+!ru-kino.com##.mb-online
+!ru-kino.com##.movie-bottom
+!ru-kino.com##div.released_number
+!!ru-kino.com##[href^="javascript:AddComplaint"]
+!ru-kino.com##.rrange
+!ru-kino.com##.ps
+!ru-kino.com##.ms
+!!||ru-kino.com/templates/demo_templates/images/post-attention.png
+
+! kino-24.com is now rukinotv.net
+rukinotv.net##.topImg
+!!kino-24.com##.commReg
+||rukinotv.net/bg00_header.jpg
+
+rumyvi.ru##.header
+
+!russkie-filmy.online##.foots
+russkie-filmy.online##[href^="javascript:AddComplaint"]
+russkie-filmy.online##.din3
+
+! russkieserialy.net is offline
+!russkieserialy.net##.definition000
+
+seasonvar.ru##.doptxt
+seasonvar.ru##.report-add
+
+seriahd.tv##.fpage2
+
+serialbook.net##.telegraminfo
+
+! serialbox.org => serialbox.info => closed
+!serialbox.info##.sbtn
+
+serial-go.com###speedbar:style(width:auto !important; margin-top:0px !important)
+serial-go.com##.ages_18
+
+! add to favs
+serial-mentalist.ru###addF
+! top
+serial-mentalist.ru##.b-wrapper:style(margin-top:0px !important)
+! ads (shadow)
+serial-mentalist.ru##.cabbage_wrapper
+! sidebar is useless and moving
+!serial-mentalist.ru##.b-side-block:style(margin-top:0px !important)
+serial-mentalist.ru###sidebar
+
+! serialtime.net is offline
+serialtime.net##.regbut
+serialtime.net##.videorek
+
+! videotyt.net => serialu.club => parked
+!serialu.club##[src="/logo_7.png"]
+!!serialu.club##.login_popup
+!serialu.club##.highslide > .example2 > span
+!serialu.club##.short_description
+!serialu.club##.news_body > tbody > tr:nth-of-type(4)
+!serialu.club##.table_news_bottom
+!||serialu.club/sml/$image
+!serialu.club###postFormContent
+!!serialu.club##noindex
+
+serialu.tv$third-party  # from Ru AdList
+
+! Update 2022-09: error 504
+!||seria-z.net/images/icons.png
+!seria-z.net##.description
+!seria-z.net##.saveposition
+
+! serio.club is now serioss.com
+serioss.com##.watch
+
+! sezon-hd.ru is offline
+!sezon-hd.ru##noindex
+!sezon-hd.ru###usermenu
+!sezon-hd.ru##.blockcontent > div:nth-of-type(2)
+
+shark-film.ru##.ffour
+shark-film.ru##.carou2
+shark-film.ru##.ffive
+
+sherlocka.net##.aikonmenu:style(position:static !important)
+sherlocka.net##.sheet:style(margin-top:0px !important)
+sherlocka.net##.footer
+
+sherlock-tv.ru###side-slider
+sherlock-tv.ru##.block-title
+sherlock-tv.ru##.ratingSidebar
+sherlock-tv.ru##.play_last
+
+! show-english.com - фильмы платные. Но на английском, ладно.
+show-english.com##.btn-learn-details
+show-english.com##.navbar
+!show-english.com##.footer
+
+smotret.biz##.Play-img
+smotret.biz##body > .eBlocks1
+show-english.com##.text-center.container:has-text(расширения для браузера)
+
+! smotret-online.co is offline
+!smotret-online.co##.dtreler
+!smotret-online.co##.dnewwbl
+!smotret-online.co##.d1name-text
+!!smotret-online.co##.dplay
+!smotret-online.co##.d1posterret
+!smotret-online.co##.dslideret
+!smotret-online.co##.pllttx
+
+smotrihd.com##.status-logged
+smotrihd.com##.small
+smotrihd.com##.nav-item:has-text(/не нужно искать/)
+
+! smotrim.me is now smotrim.online and 404
+!!smotrim.me##body:style(background-image:none !important)
+!!||smotrim.me/templates/kw/images/bg.jpg$image
+!!smotrim.me##div.bochok-box:has-text(/Скоро на|Комментируют/)
+!||smotrim.me/templates/kw/images/slider.jpg$image
+!!smotrim.me##.desc-text
+!!smotrim.me##.grnd
+
+! now smotrionline.tv - 404 root
+!smotrionline.tv##.block-video
+!smotrionline.tv##.main-text
+!smotrionline.tv###flagging_container
+
+smotri-v-hd.ru##.icons2
+
+! Update 2022-09: parked
+!sserialu-net.ru##.h-topbar
+!sserialu-net.ru##.h-menu1:style(position:static !important)
+!sserialu-net.ru##.h-menu2:style(position:static !important)
+!sserialu-net.ru##.h-menu3:style(position:static !important)
+!sserialu-net.ru###dle-content > div:has-text(сериалы ниже на странице)
+!sserialu-net.ru##.h-menu1 > button
+!sserialu-net.ru$inline-script # site breaks copypaste
+
+! "Disable adblock" errors
+strvid.ws##[class^=error]
+
+studiohd.org##.like-more
+
+! svoekino.biz is offline
+!!svoekino.biz##.koiialla
+!!svoekino.biz##.skots
+!svoekino.biz##.logggg
+!svoekino.biz##.tab_container2 > center
+
+! svoekino.club is 404
+!!svoekino.club##body:style(background-image:none !important)
+!!||svoekino.club/templates/svoekinoclub/dleimages/fon.jpg$image
+!!svoekino.club##.skots
+!svoekino.club##.ololo > div:has-text(комментарии)
+!svoekino.club##.minjjdaq:style(margin-top:0px !important)
+!||svoekino.club/templates/svoekinoclub/dleimages/fon.jpg$image
+!!svoekino.club##.koiialla
+!svoekino.club##.tab_container2
+!svoekino.club##.kiijjllaa
+
+! telek.live is offline
+!telek.live##.fa-w-16.fa-moon.svg-inline--fa
+!telek.live###site-dark
+!telek.live##.fmeta
+!telek.live##.fa-w-18.fa-eye.svg-inline--fa
+!telek.live##.watch-online
+
+! the-cinema.fun is now the-cinema.best
+the-cinema.best##.tbar
+the-cinema.best##.todayfilms
+the-cinema.best##.ratebox
+the-cinema.best##.shortbtn
+the-cinema.best##.arg
+the-cinema.best##div.lcolboxbrd:has-text(рецензии)
+the-cinema.best##.lcolbox > table
+the-cinema.best##.leftside.lcolomn
+||the-cinema.best/templates/blueshab/images/tbar.jpg
+||the-cinema.best/templates/blueshab/images/the-cinema.png
+
+! topasnew24.com - уже не кино
+!topasnew24.com##.navbar
+!||topasnew24.com/uploads/orphys.png$image
+!topasnew24.com##.full-news-panel
+!topasnew24.com##.side-block-add
+!topasnew24.com##.side-block-reg
+!topasnew24.com##.side-block
+!topasnew24.com##.full-news
+!topasnew24.com###myTab
+!topasnew24.com###home
+
+||the-cinema.online/*/the-cinema.png
+the-cinema.online##[href="#top"]
+the-cinema.online##.dcont
+
+! hotser.top => topcinema.tv => error 504
+!topcinema.tv##.auth
+!topcinema.tv##.topic-info-vote
+!topcinema.tv##.topic-info-favourite
+!topcinema.tv##.redbold
+
+timehd.org##p:has-text(телеграм)
+timehd.org##.st-txt
+timehd.org##.bold
+
+! спам казино. Но фильмы пока есть
+topfile.tj##.short:has(.genre.short-info:has-text(Информация))
+
+top-kino-online.ru##[href="/skoro-na-sayte/"]
+top-kino-online.ru##.mb-online
+top-kino-online.ru##.mb-meta
+||top-kino-online.ru/templates/top-kino/images/btn_r.png
+top-kino-online.ru##p
+
+topserials.tv##.page-title:has-text(/Смотреть|онлайн/)
+topserials.tv##.breadcrumbs:has-text(/Смотреть|онлайн/)
+topserials.tv##.category-header
+topserials.tv##.cinemapress-news
+
+||traffilm.net/img/brand  # from Ru AdList  # movies
+
+tryserial.net##.released_number
+tryserial.net##.over
+
+turbofilm.org##.live_link
+turbofilm.org##.fav_link
+turbofilm.org##.info
+turbofilm.org##.fright > center
+
+turboserial.net##.anons.popular_materials
+turboserial.net##.link_user
+turboserial.net##.circle_my
+turboserial.net##.my
+
+! tv-cinema.club is offline
+!tv-cinema.club##[href="/online/skoro"]
+!tv-cinema.club##.menuSch
+!tv-cinema.club##.rek_topp
+!!tv-cinema.club##.dateicon
+!tv-cinema.club###topper:style(position:static !important)
+!tv-cinema.club##.decription
+!tv-cinema.club##.toop
+!tv-cinema.club##.caption-text
+!tv-cinema.club##.topper:style(position:static !important)
+!tv-cinema.club##.wrapper:style(position:static !important)
+!tv-cinema.club##.vozmojnosti
+!tv-cinema.club###advice
+!tv-cinema.club##.newComment
+!tv-cinema.club##.mc4.leftmenu
+!tv-cinema.club##.vozmojnosti1
+!tv-cinema.club##.torrent-opis
+!tv-cinema.club##.bloggg
+!tv-cinema.club##.fullstory > .bold
+
+! tvfu.ru is offline
+!tvfu.ru##.menutop
+!tvfu.ru##.sliderContent
+!tvfu.ru##.netrek
+!||tvfu.ru/images/comme.png
+!||tvfu.ru/img/vkgr.png
+!||tvfu.ru/img/commentas.jpg
+!tvfu.ru###rt-header
+!tvfu.ru##[href^="https://playmaxwin.com/"]
+
+||tureckiy-serial.ru/vk31.php
+tureckiy-serial.ru##.vote_line
+
+turkserial.org##.notification-live
+turkserial.org##.textbottom
+
+! Update 2022-09: parked
+!tvs.wtf##.attbox-menu
+!tvs.wtf##.rate3-short
+!!tvs.wtf##.frate
+!tvs.wtf##div.crdt-line:has-text(Ограничение:)
+!tvs.wtf##.korob-title:has-text(Рекомендуем посмотреть)
+!tvs.wtf##.owl-carousel
+!tvs.wtf##.count
+
+||tvsok.ru/media/images/bg-tvcok.png
+!rumer.club - don't block, it's for a player
+
+intermovis.ucoz.net##.wrapper > section
+intermovis.ucoz.net##.eBlock > tbody > tr > td > .eDetails
+
+! kinokrad.proxybit.icu now is kinokrad.unblockit.xyz
+!kinokrad.unblockit.xyz##.addcomm
+kinokrad.unblockit.xyz##.k-reg
+kinokrad.unblockit.xyz##.baseform
+kinokrad.unblockit.xyz##.favshoetbox1
+kinokrad.unblockit.xyz###wrapper.bgmain:style(margin-top:0px !important)
+! site breaks copypaste
+kinokrad.unblockit.xyz$inline-script
+
+! vastkino.ru is now vastkino.co
+vastkino.co##.sticky-background
+vastkino.co##.header
+
+videobalancer.net/ping
+
+||video-pleer.online/9999999-kredit.png
+
+||videoplenka.info/ya.htm
+||videoplenka.info/pic/help.png
+videoplenka.info##center > div > font
+
+videoruclip.com##.user-info
+
+vidlox.me##.make_money
+
+viju.ru  # paid movies site
+vipplay.ru  # now viju.ru  # paid movies site
+
+vkcombo.ru  # getblogger.ru  # "Подписка VK Combo" and near empty root  # maybe paid tv, moved to _filters/online_films
+
+v-kino.biz##.to-reg
+
+!vse-chasti-kino.ru##.footer
+vse-chasti-kino.ru##.popular
+vse-chasti-kino.ru##.text-tv
+vse-chasti-kino.ru##.fdevices
+vse-chasti-kino.ru##.fleft-sect-title
+vse-chasti-kino.ru##.tabs-sel
+
+vtorrente.info##.help_top
+!vtorrente.info##.back_top
+vtorrente.info##.right_col
+
+! vtrende.life is now vtrende.pw
+vtrende.pw##[href="/mobile/"]
+
+||v-zoom.ru/gadget/
+! не оно
+!v-zoom.ru$inline-script
+! не оно
+!v-zoom.ru$script
+! да и фиг с ним
+! Update 2022-09: домен перекупили наркоманы
+v-zoom.ru
+
+! loungefilm.club, westernfilm.ru, wfilm.club
+||westernfilm.ru/*/wr-bg12.jpg
+westernfilm.ru##.cat-title
+westernfilm.ru##.bottom-inner
+westernfilm.ru##[href="/premiere/"]
+||wfilm.club/*/wr-bg12.jpg
+wfilm.club##.cat-title
+wfilm.club##.bottom-inner
+wfilm.club##[href="/premiere/"]
+||loungefilm.club/*/wr-bg12.jpg
+loungefilm.club##.cat-title
+loungefilm.club##.bottom-inner
+loungefilm.club##[href="/premiere/"]
+! loungefilm.club, westernfilm.ru, wfilm.club
+
+! kinofizik.me is now widemovie.me
+||widemovie.me/templates/a/images/background.jpg
+widemovie.me##div.sidebar:has-text(трейлер)
+widemovie.me##div.sidebar:has-text(Выбор зрител)
+
+worldserials.org###rt-logo
+||worldserials.org/templates/beez/images/custom/bg.jpg
+worldserials.org##.module-content > noindex
+
+# x-film.top => x-film.sbs
+! generalized
+!x-film.top##.site-desc
+x-film.sbs##.fa-play
+!x-film.sbs##.fplayer-title
+x-film.sbs##p
+
+! zagzag.tv is 403
+! Update 2022-09: closed
+!zagzag.tv##.carouside.sidebox
+!zagzag.tv##.mov-comp3
+!zagzag.tv##.mov-comp2
+!zagzag.tv##.full_mob
+!zagzag.tv##.caroubottom.rels
+
+zetfix.online##noindex
+
+||zevka.com/images/kinologo.jpg
+||zevka.com/images/shapka_zevka.png
+||zevka.com/images/logotip2.png
+zevka.com###MainMenu2
+zevka.com##body > table:nth-of-type(1)
+||zevka.com/images/opisaniefilms.png
+||zevka.com/images/nizok/left_fotter.png
+||zevka.com/images/nizok/uline_fotter.png
+||zevka.com/images/nizok/right_fotter.png
+||zevka.com/images/nizok/atline_fotter.png
+zevka.com##.left_fotter
+zevka.com##.right_fotter
+||zevka.com/images/nizok/at_fotter.png
+zevka.com##.at_fotter
+zevka.com##.p_pod
+
+! zfilm2-hd.life is now zfilme-hd1.site
+zfilme-hd1.site##.lo
+zfilme-hd1.site##.fastreg
+zfilme-hd1.site##.main_info_j
+zfilme-hd1.site##.fulltrailer
+zfilme-hd1.site##.dropdsds > button
+||zfilme-hd1.site/templates/Default/img/Disclaimer.png
+zfilme-hd1.site##.podelitca
+zfilme-hd1.site##.pl1
+zfilme-hd1.site##ul.favbutts
+zfilme-hd1.site##.filter_mov
+zfilme-hd1.site##.filter_anim
+zfilme-hd1.site##.filter_ser
+zfilme-hd1.site##.right-material > div:has-text(коммент)
+zfilme-hd1.site##.faqPopup
+
+! zfilm-hd8.life is offline
+! Update 2022-09: closed
+!zfilm-hd8.life##.main_info_j
+!zfilm-hd8.life##.lo
+!zfilm-hd8.life##.dropdsds
+!zfilm-hd8.life##.fastreg
+!||zfilm-hd8.life/templates/Default/img/Disclaimer.png
+!zfilm-hd8.life##.podelitca
+!zfilm-hd8.life##.pl1
+!zfilm-hd8.life##ul.favbutts
+!film-hd8.life##.left-material > div:nth-of-type(3)
+!zfilm-hd8.life##.playlist-add-area
+!zfilm-hd8.life##.votes
+!zfilm-hd8.life##.section
+!zfilm-hd8.life##.view-info-tit
+!zfilm-hd8.life##.show-trailer
+!zfilm-hd8.life##.foot-main
+
+! gidfilm.ru is now zloekino.ru
+! now it is not free. Block it.
+zloekino.ru
+! older
+!zloekino.ru###user-bar
+!zloekino.ru##div.block-side:has-text(Подписчики)
+!||zloekino.ru/*/pay/
+
+! zoomby.ru - flash video in 2019? Blocked
+! now it is blocked by itself (redirect to spam)
+zoomby.ru
+! before that
+!zoomby.ru###fancybox-outer
+!zoomby.ru###fancybox-overlay
+!zoomby.ru##.age01
+!zoomby.ru##.flash_carousel01_cont
+!zoomby.ru##.md-reg-show
+!zoomby.ru##.call_fancy_auth_window
+!zoomby.ru##.block01_recommend01
+!zoomby.ru###load_lucky_content_block
+!zoomby.ru##.block01
+
+! kinotv1.ru => zritv.net => parked
+!!||kinotv1.ru/images/bg.png$image
+!zritv.net##.col-md-6 > div:nth-of-type(1)
+!zritv.net##.head
+!!zritv.net##table.boxTable:has-text(/Касса|Статистика/)
+!zritv.net##.comEnt
+!!||kinotv1.ru/.s/$image
+!!||kinotv1.ru/stat/$image
+!!zritv.net##.foot
+
+! киного-нет.net
+! wkino4.net is now киного-нет.net
+! temporary removed from general rules
+! Они там внутрь footer-background засунули main. "Так верстают только мудаки"
+! Update 2022-09: closed
+!xn----etbhjjtcfb7b.net##body:style(background-image:none !important)
+!xn----etbhjjtcfb7b.net##.footer-up
+!xn----etbhjjtcfb7b.net##.footer
+!xn----etbhjjtcfb7b.net##.head-block
+!xn----etbhjjtcfb7b.net###text_films
+!||xn----etbhjjtcfb7b.net/templates/wkino4/images/body.jpg
+!||xn----etbhjjtcfb7b.net/templates/wkino4/images/top-menu1.png
+!||xn----etbhjjtcfb7b.net/templates/wkino4/images/top-menu3.png
+!xn----etbhjjtcfb7b.net##[href="/orderdesc/"]
+!xn----etbhjjtcfb7b.net##div.left-block:has-text(Скоро на )
+!xn----etbhjjtcfb7b.net##.left-comments
+!xn----etbhjjtcfb7b.net##.login-open
+!xn----etbhjjtcfb7b.net##.main-news-fav
+!xn----etbhjjtcfb7b.net##.jalobs
+!xn----etbhjjtcfb7b.net##.kontent
+!xn----etbhjjtcfb7b.net###vid_over_float
+!xn----etbhjjtcfb7b.net##h2
+!xn----etbhjjtcfb7b.net##.main-news-rating
+!xn----etbhjjtcfb7b.net##.m-rating-area
+!xn----etbhjjtcfb7b.net##.pleer-text
+!xn----etbhjjtcfb7b.net##td > div:has-text(Подписалось)
+
+!! todo

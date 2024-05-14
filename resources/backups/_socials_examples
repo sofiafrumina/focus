@@ -1,0 +1,288 @@
+﻿
+##[class*=footer__social]
+##[id*=footer__social]
+    !! Some examples
+    ! from Fanboy's
+    !##.b-article-image-footer__social-link
+    ! is in Fanboy's
+    !##.b-footer__social
+    ! from Fanboy's
+    !##.b_footer__socialmedia
+    ! from Fanboy's
+    !##.bottom-footer__social
+    ! from Fanboy's
+    !##.bt__footer__social
+    ! from Fanboy's
+    !##.c-footer__social
+    ! from Fanboy's
+    !##.c-footer__social-links
+    ! from Fanboy's
+    !##.c-footer__social-list
+    ! from Fanboy's
+    !##.c-footer__social-list-item
+    ! from Fanboy's
+    !##.c-main-footer__social
+    ! from Fanboy's
+    !##.c-site-footer__social-icons
+    ! from Fanboy's
+    !##._footer__social
+    ! from Fanboy's
+    !##.footer__socialButtons
+    ! is in Ru AdList and Fanboy's
+    !##.footer__social
+    !##.footer__social-group
+    ! from Fanboy's
+    !##.footer__social-icon
+    ! from Fanboy's
+    !##.footer__socialIcon
+    ! from Fanboy's
+    !##.footer__social-items
+    ! from Fanboy's
+    !##.footer__social-links
+    ! is in Fanboy's
+    !##.footer__social-list
+    ! from Fanboy's
+    !##.footer__social-media
+    ! from Fanboy's
+    !##.footer__socialmedia
+    ! from Fanboy's
+    !##.footer__social-menu
+    ! from Fanboy's
+    !##.footer__socialNetwork
+    ! from Fanboy's
+    !##.footer__socialNetworkItem
+    ! is in Fanboy's
+    !##.footer__socials
+    ! from Fanboy's
+    !##.footer__social-wrapper
+    ! from Fanboy's
+    !##.global-footer__social
+    ! from Fanboy's
+    !##.global-footer__social-link
+    ! from Fanboy's
+    !##.lp-global-footer__social-list
+    ! from Fanboy's
+    !##.m-footer__social-container
+    ! from Fanboy's
+    !##.main-footer__social
+    ! from Fanboy's
+    !##.main-footer__socials
+
+
+##[class*=footer_social]
+    !! Some examples
+    ! from Fanboy's
+    !##.footer_social
+    ! from Fanboy's
+    !##.footer_social-icon
+    ! from Fanboy's
+    !##.footer_social_bar
+    ! from Fanboy's
+    !##.footer_social_button
+    ! from Fanboy's
+    !##.footer_social_facebook
+    ! from Fanboy's
+    !##.footer_social_gplus
+    ! from Fanboy's
+    !##.footer_social_icons
+    ! from Fanboy's
+    !##.footer_social_twitter
+    ! from Fanboy's
+    !##.footer_socialblock
+    ! from Fanboy's
+    !##.footer_socialnav
+    ! from Fanboy's
+    !##.footer_socials
+    ! from Fanboy's
+    !##.footer_socialtab
+    ! from Fanboy's
+    !##.ic_footer_social-share
+    ! from Fanboy's
+    !##.mod_footer_sociallist_iconlink
+    ! from Fanboy's
+    !##.ms-footer_socials
+    ! from Fanboy's
+    !##.page-footer_social
+    ! from Fanboy's
+    !##.sticky_footer_social_facebook
+    ! from Fanboy's
+    !##.sticky_footer_social_google
+    ! from Fanboy's
+    !##.tgc-footer_social
+
+
+##[class*=footer-social]
+##[id*=footer-social]
+    !! Some examples
+    ! from Fanboy's
+    ##div[class^="footer-social-"]
+    ! from Fanboy's
+    ##div[id^="footer-social-"]
+    ! from Fanboy's
+    ##div[id^="footer-social_"]
+    ! from Fanboy's
+    ##div[class^="site-footer-social"]
+    ! from Fanboy's
+    ###arpae-footer-socialBar
+    ! from Fanboy's
+    ###article-footer-social-share
+    ! from Fanboy's
+    ###articles-footer-social
+    ! from Fanboy's
+    ###block-footer-footer-social
+    ! from Fanboy's
+    ###block-menu-menu-footer-social
+    ! from Fanboy's
+    ###dd-footer-social
+    ! from Fanboy's
+    ###footer-social
+    ##.footer-social
+    ! is in EasyList and Fanboy's
+    ##.footer-social-link
+    ! from Fanboy's
+    ###footer-socials
+    ! is in Fanboy's
+    ##.footer-socials
+    ! from Fanboy's
+    ###footer-social_share
+    ! from Fanboy's
+    ###lg-footer-socials
+    ! from Fanboy's
+    ###menu-footer-social-links
+    ! from Fanboy's
+    ###menu-footer-social-list
+    ! from Fanboy's
+    ###menu-menu-footer-social
+    ! from Fanboy's
+    ##.subfooter-social
+    ! from Fanboy's
+    ##.story-footer-social
+    ##.footer-social-wrap
+
+
+##[class*=header-social]:not(body)
+##[id*=header-social]
+    !! Some examples
+    ! from Fanboy's
+    ###block-menu-menu-header-social
+    ! from Fanboy's
+    ###entry-header-social-buttons
+    ! is in Adguard
+    ##.header-social
+    ! from Fanboy's
+    ##.paCmsArticle-section-header-social
+    ! from Fanboy's
+    ##.page-header-social
+    ! from Fanboy's
+    ##.sitewide-header-social
+    ##.td-header-social
+
+
+##[class*=header__social]
+    !! Some examples
+    ! from Fanboy's
+    ##.header__social
+    ! from Fanboy's
+    ##.header__social-accounts
+    ! from Fanboy's
+    ##.header__social-button
+    ! from Fanboy's
+    ##.header__social-buttons
+    ! from Fanboy's
+    ##.header__social-icons
+    ! from Fanboy's
+    ##.header__social-list
+    ! from Fanboy's
+    ##.header__social-media
+    ! from Fanboy's
+    ##.header__social-nav
+    ! from Fanboy's
+    ##.header__social-section
+    ! from Fanboy's
+    ##.header__socialMedia
+    ! from Fanboy's
+    ##.header__socials
+    ! from Fanboy's
+    ##.main-header__social
+    ! from Fanboy's
+    ##.m-header__social
+    ! from Fanboy's
+    ##.m-header__social-button
+    ! from Fanboy's
+    ##.page-header__social
+
+
+##[class*=header-share]
+    !! Some examples
+    ! from Adguard
+    ! codewithhugo.com,laptrinhx.com##.floating-header-share
+    ! is in Fanboy’s and Ru AdList
+    ##.header-share
+    ! from Adguard
+    genius.com##.song_header-share_buttons
+    ! from Adguard
+    !rtvi.com##.c-new__header-share  
+
+
+##[id*=head-social]
+##[class*=head-social]
+    !! Some examples
+    ! from Fanboy's
+    ##.article__head-socials
+    ! from Fanboy's
+    ##.head-social
+    ! from Fanboy's
+    ##.head-social-links
+    ! from Fanboy's
+    ##.head-socials
+    ! from Fanboy's
+    ###masthead-social
+    ! from Fanboy's
+    ##.masthead-social
+    ! from Fanboy's
+    ###masthead-socialblock2
+    ! from Fanboy's
+    ##.site-head-social--small
+
+
+##[class^=social-icon]
+    !! Some examples
+    !##.social-icon
+    ! is in Fanboy's, Adguard, Ru AdList
+    !##.social-icons
+    !##.social-icons__link
+    ! from Adguard
+    !##.social-icons-widget
+    ! from Fanboy's
+    !##.social-icon-wrap
+    ! from Fanboy's
+    !##.social-icons-wrapper
+
+
+##[class^=social-likes]
+    !! Some examples
+    ! is in Adguard, RU AdList, Fanboy's
+    !##.social-likes
+    !##.social-likes__icon
+    !##.social-likes__button
+    !##.social-likes__widget
+    ! from Adguard
+    !autoua.net#?#.single-post > div.l-container:has(> div[class] div.social-likes)
+    ! from Adguard
+    !cyberleninka.ru#?#.half:has(> .social-likes)
+
+
+##[class^=social-links]
+    !##.social-links
+    ! is in Adguard and Fanboy's
+    !##.social-links-block
+    ! is in Adguard and Fanboy's
+    !##.social-links-wrapper
+    ! from Adguard
+    !denofgeek.com##.social-links__items + span.sep
+    ! from Adguard
+    !tokyohive.com##body.single .post .social-links > li:not(:first-child)
+
+
+
+

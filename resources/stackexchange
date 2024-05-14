@@ -1,0 +1,84 @@
+﻿!! It is a sublist of Yet another small uBlock filter list
+! See https://github.com/mtxadmin/ublock for details
+!
+!
+
+    ! banners
+askubuntu.com,stackexchange.com,stackoverflow.com,serverfault.com,superuser.com##.js-dismissable-hero
+    ! top
+! subtop (empty)
+askubuntu.com,stackexchange.com##.site-header--container
+stackoverflow.com##.top-bar ~ .container:style(position:static !important; margin-top:0px !important)
+stackoverflow.com##.top-bar:style(position:static !important)
+stackoverflow.com##.ps-sticky
+    ! logos
+||sstatic.net/img/*/logo-$image
+||sstatic.net/*/logosponsored.svg
+askubuntu.com,stackexchange.com,stackoverflow.com,serverfault.com,superuser.com##.-logo
+askubuntu.com,stackexchange.com,stackoverflow.com,serverfault.com,superuser.com##.s-topbar--logo
+askubuntu.com,stackexchange.com,stackoverflow.com,serverfault.com,superuser.com##.af-logo-img
+    ! popups
+askubuntu.com,stackoverflow.com##.s-popover
+stackoverflow.com##.js-toast
+    ! social
+askubuntu.com,stackexchange.com,stackoverflow.com,serverfault.com,superuser.com##.short-link
+    ! other
+askubuntu.com,stackexchange.com,stackoverflow.com,serverfault.com,superuser.com##.new-login-form
+askubuntu.com,stackexchange.com,stackoverflow.com,serverfault.com,superuser.com##.new-feature-wrapper
+askubuntu.com,stackexchange.com,stackoverflow.com,serverfault.com,superuser.com##._fixed:style(position:absolute !important)
+askubuntu.com,stackexchange.com,stackoverflow.com,serverfault.com,superuser.com###post-form
+askubuntu.com,stackexchange.com,stackoverflow.com,serverfault.com,superuser.com###footer
+askubuntu.com,stackexchange.com,stackoverflow.com,serverfault.com,superuser.com##.bottom-notice
+askubuntu.com,stackexchange.com,stackoverflow.com,serverfault.com,superuser.com###left-sidebar
+askubuntu.com,stackexchange.com,stackoverflow.com,serverfault.com,superuser.com##.everyoneloves__top-leaderboard
+askubuntu.com,stackexchange.com,stackoverflow.com,serverfault.com,superuser.com##.everyonelovesstackoverflow
+askubuntu.com,stackexchange.com,stackoverflow.com,serverfault.com,superuser.com###announcement-banner
+
+serverfault.com##.site-header
+
+!clc.stackoverflow.com  # is in Adguard and EasyPrivacy  # see in _marketing__subdomains
+
+! ? superuser.com##.sm\:pt64.ps-relative.ai-center.md\:fd-column.wmx12.fs-body2.grid.s-hero--circle.s-hero--container
+
+askubuntu.com##.js-sticky-leftnav:style(position:static !important)
+||sstatic.net/*/site-background-image.png
+askubuntu.com##.site-header
+
+
+! Russian translated clone
+stackoverrun.com##.text-muted
+stackoverrun.com##.exchange
+stackoverrun.com##.navbar-brand
+
+! Russian translated clone
+qaru.site,questarter.com##.navbar-fixed-top:style(position: absolute !important;)
+qaru.site,questarter.com##.s-link
+qaru.site,questarter.com##.blue
+qaru.site,questarter.com##.btn-primary
+qaru.site,questarter.com##.adtester-container
+qaru.site,questarter.com##.wraptip
+qaru.site,questarter.com##.wtip
+
+! Russian translated clone
+qa-help.ru##.order-btn
+qa-help.ru##.footer
+qa-help.ru##.back-up
+qa-help.ru##.center-block
+
+! Russian translated clone
+qa-helper.ru##.navbar
+
+! Russian translated clone
+coredump.su##.navbar-brand
+
+! Russian translated clone
+geekquestion.com##.flip-box
+geekquestion.com##.header
+geekquestion.com##body:style(padding-top:0px !important)
+
+! Russian translated clone
+ubuntugeeks.com##.navbar-brand
+
+! Russian translated clone
+askdev.ru###logo
+askdev.ru###ishame

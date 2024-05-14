@@ -1,0 +1,703 @@
+﻿!! It is a sublist of Yet another small uBlock filter list
+!
+! This list contains common third-party ad networks' cookies, due to blocking them
+! Also it contains confirmed first-party tracking cookies
+!
+! See https://github.com/mtxadmin/ublock for details
+! You can use some browser extention to watch cookies in your Browser. For instance, for Mozilla: Cookie Quick Manager or Cookie Manager (it exists even on mobile)
+! Something doesn't work? Something is missing? Please, feel free to write about it here:
+! https://github.com/mtxadmin/ublock/issues/new
+
+!! general rules
+
+! Third-party ad tracking cookies by 6sc.co
+!   https://www.nvidia.com/en-us/about-nvidia/cookie-policy/
+*##+js(cookie-remover, 6suuid)
+
+! apbct_* - CleanTalk Spam Protect cookies. They intend to be useful, but can be tracking. See examples below (referrer etc.)
+!   https://cleantalk.org/help/cookies-description
+
+! ustream.tv third-party targeted advertising
+!   https://www.nvidia.com/en-us/about-nvidia/cookie-policy/
+!*##+js(cookie-remover, ab_test_2)
+
+! Ezoic tracking cookies
+! "Used by the analytics and personalization company, Ezoic"  # https://www.ezoic.com/terms/
+*##+js(cookie-remover, active_template)
+    ! linuxize.com##+js(cookie-remover, active_template)
+    ! thewindowsclub.com##+js(cookie-remover, active_template)
+    ! axeandtool.com##+js(cookie-remover, active_template)
+    ! toppickguide.com##+js(cookie-remover, active_template)
+
+! Amazon third-party affiliate marketing cookie
+!   https://www.nvidia.com/en-us/about-nvidia/cookie-policy/
+*##+js(cookie-remover, ad-id)
+
+! Admitad ad-network third-party cookies
+*##+js(cookie-remover, /^admitad_/)
+    ! mvideo.ru##+js(cookie-remover, admitad_deduplication_cookie)
+
+*##+js(cookie-remover, adtech_uid)
+    ! livejournal.com##+js(cookie-remover, adtech_uid)
+    ! pleer.ru##+js(cookie-remover, adtech_uid)
+
+! advcake third-party tracking cookies
+*##+js(cookie-remover, /^advcake_/)
+    !*##+js(cookie-remover, advcake_click_id)
+    !*##+js(cookie-remover, advcake_track_id)
+    !*##+js(cookie-remover, advcake_session_id)
+        ! bigam.ru##+js(cookie-remover, advcake_session_id)
+        ! bigam.ru##+js(cookie-remover, advcake_track_id)
+        ! citilink.ru##+js(cookie-remover, advcake_session_id)
+        ! citilink.ru##+js(cookie-remover, advcake_track_id)
+        ! eldorado.ru##+js(cookie-remover, advcake_click_id)
+        ! eldorado.ru##+js(cookie-remover, advcake_session_id)
+        ! eldorado.ru##+js(cookie-remover, advcake_trackid)
+        ! eldorado.ru##+js(cookie-remover, advcake_track_url)
+        ! eldorado.ru##+js(cookie-remover, advcake_utm_partner)
+        ! eldorado.ru##+js(cookie-remover, advcake_utm_webmaster)
+        ! mvideo.ru##+js(cookie-remover, advcake_click_id)
+        ! mvideo.ru##+js(cookie-remover, advcake_session_id)
+        ! mvideo.ru##+js(cookie-remover, advcake_track_id)
+        ! mvideo.ru##+js(cookie-remover, advcake_utm_partner)
+        ! mvideo.ru##+js(cookie-remover, advcake_utm_webmaster)
+        ! mvideo.ru##+js(cookie-remover, advcake_track_id)
+        ! mvideo.ru##+js(cookie-remover, advcake_track_url)
+
+##+js(cookie-remover, ajs_anonymous_id)
+    ! digitalocean.com##+js(cookie-remover, ajs_anonymous_id)
+    ! substack.com##+js(cookie-remover, ajs_anonymous_id)
+    ! trello.com##+js(cookie-remover, ajs_anonymous_id)
+
+! Bitrix first-party trackers
+##+js(cookie-remover, /^BITRIX_SM_ABTEST_/)
+    ! eksmo.ru##+js(cookie-remover, BITRIX_SM_ABTEST_ru)
+    ! victel63.ru##+js(cookie-remover, BITRIX_SM_ABTEST_s1)
+    ! xn--h1alcedd.xn--d1aqf.xn--p1ai##+js(cookie-remover, BITRIX_SM_ABTEST_s1)
+*##+js(cookie-remover, BITRIX_SM_BANNERS)
+    ! adrenalin.ru##+js(cookie-remover, BITRIX_SM_BANNERS)
+    ! go64.ru##+js(cookie-remover, BITRIX_SM_BANNERS)
+    ! kprfnsk.ru##+js(cookie-remover, BITRIX_SM_BANNERS)  # sic! sale banners on a political party site
+*##+js(cookie-remover, BITRIX_SM_GUEST_ID)
+    ! adrenalin.ru##+js(cookie-remover, BITRIX_SM_GUEST_ID)
+    ! avicom.ru##+js(cookie-remover, BITRIX_SM_GUEST_ID)
+    ! bigam.ru##+js(cookie-remover, BITRIX_SM_GUEST_ID)
+    ! ohotnik.com##+js(cookie-remover, BITRIX_SM_GUEST_ID)
+    ! specodegda.ru##+js(cookie-remover, BITRIX_SM_GUEST_ID)
+    ! technocity.ru##+js(cookie-remover, BITRIX_SM_GUEST_ID)
+!*##+js(cookie-remover, BITRIX_SM_LAST_VISIT) - see /visit/
+    ! adrenalin.ru##+js(cookie-remover, BITRIX_SM_LAST_VISIT)
+    ! avicom.ru##+js(cookie-remover, BITRIX_SM_LAST_VISIT)
+    ! bigam.ru##+js(cookie-remover, BITRIX_SM_LAST_VISIT)
+    ! ohotnik.com##+js(cookie-remover, BITRIX_SM_LAST_VISIT)
+    ! specodegda.ru##+js(cookie-remover, BITRIX_SM_LAST_VISIT)
+    ! technocity.ru##+js(cookie-remover, BITRIX_SM_LAST_VISIT)
+*##+js(cookie-remover, BITRIX_SM_SALE_UID)
+    ! baucenter.ru##+js(cookie-remover, BITRIX_SM_SALE_UID)
+    ! izhohota.ru##+js(cookie-remover, BITRIX_SM_SALE_UID)
+    ! podrygka.ru##+js(cookie-remover, BITRIX_SM_SALE_UID)
+    ! qwertysh.ru##+js(cookie-remover, BITRIX_SM_SALE_UID)
+    ! specodegda.ru##+js(cookie-remover, BITRIX_SM_SALE_UID)
+    ! technocity.ru##+js(cookie-remover, BITRIX_SM_SALE_UID)
+
+! ContentSquare tracking cookies
+!   https://www.nvidia.com/en-us/about-nvidia/cookie-policy/
+*##+js(cookie-remover, _cs_c)
+*##+js(cookie-remover, _cs_ex)
+*##+js(cookie-remover, _cs_id)
+*##+js(cookie-remover, _cs_optout)
+*##+js(cookie-remover, _cs_s)
+*##+js(cookie-remover, _cs_vars)
+
+! Marketo ad network persistent cookies
+!   https://www.nvidia.com/en-us/about-nvidia/cookie-policy/
+*##+js(cookie-remover, __cf_bm)
+
+! Google Analytics ID third-party tracking cookies
+!   https://cookiedatabase.org/cookie/google-analytics/_dc_gtm_ua/
+!   https://cookiepedia.co.uk/cookie/12712424
+!   https://itecnote.com/tecnote/official-documentation-of-the-_dc_gtm-cookie-from-google-tag-manager/
+!   https://www.bitrix24.eu/about/cookie-policy/
+*##+js(cookie-remover, /^_dc_gtm_/)
+    ! citilink.ru##+js(cookie-remover, /^_dc_gtm_/)
+    ! eldorado.ru##+js(cookie-remover, /^_dc_gtm_/)
+
+! DDoS cookies. They are usually http-only. It seems, don't block, just for information
+!*##+js(cookie-remover, /^__ddg/)
+    ! There are many sites. Only examples:
+    ! ayzdorov.ru##+js(cookie-remover, __ddg1_)
+    ! garmin.ru##+js(cookie-remover, __ddg1_)
+    ! hh.ru##+js(cookie-remover, __ddg1_)
+    ! kemono.party##+js(cookie-remover, __ddg1_)
+    ! nozhikov.ru##+js(cookie-remover, __ddg1_)
+    ! pikabu.ru##+js(cookie-remover, __ddg1_)
+    ! pikabu.ru##+js(cookie-remover, __ddg5_)
+    ! pikabu.ru##+js(cookie-remover, __ddgid_)
+    ! pikabu.ru##+js(cookie-remover, __ddgmark_)
+    ! platiza.ru##+js(cookie-remover, __ddg1_)
+    ! podpiska.org##+js(cookie-remover, __ddg1_)
+
+! Device id. For instance, Twitch's third party
+!   https://www.nvidia.com/en-us/about-nvidia/cookie-policy/
+*##+js(cookie-remover, device_id)
+
+! Ezoic tracking cookies
+! "Used by the analytics and personalization company, Ezoic"  # https://www.ezoic.com/terms/
+*##+js(cookie-remover, ezds)
+*##+js(cookie-remover, /^ezo/)
+*##+js(cookie-remover, /^ezux_/)
+    ! axeandtool.com##+js(cookie-remover, ezds)
+    ! axeandtool.com##+js(cookie-remover, /^ezo/)
+    ! codefather.tech##+js(cookie-remover, /^ezo/)
+    ! easy2boot.com##+js(cookie-remover, /^ezo/)
+    ! ezoic.com##+js(cookie-remover, /^ezo/)
+    ! ipaddress.com##+js(cookie-remover, /^ezoadgid/)
+    ! ipaddress.com##+js(cookie-remover, /^ezosuibasgeneris/)
+    ! linuxize.com##+js(cookie-remover, ezds)
+    ! linuxize.com##+js(cookie-remover, /^ezo/)
+    ! lynxbee.com##+js(cookie-remover, ezds)
+    ! lynxbee.com##+js(cookie-remover, /^ezo/)
+    ! thewindowsclub.com##+js(cookie-remover, ezds)
+    ! thewindowsclub.com##+js(cookie-remover, /^ezoab_/)
+    ! thewindowsclub.com##+js(cookie-remover, /^ezoadgid_/)
+    ! thewindowsclub.com##+js(cookie-remover, /^ezopvc_/)
+    ! thewindowsclub.com##+js(cookie-remover, ezohw)
+    ! thewindowsclub.com##+js(cookie-remover, /^ezoref_/)
+    ! thewindowsclub.com##+js(cookie-remover, /^ezosuibasgeneris/)
+    ! thewindowsclub.com##+js(cookie-remover, /^ezovid_/)
+    ! thewindowsclub.com##+js(cookie-remover, /^ezovuuid_/)
+    ! thewindowsclub.com##+js(cookie-remover, /^ezovuuidtime_/)
+    ! toppickguide.com##+js(cookie-remover, ezds)
+    ! toppickguide.com##+js(cookie-remover, /^ezo/)
+! not in the list of Ezoic cookies, but, it seems, they are theirs too
+*##+js(cookie-remover, ezAdBlockUser)
+*##+js(cookie-remover, ezCMPCCS)
+*##+js(cookie-remover, ezepvv)
+    ! axeandtool.com##+js(cookie-remover, ezAdBlockUser)
+    ! axeandtool.com##+js(cookie-remover, ezCMPCCS)
+    ! axeandtool.com##+js(cookie-remover, ezepvv)
+    ! codefather.tech##+js(cookie-remover, ezCMPCCS)
+    ! codefather.tech##+js(cookie-remover, ezepvv)
+    ! linuxize.com##+js(cookie-remover, ezAdBlockUser)
+    ! linuxize.com##+js(cookie-remover, ezepvv)
+    ! linuxize.com##+js(cookie-remover, ezCMPCCS)
+    ! lynxbee.com##+js(cookie-remover, ezAdBlockUser)
+    ! lynxbee.com##+js(cookie-remover, ezCMPCCS)
+    ! lynxbee.com##+js(cookie-remover, ezepvv)
+    ! toppickguide.com##+js(cookie-remover, ezAdBlockUser)
+    ! toppickguide.com##+js(cookie-remover, ezCMPCCS)
+    ! toppickguide.com##+js(cookie-remover, ezepvv)
+    ! thewindowsclub.com##+js(cookie-remover, ezepvv)
+
+! Google Analytics third-party tracking cookies
+!   https://www.nvidia.com/en-us/about-nvidia/cookie-policy/
+!   https://www.bitrix24.eu/about/cookie-policy/
+*##+js(cookie-remover, _ga)
+    ! 10minutemail.net##+js(cookie-remover, _ga)
+    ! citilink.ru##+js(cookie-remover, _ga)
+    ! dns-shop.ru##+js(cookie-remover, _ga)
+    ! eldorado.ru##+js(cookie-remover, _ga)
+    ! mvideo.ru##+js(cookie-remover, _ga)
+*##+js(cookie-remover, /^_ga_/)
+    ! 10minutemail.net##+js(cookie-remover, /^_ga_/)
+    ! dns-shop.ru##+js(cookie-remover, /^_ga_/)
+    ! eldorado.ru##+js(cookie-remover, /^_ga_/)
+    ! mozilla.org##+js(cookie-remover, /^_ga/)
+    ! mvideo.ru##+js(cookie-remover, /^_ga_/)
+! also
+*##+js(cookie-remover, _gat)
+!   https://itecnote.com/tecnote/official-documentation-of-the-_dc_gtm-cookie-from-google-tag-manager/
+    ! andrewdenty.com##+js(cookie-remover, _gat)
+    ! dns-shop.ru##+js(cookie-remover, _gat)
+    ! gameplay.tips##+js(cookie-remover, _gat)
+*##+js(cookie-remover, /^_gat_/)
+    ! citilink.ru##+js(cookie-remover, /^_gat_/)
+    ! mvideo.ru##+js(cookie-remover, /^_gat_/)  # _gat_gtag_UA_{id}
+*##+js(cookie-remover, _gcl_au)
+    ! citilink.ru##+js(cookie-remover, _gcl_au)
+    ! dns-shop.ru##+js(cookie-remover, _gcl_au)
+    ! eldorado.ru##+js(cookie-remover, _gcl_au)
+    ! mvideo.ru##+js(cookie-remover, _gcl_au)
+    ! pleer.ru##+js(cookie-remover, _gcl_au)
+    ! trello.com##+js(cookie-remover, _gcl_au)
+! "_gid – used to identify the user"  # https://www.optimizesmart.com/google-analytics-cookies-ultimate-guide/ :
+*##+js(cookie-remover, _gid)
+    ! 10minutemail.net##+js(cookie-remover, _gid)
+    ! andrewdenty.com##+js(cookie-remover, _gid)
+    ! citilink.ru##+js(cookie-remover, _gid)
+    ! dns-shop.ru##+js(cookie-remover, _gid
+    ! eldorado.ru##+js(cookie-remover, _gid)
+    ! mozilla.org##+js(cookie-remover, _gid)
+    ! mvideo.ru##+js(cookie-remover, _gid)
+
+*##+js(cookie-remover, /^gdeslon.ru/)
+    ! eldorado.ru##+js(cookie-remover, gdeslon.ru.__arc_domain)
+    ! eldorado.ru##+js(cookie-remover, gdeslon.ru.user_id)
+
+! DoubleClick third-party persistent ad cookies
+! https://www.nvidia.com/en-us/about-nvidia/cookie-policy/
+*##+js(cookie-remover, IDE)
+
+! New Relic third-party ad cookies
+! https://www.nvidia.com/en-us/about-nvidia/cookie-policy/
+*##+js(cookie-remover, JSESSIONID)
+
+! laravel_session - in general, don't(?), it is a Laravel session id. And also it is http-only
+!*##+js(cookie-remover, laravel_session)
+    ! autoreview.ru##+js(cookie-remover, laravel_session)
+    ! meme-generator.ru##+js(cookie-remover, laravel_session)
+    ! mindbox.in##+js(cookie-remover, laravel_session)
+    ! mindboxindia.com##+js(cookie-remover, laravel_session)
+
+! Liveramp cookies
+! https://docs.liveramp.com/privacy-manager/en/cookies-set-by-ats.html
+! also: https://github.com/prebid/Prebid.js/issues/5882 : "If you remove the cookie "_lr_retry_request" and refresh, then the bids requests are done and the ads are displayed"
+*##+js(cookie-remover, /^_lr_/)
+
+! not in the list of Ezoic cookies, but, it seems, they are theirs too. Last page visited.  # https://www.ezoic.com/terms/
+*##+js(cookie-remover, /^lp_[0-9]+$/)
+    ! axeandtool.com##+js(cookie-remover, /^lp_[0-9]+/)
+    ! codefather.tech##+js(cookie-remover, /^lp_[0-9]+$/)
+    !  lp_{numid}:https://www.ezoic.com/terms/
+    ! ezoic.com##+js(cookie-remover, /^lp_[0-9]+/)
+    ! linuxize.com##+js(cookie-remover, /^lp_[0-9]+$/)
+    ! thewindowsclub.com##+js(cookie-remover, /^lp_[0-9]+$/)
+    ! toppickguide.com##+js(cookie-remover, /^lp_/)
+
+! third party - mediarithmics marketing cloud
+! https://www.nvidia.com/en-us/about-nvidia/cookie-policy/
+!*##+js(cookie-remover, mics_lts)
+
+! ustream.tv targeted advertising
+! https://www.nvidia.com/en-us/about-nvidia/cookie-policy/
+!*##+js(cookie-remover, mte_use_lonpoll)
+
+! PHPSESSID - in general, don't(?), it is a PHP session id. And also it is http-only, but not everywhere
+!*##+js(cookie-remover, PHPSESSID)
+! Sometimes it is different:
+!   ustream.tv targeted advertising
+!   https://www.nvidia.com/en-us/about-nvidia/cookie-policy/
+
+*##+js(cookie-remover, /refer/i)
+    !*##+js(cookie-remover, referer)
+        ! fasko.ru##+js(cookie-remover, referer)
+        ! nozhikov.ru##+js(cookie-remover, referer)
+        ! ohota-magazin.ru##+js(cookie-remover, referer)
+        ! udsezon.ru##+js(cookie-remover, referer)
+    ! Referer. For instance, Twitch's third party
+    ! https://www.nvidia.com/en-us/about-nvidia/cookie-policy/
+    !*##+js(cookie-remover, referrer_url)
+    !
+    ! altaro.com##+js(cookie-remover, AltaroSoftwareRefer)
+    !  http-only, but
+    ! cubelelo.com##+js(cookie-remover, _orig_referrer)
+    ! digitalocean.com##+js(cookie-remover, referrer)
+    ! duolingo.com##+js(cookie-remover, initial_referrer)
+    ! filestash.app##+js(cookie-remover, referral)
+    ! grafana.com##+js(cookie-remover, rl_page_init_referring_domain)
+    ! grafana.com##+js(cookie-remover, rl_page_init_referrer)
+    ! hexospark.com##+js(cookie-remover, document_referrer)
+    ! hotwav.com##+js(cookie-remover, _orig_referrer)
+    ! nozhikov.ru##+js(cookie-remover, first_referer)
+    ! osteopluscct.ru##+js(cookie-remover, apbct_prev_referer)
+    ! popl.co##+js(cookie-remover, _orig_referrer)
+    ! product-test.ru##+js(cookie-remover, ReferPage)
+    ! tigerlrm.com##+js(cookie-remover, _referrer)
+    ! udsezon.ru##+js(cookie-remover, referer_referer)
+    ! udsezon.ru##+js(cookie-remover, referer_time)
+    ! udsezon.ru##+js(cookie-remover, referer_type)
+    ! udsezon.ru##+js(cookie-remover, referer_uri)
+    ! zamkielbor.ru##+js(cookie-remover, qform_refer)
+    ! zaochnik.com##+js(cookie-remover, LAST_REFERRER)
+    ! zona.media##+js(cookie-remover, mz.t_freferrer)
+
+*##+js(cookie-remover, rerf)
+    ! dns-shop.ru##+js(cookie-remover, rerf)
+    !  3p
+    ! analytics.dns-shop.ru##+js(cookie-remover, rerf)
+    ! restapi.dns-shop.ru##+js(cookie-remover, rerf)
+    ! webapi.dns-shop.ru##+js(cookie-remover, rerf)
+    ! api.farfor.ru##+js(cookie-remover, rerf)
+    ! mibf.info##+js(cookie-remover, rerf)
+
+*##+js(cookie-remover, sh2lastfid)
+    ! dsezon.ru##+js(cookie-remover, sh2lastfid)
+    ! ruskeala.ru##+js(cookie-remover, sh2lastfid)
+    ! sotohit.ru##+js(cookie-remover, sh2lastfid)
+
+! Adobe third-party persistent ad cookies
+! https://www.nvidia.com/en-us/about-nvidia/cookie-policy/
+*##+js(cookie-remover, /^s_vi_/)
+
+! Mail.ru third party tracking cookie
+! https://cookiedatabase.org/cookie/mail-ru/tmr_detect/
+! https://www.change.org/policies/cookies
+*##+js(cookie-remover, tmr_detect)
+    ! citilink.ru##+js(cookie-remover, tmr_detect)
+    ! dns-shop.ru##+js(cookie-remover, tmr_detect)
+    ! eldorado.ru##+js(cookie-remover, tmr_detect)
+    ! pleer.ru##+js(cookie-remover, tmr_detect)
+! VK (belongs to Mail.ru) third-party affiliate marketing referrer domain
+! https://www.nvidia.com/en-us/about-nvidia/cookie-policy/
+! https://www.change.org/policies/cookies
+*##+js(cookie-remover, tmr_lvid)
+*##+js(cookie-remover, tmr_lvidTS)
+    ! Some examples:
+    ! citilink.ru##+js(cookie-remover, tmr_lvid)
+    ! citilink.ru##+js(cookie-remover, tmr_lvidTS)
+    ! dns-shop.ru##+js(cookie-remover, tmr_lvid)
+    ! dns-shop.ru##+js(cookie-remover, tmr_lvidTS)
+    ! eldorado.ru##+js(cookie-remover, tmr_lvid)
+    ! eldorado.ru##+js(cookie-remover, tmr_lvidTS)
+    ! pleer.ru##+js(cookie-remover, tmr_lvid)
+    ! pleer.ru##+js(cookie-remover, tmr_lvidTS)
+! https://www.change.org/policies/cookies
+*##+js(cookie-remover, tmr_reqNum)
+
+*##+js(cookie-remover, /visit/i)
+    !*##+js(cookie-remover, BITRIX_SM_LAST_VISIT)
+        ! adrenalin.ru##+js(cookie-remover, BITRIX_SM_LAST_VISIT)
+        ! avicom.ru##+js(cookie-remover, BITRIX_SM_LAST_VISIT)
+        ! bigam.ru##+js(cookie-remover, BITRIX_SM_LAST_VISIT)
+        ! ohotnik.com##+js(cookie-remover, BITRIX_SM_LAST_VISIT)
+        ! promt.ru##+js(cookie-remover, BITRIX_SM_LAST_VISIT)
+        ! specodegda.ru##+js(cookie-remover, BITRIX_SM_LAST_VISIT)
+        ! technocity.ru##+js(cookie-remover, BITRIX_SM_LAST_VISIT)
+    ! auto.ru##+js(cookie-remover, count-visits)
+    ! ballistica.su##+js(cookie-remover, user_visits)
+    ! ballistica.su##+js(cookie-remover, uss_visitor)
+    ! banki.ru##+js(cookie-remover, BANKI_RU_LAST_VISIT)
+    !  httpOnly
+    ! coldsteel.com##+js(cookie-remover, athena_short_visit_id)
+    ! crmnext.us##+js(cookie-remover, ifso_visit_counts)
+    ! crozdesk.com##+js(cookie-remover, ahoy_visit)
+    ! crozdesk.com##+js(cookie-remover, ahoy_visitor)
+    ! httpOnly
+    ! cubicl.io##+js(cookie-remover, visitorId)
+    ! garmin.ru##+js(cookie-remover, GARMIN_CO_LAST_VISIT)
+    ! getapp.com##+js(cookie-remover, /^most_visited_apps/)
+    ! habr.com##+js(cookie-remover, visited_articles)
+    ! kb.macrium.com##+js(cookie-remover, IKB_InstantKBLastVisit)
+    ! pleer.ru##+js(cookie-remover, cats_visit)
+    ! pleer.ru##+js(cookie-remover, last_visit)
+    ! pleer.ru##+js(cookie-remover, prods_visit)
+    ! producthunt.com##+js(cookie-remover, visitor_id)
+    ! rnk.ru##+js(cookie-remover, ASE_userLastVisit)
+    ! setforbusiness.com##+js(cookie-remover, visitCount)
+    ! smartsalescrm.com##+js(cookie-remover, ifso_visit_counts)
+    !  http-only, but
+    ! sourceforge.net##+js(cookie-remover, VISITOR)
+    ! stopgame.ru##+js(cookie-remover, last_visit_date_v2)
+    ! syncfusion.com##+js(cookie-remover, nQ_userVisitId)
+    ! tenforums.com##+js(cookie-remover, bb_lastvisit)
+    ! thestreet.com##+js(cookie-remover, last_visit_bc)
+    ! xn--80aiikwliqi.xn--80ao21a##+js(cookie-remover, companies_visited_products)
+    !  http-only, but
+    ! youtube.com##+js(cookie-remover, VISITOR_INFO1_LIVE)
+    ! zabbix.com##+js(cookie-remover, bblastvisit)
+    ! zapier.com##+js(cookie-remover, visitor_id)
+    !  non-session cookie, several months
+    ! zoom.us##+js(cookie-remover, _zm_visitor_guid)
+
+! XSRF-TOKEN - in general, don't(?): it is typically a token for form sending security
+! It should be strictly session though. Todo for research.
+!*##+js(cookie-remover, XSRF-TOKEN)
+
+    ! Yandex trackers
+! Yandex third-party tracking cookies
+! https://www.nvidia.com/en-us/about-nvidia/cookie-policy/
+! https://yandex.com/support/metrica/general/cookie-usage.html
+!
+! Don't think that removing cookies "i" can be false-positives. 
+! 1)Yandex Metrica is wide accepted, 
+! 2)it is just on-start removing cookies, effectively making them session
+! Update: this cookie somehow is used by qrator anti-ddos service. Do not block it.
+! At least, you can see examples on dns-shop.ru (worldwide) and leroymerlin.ru (only with rus ip)
+! heavily obfuscated scripts:
+!||dns-shop.ru/__qrator/qauth_utm_v2_vcf8c.js
+!||dns-shop.ru/__qrator/validate
+! resume:
+!*##+js(cookie-remover, i) - don't block
+    sso.dzen.ru##+js(cookie-remover, i)
+    ya.ru##+js(cookie-remover, i)
+    yandex.ru##+js(cookie-remover, i)
+!
+! is_gdpr and is_gdpr_b are not present in the links above but exists in some pivacy policies.
+! view-source:https://notify.events/en/blog/wix-notifications-setup-guide
+! And they are definitely Yandex-related cookie (not Google). Also see examples.
+*##+js(cookie-remover, is_gdpr)
+*##+js(cookie-remover, is_gdpr_b)
+    ! ya.ru##+js(cookie-remover, is_gdpr)
+    ! ya.ru##+js(cookie-remover, is_gdpr_b)
+    ! yandex.ru##+js(cookie-remover, is_gdpr)
+    ! yandex.ru##+js(cookie-remover, is_gdpr_b)
+*##+js(cookie-remover, usst)
+*##+js(cookie-remover, yabs-sid)
+*##+js(cookie-remover, yandexuid)
+    ! auto.ru##+js(cookie-remover, yandexuid)
+    ! dzen.ru##+js(cookie-remover, yandexuid)
+    ! kinopoisk.ru##+js(cookie-remover, yandexuid)
+    ! ya.ru##+js(cookie-remover, yandexuid)
+    ! yandex.ru##+js(cookie-remover, yandexuid)
+! _yasc is not present in the links above but exists in some pivacy policies.
+! view-source:https://notify.events/en/blog/wix-notifications-setup-guide
+! And it is definitely Yandex-related cookie (not Google). Also see examples.
+*##+js(cookie-remover, _yasc)
+    ! auto.ru##+js(cookie-remover, _yasc)
+    !   some uid
+    ! dzen.ru##+js(cookie-remover, _yasc)
+    ! kinopoisk.ru*##+js(cookie-remover, _yasc)
+    ! turbopages.org##+js(cookie-remover, _yasc)
+    ! ya.ru##+js(cookie-remover, _yasc)
+    ! yandex.ru##+js(cookie-remover, _yasc)
+! Yandex Metrica cookies
+*##+js(cookie-remover, /^_ym_/)
+    ! *##+js(cookie-remover, _ym_d)
+    ! *##+js(cookie-remover, _ym_debug)
+    ! *##+js(cookie-remover, _ym_hostIndex)
+    !   "this cookie determines whether a user has ad-blockers"
+    ! *##+js(cookie-remover, _ym_isad)
+    ! *##+js(cookie-remover, _ym_metrika_enabled)
+    ! *##+js(cookie-remover, _ym_uid)  # https://cookiedatabase.org/cookie/yandex-metrica/_ym_uid/
+    ! *##+js(cookie-remover, /^_ym_visorc_/)
+        ! Some examples:
+        ! dns-shop.ru##+js(cookie-remover, _ym_d)
+        ! dns-shop.ru##+js(cookie-remover, _ym_isad)
+        ! dns-shop.ru##+js(cookie-remover, _ym_uid)
+        ! dns-shop.ru##+js(cookie-remover, _ym_visorc)
+        ! eldorado.ru##+js(cookie-remover, _ym_d)
+        ! eldorado.ru##+js(cookie-remover, _ym_isad)
+        ! eldorado.ru##+js(cookie-remover, _ym_uid)
+        ! fskrs.ru##+js(cookie-remover, _ym_d)
+        ! fskrs.ru##+js(cookie-remover, _ym_isad)
+        ! fskrs.ru##+js(cookie-remover, _ym_uid)
+        ! morakniv-russia.ru##+js(cookie-remover, _ym_d)
+        ! morakniv-russia.ru##+js(cookie-remover, _ym_isad)
+        ! morakniv-russia.ru##+js(cookie-remover, _ym_uid)
+        ! mvideo.ru##+js(cookie-remover, _ym_d)
+        ! mvideo.ru##+js(cookie-remover, _ym_uid)
+        ! pleer.ru##+js(cookie-remover, _ym_d)
+        ! pleer.ru##+js(cookie-remover, _ym_isad)
+        ! pleer.ru##+js(cookie-remover, _ym_uid)
+        ! stroy-podskazka.ru##+js(cookie-remover, yandex_ym_lvs)
+        ! translate.ru##+js(cookie-remover, _ym_d)
+        ! translate.ru##+js(cookie-remover, _ym_isad)
+        ! translate.ru##+js(cookie-remover, _ym_uid)
+        ! translate.ru##+js(cookie-remover, _ym_visorc)
+        ! wlooks.ru##+js(cookie-remover, yandex_ym_lvs)
+*##+js(cookie-remover, ymex)
+*##+js(cookie-remover, yuidss)
+
+*##+js(cookie-remover, /_utm_/)
+    ! 247wallst.com##+js(cookie-remover, ws_utm_campaign)
+    ! biglion.ru##+js(cookie-remover, /^raw_utm_/)
+        ! biglion.ru##+js(cookie-remover, raw_utm_content)
+        ! biglion.ru##+js(cookie-remover, raw_utm_medium
+        ! biglion.ru##+js(cookie-remover, raw_utm_ext)  # ref
+        ! biglion.ru##+js(cookie-remover, raw_utm_source)  # ref
+        ! biglion.ru##+js(cookie-remover, raw_utm_date)
+    ! yclients.com##+js(cookie-remover, /^yc_utm_/)
+        ! yclients.com##+js(cookie-remover, yc_utm_campaign)
+        ! yclients.com##+js(cookie-remover, yc_utm_source)
+        ! yclients.com##+js(cookie-remover, yc_utm_medium)
+
+!! domains
+
+24review.ru##+js(cookie-remover, watched)
+
+beeline.ru##+js(cookie-remover, abtest_new_basket)
+beeline.ru##+js(cookie-remover, abtest_new_basket_shop)
+
+buffer.com##+js(cookie-remover, buffer-marketing)
+buffer.com##+js(cookie-remover, buffer-marketing.sig)
+
+!citilink.ru##+js(cookie-remover, _pcl) - don't, it breaks the site loading
+!(it breaks later, though, due to their WAF, but)
+citilink.ru##+js(cookie-remover, /^ab_test/)
+    ! citilink.ru##+js(cookie-remover, ab_test)
+    ! citilink.ru##+js(cookie-remover, ab_test_analytics)
+    ! citilink.ru##+js(cookie-remover, /^ab_test_listing_/)
+    ! citilink.ru##+js(cookie-remover, /^ab_test_main_/)
+citilink.ru##+js(cookie-remover, directCrm-session)
+citilink.ru##+js(cookie-remover, __exponea_etc__)
+citilink.ru##+js(cookie-remover, __exponea_time2__)
+citilink.ru##+js(cookie-remover, mindboxDeviceUUID)
+
+cloudstorageinfo.org##+js(cookie-remover, /^apbct_/)
+    ! cloudstorageinfo.org##+js(cookie-remover, apbct_cookies_test)
+    ! cloudstorageinfo.org##+js(cookie-remover, apbct_headless)
+    ! cloudstorageinfo.org##+js(cookie-remover, apbct_page_hits)
+    ! cloudstorageinfo.org##+js(cookie-remover, apbct_pixel_url)
+    ! cloudstorageinfo.org##+js(cookie-remover, apbct_prev_referer)
+    ! cloudstorageinfo.org##+js(cookie-remover, apbct_site_landing_ts)
+    ! cloudstorageinfo.org##+js(cookie-remover, apbct_site_referer)
+    ! cloudstorageinfo.org##+js(cookie-remover, apbct_timestamp)
+    ! cloudstorageinfo.org##+js(cookie-remover, apbct_urls)
+! fingerprinting
+cloudstorageinfo.org##+js(cookie-remover, ct_screen_info)
+
+! visitor id
+cnn.com##+js(cookie-remover, _pxhd)
+
+coldsteel.com##+js(cookie-remover, fornax_anonymousId)
+
+creatio.com##+js(cookie-remover, /^visid_incap_/)
+
+crozdesk.com##+js(cookie-remover, conversion)
+
+! url
+cubelelo.com##+js(cookie-remover, _landing_page)
+
+digitalocean.com##+js(cookie-remover, first_landing_page)
+digitalocean.com##+js(cookie-remover, last_landing_page)
+digitalocean.com##+js(cookie-remover, last_landing_page_timestamp)
+
+drivecentric.com##+js(cookie-remover, Ignitify)
+
+! not session cookie, 10 years
+eksmo.ru##+js(cookie-remover, eid)
+
+empoweringsystems.com##+js(cookie-remover, _wpfuj)
+
+fanboy.co.nz##+js(cookie-remover)
+
+! ref
+fleeg.com##+js(cookie-remover, custom_origin_first)
+! "undefined"
+fleeg.com##+js(cookie-remover, user_origin)
+! "custom_origin_first: duckduckgo/https://fleeg.com/
+fleeg.com##+js(cookie-remover, origin)
+! "custom_origin_first: duckduckgo/https://fleeg.com/"
+fleeg.com##+js(cookie-remover, custom_origin_last)
+fleeg.com##+js(cookie-remover, param_tag)
+
+! visitor id
+forbes.com##+js(cookie-remover, fadvfpuid)
+forbes.com##+js(cookie-remover, fadve2etid)
+
+fridaycrm.com##+js(cookie-remover, income_point_uri)
+!fridaycrm.com##+js(cookie-remover, income_point_referer) - as /refer/
+
+gameplay.tips##+js(cookie-remover, caosLocalGa)
+gameplay.tips##+js(cookie-remover, caosLocalGa_gid)
+
+google.com##+js(cookie-remover, DV)
+
+! "{"landing_page_url":"https%3A%2F%2Fwww.hellobonsai.com%2F","initial_referrer" ..."
+hellobonsai.com##+js(cookie-remover, bonsai_attribution_data)
+
+! some visitor ids
+indeed.com##+js(cookie-remover, CTK)
+indeed.com##+js(cookie-remover, LV)
+indeed.com##+js(cookie-remover, RF)
+indeed.com##+js(cookie-remover, RQ)
+indeed.com##+js(cookie-remover, UD)
+
+investing.com##+js(cookie-remover, adBlockerNewUserDomains)
+investing.com##+js(cookie-remover, lifetime_page_view_count)
+! some visitor id
+investing.com##+js(cookie-remover, smd)
+! some visitor id 1 year cookie
+investing.com##+js(cookie-remover, udid)
+
+invideo.io##+js(cookie-remover, /^amp_/)
+
+! http-only, but
+learn.microsoft.com##+js(cookie-remover, original_req_url)
+
+nethunt.com##+js(cookie-remover, NH-EXIT-BANNER)
+
+nordvpn.com##+js(cookie-remover, /^popups_/i)
+    ! nordvpn.com##+js(cookie-remover, popups_session_pageviews)
+    ! nordvpn.com##+js(cookie-remover, popups_referrer)
+    ! nordvpn.com##+js(cookie-remover, popups_session_duration)
+
+ozon.ru##+js(cookie-remover, ADDRESSBOOKBAR_WEB_CLARIFICATION)
+finance.ozon.ru##+js(cookie-remover, /trackerSessionId/i)
+
+price.ru##+js(cookie-remover, ruid)
+
+reallysimplesystems.com##+js(cookie-remover, MoneypennyRef)
+
+rnk.ru##+js(cookie-remover, ASE_anonymousId)
+rnk.ru##+js(cookie-remover, ASE_SlideBannerShowedPeriod_15)
+
+! httpOnly id
+slashdot.org##+js(cookie-remover, VISITOR)
+
+! "direct"
+softr.io##+js(cookie-remover, sfic)
+! "direct"
+softr.io##+js(cookie-remover, slic)
+! visit url
+softr.io##+js(cookie-remover, sfip)
+! visit url
+softr.io##+js(cookie-remover, sfid)
+! visit url
+softr.io##+js(cookie-remover, slip)
+! visit time
+softr.io##+js(cookie-remover, slid)
+
+squarespace.com##+js(cookie-remover, SS_ANALYTICS_ID)
+squarespace.com##+js(cookie-remover, SS_MID)
+
+squareup.com##+js(cookie-remover, _solidshop_guest_token)
+
+vseinstrumenti.ru##+js(cookie-remover, reftoken)
+
+! ref
+webflow.com##+js(cookie-remover, wf_first_touch)
+webflow.com##+js(cookie-remover, wf_first_touch_v2)
+
+wynk.in##+js(cookie-remover, nonLoggedInUser)
+
+yandex.ru##+js(cookie-remover, usurveys)
+
+zabbix.com##+js(cookie-remover, bbdiscussion_view)
+zabbix.com##+js(cookie-remover, bblastactivity)
+
+! not session cookie, 10 years
+zoom.us##+js(cookie-remover, _zm_mtk_guid)
+zoom.us##+js(cookie-remover, _zm_visitor_guid)
+
+!! todo
+
+! httpOnly 
+gaana.com##+js(cookie-remover, reftoken)
+
+! ref
+salescrm.org##+js(cookie-remover, mailchimp_landing_site)
+
+producthunt.com##+js(cookie-remover, track_code)
+
+ru-shopping.ru##+js(cookie-remover, nc_Netshop_RecentGoods_sid)
+
+firmao.net##+js(cookie-remover, initialWebpage)
+firmao.net##+js(cookie-remover, pk_campaign)
+firmao.net##+js(cookie-remover, pk_campaign_set)
+! visitorid
+firmao.net##+js(cookie-remover, vjs)
+
+radreads.co##+js(cookie-remover, __sl-fingerprint)
+
+gold-vision.com##+js(cookie-remover, _monsterinsights_uj)
+
+! httpOnly 
+growsmartmarketing.com##+js(cookie-remover, apbct_urls)
+! httpOnly
+!growsmartmarketing.com##+js(cookie-remover, apbct_site_referer) - as /refer/
+
+intuit.com##+js(cookie-remover, ADRUM_BT)
+intuit.com##+js(cookie-remover, hosted-shell)
+intuit.com##+js(cookie-remover, qbn.qbo_sc)
+
+! first url
+involve.me##+js(cookie-remover, first_lp)
+
+mvideo.ru##+js(cookie-remover, __cpatrack)
+mvideo.ru##+js(cookie-remover, __SourceTracker)
+mvideo.ru##+js(cookie-remover, __allsource)
+mvideo.ru##+js(cookie-remover, __sourceid)
+mvideo.ru##+js(cookie-remover, partnerSrc)
+
+eldorado.ru##+js(cookie-remover, ek_ab_test)

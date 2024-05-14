@@ -1,0 +1,6050 @@
+﻿!! It is a sublist of Yet another small uBlock filter list
+! See https://github.com/mtxadmin/ublock for details
+!
+!
+! Here are advanced general rules
+!
+! Sometimes they can trigger false-positives (so here can be exclusions) but in general they work very good without need to add many specific rules
+!
+!
+!
+! Something doesn't work? Something is missing? Please, feel free to write about it here:
+! https://github.com/mtxadmin/ublock/issues/new
+
+
+*$ping,3p  # EasyPrivacy rule
+||de/|$xhr,3p  # Ru AdList rule - catches many random ad domains
+/?pu=  # some temporary push ads domains. See some of them in _marketing_0-9+
+    ! .com/?pu=$script,third-party  # from Adguard
+    ! .biz/?pu=$script,third-party  # from Adguard
+    ! .me/?pu=$script,third-party  # from Adguard
+    ! .name/?pu=$script,third-party  # from Adguard
+    ! .ru/?pu=$script,third-party  # from Adguard
+    ! .site/?pu=$script,third-party  # from Adguard
+    ! .vip/?pu=$script,third-party  # from Adguard
+/?pus=
+    ! .com/?pus=$script,third-party  # from Adguard
+    ! .biz/?pus=$script,third-party  # from Adguard
+    ! .me/?pus=$script,third-party  # from Adguard
+    ! .name/?pus=$script,third-party  # from Adguard
+    ! .ru/?pus=$script,third-party  # from Adguard
+    ! .site/?pus=$script,third-party  # from Adguard
+    ! .vip/?pus=$script,third-party  # from Adguard
+.club/rp/rp.php?site=  # Adguard rule  # see publisher.house and rtbmedia.org
+/:\/\/www\.([a-z]{6,16})\.com\/([a-z]{1,4})\.js$3p,script  # from Fanboy's. Matches http://www.zlfgedpuxrbpgm.com/xtzj.js and http://www.zckphynp.com/d.js
+://*.*.com/xj/*$script,important,redirect-rule=noop.txt  # Adguard rule
+.ru/proxy_*.php?init_form=$script  # ad scripts  # from AdGuard
+/?dm=*&blogid=$script,domain=~wordpress.org  # ad scripts  # is in EasyPrivacy
+@@|data:text^$popup,domain=box.com|clker.com|labcorp.com  # interesting rule from EasyList
+/favicon.ico$image,third-party,domain=~streameast.live|~apple.com|~douban.com|~bahn.de|~winfuture.de|~bt.com|~ebay.com.au|~ebay.com|~ebay.co.uk|~go.com|~github.com|~microsoft.com|~stackexchange.com|~stackoverflow.com|~askubuntu.com|~reddit.com|~4chan.org|~twitter.com|~live.com|~espn.com|~yahoo.com|~jit.si
+.php?zoneid=  # from CJX's EasyList Lite
+&referer=$script,domain=~sportdiver.com|~gismeteo.ru|~vuokraovi.com|~24ur.com|~cdon.dk|~cdon.fi|~cdon.no|~cdon.se|~ratp.fr|~skype.com  # from Fanboy's
+/point/?method=video_link&xl=$xmlhttprequest  # Ru AdList rule
+/transparent.gif?ray=  # EasyPrivacy rule
+
+
+! Antiphishing rule from from uBlock filters:
+||apple.com-  # from uBlock filters - Badware: ||apple.com-*.live^
+
+
+    ! 88x31 banners
+_8831.gif  # from Ru AdList
+/8831_1.gif  # from Ru AdList
+! from Adguard
+##img[width="88"][height="31"]
+
+
+-120x60.  # is in EasyList
+_120x240.  # from EasyList
+_120x240_  # from EasyList
+-120x300.  # from EasyList
+-120x400.  # from EasyList
+_120x500.  # from EasyList
+
+
+    ! 120x600 banners
+-120x600  # from Adguard
+-120x600-  # from EasyList
+-120x600.  # from EasyList
+-120x600_  # from EasyList
+-120-600.  # from EasyList
+-120_600_  # from EasyList
+/120-600-  # from EasyList
+/120-600.  # from EasyList
+/120_600.  # from EasyList
+/120_600/*  # from EasyList
+/120_600_  # from EasyList
+/120x600  # from Adguard
+    ! /120x600-  # from EasyList
+    ! /120x600.  # from EasyList
+    ! /120x600/*  # from EasyList
+    ! /120x600_  # from EasyList
+=120x600;  # from EasyList
+_120_600  # from Adguard
+    ! _120_600.  # from EasyList
+    ! _120_600_  # from EasyList
+_120x600-  # from EasyList
+120x600.  # from Adguard
+    ! .120x600.  # from EasyList
+_120x600  # from Adguard
+    ! _120x600.  # from EasyList
+120x600b  # from Adguard
+_120x600_  # from EasyList
+
+
+    ! 125x600 banners
+/125x600-  # from EasyList
+/125x600_  # from EasyList
+_125x600_  # from EasyList
+! from Ru AdList
+##img[width="120"][height="600"]
+
+
+_128x600.  # from EasyList
+/130x600-  # from EasyList
+/130x600.  # from EasyList
+_140x600.  # from EasyList
+_140x600_  # from EasyList
+/150x200-  # from EasyList
+/150x300_  # from EasyList
+/150x600_  # from EasyList
+_150x700_  # from EasyList
+=160x160;  # from EasyList
+_160x290  # from Adguard
+_160x300.  # from EasyList
+_160x300_  # from EasyList
+_160x350.  # from EasyList
+
+
+    ! 160x400 banners
+-160x400-  # from EasyList
+/160x400-  # from EasyList
+/160x400_  # from EasyList
+_160x400.  # from EasyList
+
+
+_160x500.  # from EasyList
+
+
+    ! 160x600 banners
+,160x600;  # from EasyList
+.160x600_  # from EasyList
+-160x600  # from Adguard
+    ! -160x600-  # from EasyList
+    ! -160x600.  # from EasyList
+    ! -160x600_  # from EasyList
+160x600-  # from Adguard
+160x600.  # from Adguard
+    ! .160x600.  # from EasyList
+-160-600.  # from EasyList
+/-160x600-$important
+/_160x600.$important
+/160-600-  # from EasyList
+/160-600.  # from EasyList
+/160_600.  # from EasyList
+/160_600_  # from EasyList
+/160x600  # from Adguard
+    ! /160x600-  # from EasyList
+    ! /160x600.  # from EasyList
+    ! /160x600/*  # from EasyList
+    ! /160x600_  # from EasyList
+=160x600&  # from EasyList
+=160x600;  # from EasyList
+_160-600.  # from EasyList
+_160_600.  # from EasyList
+_160_600_  # from EasyList
+_160x600  # from Adguard
+    ! _160x600&  # from EasyList
+    ! _160x600-  # from EasyList
+    ! _160x600.  # from EasyList
+    ! _160x600/  # from EasyList
+    ! _160x600_  # from EasyList
+! from Ru AdList
+##img[width="160"][height="600"]
+
+
+/170x700.  # from EasyList
+/190x600.  # from EasyList
+/190_900.  # from EasyList
+_200x250.png  # from Adguard
+-234x60.gif  # from Adguard
+/240x200_  # from Adguard
+/240x350_  # from Adguard
+/240x400.
+    ! /240x400.gif  # from Adguard
+    ! /240x400.jpg  # from Adguard
+    ! /240x400.swf  # from Adguard
+-240x400_  # from Ru AdList
+/240x800/*  # from EasyList
+/300x150_  # from EasyList
+
+
+    ! 300x250 banners
+.300x250.  # from EasyList
+.300x250_  # from EasyList
+-300-250.  # from EasyList
+-300x250_  # from EasyList
+/300-250-  # from EasyList
+/300-250.  # from EasyList
+/300_250_  # from EasyList
+/300x250-  # from EasyList
+/300x250_  # from EasyList
+/300x250b.  # from EasyList
+=300x250/  # from EasyList
+=300x250;  # from EasyList
+=300x250_  # from EasyList
+_300-250-  # from EasyList
+_300x250&  # from EasyList
+_300x250-  # from EasyList
+_300x250.  # from EasyList
+_300x250_  # from EasyList
+
+
+=300x300;  # from EasyList
+/300x350.  # from EasyList
+
+
+    ! 300x600 banners
+-300x600.  # from EasyList
+/300-600_  # from EasyList
+/300x600-  # from EasyList
+/300x600_  # from EasyList
+_300x600.  # from EasyList
+_300x600_  # from EasyList
+
+
+_billboard_320x100.iframe.  # from Adguard Chinese
+_320x250_  # from EasyList
+/320x250.  # from EasyList
+_323x120_  # from EasyList
+/335x205_  # from EasyList
+_336x120.  # from EasyList
+
+
+
+    ! 336x280 banners
+-336x280  # from Adguard
+_336x280  # from Adguard
+/336x280  # from Adguard
+    ! /336x280-  # from EasyList
+    ! /336x280.  # from EasyList
+    ! /336x280_  # from EasyList
+=336x280;  # from EasyList
+
+
+_350_100.  # from EasyList
+_350_100_  # from EasyList
+_350x100.  # from EasyList
+-360x110.  # from Adguard
+_400-80.  # from EasyList
+_400x60.  # from EasyList
+_400x68.  # from EasyList
+_420x80.  # from EasyList
+_420x80_  # from EasyList
+/428x60.  # from EasyList
+_438x50.  # from EasyList
+_438x60.  # from EasyList
+_438x60_  # from EasyList
+/460x60.  # from EasyList
+_460_60.  # from EasyList
+_460x60.  # from EasyList
+-460x68.  # from EasyList
+/460x80_  # from EasyList
+468x15.h  # from Adguard
+/468-20.  # from EasyList
+
+
+    ! 468x60 banners
+,468x60-  # from EasyList
+,468x60;  # from EasyList
+.468x60-  # from EasyList
+.468x60.  # from EasyList
+.468x60/  # from EasyList
+.468x60_  # from EasyList
+-468-60-  # from EasyList
+-468-60.  # from EasyList
+-468-60_  # from EasyList
+-468_60.  # from EasyList
+-468x60-  # from EasyList
+-468x60/  # from EasyList
+-468x60_  # from EasyList
+-468x60.  # from EasyList
+_468x60.$important  # from EasyList, modified
+468x60.g  # from Adguard
+468x60.h  # from Adguard
+468x60.j  # from Adguard
+468x60.s  # from Adguard
+/.468x60_$important
+.468x60/  # from EasyList
+/468-60-  # from EasyList
+/468-60.  # from EasyList
+/468-60_  # from EasyList
+/468_60.  # from EasyList
+/468_60_  # from EasyList
+_468-60.  # from EasyList
+_468-60_  # from EasyList
+_468_60-  # from EasyList
+_468_60.  # from EasyList
+_468_60_  # from EasyList
+/468x060.  # from EasyList
+/468x060_  # from EasyList
+_468x060-  # from EasyList
+_468x060.  # from EasyList
+_468x060_  # from EasyList
+/468x60-  # from EasyList
+/468x60/*  # from EasyList
+/468x60_  # from EasyList
+/468x60i.gif  # from Adguard
+/468_60_2.gif  # from Adguard
+_468x60-  # from EasyList
+_468x60.  # from EasyList
+_468x60/  # from EasyList
+_468x60_  # from EasyList
+468x60a.  # from Adguard
+_468x60b.  # from EasyList
+468x60ba  # from Adguard
+=468x60&  # from EasyList
+=468x60/  # from EasyList
+=468x60;  # from EasyList
+=468x60_  # from EasyList
+/468x60r  # from Adguard
+/468by60  # from Adguard
+/60x468.  # from EasyList
+! from Ru AdList and Adguard
+##img[width="468"][height="60"]
+
+
+-468x70.  # from EasyList
+/468x70-  # from EasyList
+/468x72.  # from EasyList
+/468x72_  # from EasyList
+
+
+    ! 468x80 banners
+.468x80-  # from EasyList
+.468x80.  # from EasyList
+.468x80/  # from EasyList
+.468x80_  # from EasyList
+/468-80-  # from Ru AdList
+.468x80/  # from EasyList
+-468x80-  # from EasyList
+-468x80.  # from EasyList
+-468x80/  # from EasyList
+-468x80_  # from EasyList
+/.468x80.$important
+/.468x80-$important
+/468_80.  # from EasyList
+/468_80_6.gif  # from Adguard
+/468_80/*  # from EasyList
+/468x80-  # from EasyList
+/468x80.  # from EasyList
+/468x80/*  # from EasyList
+/468x80_  # from EasyList
+_468x80-  # from EasyList
+_468x80.  # from EasyList
+_468x80/  # from EasyList
+_468x80_  # from EasyList
+_468_80.  # from EasyList
+_468_80_  # from EasyList
+=468x80_  # from EasyList
+/80x468_  # from EasyList
+Banner468x60  # from Adguard
+
+
+-468x90.  # from EasyList
+_468x90.  # from EasyList
+_468x90_  # from EasyList
+-468-100.  # from EasyList
+_468x100.  # from EasyList
+_468x100_  # from EasyList
+_468x118.  # from EasyList
+_468x120.  # from EasyList
+/468x150-  # from EasyList
+/468x280.  # from EasyList
+/468x280_  # from EasyList
+
+
+/470x030_  # from EasyList
+/480x030.  # from EasyList
+/480x030_  # from EasyList
+
+
+    ! 480x60 banners
+.480x60-  # from EasyList
+.480x60.  # from EasyList
+.480x60/  # from EasyList
+.480x60_  # from EasyList
+_480_60.  # from EasyList
+_480_80_  # from EasyList
+_480x60-  # from EasyList
+_480x60.  # from EasyList
+_480x60/  # from EasyList
+_480x60_  # from EasyList
+-480x60-  # from EasyList
+-480x60.  # from EasyList
+-480x60/  # from EasyList
+-480x60_  # from EasyList
+.480x60/  # from EasyList
+/480x60-  # from EasyList
+/480x60.  # from EasyList
+/480x60/*  # from EasyList
+/480x60_  # from EasyList
+=480x60;  # from EasyList
+
+
+/480x70_  # from EasyList
+
+
+-486x60.  # from EasyList
+/486x60_  # from EasyList
+_486x60.  # from EasyList
+_486x60_  # from EasyList
+/496_98_  # from EasyList
+-500x100.  # from EasyList
+_580x100  # from Adguard
+/600-60.  # from EasyList
+-600x70.  # from EasyList
+/600x75_  # from EasyList
+/600_120_  # from EasyList
+/600-160-  # from EasyList
+
+
+    ! 600x90 banners
+/600-90.  # from EasyList
+/600_90_  # from EasyList
+/600x90.  # from EasyList
+-600x90-  # from EasyList
+
+
+_600x100.png  # from Adguard
+_610x120.gif  # from Adguard
+/640x80-  # from EasyList
+/640x100/*  # from EasyList
+/660x60.  # from EasyList
+/660x120_  # from EasyList
+/680x190_$image
+    ! ||tutby.gcdn.co/n/os/06/e/680x190_pm_bf.png  # from Adguard
+    ! ||dh.img.tyt.by/n/os/03/f/680x190_khl_parimatch.jpg  # from Adguard
+    ! ||img.tyt.by/*/680x190_*.png  # from Adguard
+/700x70_  # from Ru AdList
+/700x90.  # from EasyList
+_700_100_  # from EasyList
+/700_100_  # from EasyList
+/700x100.  # from EasyList
+_700_150_  # from EasyList
+_700_200_  # from EasyList
+/700_200.  # from EasyList
+
+
+    ! 720x90 banners
+-720x90-  # from EasyList
+-720x90.  # from EasyList
+_720_90.  # from EasyList
+_720x90.  # from EasyList
+_720x90_  # from EasyList
+
+
+/720x140-$image
+    ! ||tutby.gcdn.co/n/os/03/5/720x140-1_bf.png  # from Adguard
+    ! ||dh.img.tyt.by/n/os/03/5/720x140-1_bf.png  # from Adguard
+_728.gif  # from Adguard
+_728x60.  # from EasyList
+
+
+    ! 728x90 banners
+,728x90,  # from EasyList
+.728x90-  # from EasyList
+.728x90.  # from EasyList
+.728x90/  # from EasyList
+.728x90_  # from EasyList
+-728-90-  # from EasyList
+-728-90.  # from EasyList
+-728.90.  # from EasyList
+-728x90-  # from EasyList
+-728x90.  # from EasyList
+-728x90/  # from EasyList
+-728x90_  # from EasyList
+/_728x90-$important
+/728x90.$important
+_728x90.$important
+.728x90/  # from EasyList
+/728x90ru.jpg  # from Adguard
+/728-90-  # from EasyList
+/728-90.  # from EasyList
+/728-90/*  # from EasyList
+/728-90_  # from EasyList
+/728_90.  # from EasyList
+/728_90/*  # from EasyList
+/728_90_  # from EasyList
+/728x90-  # from EasyList
+/728x90.  # from EasyList
+/728x90/*  # from EasyList
+/728x90_  # from EasyList
+=728x90/  # from EasyList
+=728x90;  # from EasyList
+_728-90.  # from EasyList
+_728-90_  # from EasyList
+_728_90.  # from EasyList
+_728_90_  # from EasyList
+_728x90-  # from EasyList
+_728x90.  # from EasyList
+_728x90/  # from EasyList
+_728x90_  # from EasyList
+728x90.g  # from Adguard
+728x90.h  # from Adguard
+728x90.j  # from Adguard
+    ! 728x90.jpg  # from CJX's EasyList Lite
+728x90.p  # from Adguard
+728x90.s  # from Adguard
+728x90px  # from Adguard
+_728by90  # from Adguard
+! is in RuAdList and Adguard
+##img[width="728"][height="90"]
+
+
+_728x150.  # from EasyList
+/728_200.  # from EasyList
+/728_200_  # from EasyList
+-729x91-  # from EasyList
+/750-100.  # from EasyList
+/750x100.  # from EasyList
+_750x100.  # from EasyList
+/760x90_  # from EasyList
+_760x100.  # from EasyList
+/760x120.  # from EasyList
+/760x120_  # from EasyList
+768x60.gif  # from Adguard
+/768x90-  # from EasyList
+/768x90.  # from EasyList
+_768x90_  # from EasyList
+-780x90-  # from EasyList
+/780x90.  # from EasyList
+_800x80_  # from EasyList
+/800x90.  # from EasyList
+_800x100.  # from EasyList
+/800x160/*  # from EasyList
+-880-80-4.jpg  # from Adguard Chinese
+.900x100.  # from EasyList
+/960_60_  # from EasyList
+/970x60.jpg  # from Adguard
+/980x90.  # from EasyList
+-980x60-  # from EasyList
+-988x60.  # from EasyList
+
+
+!! banners
+!
+! urls
+! comments is preferably inline with  # 
+! general first, specific last
+!
+/3dssWoWG/*
+_468.gif  # from CJX's EasyList Lite
+/abdetect*$important
+.ace.advertising.  # from EasyList
+/achecker.js
+! here are some false positives in URL. But generally this rule is very good
+/ad/*$important,all,domain=~1000.menu|~alza.de|~condenast-media.gcdn.co|~dhresource.com|~etutorium.com|~habr.com|~habrastorage.org|~imagebam.com|~imfdb.org|~livemaster.ru|~xnxx.com
+    ! Exclusions:
+    ! alza.de - images (https://cdn.alza.de/Foto/f8/AD/ADL27u31p.jpg)
+    ! condenast-media.gcdn.co (admagazine.ru) is not ads, it is Arch Design
+    ! habr.com & habrastorage.org - images
+    ! imagebam.com - random 2-symbol folders in url
+    ! xnxx.com - images
+_ad.aspx  # from Adguard
+_ad.gif|  # from EasyList
+/ad.aspx  # from Adguard
+/ad.html  # from Adguard
+-ad.jpg.pagespeed.  # from EasyList
+/ad.js$important
+/ad.pl?z  # from Adguard
+.ad.final.  # from EasyList
+.ad.footer.  # from EasyList
+.ad.page.  # from EasyList
+.ad.premiere.  # from EasyList
+.ad.wrapper.  # from EasyList
+/ad1.html  # from Adguard
+/ad1.js$important
+-ad1.jpg  # from Adguard
+/ad2.aspx  # from Adguard
+/ad2.html  # from Adguard
+/ad300.htm  # from Adguard
+/adb.min.js$important
+/adbanner*$important
+/ad_banner_  # is in EasyList
+/ad-banner.  # from SecurityEntire RussianFilter
+/ad-banners
+/adbdetect
+    ! /adbdetect.
+    ! /adbdetect.js  # from Adguard
+    ! /adbdetect/*
+/adb_detector.  # from EasyList
+/adblock.gif?  # from EasyList
+/adblock.js$important
+/adblock-alerter/*  # from EasyList
+/adblock-blocker/*  # from EasyList
+/adblock-checker*$important
+    ! /adblock-checker.js$important
+/adblock-detect*$important
+    ! /adblock-detect/*  # from Adblock Warning Removal
+    ! /adblock_detect.  # from EasyList
+    ! /adblock-detect.js$script,important  # from uBlock filters
+    ! /adblock_detector.  # from EasyList
+/adblockdetect*$important  # from EasyList
+    ! /adblockdetect.  # from EasyList
+    ! /adblockdetection.  # from EasyList
+    ! /adblockdetector.js$important
+    ! /adBlockDetector/*  # from EasyList
+    ! /adblockdetectorwithga.  # from EasyList
+adblockdetector/$important
+/adblock-detector/*$important
+/adblock-detector.  # from EasyList
+/adblocker.js$important  # is in EasyList
+/adblocker-check.  # is in EasyPrivacy
+-adblocker-detect
+    ! -adblocker-detection/  # from EasyList
+    ! -adblocker-detector/  # from EasyList
+/adblocker-leader.  # from EasyList
+/adblock-icon.png  # gocitysites.ru network
+/ad-blocking-advisor/*  # from EasyList
+/ad-blocking-alert/*  # from EasyList
+/adblock_logger.  # from EasyList
+/adblock-message.  # from EasyList
+/adblock-notify-by-bweb/*  # from EasyList
+/adblock-relief/*  # from EasyList
+/adblock-relief.js  # from EasyList
+/adblockTester.js  # from EasyList China
+/adblock-tracking
+/adbs.js  # from Adguard
+/adclick*$important
+/adetector/*$important
+/ad_exo.  # is in EasyList
+/adflash/*  # from EasyList China
+/adframe.js$important
+/adframes/*$important
+/adframetop*$important
+/adfuel/*$important
+    ! @@/adfuel/*$script,domain=cnn.com  # from ABP
+    ! @@/adfuel/initiator.js^$script,~third-party,domain=nba.com  # from ABP
+    ! @@||cdn.turner.com/ads/adfuel/*.min.js^$script,domain=nba.com  # from ABP
+/adgear.js$important
+/adgroupdetailv2.  # is in EasyList
+/ad-inserter/*  # from EasyList
+/adland.php  # from Ru AdList
+/adlift.js  # from Ru AdList
+/adliftqueue.js  # from Ru AdList
+/adlink-  # from EasyList
+/adlink.  # from EasyList
+/adlink/*  # from EasyList
+/adlink.  # from EasyList
+/adload.$important  # from Ru AdList
+/adloaderplus?  # from EasyList
+/adlogger_tracker.js?  # from Ru AdList
+/admanager/*$important
+/admanager.js$important
+/admp-tc.  # from Ru AdList
+/adnext.  # from EasyList
+/adobe_target/*
+/adobe_target.js
+/adpic/*  # from EasyList
+/adplayer/*  # from EasyList
+/adpuba/*  # from EasyList China
+/adrum/*  # AppDynamics Adrum scripts: https://cdn.comcast.com/-/media/Common/adrum/adrumext7a88a5f34b3368a060fd963640d8c56b.js
+/ads/*$important,domain=~cnn.com  # exclusion - cnn loads page through json: https://cdn.cnn.com/ads/cnni/cnni_homepage.json
+/ads_*$important,domain=~vk.com
+/ads-  # from EasyList: .com/ads-
+    /ads-iframe/*$important  # from ABP
+/ads.*$important,~stylesheet
+    ! /ads.css$important - hmm, uBlock filters recommends remove it. Ok.
+    ! /ads.gif$important
+    ! /ads.html$important
+    ! /ads.js$important
+    ! /ads.min.js$important
+/ads?
+-ads.generated.  # from EasyList
+-ads.gif  # from EasyList
+-ads1.htm  # from EasyList
+-ads2.htm  # from EasyList
+-ads3.htm  # from EasyList
+-ads3.jpg  # from EasyList
+-ads4.htm  # from EasyList
+_ads.cgi  # from EasyList
+_ads.html  # from EasyList
+_ads.js.  # from EasyList
+_ads.php?  # is in EasyList
+_ads.station.  # from EasyList
+.ads.controller.  # from EasyList
+.ads.core.  # from EasyList
+.ads.css  # from EasyList
+.ads.darla.  # from EasyList
+.ads.loader-  # from EasyList
+.ads.zones.  # from EasyList
+/ads2.html  # from Adguard
+/ads2.php  # from Adguard
+/adsblock2.js
+/adsblocker.  # from EasyList
+/adseller/*  # from EasyList
+/adsen/*  # from EasyList
+/adsense*$important
+    ! /adsense/*
+    ! /adsence.  # from EasyList
+    ! /adsense-  # from EasyList
+    ! /adsense1.  # from EasyList
+    ! /adsense2.  # from EasyList
+    ! /adsense3.  # from EasyList
+    ! /adsense4.  # from EasyList
+    ! /adsense5.  # from EasyList
+    ! /adsense23.  # from EasyList
+    ! /adsense24.  # from EasyList
+    ! /adsense250.  # from EasyList
+    ! /adsense?  # from EasyList
+    ! /AdsenseBlockView.  # from EasyList
+    ! /adsenseClient-  # from EasyList
+    ! /adsensecommon.  # from EasyList
+    ! /adsensegb.  # from EasyList
+    ! /adsensegoogle.  # from EasyList
+    ! /adsensets.  # from EasyList
+    ! /adsensev2.  # from EasyList
+/adsenze.  # from EasyList
+/adseo/*  # from EasyList
+/adser/*  # from EasyList
+/adserv
+    ! /adserv.  # from EasyList
+    ! /adserv_  # from EasyList
+    ! /adserv/*  # from EasyList
+    ! /adserv1.  # from EasyList
+    ! /adserv2.  # from EasyList
+    ! /adserv3.  # from EasyList
+    ! /adserve-  # from EasyList
+    ! /adserve.  # from EasyList
+    ! /adserve/*  # from EasyList
+    ! /adserve_  # from EasyList
+    ! /adserver-  # from EasyList
+    ! /adserver_  # from EasyList
+    ! /adserver/*  # from EasyList
+    ! /adserver?  # from EasyList
+    ! /adserver01.  # from EasyList
+    ! /adserver1-  # from EasyList
+    ! /adserver1.  # from EasyList
+    ! /adserver2.  # from EasyList
+    ! /adserver2/*  # from EasyList
+    ! /adserver3.  # from EasyList
+    ! /adserver7/*  # from EasyList
+    ! /adserverc.  # from EasyList
+    ! /adserverdata.  # from EasyList
+    ! /adServerDfp.  # from EasyList
+    ! /adserverpub?  # from EasyList
+    ! /adservers-  # from EasyList
+    ! /adserversolutions/*  # from EasyList
+    ! /adserverstore.  # from EasyList
+    ! /adservervastvideovizu.  # from EasyList
+    ! /adservice-  # from EasyList
+    ! /adservices.  # from EasyList
+    ! /adservices/*  # from EasyList
+    ! /adserving.  # from EasyList
+    ! /adserving/*  # from EasyList
+    ! /adserving_  # from EasyList
+    ! /AdServlet?  # from EasyList
+    ! /adserv|*|adtech;  # from EasyList
+/adshare.
+/adshare/*  # from EasyList
+/adsjs.  # ad scripts  # is in EasyList
+/adsjs/*
+/adsnews.  # from Ru AdList
+/adsteroid.js  # from Ru AdList
+/adstil.  # from Ru AdList
+?ads=$domain=~booking.loganair.co.uk  # from EasyList
+-adserver.  # from EasyList
+/AdsShow.
+/_adslot/*  # from EasyList
+-ads-manager/  # from EasyList
+/ads-iframe/*
+/AdsMarketing/*
+/adsmin/*  # from EasyList
+/adsnative/*
+/adsplacer.
+/ad_status.$important
+/ad_status.js$important
+/ads-top*$important  # ads-top.ru (now closed)
+/adstyle*$important  # adstyle.com.ua (now closed)
+/ad_top_*$important
+_ad_content.  # from Adguard
+_ad_superbanner.  # from EasyList
+_adsys.js  # from Adguard
+/ad-tag-  # is in EasyList  # /ad-tag-manager/*
+/adtoniq-*$script,stylesheet,domain=theregister.co.uk  # from Adguard
+/adtoniq/*
+/adtop.js  # from Adguard
+/adunion/*
+/adunit.js$important
+/adv/*$important
+    /media/adv/*$important
+/adv?
+/adv.aspx  # from Adguard
+/adv.js$important
+.adv.cdn.  # from EasyList
+/advagg_js/*$domain=lugasoft.ru|tropki.ru
+    # advagg_js means "Advanced CSS/JS Aggregation | Drupal.org", in general it is neutral, but sometimes such scripts need to be blocked. Seen several times. For example, also anti-copypaste script on tropki.ru
+    # again, don't block in general.
+    ! ||lugasoft.ru/sites/default/files/advagg_js  # https://lugasoft.ru/sites/default/files/advagg_js/js__ymW-rl9lD6KBolMA5i4aTm5RtAGdXpWFkCEIRJEoeSg__bYql3V-oJFRYwqyWRsHFOBwFvjz8GWKDr13zKsqR2Dg__3A1VosOGEjIxBma_LG1rYWMWvou3vJ4TDNl9wQuf4RY.js
+    ! ||tropki.ru/sites/default/files/advagg_js/
+=advanced-ads-  # from EasyList
+_advert/  # from EasyList
+/advert.js$important
+/advert-  # from EasyList
+/advert3.js$important
+/advertise.
+/advertise.js$important
+/advertisers/*$important
+/advertisement.js$xmlhttprequest,important
+/advertisement.js$important
+/advertisement.min.js$important
+/advertising/$important,domain=~aliexpress.com|~aliexpress.ru|~duckduckgo.com
+/advertising.banner/*$important
+/advertising.js$important
+/advertising.min.js$important
+_adverts.js  # from EasyList
+-adverts.libs.  # from EasyList
+-adverts.min.  # from EasyList
+/advpic/*  # from EasyList China
+/adv-vast/*  # see /vast/.  # from Adguard: kodik*/adv-vast/
+/adwords/$important
+/adx/*
+/aff/*
+    ! ||bomb-club.com/aff/  # from Ru AdList
+    ! ||pc-user-shop.com/aff/  # from Ru AdList
+/aff.php
+/aff_
+    ! /aff_c?*offer_id=*&aff_id=  # from Adguard
+    ! /aff_i?offer_id=  # from Adguard and EasyPrivacy
+    ! /aff_r?*offer_id=*&aff_id=  # from Adguard
+    ! /click?pid=*&offer_id=  # from uBlock filters
+    ! ||t.crsmc.link/*&offer_id=$subdocument  # from Adguard
+    ! ||t.frtyt.com/*offer_id=*&aff_id=  # from Adguard
+    ! ||safecurr.g2afse.com/click?pid=*&offer_id$popup  # from uBlock filters
+    ! impiego24.it#?#.annunciLavoro > li.boxAnnunci:has(> a[href^="http://go.ketc.it/aff_c?offer_id="])  # from Adguard
+    ! shareae.com##a[href*="/aff_c?offer_id="]  # from Adguard
+    ! from Ru AdList
+    !vpnmag.ru##a[href*="aff_c?offer_id"]
+    ! from Ru AdList
+    !root-nation.com,vpnmag.ru##a[href*="aff_c?offer_id"]
+    ! from EasyList
+    !##a[href^="https://get.surfshark.net/aff_c?"][href*="&aff_id="] > img
+    ! from Adguard
+    !manutd.pl##a[href*="/aff_c?offer_id="] > img
+    ! from Adguard
+    !christianforums.com##a[href*="/aff_c?offer_id="] > img
+    ! from Adguard
+    !passivevoiceconverter.com##a[href^="https://grammarly.go2cloud.org/aff_c?offer_id="] > img
+/affiliate/*
+/affiliatelinks.  # from Adguard
+/affiliates/*
+/affinity.js
+/ajax-banner.js
+/am-cookie-ban/*  # from Fanboy's
+/anti_ad.js  # from Adguard
+/apu.php  # from uBlock filters, modified
+/arlinablock.js  # from Adguard
+/async-ads.js$important
+-auto-ads-  # from EasyList
+/avada-scrollspy.js
+/awaps*$important
+/b/ss/*/js-  # is in AdGuard and EasyPrivacy  # dell.com/b/ss/dellglobalonline/1/JS-
+/bab.min.js  # from uBlock filters
+/ban/*
+/ban.min.js
+/baner.  # from Ru AdList
+/baner/*$important
+/baner_*$important
+/banery/*
+/%21banery/*
+!/banner*$important,domain=~archive.org|~doshirak.com|~sberbank.ru - this one sometimes doesn't work. So, after experiments, adding $all parameter to it. Update: maybe asterisk was needed
+/banner*$all,important,domain=~archive.org|~doshirak.com|~sberbank.ru|~sbis.ru
+    ! ##[src^="/images/banner"]
+    ! /banner/*$important
+    ! /banner.js$important
+    ! /banner.php
+    ! /banner2.gif  # from Ru AdList
+    ! /bannerex.cgi/getbanner.js?id=  # from Ru AdList
+    ! /bannerBackgroundImage
+    ! /bannerek/*  # Hungary banners
+    ! /bannergzo/*  # from Ru AdList
+    ! /banner-lgpd.  # from EasyList
+    ! /banners/*$important,domain=~livejournal.com
+        ! /cgi-bin/banners/*  # from Ru AdList
+        ! /free/banners/*  # from Ru AdList
+        ! /media/banners/*  # from Ru AdList
+        ! /networks//banners/*  # from Ru AdList
+        ! /upload/banners/*  # from Ru AdList
+        ! /upload_photo/banners/*  # from Ru AdList
+        ! /userfiles/banners/*  # from Ru AdList
+        ! ||adamfowlerit.com/*/banner-logo
+        ! ||ado.hu/banners/  # from Hufilter
+        ! ||asau.ru/images/banner-home
+        ! ||auchan.ru/pokupki/media/banners$image
+        ! ||baku.ws/banners/  # from Ru AdList
+        ! ||bankcomat.org/res/bankomat/banners/  # from Ru AdList
+        ! ||beeline.ru/upload/images/banners/
+        ! ||b-port.com/mediafiles/banners/  # from Ru AdList
+        ! ||bestchange.ru/images/banners/  # from Ru AdList
+        ! ||beznal.cc/banners/  # from Ru AdList
+        ! ||bkn.ru/content/banners/  # from Ru AdList
+        ! ||bos.bz/assets/php/banners/  # from Ru AdList
+        ! ||callonline.ru/images/banners/  # from Ru AdList
+        ! ||cfts.org.ua/_i/banners/  # from Ru AdList
+        ! ||channel4it.com/pub/banners/  # from Ru AdList
+        ! ||chat.hu/client/banner  # from Hufilter
+        ! ||citilink.ru/banners$image
+        ! ||citilink.ru/*/banners/$image
+        ! ||cloudinary.com/*/images/banners$image
+        ! ||e-learn.ru/images/banner
+        ! ||exler.ru^*/banner$script  # from Ru AdList
+        ! ||freedownloadmanager.org/web/bannerinf
+        ! ||h-sant.ru/*/banner_vd_left.jpg
+        ! ||jimdo.com/assets/images/banner2.png
+        ! ||kommersant.ru/common/bannernew
+        ! ||nakanune.ru/images/banners/  # from Adguard
+        ! ||nexplorer.ru/*/Banner$image
+        ! ||ozone.ru/*/banners_services/
+        ! ||ozone.ru/s3/marketplace-seller-actions/banners/
+        ! ||pro-spec.ru/images/banners-tovar/
+        ! ! redditstatic.com/desktop2x/img/banner/$important
+        ! ||qiwi.com/img/qiwi_com/banners/
+        ! ||sobaka.ru/*/bannersApi.js
+        ! ||szepsegbroker.hu/elements/bannerz  # to Hufilter
+        ! ||tumix.ru/*/banners/  # from Ru AdList
+        ! ||turbo.az/banners/  # from Ru AdList
+        ! ||wi-fi.ru/mtt/banners/
+        ! ||yourdailygerman.com/wp-content/uploads/2018/02/banner-winter-18.jpg
+        ! ||zestmoney.in/images/banner
+        ! ... and many, many others
+    ! /banners.mvc?  # from Ru AdList
+    ! /banners.js
+    ! /banner-support.js
+    ! /cgi-bin/banner/*  # from Ru AdList
+    ! /partner/banner/*  # from Ru AdList
+    ! ||szepsegbroker.hu/banner/  # from Hufilter
+_banner.gif  # from Adguard and Ru AdList
+/banner_
+    ! ||beforeitsnews.com/img/banner_  # from EasyList
+    ! ||h-sant.ru/*/banner_vd_left.jpg
+    ! ||inmyroom.ru/*/banner_places/
+    ! ||labirint.ru/*/b/banner_
+    ! ||ohota360.ru/*/banner_*.png
+    ! ||ohrana.ru/images/banner_automation.jpg
+    ! ||revistalider.com/banner_fixer.php
+    ! ||sportsweek.org/banner_js
+    ! ||warhead.su/system/uploads/banner_image/*
+_banner120_2.gif  # from Adguard
+.bannerbank.  # from Ru AdList
+.bannerbank_  # from Ru AdList
+/_banner_common.php
+_banner_rotator.php  # from Adguard
+/_banners/*
+/bans/*
+    ! ||stopgame.ru/bans/  # from Adguard
+/bitrix/spread.php?$important  # is in RU AdList, EasyPrivacy, AdGuard
+/blockadblock*$important
+    ! Adguard exclusions:
+    ! /blockadblock.$script,redirect=nofab.js  # from Adguard
+    ! /blockadblock-$script,redirect=nofab.js  # from Adguard
+/bn/tracker/*  # from EasyPrivacy
+/bn_axelname.png  # on parked domains of axelname.ru
+/bnr/*
+/bnrs/*
+/bns/*
+    ! ||1istochnik.ru/attachments/bns/  # from Ru AdList
+    ! ||troitsk.org/photos/bns/
+/bold-upsell-custom.js
+/bookmark.js
+/bootstrap.scrollspy.js
+/bouncy.php$important  # malware on parked domains  # uBlock filters – Badware risks: /bouncy.php?*&inpopup=$document
+/brand.js
+/bugsnag.min.js$important
+/bundle-vast.min.js  # also see /vast/
+    ! /bundle-vast.min.js$domain=defileb.com|fplay.online|hovels.info|likelol.online|playep.pro|playy.online|plplayer.online|plwork.net|sorb.info|toplay.biz|ttutu.biz  # from Ru AdList
+/bundle.vast.min.js  # also see /vast/
+    ! /bundle.vast.min.js$domain=defileb.com|fplay.online|hovels.info|likelol.online|playep.pro|playy.online|plplayer.online|plwork.net|sorb.info|toplay.biz|ttutu.biz  # from Ru AdList
+/bunners/*
+?bannerid=  # is in EasyList
+/busting/*/gtm-  # /wp-content/cache/busting/1/gtm-ad...  # is in EasyPrivacy
+/bx/*$domain=~aliexpress.ru
+    ! /upload/bx/*  # from Ru AdList
+    ! ||rugrad.eu/bx/  # from Ru AdList
+/campaigns/*
+/clipboard.min.js$important,domain=~play-with-docker.com
+/cdn-cgi/pe/bag2?r$important  # generalized rule. Sources from Ru AdList (see all mentioned domains here too):
+    ! /cdn-cgi/pe/bag2?r*aksessuarov.ru
+    ! /cdn-cgi/pe/bag2?r*am15.net
+    ! /cdn-cgi/pe/bag2?r*byzgoso.ru
+    ! /cdn-cgi/pe/bag2?r*digitaltarget.ru
+    ! /cdn-cgi/pe/bag2?r*ecefibwja.xyz
+    ! /cdn-cgi/pe/bag2?r*gynax.com
+    ! /cdn-cgi/pe/bag2?r*hgbn.rocks
+    ! /cdn-cgi/pe/bag2?r*interfax.info
+    ! /cdn-cgi/pe/bag2?r*interfax.pw
+    ! /cdn-cgi/pe/bag2?r*itisanime.ru
+    ! /cdn-cgi/pe/bag2?r*ledsitling.pro
+    ! /cdn-cgi/pe/bag2?r*m-shes.ru
+    ! /cdn-cgi/pe/bag2?r*mailget.net
+    ! /cdn-cgi/pe/bag2?r*mp-https.info
+    ! /cdn-cgi/pe/bag2?r*mrelko.com
+    ! /cdn-cgi/pe/bag2?r*mwcvu.com
+    ! /cdn-cgi/pe/bag2?r*mxtads.com
+    ! /cdn-cgi/pe/bag2?r*oconner.biz
+    ! /cdn-cgi/pe/bag2?r*recreativ.ru
+    ! /cdn-cgi/pe/bag2?r*rtl.info
+    ! /cdn-cgi/pe/bag2?r*smartadserver.com
+    ! /cdn-cgi/pe/bag2?r*tizmarkov.ru
+    ! /cdn-cgi/pe/bag2?r*tlr1.biz
+    ! /cdn-cgi/pe/bag2?r*tredman.com
+    ! /cdn-cgi/pe/bag2?r*vidroll.ru
+    ! /cdn-cgi/pe/bag2?r*ytimgg.com
+/clicklognew.  # is in EasyPrivacy
+.clickunder.  # from Ru AdList
+^clickunder^$popup  # from Ru AdList
+/clp0zi/*
+/cnads.js$important
+/code/native.js?h=  # is in Adguard
+/console-ban.min.js  # from uBlock filters: ||cdn.jsdelivr.net/*/console-ban.min.js
+/context_ads/*
+-contrib-ads/  # from EasyList
+-core-ads  # ad scripts  # is in EasyList
+/coremetrics/*$important  # many exclusions in Fanboy's
+/countly.js  # from Adguard  # see count.ly, countly.org
+/countly.min.js  # from Adguard  # see count.ly, countly.org
+/__cpa.$script  # ad scripts
+/crm/site_button/loader_*.js  # from Adguard
+/dclk_video_ads/*$important  # from Adguard: @@||redirector.gvt1.com/videoplayback/id/*/source/dclk_video_ads/*
+/dcmads.js
+/deb.html$frame,1p  # from uBlock filters
+/deblocker.min.js
+-detect-adblock.  # from EasyList
+/detectadblock.js
+/detect-adblock.js
+/detectadblockpc.js
+/detector.min.js$important
+/dev-console-detect.js
+/devtools-detect.js
+/devicead/*  # from EasyList
+/dfp/*
+    ! /dfp/async.  # from EasyList
+    ! /dfp/blocks/*  # from EasyList
+    ! /dfp/common/*  # from EasyList
+    ! /dfp/dc.js  # from EasyList
+    ! /dfp/dfp-  # from EasyList
+    ! /dfp/head/*  # from EasyList
+    ! /dfp/jquery.  # from EasyList
+    ! /packages/dfp/*  # from EasyList
+    ! avito.ru*/dfp/px.js  # from Ru AdList
+/dfp.js  # from EasyList
+/dfp.min.js$third-party  # from EasyList
+/dfpad/*  # from EasyList
+/dfp-ads.  # from EasyList
+/dfp-ads/*  # from EasyList
+/dfp_ads/*  # from EasyList
+/dfp-custom/*  # from EasyList
+/dfp_delivery.js  # from EasyList
+/dfp_init.  # from EasyList
+/dfp_js/*  # from EasyList
+/dfp_overlay.  # from EasyList
+/dfp_skin.js  # from EasyList
+/dfp_mobile.js
+/dfp_page
+    ! ||autonews.ru/dfp_page
+    ! ||rbc.ru/dfp_page  # ad scripts  # https://www.rbc.ru/dfp_page
+/dfpInAngular.  # from EasyList
+/dfpsds.  # from EasyList
+/dfpsearchads.  # from EasyList
+/disable-devtool$important,all
+    ||cdn.jsdelivr.net/npm/disable-devtool/disable-devtool.min.js  # from uBlock filters
+    ||motphim123.com/assets/js/disable-devtool.min.js  # from uBlock filters
+/disable-selection-  # is in Fanboy's
+/discourse-adplugin-  # ad scripts  # is in EasyList
+/dragscroll/*
+/dragscroll.js
+/easy-social-share-buttons.min.js
+/edmonton.webp$script,important  # is in EasyList
+/empty.json  # from Hufilter
+/eu-banned-popup/*  # from Hufilter
+/exoclick/*  # from EasyList
+/exosrv.js$script  # from uBlock filters
+/fixads.js
+/flashads.  # from EasyList
+/flo.js  # is in Adguard
+/flr.js  # is in uBlock filters
+/floating-video.js
+/float_panel/*
+/footer_ads.  # is in EasyList
+/fuckadb*$important
+    ! /fuckadb.js  # from EasyList
+    ! /fuckadblock/*$important
+    ! /fuckadblock.js$important
+    ! Adguard exclusions:
+    ! /fuckadblock.js$badfilter  # from Adguard
+    ! /fuckadblock.min.js$badfilter  # from Adguard
+    ! /fuckadblock.$script,redirect=nofab.js  # from Adguard
+    ! /fuckadblock-$script,redirect=nofab.js  # from Adguard
+/fuckingadblockplus.  # from EasyList
+/gampad/*$important  #/gampad/ad  #/gampad/ads  #/gampad/adx  #/gampad/google_ads.js
+/goodshare.  # from Fanboy's
+    !||jsdelivr.net/npm/goodshare.js
+/gpt/pubads_impl_*$script,important
+/gujAd/*$important
+/gujAd.js$important
+/HarbergerTaxBanner
+/header-bidding.js$important  # from Ru AdList
+/homebanner/*
+/homepage_ads/*  # from EasyList
+/housead.  # from EasyList
+-images/ad-  # is in EasyList
+/images/ad_  # is in AdGuard and RU AdList
+/images/ban/*  # from Ru AdList
+/images/bn/*  # from Ru AdList
+/informer.cgi?
+/informer.js$important  # is in Ru AdList
+/informer.php?  # from Ru AdList
+/_informer_/*
+/informer.cgi
+/informer/*$third-party,important
+    ||sinoptik.ua/_uploaded_files/informer/
+/informers/*$third-party,important
+    ||all-news.net.ua/informers/  # from Adguard
+    ||banki.ru/_export/informers/  # from Adguard
+    ||nyx.su/informers/  # from Adguard
+    ||price.ua/informers/  # from Adguard
+/istripper/*  # ads on many sites  # is in EasyList and uBlock filters
+/javascript_adblockdetector/front_front_abagent.js  # from Adguard
+/jllikepro/js/buttons.
+/jquery.adsplace
+/jquery.adsplacer
+/jquery.bootstrap.scrollspy.js
+/jquery.counterup  # fiction marketing "counters"  # https://gratisvps.net/assets/plugins/waypoints/jquery.counterup.min.js  # https://www.npmjs.com/package/jquery.counterup
+/jquery.growl.min.js  # popups
+    ##.growl
+/jquery.iframetracker
+/jquery.modal.min.js
+/jquery.scrollto.js
+/jquery.smartbanner.js$important  # from Ru AdList and EasyList, modified
+/jquerymin18.js  # from Adguard
+/jsmd.min.js$important
+/js.ng/*  # from CJX's EasyList Lite, modified
+/landing/*$domain=~gosuslugi.ru|~etutorium.com|~qiwi.com|~univerpp.ru|~univer-pp.ru|~walletone.com
+/lazy-loader-banner/*
+/mads/gma
+/main-banner/*
+/marketing.js
+/media/upload_adv/*$image
+/metric-collector
+/mobile-banner/*
+/module_sticker.min.js  # from Adguard
+/moksa/*  # see https://ew.com/moksa/js-min/moksa.js  # "OptanonAlertBoxClosed", "setGDPRApplicable", "setNonPersonalizedAds"
+/moksa.js  # see https://ew.com/moksa/js-min/moksa.js  # "OptanonAlertBoxClosed", "setGDPRApplicable", "setNonPersonalizedAds"  # is in EasyPrivacy
+/myout.php  # from Adguard: /myout.php?g=
+/native.php  # from AdGuard: .com/native.php?b=
+/nativeads.  # is in Easylist
+/nct.php?nid=  # is in EasyPrivacy
+/newAd/*
+/newrelic-browser.js
+/news.js  # from Ru AdList and Adguard, modified
+/ngclipboard/*
+/ngclipboard.min.js$domain=~play-with-docker.com
+/no-right-click.$script  # from EasyList and Fanboy's
+/offer/*
+-omniture.js  # from Fanboy's
+/openx/*$important  # is in EasyList
+/openxtag.js$important
+/otBannerSdk.js$important  # from EasyList  # cookie banners
+/owa.tracker.js
+    ! ||showstopped.com/owa/modules/base/dist/owa.tracker.js  # from Adguard and EasyList
+/page/bouncy.php  # is in Adguard
+/pagead/*$important  # google ads
+/pagead2.$important
+/pagead2/*
+/pageview.js  # is in EasyPrivacy
+/partner/*
+    ! /partner/banner/*  # from Ru AdList
+    ! ||agrarii-razom.com.ua/files/partner/  # from Ru AdList
+    ! antihacker.info*/partner/  # from Ru AdList  # parked
+    ! ||bigcinema.tv/uploads/partner/
+    ! ||igromagaz.ru/partner/  # from Ru AdList
+    ! ||labirint.ru/design/partner/  # from Ru AdList
+    ! ||passport-rk.ru/widgets/partner/  # from Ru AdList: ||passport-rk.ru/widgets/partner/
+    ! ||pc-newcomer.ru/partner/  # from Ru AdList
+    ! ||reforum.ru/j/partner/  # from Ru AdList
+    ! ||ruload.org/partner/  # from Ru AdList
+    ! ||rutracker.ru/images/partner/  # from Ru AdList
+    ! ||slavabogam.ru/catalog/partner/  # from Ru AdList
+    ! ||teremok.org.ua/partner/images/  # from Ru AdList
+    ! ||tripster.ru/partner/widget.js
+    ! ||tulapressa.ru/partner/  # from Ru AdList
+    ! ||ukrbuy.com/partner/  # from Ru AdList
+    ! ||volgo-mame.ru/partner/  # from Ru AdList
+/partners/*
+    ! /uploads/partners/*.swf  # from Adguard
+    ! ||allbasketball.org/uploads/partners/  # from Adguard
+    ! ||anti-malware.ru/images/partners/  # from Adguard
+    ! ||civic-club.ru/static/partners/  # from Adguard
+    ! ||clib.me/partners/$image
+    ! ||ecosigara.com.ua/partners/  # from Ru AdList
+    ! ||fonarevka.ru/images/partners/  # from Adguard
+    ! ||adst.fwdcdn.com/frame/partners/*.html  # from Adguard
+    ! ||hclada.ru/img/partners/  # from Adguard
+    ! ||i.ua/v2/homepage/partners/
+    ! ||overclockers.ru/images/partners/wsr_logo.png
+    ! ||printbar.ru/upload/partners/  # from Adguard
+    ! ||rg.ru/api/partners/  # is in Ru AdList
+    ! ||sport.ua/images/cyber/partners/  # from Adguard
+    ! ||sport-express.ru/fb/img/icons/partners/
+    ! ||stopgame.ru/*partners/  # from Adguard
+    ! and others
+/pb.min.  # from EasyList
+/pbjs-*.js  # from EasyList
+/pbjsandwich.  # from EasyList
+/pbjsandwich-  # is in EasyList
+/pc_static.min.js  # from Adguard
+/pc_sticker.min.js  # from Adguard
+/pcs/click^
+/phoenixgoogleanalytics.  # ad scripts  # is in EasyPrivacy
+/pmc-google-universal-analytics/*  # from Adguard
+/popads.  # from Ru AdList
+/popads/*  # from Ru AdList
+/popua/*  # from Ru AdList
+/popunder.*$important
+    ! /popunder.  # from EasyList
+    ! /popunder.js$important
+    ! /sponsors/popunder.  # from EasyList
+    ! ||akamaized.net/mr/popunder.js  # from EasyList
+    ! ||scriptadmin.com/scripts/popunder.js  # from EasyList
+.popunder.js  # from EasyList
+/popupclick/$popup  # from Ru AdList
+/prebid*$important
+    ! /js/prebid-  # from EasyList
+    ! /npm/prebid-  # from EasyList
+    ! /prebid/*  # from EasyList
+    ! /prebid?  # from EasyList
+    ! /prebid.js$important
+    ! /prebid_$important
+    ! /prebid1.  # from EasyList
+    ! /prebid2.$important  # from EasyList
+    ! /prebid3.  # from EasyList
+    ! /prebid4.  # from EasyList
+    ! /prebid5.  # from EasyList
+    ! /prebid6.  # from EasyList
+    ! /prebid14.js  # from EasyList
+    ! /prebid2140.  # from EasyList
+    ! /prebid35.  # from EasyList
+    ! /prebidAdcall.  # from EasyList
+    ! /prebid-ads.js
+    ! /prebidjs/*  # is in EasyList
+    ! /prebidLibrary.  # from EasyList
+    ! /prebidlink/*$important  # from EasyList, modified
+    ! /prebid-min-  # from EasyList
+    ! /prebid_request.  # from EasyList
+    ! /prebid-sdk.  # from EasyList
+    ! /prebid-setup.js
+    ! /prebidtest.  # from EasyList
+    ! /prebid_v4.  # from EasyList
+    ! /prebid-worker/*  # from EasyList
+    ! ||akamaihd.net/player/*/akamai/amp/prebid/$important
+_prebid.js  # from EasyList
+~Prebid.js  # from EasyList
+/prepare/ads^  # from Adguard
+/profitwell.js$important
+/propellerads.  # from EasyList
+/pubads/*$important
+/pubads.ad$important
+/pubfig.min.js  # from EasyList
+/rbs_scripts/rbs_banner_  # is in Ru AdList
+/rd.php?
+    ! ||accountant/*rd.php?id=$third-party,popup  # from Ru AdList
+    ! ||bid/*rd.php?id=$third-party,popup  # from Ru AdList
+    ! ||cricket/*rd.php?id=$third-party,popup  # from Ru AdList
+    ! ||date/*rd.php?id=$third-party,popup  # from Ru AdList
+    ! ||download/*rd.php?id=$third-party,popup  # from Ru AdList
+    ! ||online/*rd.php?id=$third-party,popup  # from Ru AdList
+    ! ||site/*rd.php?id=$third-party,popup  # from Ru AdList
+    ! ||stream/*rd.php?id=$third-party,popup  # from Ru AdList
+    ! ||top/*rd.php?id=$third-party,popup  # from Ru AdList
+    ! ||xyz/*rd.php?id=$third-party,popup  # from Ru AdList
+_rebid.js  # from EasyList
+/redirect_base/*  # ad scripts
+/redirect/cpa/*
+.refit.ads.  # from EasyList
+/regenerator-runtime.min.js
+/rek/*
+    ! /images/rek/*  # from Ru AdList and Adguard
+    ! ||cheat-master.ru/rek/  # from Adguard
+    ! ||dni24.com/rek/  # from Adguard
+    ! ||iskra-sev.ru/rek/  # from Adguard
+    ! ||mobiltelefon.ru/photo/rek/  # from Adguard
+    ! ||pornopda.net/rek/  # from Adguard
+    ! ||pornovonline.org/uploads/rek/  # from Adguard
+    ! ||shopworld.biz/rek/  # from Adguard
+    ! ||tvfru.net/img/rek/  # from Adguard
+    ! ||tvfru.org/img/rek/  # from Adguard
+    ! ||tvfru.ru/img/rek/  # from Adguard
+    ! ||zagonka.ru/rek/  # from Adguard
+/rekl/*
+    ! /images/rekl/*  # from Ru AdList
+    ! /img/rekl/*  # from Adguard
+    ! ||film-adult.net/*/rekl/  # from Adguard
+    ! ||filsrver.com/video/*/rekl/  # from Adguard
+    ! ||rus-linux.net/rekl/  # from Adguard
+/reklam/*$domain=~reklam.com.tr  # from EasyList
+/reklama*$important
+/renderbanner.do?  # is in EasyList
+/retargeting/*
+.richbanner.  # from Ru AdList
+/rollbar.js  # is in EasyPrivacy
+/rotate-banner.min.js
+/rotator/*
+!/rotator.js  # don't block - it may be used in non-ad video for previews
+/rotator.min.js$important
+/rotban/*  # from Adguard: /rotban/rotator.js
+/RTABlur*$script
+/RTAModal*$script
+/rtr/*$script,important
+    ! ||am/rtr/$script  # from Ru AdList
+    ! ||biz/rtr/$script  # from Ru AdList
+    ! ||by/rtr/$script  # from Ru AdList
+    ! ||cc/rtr/$script  # from Ru AdList
+    ! ||club/rtr/$script  # from Ru AdList
+    ! ||co/rtr/$script  # from Ru AdList
+    ! ||com/rtr/$script  # from Ru AdList
+    ! ||es/rtr/$script  # from Ru AdList
+    ! ||info/rtr/$script  # from Ru AdList
+    ! ||kz/rtr/$script  # from Ru AdList
+    ! ||me/rtr/$script  # from Ru AdList
+    ! ||net/rtr/$script  # from Ru AdList
+    ! ||org/rtr/$script  # from Ru AdList
+    ! ||pl/rtr/$script  # from Ru AdList
+    ! ||ro/rtr/$script  # from Ru AdList
+    ! ||ru/rtr/$script  # from Ru AdList
+    ! ||so/rtr/$script  # from Ru AdList
+    ! ||tv/rtr/$script  # from Ru AdList
+    ! ||ua/rtr/$script  # from Ru AdList
+/ru-n4p/*.js$important  # from AdGuard
+/sam-pro-free/*  # from EasyList
+/sam-pro-images/*  # from EasyList
+/sb/clk/*
+    ! from Ru AdList
+    ##[onclick*="/sb/clk/"]
+/scripttag_loader.min.js
+/scrollspy.js
+/scrollspy.min.js
+/segment.js$important
+/show_ads.js$important
+/show-ads.js$important
+/showads.*$important  # disable exclusion from Fanboy’s Enhanced Tracking List
+/sidebar_banners/*
+/siropu/am/*$script,important
+    ! /siropu/am/core.min.js$script,important  # is in uBlock filters as is
+    ! /siropu/am/display.$script  # from RU AdList
+    ! ||cdn.car4um.com/js/Siropu/AM/ads.min.js  # from Adguard
+    ! ||germancarforum.com/js/Siropu/AM/ads.min.js  # from Adguard
+/sitecatalyst/*  # from Fanboy’s
+/smart-app-banner/
+/smart-app-banner.js$important  # is in EasyList
+/smartBanner/*
+/smartbanner.js
+/smartbanner.min.js$important
+/smartbanner-android.js
+/smarttag.js$important
+/soralink/*  # from EasyList
+/sponsored-articles/*$xmlhttprequest  # is in EasyList
+/static_pc.min.js  # from Adguard
+-stats.video.  # from Adguard
+-stdlauncher.js  # from Adguard
+/sticker_pc.min.js  # from Adguard
+/sys/js/*$third-party  # from Adguard (many random domains)
+/tagman/*  # from EasyList
+/test-widget/*
+/top-banner.jpg
+/trafficguard.js$important
+/uedata?$important  # from AdGuard Tracking Protection and EasyPrivacy, modified
+/underbanner/*
+    ! azbukadiet.ru*/underbanner/  # from Ru AdList
+    ! ||domsnov.ru/underbanner/  # from Adguard and Ru AdList
+    ! ||otvetkak.ru/wp-content/themes/yoo_everest_wp/underbanner/zone*.html  # from Adguard
+    ! ||prisnilos.su/underbanner/js/the_underbanner  # from Adguard
+    ! prisnilos.su*underbanner/  # from Ru AdList
+/upload/jackets/*  # Ru AdList rule: ||ua/upload/jackets/  # https://s.056.ua/upload/jackets/000/...
+/upsell.js
+/upsell_hero*$important
+/upselltracker.js
+.utils.ads.  # from EasyList
+/uutils.fcg?  # from EasyPrivacy
+/valnet-header.  # is in EasyPrivacy  # valnetinc.com (yet not blocked)
+/valnet-footer  # /valnet-footer-article. and /valnet-footer. scripts
+/vast/*$important,all
+    ! /api/outreach/vast/*$xmlhttprequest  # from Ru AdList
+    ! /vast/ads-  # from EasyList
+    ! ||cdngate.org/vast/  # from Ru AdList
+    ! ||freep2p.info/vast/  # from Ru AdList
+    ! ||kodik.biz/vast/  # from Adguard
+    ! ||u-tv.ru/vast/  # from Ru AdList
+    ! ||vmeste.xyz/vast/  # from Ru AdList
+    ! ||api.yapfiles.ru/vast/  # from Ru AdList
+    ! ||ykt.ru/vast/$xmlhttprequest  # from Ru AdList
+/vast.
+    ! /vast.js
+        ! /handler_static/js/vast.js  # from Ru AdList
+        ! /testserial/vendor/vast.js  # from Ru AdList
+        ! ||jwpcdn.com/*/vast.js$domain=playground.ru  # from Ru AdList
+        ! ||noodlemagazine.com/static/engine/*/vast.js  # from Ru AdList
+        ! ||ukdevilz.com/static/engine/*/vast.js  # from Ru AdList
+        ! ||xuy.tv/player*/vast.js  # from Ru AdList
+    ! /vast.php
+        ! ||stats.anidub.life/vast.php  # from Ru AdList
+        ! ||jiouv.com/vast.php  # from Ru AdList
+    ! /vast.xml
+        ! /vast.xml?key=  # from Ru AdList
+        ! ||50.7.134.117/ttv_omorp/vast.xml$object  # from Ru AdList
+        ! ||mxttrf.com/vast.xml  # from Adguard
+        ! ||n278adserv.com/vast.xml  # from Adguard
+    ! /player/vast.$domain=imasdk.googleapis.com  # from Ru AdList
+    ! /vast.min.js$domain=defileb.com|fplay.online|hovels.info|likelol.online|playep.pro|playy.online|plplayer.online|plwork.net|sorb.info|toplay.biz|ttutu.biz  # from Ru AdList
+/vast?
+    ! ||bazr.ru/vast?$xmlhttprequest  # from Ru AdList
+    ! ||okay.uz/api/default/vast?$xmlhttprequest  # from Ru AdList
+    ! ||stream.cz/*/vast?  # from Adguard
+/vast3.js  # from uBlock filters
+/vast4.js  # from uBlock filters
+/vast*php?$xmlhttprequest  # from Ru AdList
+/vastad/*  # from Adguard: /vastad/*/manifest.xml
+/vastadv/*  # from Adguard: /vastadv/*/manifest.xml
+/vastadvert/*  # from Adguard: ||kodik.cc/vastadvert/
+/vast-ad/*  # from Adguard: /vast-ad/*/manifest.xml
+/vast-adv/*  # from Adguard: /vast-adv/*/manifest.xml
+/vast-advert/*  # from Adguard: /vast-advert/*/manifest.xml
+.vast.ad.js  # from Ru AdList: zoneofgames.ru*/native.video.vast.ad.js
+/vast-bundle.min.js
+    ! /vast-bundle.min.js$domain=defileb.com|fplay.online|hovels.info|likelol.online|playep.pro|playy.online|plplayer.online|plwork.net|sorb.info|toplay.biz|ttutu.biz  # from Ru AdList
+.vert.ad.  # from EasyList
+/video/?format=overroll&  # from Ru AdList
+/videoadcode/*  # from Ru AdList
+.video.ads.  # from EasyList
+/video_banner.js
+/videojs.ads
+/videojs-contrib-ads.*$important
+/videojs-contrib-ads/*$important
+/view.js$domain=~livejournal.com  # from Ru AdList and Adguard, modified
+/viewc.js  # from Ru AdList, modified
+/vinos.js?$important
+    ! /bens/vinos.js?$important  # is in AdGuard
+    ! /grand/vinos.js$script  # from https://github.com/easylist/ruadlist/issues/153
+/volcano_banner  # from Ru AdList
+/webbanners/*
+.weborama.js  # from EasyList
+/webunder.  # from Ru AdList
+/webunder_  # from Ru AdList
+! widget rules need refactoring :-( They block /jquery/ui/widget.min.js
+!/widget/*$~stylesheet,domain=~hypercomments.com|~hse.ru|~alicdn.com|~arcgis.com|~domclick.ru|~ozon.ru|~ozon.by|~ozon.com|~rzd.ru|~sbis.ru
+!    ! /widget/?45;*|1|1|1|1  # strange rule from Ru AdList
+    ||market.yandex.ru/widget/*$third-party,script  # from Ru AdList
+!/widget.min.js$important,domain=~sbis.ru
+/widget/*$~stylesheet,domain=~hypercomments.com|~hse.ru|~alicdn.com|~arcgis.com|~domclick.ru|~ozon.ru|~ozon.by|~ozon.com|~rzd.ru|~sbis.ru  # v2
+    ! Exclusions:
+    !
+    ! ozon: useful inner widgets
+    ! rzd : useful inner widgets
+/widget-a-b.js  # from Ru AdList
+/widgets/*$~stylesheet,domain=~aliexpress.com|~aliexpress.ru|~banki.ru|~dns-shop.ru|~domclick.ru|~embedly.com|~gosuslugi.ru|~leroymerlin.ru|~sberbank.ru|~sbis.ru
+    ! Exclusions:
+    ! banki.ru - currency courses (first-party)
+    !
+    ! Update: useful third-party widgets cannot be allowed as domain=... because they are third-party. So, direct exclusions:
+    ! aplaut.io - useful reviews/feedback widgets
+    @@||aplaut.io/widgets  # aplaut.io/widgets/ and aplaut.io/*/widgets.css
+    @@||aplaut.io/*/widgets  # aplaut.io/widgets/ and aplaut.io/*/widgets.css
+    ! embedly.com - embedded elements (video, as far as I remember)
+    @@||embedly.com/widgets/
+    ! 
+    ! In the most cases this rule is very useful. But maybe remake it to 3p? It would solve all these problems
+    !
+/wp-banners.js$important
+||/wp-content/*/ad-*$script,important  # disable exclusion from Fanboy’s Enhanced Tracking List
+||/wp-content/*/ads*.js$script,important  # disable exclusions from Fanboy's list
+/www/delivery/*  # from EasyList
+/xavi4.php
+/xb/xb.php
+/xtcore.js  # is in AdGuard and EasyPrivacy
+/yads.  # from SecurityEntire BaseFilter
+/youxia.js  # from EasyList China, modified
+/cdn-cgi/zaraz/*  # ad scripts  # is in Adguard and EasyPrivacy
+/zcvisitor/*  # is in: uBlock filters – Badware risks: /zcvisitor/*?campaignid$document
+/zuoxia.js  # from EasyList China, modified
+!
+! cosmetic filters
+! general first, specific last
+! comments is in separate line(s) before the string (as uBlock Origin editor says, inline is not correct)
+!
+~babyblog.ru,~cnn.com##[class$="-ad"]:not(html):not(body):not(article):not(#maincontent)
+    ! is in EasyList
+    ##.gpt-ad
+    ! is in EasyList
+    ##.inline-ad
+    ! is in EasyList
+    ##.nav-ad
+    ! is in EasyList
+    ##.text-ad
+    ! is in EasyList
+    ##.top-ad
+~kijiji.ca##[id$="-ad"]:not(html):not(body):not(article)
+    ! kijiji.ca is a classifieds site
+    ###nav-ad
+~opensubtitles.org,~dkc7dev.com##[class$="_ad"]:not(html):not(body):not(article)
+##[id$="_ad"]:not(html):not(body):not(article)
+    ! is in EasyList
+    ! ##.sidebar__ad
+    ! is in EasyList
+    ! ##.text_ad
+##[class^="AD_"]:not(html):not(body):not(article)
+##[id^="AD_"]:not(html):not(body):not(article)
+##[class^="Ad_"]:not(html):not(body):not(article)
+##[id^="Ad_"]:not(html):not(body):not(article)
+    ###Ad_Top
+~360cities.net##[class^="ad_"]:not(html):not(body):not(article)
+~cnn.com##[id^="ad_"]:not(html):not(body):not(article)
+    ! is in EasyList
+    ##.ad_float
+    ! from EasyList
+    ###ad_ph_1
+    ! from RU AdList
+    ###ad_ph_2
+    ! from RU AdList
+    ###ad_ph_3
+    ! from RU AdList
+    ###ad_ph_4
+    ! is in EasyList
+    ##.ad_unit
+    ! from EasyList
+    ##div[id^="ad_rect_"]
+~cnn.com,~ferra.ru,~indicator.ru,~moslenta.ru,~motor.ru,~trud.com##[class^="ad-"]:not(html):not(body):not(article):not(.ad-site-wrapper)
+        ! letidor.ru,secretmag.ru: #@#.ad-site-wrapper
+        ! trud.com: .ad-free .ad-pages
+    ! is in EasyList
+    !##.ad-popup-content
+    ! is in EasyList
+    !##.ad-banner
+##[id^="ad-"]:not(html):not(body):not(article)
+    !###ad-101
+    !###ad-desktop-bottom
+    !###ad-desktop-bottom2
+    ! is in EasyList
+    !##.ad-leaderboard
+    ! is in EasyList
+    !##.ad-leader-plus-top
+    ! is in EasyList
+    !##.ad-mpu-bottom
+    ! is in EasyList
+    !##.ad-mpu-middle
+    ! is in EasyList
+    !##.ad-mpu-plus-top
+    ! is in EasyList
+    !##.ad-nav-ad
+    ! is in EasyList
+    !##.ad-slot
+    ! is in EasyList
+    !##.ad-unit
+    ! is in EasyList
+    !##.ad-wide
+~babyblog.ru,~blokada.org,~cnn.com,~dirteam.com,~domclick.ru,~nextdns.io,~youtube.com##[class*="-ad-"]:not(html):not(body):not(article):not([class*=page-wrapper])
+    ! Exclusions:
+    ! nextdns.io - it needs recheck later  https://help.nextdns.io/category/privacy-blocklist-ad-blocking : "posting topic-summary -cat-privacy-blocklist-ad-blocking js-topic-summary -article -r1 -unread"
+    !
+    ! from EasyList
+    ##.ytp-ad-progress-list
+~afisha.ru,~ansible.com,~cnn.com##[id*="-ad-"]:not(html):not(body):not(article)
+    ! 
+! ._ad_U,._ad_V,._ad_Y,... there are in MS OWA. Don't know how to make precise exclusion of such. :not(._ad_U):not(._ad_V):not(._ad_Y) don't not work - there are too many of them.
+! As a workaround, one can add exclusion for corporate mail server:
+! @@||<server_host>^$generichide
+! for example, @@mail.example.com^$generichide
+! Update: NO! There is a better and working way:
+@@||*/owa/^$generichide
+##[class*="_ad_"]:not(html):not(body):not(article)
+~kodi.wiki##[id*="_ad_"]:not(html):not(body):not(article)
+    ! is in EasyList
+    !###sticky_ad_bar
+##[class*="Adblock"]:not(html):not(body):not(article)
+##[id*="Adblock"]:not(html):not(body):not(article)
+~microsoft.com,~reddit.com##[class*="adblock"]:not(html):not(body):not(article):not(.main-container):not(.nav-container)
+~fastpic.ru,~fastpic.org##[id*="adblock"]:not(html):not(body):not(article)
+##[class^="adMedia"]:not(html):not(body):not(article)
+##[id^="adMedia"]:not(html):not(body):not(article)
+##[class*="-admedia"]:not(html):not(body):not(article)
+##[id*="-admedia"]:not(html):not(body):not(article)
+##[class*="adriver"]:not(html):not(body):not(article)
+##[id*="adriver"]:not(html):not(body):not(article)
+##[class^="adrotate"]:not(html):not(body):not(article)
+##[id^="adrotate"]:not(html):not(body):not(article)
+    ! is in EasyList
+    ##div[id^="adrotate_widgets-"]
+    ! is in EasyList
+    ##.adrotate_widgets
+~24ru.com,~mediafire.com,~obi.ru,~yandex.*##[class^="ads"]:not(html):not(body):not(article):not(#issue)
+    ! Exclusions:
+    ! 24ru.com - adv board (buy/sell etc.)
+    ! mediafire.com - "ads dl-box" class of the download button
+~e-du.ru,~yandex.*##[id^="ads"]:not(html):not(body):not(article)
+    ! from Ru AdList: ##div[id^="ads_games_"]
+    ! is in EasyList: ##.ads-fr
+~blogspot.com,~xstepmother.com,~yandex.*##[class$="-ads"]:not(html):not(body):not(article)
+~kijiji.ca,~yandex.*##[id$="-ads"]:not(html):not(body):not(article)
+    ! kijiji.ca is a classifieds site
+    ! is in EasyList
+    !###player-ads
+    ! is in EasyList
+    !##.sidebar-ads
+~libreelec.tv,~obi.ru,~yandex.*##[class*="-ads-"]:not(html):not(body):not(article)
+~yandex.*##[id*="-ads-"]:not(html):not(body):not(article)
+~yandex.*##[class*="_ads_"]:not(html):not(body):not(article)
+~24ru.com,~yandex.*##[id*="_ads_"]:not(html):not(body):not(article)
+    ! Exclusions:
+    ! 24ru.com - adv board (buy/sell etc.)
+~yandex.*##[class$="_ads"]:not(html):not(body):not(article)
+~adblockplus.org,~yandex.*##[id$="_ads"]:not(html):not(body):not(article)
+##[class*="Advert"]:not(html):not(body):not(article)
+##[id*="Advert"]:not(html):not(body):not(article)
+~e.mail.ru,~prace.cz,~radikal.ru,~yandex.*##[class*="advert"]:not(html):not(body):not(article)
+    ! Exclusions:
+    ! prace.cz: .search-result__advert
+    !
+    ! is in EasyList
+    ##.advert-block
+    ! is in EasyList
+    ##.advertisement_above_footer
+    ! is in EasyList
+    ##.advertisement_728x90
+    ! is in EasyList
+    ##.advertisement-content
+##[id*="advert"]:not(html):not(body):not(article)
+~aliexpress.com,~aliexpress.ru,~clickup.com,~westerndigital.com##[class*="Banner"]:not(html):not(body):not(article):not(#Header)
+    ! Exclusions:
+    ! clickup.com - main section, .hasBanner
+##[id*="Banner"]:not(html):not(body):not(article)
+! don't block *banner* by id or class
+! ##[role="banner"] - in general, don't
+~booknet.ua##[class^="bn_"]:not(html):not(body):not(article)
+    ! Exclusions:
+    ! booknet.ua - many bn_* classes (by site name, BookNet)
+~booknet.ua##[id^="bn_"]:not(html):not(body):not(article)
+    ! Exclusions:
+    ! booknet.ua - many bn_* classes (by site name, BookNet)
+##[class*="_bn_"]:not(html):not(body):not(article)
+##[id*="_bn_"]:not(html):not(body):not(article)
+! from EasyList
+##div[id^="crt-"][style]
+##[class^="dfp"]:not(html):not(body):not(article)
+##[id^="dfp"]:not(html):not(body):not(article)
+##[class$="dfp"]:not(html):not(body):not(article)
+##[id$="dfp"]:not(html):not(body):not(article)
+##[class*="-dfp"]:not(html):not(body):not(article)
+##[id*="-dfp"]:not(html):not(body):not(article)
+##[class*="leaderboard"]:not(html):not(body):not(article)
+##[id*="leaderboard"]:not(html):not(body):not(article)
+~airtable.com##[class*="Marketing"]:not(html):not(body):not(article)
+    ! Exclusions:
+    ! airtable.com - main content
+~airtable.com,~kodi.wiki,~learn.microsoft.com##[id*="Marketing"]:not(html):not(body):not(article)
+    ! Exclusions:
+    ! airtable.com - main content
+    ! kodi.wiki - don't remember, but definitely not marketing
+    ! learn.microsoft.com - main section
+~surveymonkey.com##[class*="marketing"]:not(html):not(body):not(article)
+##[id*="marketing"]:not(html):not(body):not(article)
+##[class*="motivation"]:not(html):not(body):not(article)
+##[id*="motivation"]:not(html):not(body):not(article)
+! .js-rtb-partner is a subclass on shops on tiu.ru engine
+~bonus-spasibo.ru,~sparta-guns.ru##[class*="partner"]:not(html):not(body):not(article):not(.js-rtb-partner):not(.post)
+! todo: recheck
+~clutch.ua,~depo.ua,~kodi.wiki,~politeka.net,~strana.today,~strana.ua,~znaj.ua##[id*="partner"]:not(html):not(body):not(article):not(.adpartner_branding):not(#adpartner_branding)
+    ! id="adpartner_branding"
+    ! ##.partner_links
+##[class*="paywall"]:not(html):not(body):not(article)
+##[id*="paywall"]:not(html):not(body):not(article)
+##[class*="reklam"]:not(html):not(body):not(article)
+##[id*="reklam"]:not(html):not(body):not(article)
+    ! from EasyList
+    !##.reklama
+##[class*="Sponsor"]:not(html):not(body):not(article):not([class*=hideSponsored])
+##[id*="Sponsor"]:not(html):not(body):not(article)
+~indeed.com##[class*="sponsor"]:not(html):not(body):not(article):not(.drt-video-player)
+    ! Exclusions:
+    ! drtuber.com, iceporn.com: "drt-video-player sponsored"
+    ! indeed.com: sponsoredJob (cardOutline tapItem fs-unmask result sponsoredJob resultWithShelf sponTapItem)
+    !
+    ! from EasyList
+    !##.sponsoredlinks
+##[id*="sponsor"]:not(html):not(body):not(article)
+##[class^="WNAd"]:not(html):not(body):not(article)
+##[id^="WNAd"]:not(html):not(body):not(article)
+! Browsec ad popups
+##[class^=_Not][class*=_Big_In]:has-text(You’re using Browsec Free)
+##[class^=_Not][class*=_Big]:has-text(VPN)
+! other
+! Ru AdList rule
+##[data-la-block]
+! from uBlock filters
+##a[href^="http://adtrack"]
+###abAlert
+###abDetected
+###abnban
+###abdanner
+###abmessage
+###abMessage
+###ab-message
+###abmsg
+###ab--notification-ribbon
+###abnotify
+###ab_placeholder
+###abPopup
+###abrpm
+###abwarn
+##.ad
+###ad
+###ad1
+###Ad1
+###ad1
+##.Ad1
+##.ad1
+###ad2
+###Ad2
+###ad-200
+###ad3
+###ad4
+###ad7
+###ad728x90
+! is in Adguard
+###ad_300X250
+##.adaptive-banner
+##.adaptive-banner-community
+! from EasyList
+##.adbanner
+! is in EasyList
+##.adBanner
+##.adb-def
+###adBlockMessaging
+###adbns
+! is in EasyList
+##.ad-center
+###adf
+###adf_notifiers_wrap
+###adfooter
+###__adIframe
+###adinserttop
+##.adlink_block
+###adlogo
+! don't block "admania" in general - it's a Wordpress theme
+! totop button
+##.admania-top
+###admania_top
+! is in EasyList
+##.adright
+###Ads
+! from EasyList
+##.adsBanner
+##.adsbox
+##.adsbygoogle
+##.adslot
+! is in EasyList
+##.adspot
+! is in EasyList
+###adss
+! is in EasyList
+##.AdSticky
+##.ad-stickyhero
+##.adtable
+! from EasyList
+##.adtester-container
+##.adText
+##.adtext
+##.adTitle
+##.AdTitle
+###adTop
+! is in EasyList
+##.ad-top
+###adultCoverWarning
+~24ru.com##.adv
+    ! is in Ru AdList: ~mail.ru,ru,~sportmail.ru,ua##.adv
+    ! Exclusions:
+    ! 24ru.com - adv board (buy/sell etc.)
+! is in EasyList
+##.adv300x250
+##.advantage
+    ! erarussia.ru##.advantage
+    ! fskrs.ru##.advantage
+    ! kovearussia.ru##.advantage
+##.advantages
+    ! instrument.ms##.advantages
+    ! obi.ru##.advantages--centered.advantages
+    ! tksiz.ru##.advantages
+##.advantages-row
+    ! super-rukzaki.ru##.advantages-row
+    ! insantex.ru##.advantages-row.row
+! from Ru Adlist
+##.advblock
+##.adv-box-right
+##.advBrand
+##.adv-contacts
+! is in EasyList
+##.adver
+##.advers
+##.adversing_block
+##.adversing_operator_count
+###adv_kod_frame
+##.adv_under_menu
+##.adv_wrap
+! is in EasyList
+##.advertising-header
+! from EasyList
+##.afs_ads
+###alert
+##.alert-announcement
+~adrr-buro.ru,~datadoghq.com##.announcement:not(.forumbg):not(#masthead)
+    ! Exclusions:
+    ! adrr-buro.ru - доска объявлений, типа. Хз, но .announcement точно предполагает баннер сверху, а там не так
+##.announcement_banner
+##.article-top-banner
+~medium.com,~betterprogramming.pub,~codeburst.io,~faun.pub,~jetruby.com,~itnext.io,~towardsdatascience.com,~ozon.ru,~ozon.by,~ozon.com##.aw
+    ! medium.com,betterprogramming.pub,faun.pub,jetruby.com,itnext.io,towardsdatascience.com - random two-letter classes, medium engine
+    ! ozon - random two-letter classes
+! from EasyList
+##.b-adv
+###ban240x400
+##.baner
+##.baner_top
+~bizon365.ru,~jiosaavn.com##.banner
+###banner
+##.banner305x245
+! from EasyList
+##.bannerad
+###banner-advert-container
+##.banner-block
+    ! babesbang.com##.banner-block
+    ! diletant.media##.banner-block
+! is in uBlock filters
+##.banner-bottom
+##.banner-catalog
+###banner-container
+##.banner-container
+##.banner__content:not(main)
+###banner-content:not(main)
+~freshworks.com##.banner-content:not(main)
+    ! Exclusions:
+    ! freshworks.com - .banner-content is a login form. Weird.
+##.banner-header
+##.banner_img
+##.banner-left
+##.banner_left
+##.banner-link
+##.banner-main-container
+##.banner-slider
+##.banner-slider-container
+##.banner-slider-wrapper
+##.banner-small
+##.banners
+##.banners-bottom
+##.banners-item
+##.banners__panel
+###banners-top
+##.banners-zones
+##.banners-zones-container
+##.banner-text
+##.banner__top
+##.banner-top-content
+##.banner-top-wrapper
+##.banner-wrapper
+! from AdGuard and Ru Adlist
+##.b-banner
+##.bets-online
+##.b-direct
+##.bg-banner
+##.b-header-adv-stripe
+~kla.tv##.big-banner
+##.big-banner-inner
+##.big-banner-out
+##.billboard
+    ! 9gag.com,hotstar.com,sport360.fit,talksport.com,trademe.co.nz##.billboard  # from EasyList
+    ! the-sun.com##.billboard
+###BottomAd
+###bn-1
+! is in EasyList
+##.BottomAd-container
+! is in EasyList
+##.bottom-adv
+##.bottom-banner-wrapper
+! is in Adguard
+###bp_banner
+! is in EasyList
+###btmad
+##.b-r
+##.bung-container
+##.bunnerLists
+##.buy_1c
+###bx-composite-banner
+    ! sledopit.moscow###bx-composite-banner
+    ! vsemtoy.ru###bx-composite-banner
+! is in EasyList
+##.c-advertising
+###catalog_banner
+##.catalog_banner
+###category_shoutbox
+! is in EasyList, AdGuard and Fanboy's
+##.cc-banner
+! is in EasyList and Fanboy's
+##.cc-container
+###check-also-box
+##.contact-sales
+###container_mediaget
+##.contentbanner
+! part of /wp-content/plugins/crayon-syntax-highlighter/ - breaks copypaste
+##.crayon-plain
+! part of /wp-content/plugins/crayon-syntax-highlighter/ - annoying toolbar on hover
+##.crayon-toolbar
+###credit-card-footer-banner
+##.cross-sell-list-section
+###ctl00_abot_bb
+###ctl00_atop_bt
+###ctl00_Body_slideboxDiv
+###ctl00_ctl00_body_body_ucLove_panelLove
+###ctoolbar
+##.custom-banner
+##.custom-forum-banner
+! from EasyPrivacy
+###cxense-recs-in-article
+! is in EasyList
+##.dcmads
+##.desktop-banner
+###desktop-banner
+! is in RU Adlist
+##.directadvert-block
+##.DirectInHeaderOnMobile_bottomSeparator
+##.DirectInHeaderOnMobile
+##.DirectSnippet
+! is in RU Adlist
+##div[id^="DIV_DA_"]
+###docAd
+##.dobanner
+##.dobanner-container
+##.dobanner-wrapper
+##.drt-spot-box
+! from EasyPrivacy
+##.embed-responsive-trendmd
+    ! medicalxpress.com,techxplore.com##.embed-responsive-trendmd
+##.float_banner
+##.float-banner
+##floating-help-button
+###footer-spelling
+##.forum-banner
+###foxclocks-statusbar-spacer
+##.free-consult
+###freetour
+##.freetour
+##.front-banner
+##.front-banner--content
+##.fullscreen-banner
+##.fullwidthbanner-container
+##.full-width-narrow-banner
+##.gallery-banner
+! is in EasyList
+##.Gallery-Content-BottomAd
+! is in Ru AdList
+##.gaminator
+! is in EasyList
+###gf-mrecs-ads
+! is in FanBoy's
+###gh-bt
+! is in EasyList
+##.gnt_x
+###goodbye-box
+###goodbye-form
+! from EasyList
+##.googads
+##.goog-te-banner-frame
+    ! Google Translate top block. For instance,
+    ! baza-v.com##.goog-te-banner-frame
+    ! geeksforgeeks.org##.goog-te-banner-frame
+    ! pp.ua##.goog-te-banner-frame
+    ! prikladov.ru##.goog-te-banner-frame
+##.grecaptcha-logo
+! is in EasyList and Fanboy's
+##.grecaptcha-badge
+    ! chilis.hu##.grecaptcha-logo
+    ! chilis.hu##.grecaptcha-badge
+    ! pikabu.ru##.grecaptcha-logo
+    ! pikabu.ru##.grecaptcha-badge
+###headerad
+##.Header-banner
+##.header_banner
+##.header-banner
+##.header-donation
+##.hero-carousel-slide-block
+##.home-carousel
+    ! dadget.ru##.home-carousel
+    ! juno.co.uk##.home-carousel
+##.home-carousel-container
+    ! iherb.com##.home-carousel-container
+###hosted-by
+##.hosted_by
+##.ID_live_cam_wrapper
+##.idmuvi-floatbanner
+! from AdGuard
+##iframe[width="100%"][height="60"]
+! from Ru AdList
+##iframe[width="240"][height="400"]
+! from AdGuard
+##iframe[width="300"][height="250"]
+! from AdGuard
+##iframe[width="728"][height="90"]
+! is in EasyList
+##.in-content-ad
+##.i-slider-banners
+##.j-banner
+##.j-banner-click-stat
+##.j-banner-shown-stat
+##.j-banner-wrapper
+! is in EasyList
+##.js-advert
+##.js-banner
+##.js__banner_type
+##.listing-banner
+###locked-footer-ad-wrapper
+##.m-ad
+##.main-banner
+###main-banner
+##.main-banners
+##.main-black-side-bar
+##.main-float-buttons
+~tempgun.ru##.maxwidth-banner
+! is in Adguard and Ru AdList
+##.mediaget
+##.menu-banner
+###middle_banner
+! is in EasyList
+##.mobileadunit
+! is in EasyList
+##.mks_ads_widget
+! is in EasyList
+##.mntl-gpt-adunit
+##.mobile-app-banner
+##.mobile-banner
+##.mobile-banner-content
+##.modal_banner
+##.module_banner_top
+##.mz-agent-banner
+##.mz-agent-banner__donate-call
+##.mz-agent-banner__link
+##.mz-agent-banner__text
+###nanoBaner
+! is in Ru AdList
+##.ncwAdCommon
+###newsAdp
+###news_adwindow_window
+###news_warp
+! is in Adguard
+##object[width="240"][height="400"]
+##.ocp-banner-navbar
+##.online-consultant-info-bar
+! several times
+##.opve-bn
+! from EasyList
+##.pagead
+##.page-top-banner
+    !krep-komp.ru##.page-top-banner
+    !vseinstrumenti.ru##.page-top-banner
+###paypal_donations
+###paypal_donations-2
+###paypal_donations-3
+###paypal_donations-4
+###paypal_donations-5
+! is in Ru AdList
+##.pb_left_banner
+! is in Ru AdList
+##.pb_right_banner
+##.penci-headline
+##.penci-top-bar
+##.photo__action
+! from EasyList
+##.plainAd
+##.post-banner
+! is in EasyList
+##.pub_300x250
+! from EasyList
+##.pub_300x250m
+! from EasyList
+##.pub_728x90
+! is in EasyList
+###quads-ad2
+! is in EasyList
+##.quads-ad2
+! is in EasyList
+##.quads-location
+! is in AdGuard
+##.rekl
+##.recov-adlabel
+##.resource_banner
+##.rotate-banner
+###rotator
+! is in AdGuard and RU AdList
+##.sb-banner
+##.SC_TBlock
+##.SearchSegments__directSnippet
+! is in Adguard and Ru AdList
+##.serp-adv__banner
+! from EasyList
+##.sideads
+##.side-banner
+##.sidebar__banner
+##.sidebar-banner
+###sidebar-banners
+###sidebar-rotator-0
+##.SimpleAd
+##.site-header-banner
+##.slide-banner
+! is in Adguard and Ru AdList
+##.surbis_banner
+##.td-banner-wrap-full
+! from Web Annoyances Ultralist
+##.td-header-sp-top-widget
+! is in Adguard
+##.topbaner
+##.top_banner
+##.top-banner
+##.topbanner
+! is in AdGuard
+##.top-banners
+##.top-banner-container
+! is in Ru AdList, Fanboy's
+###topcontrol
+##.top-main__banner
+###top_page_banner
+##.top_page_banner
+! is in Adguard
+###total_banner
+! is in Ru AdList
+##.tv-grid__item-adv-content
+! is in Ru AdList
+##.tv-grid__item-adv_wide_no
+! from FanBoy's
+###uglipop_overlay
+! from FanBoy's
+###uglipop_content_fixed
+##.ui-banner-slider-container
+##.underplayer_banner
+##.upsell
+    ! packtpub.com##.upsell
+    ! magpul.com##.upsell
+##.welcome-banner
+##.vertical-banner
+##.videoAnnouncement
+##.video-sidebar
+    ! from uBlock filters
+    !camsexbabe.nl##.d-md-block.d-none.video-sidebar
+    ! from uBlock filters
+    !173.249.49.204##.d-md-block.d-none.video-sidebar
+##.vkredit
+! is in AdGuard
+##.wpcnt > .wpa
+##.wrap-banner
+##.xfloatFrame
+##.xfloatVideoFrame
+    ! fairynudes.com##.xfloatFrame
+    ! fairynudes.com##.xfloatVideoFrame
+    ! nunude.com##.xfloatVideoFrame
+! is in Ru AdList
+##.ya-direct
+
+
+
+! fluid web player ads and ad popups
+###fluid-buffer_spot
+###fluid-onpause_spot
+###fluid-ontop_spots
+##.fluid-spot
+###onpause_spot
+##.on-player
+##.on-player-box
+##.spot-player
+###spot-player
+
+
+
+
+!! teasers
+/adv_teasers.  # is in EasyList
+/nettyzer/*
+/teaser*$domain=~vento.ru
+/teaser.*$~media,~object,domain=~amocrm.ru|~gosuslugi.ru|~insomnihack.ch|~pik-comfort.ru|~play.date  # from Ru AdList  # ok, exclusions from there
+/teaser2.  # from Ru AdList
+/teaser_klubnika/*  # from Ru AdList
+/teaserblock.site.js  # from Ru AdList
+/teasers.  # from Ru AdList
+/teasers/*  # from Ru AdList
+-teasers-  # from Ru AdList
+/tionline120x60.  # from Ru AdList
+/tionline150x60.  # from Ru AdList
+/tionline240x100.  # from Ru AdList
+/tionline240x400.  # from Ru AdList
+/tizer*$all,important,domain=~mos.ru|~mosmetod.ru|~stopgame.ru
+    ! Exclusions:
+    ! asau.ru: closed  # Ru AdList exclusion
+    ! mos.ru: govt  # Ru AdList exclusion
+    ! mosmetod.ru: govt  # Ru AdList exclusion
+    ! stopgame.ru - false positive at https://stopgame.ru/newsdata/58024/tizer_trailer_seriala_po_twisted_metal  # https://github.com/easylist/ruadlist/issues/61#issuecomment-1528030907
+    ! tizer.io: closed  # Ru AdList exclusion
+    ! all other Ru AdList exclusion seems unneeded (2023-04)
+    !
+    !/tizer-  # from Ru AdList
+    !/tizer.*$domain=~tizer.io  # from Ru AdList  # tizer.io is cryptowallet app
+    !/tizer/*  # from Ru AdList
+    !/tizer2.  # from Ru AdList
+    !/tizer2/*  # from Ru AdList
+    !/tizer_*$domain=~mos.ru|~mosmetod.ru  # from Ru AdList
+    !/tizermedia.  # from Ru AdList
+    !/tizerotator/*  # from Ru AdList
+    !/tizers/*  # from Ru AdList
+    !/tizers2.  # from Ru AdList
+    !/tizers3.  # from Ru AdList
+    !/tizers_  # from Ru AdList
+_tizer2.  # from Ru AdList
+/tizshow.  # from Ru AdList
+/utftizer.  # from Ru AdList
+?teaser_  # from Ru AdList
+_tizer.  # from Ru AdList
+_tizer2.  # from Ru AdList
+_tizers.  # from Ru AdList
+.sextizer.  # from Ru AdList
+.teaser.  # from Ru AdList
+.tizer-  # from Ru AdList
+.tizermedia.  # from Ru AdList
+.tizers.  # from Ru AdList
+.trafficbass.com^  # from Ru AdList
+.trafficdok.com^  # from Ru AdList
+.trafficlide.com^  # from Ru AdList
+.viptizer.  # from Ru AdList
+/viptizer.  # from Ru AdList
+! .media_image-field - Drupal images
+~bki-okb.ru,~dw.com,~freeones.com,~geeks.hu,~heise.de,~irecommend.ru,~metro-cc.ru,~n-tv.de,~selbst.de,~stuttgarter-zeitung.de,~tvklik.ru,~ua-independent.com,~youtube.com##[class*=teaser]:not(html):not(body):not(article):not(.media_image-field)
+    ! Exclusions:
+    ! bki-okb.ru: in fact, just articles in the FAQ
+    ! dw.com: links to news (.link-in-teaser)
+    ! freeones.com: previews
+    ! heise.de - non-ad teasers. a-article-teaser*: a-article-teaser__link, a-article-teaser, a-article-teaser--horizontal-layout, a-article-teaser--mobile-in-list
+    ! n-tv.de news site: many teaser classes - "bnews__slides__teaser slick-slide slick-cloned", "teaser__date", "teaser__kicker", "teaser__headline", "teaser teaser--wide teaser--hero teaser--gallery"
+    ! selbst.de - non-ad teasers, multiple classes
+    ! stuttgarter-zeitung.de - news articles: brick teaser-hero boxitem
+    ! tvklik.ru: just regular list items - .rt-teaser-articles
+    ! ua-independent.com - normal, non-ad news: "itemteaser teaser_title"
+~heise.de##[id*=teaser]
+    ! Exclusions:
+    ! heise.de - non-ad teasers
+    !
+    ! ##.b-content__section_teasers
+    ! au.ru###header-teaser
+    ! ||au.ru/*/teaser-mobile.png
+    ! doctorpiter.ru##.teaserblock
+    ! gismeteo.*##.navteaser__info
+    ! quick view
+    ! lamoda.ru##.main-teaser-know-more__item
+    ! lamoda.ru##.main-teaser-know-more-wrap
+    ! lamoda.ru##.teaser_interesting-square__inner
+    ! lamoda.ru##.teaser_interesting-square__link
+    ! lamoda.ru##.teaser_interesting-square__image
+    ! lamoda.ru##.teaser_interesting-square__button
+    ! lamoda.ru##.main-teaser-pop-brand__item
+    ! lamoda.ru##.teaser_popular-square__inner
+    ! lamoda.ru##.teaser_popular-square__link
+    ! lamoda.ru##.teaser_popular-square__image
+    ! lamoda.ru##.teaser_popular-square__button
+    ! other
+    ! lamoda.ru##.main-teaser-square__item--redesign
+    ! lamoda.ru##.main-teaser-long__item--redesign
+    ! lamoda.ru##.teaser-long__button
+    ! ||mts.ru/teaser
+    ! obi.ru##.cm-teaser-trsprt
+    ! paessler.com###teaser
+    ! relook.ru##[class^=teasers]
+    ! vedomosti.ru##.teaser
+    ! vkusvill.ru##.Footer__teasers
+    ! voenhronika.ru##.eBlockteaser
+    ! xdrv.ru##.teasers
+    ! xdrv.ru##.teaser_tbl
+    ! xn--59-mlcdk8aoy.xn--p1ai##.small-banner--teaser
+    ! is in Adguard
+    ! youtube.com##.ytp-cards-teaser
+##.tizers_block
+##.tizzers
+
+
+
+!! promos
+! is in EasyList
+://promo.$3p
+/app.promo*$script
+/load-promo/*  # from Ru AdList
+/promo.$important
+    ! /promo.js$important
+    ! /promo.php
+/promo?
+/promo/*$~stylesheet,domain=~livejournal.com|~mts.ru  # mts.ru loads non-ad /Promo/ links in lk
+    ! /promo/impression?  # from EasyPrivacy
+/promo_b/*  # from Adguard: /images/promo_b/*
+/promobanner
+/promo-banner.js$important
+/promolinks.
+/promos/*  # is in Ru AdList
+    ! /promos/pixels?  # from EasyPrivacy
+/promotion/*$domain=~doogee.cc
+/promotions/*
+    ! ||gbtcdn.com/GB/images/promotion/*$image
+    ! ||mvideo.ru/media/promotions/*$image
+    ! ||wbstatic.net/promotions/
+/promo_tracking.  # from EasyPrivacy
+/promo_tracking/*  # from EasyPrivacy
+/searchpromote/*
+##[id*="Promo"]:not(html):not(body):not(article)
+##[class*="Promo"]:not(html):not(body):not(article)
+##[id*="promo"]:not(html):not(body):not(article)
+! too many exclusions
+!~rusbestrailways.com,~hh.ru,~kodi.tv,~idsv.ru,~fermer.ru,~redhat.com##[class*="promo"]:not(html):not(body):not(article)
+    ! Exclusions:
+    ! redhat.com: "full full--article node node--promoted"
+    ! 
+    ! is in Ru AdList
+    ##.flex-promo-series
+    ##.open_promo
+    ~pochtabank.ru##.promo
+    ##.promo__banner
+    ##.promo-bar
+    ##.promo_block
+    ##.promo-block
+    ##.promo-block-letter
+    ##.promo-box
+    ##.promo-button
+    ##.promo-carousel
+    ##.promo_line
+    ##.promo_top
+    ##.promo_widget
+##[id*="-promo"]:not(html):not(body):not(article)
+~5turistov.ru,~aliexpress.com,~aliexpress.ru,~e.mail.ru,~stepik.org,~yoomoney.ru##[class*="-promo"]:not(html):not(body):not(article):not(.node-promoted):not(.content):not(.content__header)
+    ! Exclusions:
+    ! 5turistov.ru - main: "mainContainer-inner promo-container container--promo js-promo-container js-main-container"
+    ! cbsnews.com - "content__header  content__header--no-promo", but it has "yes-promos". Added ".content__header"
+    !
+    ! delikateska.ru##.header-promo-container
+    ! popup
+    ! exam-labs.com##.quick-registration-promo
+    ! federalnewsnetwork.com##.widget-promo-link
+    ! kupibonus.ru##.kb-promo
+    ! e.mail.ru - mail list: .application-mail > .application-mail__overlay .js-promo-id_new-toolbar
+    ! ponominalu.ru##.pn-ss-promo-block
+    ! techport.ru##.techbonuses-promo-block-wrapper
+    ! techport.ru##.techbonuses-promo-block-wrapper-parent
+    ! travel.ru##.b-footer-mobile-app-promo-icon
+    ! wildberries.ru##.j-promo-carousel-wrapper
+##[id*="promotion"]:not(html):not(body):not(article)
+~alibaba.com,~aliexpress.com,~aliexpress.ru,~chess.com,~mwave.com.au##[class*="promotion"]:not(html):not(body):not(article)
+    ! Exclusions:
+    ! alibaba.com, aliexpress.com: .promotion is a regular price, not a promo
+    !
+    ! ##.close-promotion
+    ! ##.promotion-box
+    ! ##.promotion-flex
+    ! booking.com##.promotion-postcard__large
+    ! booking.com##.promotion-postcard__small
+    ! mwave.com.au - .promotionWrapper is a main div
+##promo-story-bucket-short
+    ! azcentral.com##promo-story-bucket-short
+    ! desmoinesregister.com##promo-story-bucket-short
+
+
+
+!! callouts and calls to action
+/alert-popup/*
+/cta/*
+/intervolga.conversionpro/*
+/skyweb24.popuppro/*
+/sms-alert-popup/*
+/sms-thankyou-popup/*
+/sms-wait-popup/*
+/tcsbank.kupivkredit/*
+~mobilization.guide##[class*="-callout"]:not(html):not(body):not(article)
+    ! mobilization.guide: .notion-callout
+##[id*="-callout"]:not(html):not(body):not(article)
+##[class*="_callout"]:not(html):not(body):not(article)
+##[id*="_callout"]:not(html):not(body):not(article)
+##[class*="_call-out"]:not(html):not(body):not(article)
+##[id*="_call-out"]:not(html):not(body):not(article)
+##[class*="-call-out"]:not(html):not(body):not(article)
+##[id*="-call-out"]:not(html):not(body):not(article)
+##[class^="callout-"]:not(html):not(body):not(article)
+##[id^="callout-"]:not(html):not(body):not(article)
+##[class^="callout_"]:not(html):not(body):not(article)
+##[id^="callout_"]:not(html):not(body):not(article)
+##[class*="Callout"]:not(html):not(body):not(article)
+##[id*="Callout"]:not(html):not(body):not(article)
+##.callout
+###callout
+##.call-out
+###call-out
+##[class*="CallToAction"]:not(html):not(body):not(article)
+##[id*="CallToAction"]:not(html):not(body):not(article)
+##[class*="callToAction"]:not(html):not(body):not(article)
+##[id*="callToAction"]:not(html):not(body):not(article)
+~money.yandex.ru,~youtube.com##[class*="call-to-action"]:not(html):not(body):not(article)
+    ! Exclusions:
+    ! money.yandex.ru - Don't remember
+    ! youtube.com - links .yt-core-attributed-string__link--call-to-action-color
+##[id*="call-to-action"]:not(html):not(body):not(article)
+    securitylab.ru##call-to-action
+    securitylab.ru##.call-to-action
+~freshworks.com,~google.com,~linkedin.com,~microsoft.com,~myfreshworks.com,~oracle.com,~udemy.com,~wasabi.com##[class*="-cta-"]:not(html):not(body):not(article)
+    ! Exclusions:
+    ! freshworks.com, myfreshworks.com - (multiple cta classes inside the form) is a continue button there
+    ! microsoft.com - download button: .ow-cta-btns
+    ! oracle.com: .two-column-cta-vertical in the menu
+##[id*="-cta-"]:not(html):not(body):not(article)
+~freshworks.com,~google.com,~myfreshworks.com##[class^="cta-"]:not(html):not(body):not(article)
+    ! Exclusions:
+    ! freshworks.com, myfreshworks.com - (multiple cta classes inside the form) is a continue button there
+    ! google.com - many buttons on Google Earth landing page (https://www.google.com/intl/en/earth/ - yes, www.google.com domain
+##[id^="-cta-"]:not(html):not(body):not(article)
+    ! ###cta-container
+    ! ionos.com##.cta-container
+    ! mindmajix.com##.cta-block
+    ! steelsafeshop.ru##.cta-phone
+    ! syloe.com##.cta-img
+    ! varonis.com##.cta-block
+~nixstats.com,~redhat.com##[class$="-cta"]:not(html):not(body):not(article)
+! "##.alert-info.alert.signup-cta" does not fall in. Weird. Ok, here an addition:
+~nixstats.com,~redhat.com##[class*="-cta "]:not(html):not(body):not(article)
+    ! nixstats.com: <button class="btn btn-cta" type="submit">login</button>
+##[id$="-cta"]:not(html):not(body):not(article)
+    ! ##.footer-cta
+    ! ##.general-cta
+    ! ##.guide-cta
+    ! ##.join-cta
+    ! ##.learn-more-cta
+    ! ##.signup-cta
+    ! ##.top-cta
+    ! autotonkosti.ru###form-cta
+    ! coursehero.com##.out-of-views-cta
+    ! eginnovations.com##.right-panel-cta
+    ! eginnovations.com##.live-demo-cta
+    ! gfycat.com##.pro-cta
+    ! linkedin.com##.sub-nav-cta
+##.c2018Q1CtaSolution
+~degoo.com##.cta
+##.ctaSolutionSticky
+##.ctaSolutionStickyWrapper
+##.headerCta-Lo
+###hellobar
+
+
+
+!! inline related inserts in blogs, random inline blog insertions
+##.ctaText
+    ##.ctaText ~ .postTitle
+    ! tested on several sites. Maybe needs correcting.
+    ##.ctaText:upward(2)
+    ##a:has(.ctaText)
+##.ctaButton
+    ##a:has(.ctaButton)
+! many sites on a similar engine, inline related blocks.
+##p .related-single
+    ! dualshockers.com##.related-single
+    ! gamerant.com##p .related-single
+    ! howtogeek.com##.related-single
+    ! makeuseof.com##p .related-single
+    ! screenrant.com##p:has(.related-single)
+    ! thegamer.com##p .related-single
+
+
+
+!! ad "offers"
+##.abstract-offer
+##.aps-offer-link
+##.bundle-offer
+###limited-offer-wrap
+~e-catalog.shop,~flatinfo.ru,~gosuslugi.ru,~hubic.com,~jobs.pl,~olx.ua,~yavirina.ru##.offer
+    ! Exclusions:
+    ! flatinfo.ru, gosuslugi.ru, hubic.com, olx.ua - don't remember exactly, sorry
+    ! e-catalog.shop (price aggregator) - "offer link"
+    ! jobs.pl - job offer list
+    ! yavirina.ru - regular goods
+~gazprombank.ru###offer
+###offerBlock
+!
+! some
+bravax.ru##.offers_link
+domashniy.ru##.b-offers
+exam-labs.com##.limited-offer
+lpgenerator.ru##.blog__offer__content
+obi.ru##.current-offers-wrapper.content-wrapper
+perekrestok.ru##.xf-catalog-header-offer
+pronovostroy.ru##.block-special-offers
+psychologies.ru##.offers-list
+skyeng.ru##.b-ff-articles-popup-offers
+! from Ru AdList
+tut.by###s_tamby_offers
+vedomosti.ru##.hide-offer__news
+vedomosti.ru##.hide-offer__container
+vedomosti.ru##.hide-offer__link
+volveter.ru##.has_offer_prop
+
+/click?pid=*&offer$popup,domain=~checkmoney.com.ua  # from EasyList
+
+
+
+!! ad "testimonials"
+##.testimonial
+##.testimonials
+	! golosobraz.ru###testimonials
+	! hranidengi.ru##.testimonial
+	! ! ad "testimonials"
+	! level.travel##.testimonials
+	! mosavtoshkola.org##.testimonial
+	! regexbuddy.com##.testimonial
+	! staff.am##.testimonials
+
+
+
+!! counters and trackers
+!
+! hosts
+! comments is preferably inline with  #
+!
+://top.$script,3p  # from Ru AdList: counter scripts from top.* subdomains
+!
+! urls
+! comments is preferably inline with  # 
+! general first, specific last
+!
+/__ssobj/core.js$important  # is in Adguard and EasyPrivacy
+/_hcms/perf  # is in EasyPrivacy
+/.well-known/shopify/monorail  # is in EasyPrivacy
+/0.gif?  # from EasyPrivacy: .ru/0.gif?
+/1pixel.  # from Ru AdList
+/1pxtransparent.  # from Ru AdList
+/1x1transparent.  # from Ru AdList
+/1x1.gif$important  # from RU AdList, modified
+/1x1.png$important  # from RU AdList, modified
+/1x1.trans.  # from Fanboy's
+/1x1transparent.  # is in Fanboy's
+/a8c-analytics.  # from EasyPrivacy
+/a8c-analytics/*  # from EasyPrivacy
+/acctag.js  # from Adguard
+/acecounter/*  # from EasyPrivacy
+/acecounter_  # from EasyPrivacy
+/acounter.php?  # from EasyPrivacy
+&action=js_stats&  # EasyPrivacy rule
+/ajax_counter.php
+/akam/*$important
+    ! /akam/10/*  # from EasyPrivacy
+    ! /akam/11/*  # from EasyPrivacy
+    ! /akam/13/*$important
+    ! /akam/*/pixel_  # from Adguard and EasyPrivacy
+    ! ||foxsports.com.au/akam/  # from EasyPrivacy
+    ! ||l-tike.com/akam/*$script  # from EasyPrivacy
+    ! ||pia.jp/akam/*$script  # from EasyPrivacy
+/akamai/pixy.gif  # from EasyPrivacy
+/akamai_analytics_  # from EasyPrivacy
+/AkamaiAnalytics.  # from EasyPrivacy
+/AkamaiMediaAnalytics.  # from EasyPrivacy
+/AkamaiTrackingPixel.  # from EasyPrivacy
+/alerte_tracking.  # from Ru AdList
+/altasib.errorsend/*  # bitrix
+/amp-analytics
+/amp-geo-  # from EasyPrivacy
+_analytics.js?  # from EasyPrivacy
+/analytics.$important
+    ! /analytics.js$important  # uBlock exclusion
+    ! /analytics.min.js$important
+    ! and many many EasyPrivacy rules
+.analytics.min.  # from EasyPrivacy
+/analytics^
+/analytics?
+    ||hh.ru/analytics^  # is in Adguard
+    ||career.ru/analytics^
+    ||rabota.by/analytics?  # is in EasyPrivacy
+/analytics/$important,domain=~alfabank.ru|~dropbox.com|~duckduckgo.com|~fandom.com|~github.com|~globalvoices.org|~ozon.ru|~rome2rio.com|~sberbank.ru|~trello.com|~twitch.tv|~twitter.com|~zoho.com|~zoho.eu
+    ! Exclusions:
+    ! alfabank - финансовая аналитика по счету
+    ! duckduckgo - it blocks any search about analytics. Other search systems are ok.
+    ! github - granular rules:
+        ! ||githubassets.com/assets/vendors-node_modules_github_hydro-analytics  # analytics  # this one must be unblocked - some functionality is broken (labels and editing)
+        ! ||githubassets.com/assets/ui_packages_analytics-provider_analytics-provider_ts-app_assets_modules_react-code-view_pages  # this one must be unblocked
+    ! ozon.ru: 2023-10 - блокировка https://cdn2.ozone.ru/assets/*/autosplit-common-common_video-player_mixins_analytics_ts.js теперь приводит к отказу карусели в продукте.
+    ! sberbank & domclick:
+        ! увы, но иначе в Сбербанк и Домклик не входит
+        !||sberbank.ru/*analytics$script,redirect=noopjs
+        @@||sberbank.ru/*analytics$script
+    !
+    ! zoho - internal(?) analitycs
+    ! /rest/analytics/*  # is in EasyPrivacy
+    ! /vwfiles/analytics/*  # from EasyPrivacy
+    !
+    !||cnn.com/analytics/  # from EasyPrivacy
+    ! and many many EasyPrivacy rules
+    ! false positive: !https://services.rome2rio.com/api/1.5/json/search?key=...&analytics=true&debugFeatures=&debugExperiments=&groupOperators=true
+/analytics-*$important
+    /analytics-event
+        ! /analytics-event-  # from EasyPrivacy
+        ! /analytics-event.  # from EasyPrivacy
+        ! /analytics-events-  # from EasyPrivacy
+        ! ||vc.ru/analytics-event
+    ! and many EasyPrivacy rules
+/analytics_*$important
+/analyticstracking.js  # from Adguard
+/antibot.php
+/api/fl?
+    ! ||eldorado.ru/api/fl?
+    ! hh.ru domains: hh.ru,career.ru,hh.by,rabota.by,hh.kz,hh.ua,grc.ua
+    !||sberbank.ru/api/fl?u  # proven rule
+/api/fl/*  # https://blog.eldorado.ru/api/fl/idgib-w-eldorado
+/api/log/*
+    ! ||paypal.com/xoplatform/logger/api/logger  # is in EasyPrivacy
+    ! ||sberbank.ru/api/log/
+    ! ||tele2.ee/api/log
+/api/tracker/*
+/appmeasurement.js$important
+-asset-tag.  # is in Adguard
+/atrk.gif
+/autotrack.js  # is in AdGuard and EasyPrivacy
+/autotrack.carbon.js  # from EasyPrivacy
+/beacon*$important
+    ! /beacon.js$important
+    ! /beacon.min.js$important
+    ! /cdn-cgi/challenge-platform/h/g/beacon/*$xmlhttprequest,~third-party  # from Adguard
+    ! ||amagi.tv/beacon  # from EasyPrivacy
+    ! ||github.com/notifications/beacon/*$important  # from Adguard
+    ! ||xumo.com/xumocdn/*/beacon  # from EasyPrivacy
+    ! ||yemeksepeti.com/*/xhr/b/s/beacon  # from Adguard
+.beacon.min.js  # from EasyPrivacy
+/blank.gif
+    ! /px/*/blank.gif?  # is in EasyPrivacy
+    ! ||blogblog.com/img/blank.gif
+!/browser.min.js - in general, don't, it can be a core ReactJS library
+/browserdetect.js
+/browserinfo?  # is in EasyPrivacy: /browserinfo?f.sid=  # meet.google.com  # play.google.com
+/c.gif?
+    ! /c.gif?*&udc=  # from Ru AdList
+    ! /c.gif?*rnd=  # from Ru AdList
+/calameo-beacon.  # from EasyPrivacy  # calameo is a publishing platform, ok. But.
+.campaign-tracking.
+    !/hr.campaign-tracking.js
+/cast_sender.js$important  # video ad counter
+.cdn-tracking.js  # from EasyPrivacy
+_chartbeat.js  # from EasyPrivacy
+/clear.png
+/clientele/reports/*  # is in EasyPrivacy
+/client-metrics/*
+    ! ||ozone.ru/s3/client-metrics/
+    ! ||ozone.ru/graphics/client-metrics/
+/client_metrics/*
+    ! ||dropbox.com/2/client_metrics/record
+/cnt.
+    ! /cnt.cgi?  # from Ru AdList
+    ! /cnt.js
+    ! /cnt.php
+/cnt-gif1x1.php?  # is in Ru AdList
+/collector/v1/event  # from EasyPrivacy
+/count.js
+/count.php  # from Ru AdList
+^counter.$image,3p  # from Ru AdList
+/counter^$important  # from RU AdList, modified
+/counter_$domain=~images.stopgame.ru  # from Ru AdList
+    ! Exclusions:
+    ! images.stopgame.ru - false positive at https://stopgame.ru/game/counter_strike_source  # https://github.com/easylist/ruadlist/issues/61
+/counter.aspx
+.counter.js
+/counter.js$important
+/counter.min.js$important
+/counter.php?$~object  # from Ru AdList
+/counters^  # from RU AdList
+/crossdevice.min.js$important
+/ctracker/*$domain=~charmtracker.com  # from EasyPrivacy  # charmtracker.com is not a ad tracker
+/cycounter.  # from Ru AdList
+/cycounter^  # from Ru AdList
+.d-engine.js  # from EasyPrivacy
+/devicepx-jetpack.js$important  # https://wordpress.org/support/topic/remove-render-blocking-javascript-devicepx-jetpack-js/
+-didomi.js  # from EasyPrivacy
+/discourse-fingerprint_  # from EasyPrivacy
+/doctracking.  # from EasyPrivacy
+/dspixel.js$important
+/dwanalytics-  # is in EasyPrivacy and Adguard
+/dwell/log?  # is in EasyPrivacy
+/easylocation/*
+/eloqua
+    ! /eloqua.  # from EasyPrivacy
+    ! /eloqua_  # from EasyPrivacy
+.eloqua.js  # from EasyPrivacy
+/elq
+    ! /elqcfg-$script  # from EasyPrivacy
+    ! /elqcfg.js  # from EasyPrivacy
+    ! /elqcfg.min.js  # from EasyPrivacy
+    ! /elqfcs.js  # from EasyPrivacy
+    ! /elqidg.js  # from EasyPrivacy
+    ! /elqimg.js  # from EasyPrivacy
+    ! /elqnow/*  # from EasyPrivacy and Ru AdList
+    ! /elqscr.js  # from EasyPrivacy
+    ! /elqtracking.  # from EasyPrivacy
+    ! /elqtrk.  # from EasyPrivacy
+/empty.gif
+/emptypixel.png
+.emsecure.min.js  # from EasyPrivacy
+/eprivacy.  # is in Fanboy's
+/event_logger  # from EasyPrivacy
+/event/track?  # from EasyPrivacy
+/eventtrack
+    ! /eventtracker.js  # from EasyPrivacy
+    ! /eventtracking-  # from EasyPrivacy
+    ! /eventtracking.  # from EasyPrivacy
+    ! /eventtracking/*  # from EasyPrivacy
+/event-tracker/*  # bitrix lib
+.event-tracking.js  # from Fanboy's
+/eventsbeacon?  # is in EasyPrivacy
+/events-metrica-scripts.js
+/facebook_pixel_  # from Adguard
+/fingerprint*$important,all,domain=~github.com
+    ! @@||github.com/gorhill/uBlock/*/src/web_accessible_resources/fingerprint2.js$~third-party  # from EasyPrivacy
+    ! /fingerprint.min.js$important
+    ! /fingerprint2.min.js$important  # is in EasyPrivacy and AdGuard
+        ! ||jsdelivr.net/fingerprintjs2/  # Also
+    ! /fingerprintjs2/*
+    ||jsdelivr.net/npm/@fingerprintjs/fingerprintjs$redirect=noopjs
+    ! Sites:
+    sbermegamarket.ru##+js(set, Object.prototype.FingerprintJS, noopFunc)
+    sbermegamarket.ru##+js(set, FingerprintJS.Promise.load, noopFunc)
+    sbermegamarket.ru##+js(set, FingerprintJS,noopFunc)
+    sbermegamarket.ru##+js(set, FingerprintJS.load,noopFunc)
+/foresee/*  # from Ru AdList
+?frm=script&se_referrer=  # from AdGuard
+/frontend-metrics/*
+    ! ||cian.ru/frontend-metrics/
+/ga_setup.js$important
+/ga_social_tracking.js  # from Ru AdList
+_gatrack.js  # from EasyPrivacy
+.gatracking.js  # from EasyPrivacy
+/gccounter.js
+/geo.php?  # is in EasyPrivacy
+/geocheck*$important
+-geoip.js  # from EasyPrivacy
+/geoip.city
+    # bitrix popups removed: ##.bxmaker__geoip__city__line-question and ##.current-city-notice
+/geotools/*  # ad xhrs
+.gif?event=  # is in EasyPrivacy
+/google-analyticator/*  # from Ru AdList
+/googleanalytics*$important
+/google-analytics*$important
+-google-analytics/*$important
+-google-analytics.*$important
+.googleanalytics.js  # from EasyPrivacy
+.googleanalytics.prod.  # from EasyPrivacy
+/google-tag-manager/*$domain=~stackexchange.com|~superuser.com  # from EasyPrivacy
+.Google.Tracker.js  # from EasyPrivacy
+/gtag.js$important  # from EasyPrivacy
+/gtagservices/*
+_hcode.js  # from Fanboy's
+/heatmap.js$important
+_hightraffic_code.js  # from EasyPrivacy
+.iframetracker/  # from EasyPrivacy
+/imp.gif?  # from EasyPrivacy
+/internal/page_view?  # is in EasyPrivacy
+/jquery.blockui.js
+/js/analitics.  # is in EasyPrivacy
+/js/analytics.  # from EasyPrivacy
+/js/parking.*$script
+/js/tracking/*  # is in EasyPrivacy
+/karamba/*  # Yandex tracker
+/karamba2.js  # Yandex tracker
+/link-tracker-  # from EasyPrivacy
+/_log?ocid=  # from EasyPrivacy
+/loggly.tracker-  # from EasyPrivacy
+/loggly.tracker.  # from EasyPrivacy
+/logger/*  # is in Adguard: /logger/p.gif?*d=/*
+_loghuman=  # from EasyPrivacy
+/log_impression.  # from EasyPrivacy
+/log_impression/*  # from EasyPrivacy
+/logimpression.  # from EasyPrivacy
+/logimpression?  # from EasyPrivacy
+/log_impressions  # from EasyPrivacy
+/logimpressions?$important  # is in EasyPrivacy and uBlock filter  # ||docs.google.com/*/logimpressions
+/logperf?  # is in EasyPrivacy
+/logstat.  # from EasyPrivacy
+/logstat?  # from EasyPrivacy
+/logstatistic?  # from EasyPrivacy
+/logstatistics?  # from EasyPrivacy
+/logstats.php  # from EasyPrivacy
+/logviewimpression/*  # from EasyPrivacy
+/loi/imp?  # amazon trk  # is in EasyPrivacy
+/lunametrics-  # from EasyPrivacy
+/lytics/*  # from EasyPrivacy
+/metrics/*
+    ! ||apple.com/metrics/
+    ! ||hpe.com/global/metrics/
+    ! ||imdb.com/api/_ajax/metrics/  # is in EasyPrivacy
+    ! ||mainfin.ru/js/metrics/
+    ! ||msk1.ru/api/metrics/
+    ! ||oracleimg.com/us/assets/metrics/  # tracking scripts
+    ! ||rambler.ru/metrics/  # is in EastPrivacy
+    ! ||sberbank.ru/metrics/
+    ! ||sobyanin.ru/metrics/
+/metrika/*
+    ! ||cloudfront.me/metrika/watch  # from Ru AdList
+    ! ||cloudfront.net/metrika/watch  # from Ru AdList
+    ! ||cloudfront.pro/metrika/watch  # from Ru AdList
+/mobile-useragent-info.js
+/mod_pagespeed_beacon?  # from Fanboy's
+_nedstat.js  # from EasyPrivacy
+_nielsen.js  # from EasyPrivacy
+/ntfc.php?$script  # from uBlock
+/optimization-perf.js  # from EasyPrivacy
+/p.gif?  # tracking imgs  # is in EasyPrivacy
+/packaged-js/trackers.  # from EasyPrivacy
+/page_perf_log  # from EasyPrivacy
+/pagerank.$image  # from Ru AdList
+/pagerank/*$image  # from Ru AdList
+_pagespeed_beacon?  # from AdGuard
+/pageviews/*$domain=~stats.wikimedia.org|~tools.wmflabs.org  # is in EasyPrivacy
+/parking-crew.js
+/paystats-public.js
+/pdp.gif?  # from EasyPrivacy
+/perflog/*  # from EasyPrivacy
+/ping/*$xmlhttprequest
+/ping?*$xmlhttprequest
+    ! /engine/ping?  # is in EasyPrivacy
+    ! /stats/ping?  # is in EasyPrivacy
+/ping.gif
+! see /piwik. rule in _marketing__subdomains
+/piwikTracker.  # from Ru AdList
+/pixel/*
+/pixel?
+    ! /visits/pixel?  # from EasyPrivacy
+/pixel.
+    ! /pixel.gif?  # from Ru AdList
+    ! /pixel.php?  # in EasyPrivacy and Adguard
+    ! /pixel.png
+    ! /pixel.png?  # from Ru AdList
+    ! ||paypalobjects.com^*/pixel.gif  # from EasyPrivacy
+.pixel.archive.  # from EasyPrivacy
+/platform-detect
+/publishertag.js  # is in EasyPrivacy
+/pum-site-scripts.  # from Fanboy's
+/purecounter.js
+/pv?
+    ! /pv?fe=*&elg=  # from EasyPrivacy
+    ! /pv?place=  # from EasyPrivacy
+    ! /pv?token=  # from EasyPrivacy
+/pv.$domain=~megatube.xxx
+    ! Exclusions:
+    ! pv.megatube.xxx - previews
+    !
+    ! /pv.gif?  # from EasyPrivacy
+    ! /pv.php?id=  # from EasyPrivacy
+    ! /pv.txt?  # from EasyPrivacy
+/pv/*
+    ! /pv/?aid=  # from EasyPrivacy
+    ! /pv/code.asp?  # from EasyPrivacy
+    ! /pv/new?  # from EasyPrivacy
+/pv2.gif?  # from EasyPrivacy
+/pvcount
+    ! /pvcount.  # from EasyPrivacy
+    ! /pvcounter.  # from EasyPrivacy
+    ! /pvcounter/*  # from EasyPrivacy
+    ! /pvcounter?  # from EasyPrivacy
+/pv_count.  # from EasyPrivacy
+/pvevent_  # from EasyPrivacy
+/pview?event  # from EasyPrivacy
+/pv_web.gif  # from EasyPrivacy
+/px.$important
+    ! Exclusion from Adguard, doesn't need
+    !@@||s.imgur.com/min/px.js$domain=imgur.com
+        !||imgur.com/min/px.js  # is in Fanboy's  # matches /px.
+    !
+    ! /px.gif?  # from EasyPrivacy and ABP
+    ! /px.js$important
+        ! /px.js?ch=$script  # from EasyPrivacy
+        ! ||avito.ru^*/dfp/px.js  # from RU AdList
+/px/*
+    ! /px/*/blank.gif?  # from EasyPrivacy
+    ! /px/client/main.min.js  # from EasyPrivacy
+/px?t=  # from EasyPrivacy
+/pxa.min.js  # from EasyPrivacy
+/pxf.gif?  # from EasyPrivacy
+/pxgif/*  # from EasyPrivacy
+/pxl.cgi?  # from EasyPrivacy
+/pxl.gif?  # from EasyPrivacy
+/pxl.png?  # from EasyPrivacy
+/pxlctl.  # from EasyPrivacy
+/pxls/*  # from EasyPrivacy
+/pxlspamanalyst-  # from EasyPrivacy
+/px_trans.gif  # from EasyPrivacy
+/qubit-integration1.  # from EasyPrivacy
+/qubit-integration2.  # from EasyPrivacy
+/qubittracker/*  # from EasyPrivacy
+/quotaservice.recordevent?  # is in EasyPrivacy  # seen on google maps
+/radio-analytics.htm  # from EasyPrivacy
+/radioanalytics.js  # from EasyPrivacy
+/radioanalyticsiframe.js  # from EasyPrivacy
+/readcounter.  # from Ru AdList
+/recordrtc.min.js
+/rendertimingpixel.  # from EasyPrivacy
+/ruxitagentjs_  # from EasyPrivacy
+.s_code.js  # from Fanboy's
+_scode.js  # from Fanboy's
+-scroll-tracker.js  # from EasyPrivacy
+/search-tracking.
+/send_watching/*
+/sensorsdata.  # is in EasyPrivacy
+/setbucket?signature=  # from EasyPrivacy
+_sdc.js  # from Fanboy's
+/shopify/assets/shop_events_listener  # tracker scripts (on-site)
+/shopify-tracker/*
+.sitecatalyst.js  # from EasyPrivacy
+.skimlinks.js  # from EasyPrivacy
+/smarttagging.js
+_social_tracking.js  # from EasyPrivacy
+/sourcebuster/*
+/sourcebuster.min.js
+/ssi/rc.js
+/stat/count  # is in EasyPrivacy
+/stat/log
+! Ru AdList rule. Didn't recheck all exclusions
+||ru/stat/$from=~allsocial.ru|~barcodes.olegon.ru|~be1.ru|~metrika.yandex.ru|~mobtop.ru|~pikabu.ru|~proships.ru|~sms-track.ru|~sports.ru|~textovod.com|~wordstat.yandex.ru
+    ! ||ozon.ru/stat/log
+/_stat/log_  # is in EasyPrivacy
+/_stat/log/*  # from EasyPrivacy
+/stat.php$domain=~sci-article.ru
+/stats.php  # is in EasyPrivacy: /stats.php?*http
+/stats/ida_  # from EasyPrivacy
+/stats/events  # is in EasyPrivacy
+    ! ||wildberries.ru/webapi/stats/events
+/superstat/collect
+/tag-manager-client/*
+/tbw/pixels/*  # is in EasyPrivacy
+/tealeaf.min.js  # from EasyPrivacy
+/top/img.php?  # from Ru AdList
+/top_counter.  # from Ru AdList
+/track?$image
+    ! .com/track?$image  # from EasyPrivacy
+    ! ||seesaa.net/common/track.gif^  # from Adguard
+    ! /track?*http$image,~third-party  # from Ru AdList
+/track.js$important
+/tracklog.  # is in EasyPrivacy
+/track.min.js
+/track_click?  # from EasyPrivacy
+/tracker?*=  # from EasyPrivacy
+/tracker.dll?  # from Ru AdList
+/tracker.js$important
+_tracker.js.  # from EasyPrivacy
+/trackify.js$important
+-tracking.gtm.  # from EasyPrivacy
+/tracking-opt-in.  # ad scripts   # /tracking-opt-in.min.js  # is in Fanboy's and EasyList
+-tracking.js?  # from EasyPrivacy
+/tracking.js$important
+/tracking.min.js
+-track-inview.  # is in EasyPrivacy
+/transparent-pixel.
+/trigger-visit-event  # from EasyPrivacy
+/ucounter.  # from Ru AdList
+/umami.js$important
+/universal-federated-analytics.  # is in EasyPrivacy
+_urchin.js  # from Fanboy's
+/user-geo-info
+/__utm.gif  # from EasyPrivacy
+/__utm.js  # is in EasyPrivacy
+/utm-tracking.js$important
+/v1/log_event  # is in EasyPrivacy
+.v4.analytics.  # from EasyPrivacy
+/vantage*$script
+/vestigo/v1/measure  # from EasyPrivacy
+/video_count.php?  # from EasyPrivacy
+/video.counters*$important
+    ! /video.counters.js$important
+    ! /video.counters.2.js?  # from Adguard
+/video/tracking.js  # from EasyPrivacy
+/videoanalytic/*  # from EasyPrivacy
+/videoanalytics.  # from EasyPrivacy
+/video-ga.js  # from EasyPrivacy
+/videojs-analytics.  # from EasyPrivacy
+/videojs-tracking.  # from EasyPrivacy
+/videojs.ga.  # from EasyPrivacy
+/videolog?vid=  # from EasyPrivacy
+/videotracking*$important
+    ! /videotracking/*  # from EasyPrivacy
+    ! /videotracking.  # from EasyPrivacy
+    ! /videotracking.min.js$important
+    ! /videotracking-v3/*  # from EasyPrivacy
+/video-tracking-youtube.js
+/vidtrack.  # from EasyPrivacy
+/view.gif?  # from EasyPrivacy
+/viewcount
+    ! /viewcount-service.  # from EasyPrivacy
+    ! /viewcount.ashx?*&referrer=  # from EasyPrivacy
+    ! /viewcounter/*  # from EasyPrivacy
+    ! /viewcounterjqueryproxy.  # from EasyPrivacy
+    ! /viewcounterproxy.  # from EasyPrivacy
+/view-log?  # from EasyPrivacy
+/view_stats.js.php  # from EasyPrivacy
+/viewerimpressions?  # from EasyPrivacy
+/views/vw.js  # from EasyPrivacy
+/views_tracking/*  # from EasyPrivacy
+/viewstats.aspx?  # from EasyPrivacy
+/viewtracking
+    ! /viewtracking.aspx?  # from EasyPrivacy
+    ! /viewtracking.min.js  # from EasyPrivacy
+/viglink_  # from EasyPrivacy
+/vimn_tracking.  # from EasyPrivacy
+/vip-analytics.  # from EasyPrivacy
+/viperbar/stats.php?  # from EasyPrivacy
+/visci-interface.  # from EasyPrivacy
+/visistat.js  # from EasyPrivacy
+/visit.gif?  # from EasyPrivacy
+/visit.pl
+/visit?id=  # from EasyPrivacy
+/visit/?*&ref=  # from EasyPrivacy
+/visit/init?  # from EasyPrivacy
+/visit/log.js?  # from EasyPrivacy
+/visit/record.gif?  # from EasyPrivacy
+/visit/record?  # from EasyPrivacy
+/_visitcount?  # from EasyPrivacy
+/visitcounter.  # from EasyPrivacy
+/visitlog.asmx  # from EasyPrivacy
+/visit_log.js  # from EasyPrivacy
+/visit_pixel?  # from EasyPrivacy
+/visitor.
+    ! /visitor.aspx?  # from EasyPrivacy
+    ! /visitor.cgi?aff  # from EasyPrivacy
+    ! /visitor.gif?ts=  # from EasyPrivacy
+    ! /visitor.js?key=  # from EasyPrivacy
+    ! /visitor.min.js  # from EasyPrivacy
+/visitorapi.js$important  # is in EasyPrivacy
+/visitor/identity?  # from EasyPrivacy
+/visitorcookie.  # from EasyPrivacy
+/visitorcountry.svc/*  # from EasyPrivacy
+/visitor-event?  # from EasyPrivacy
+/visitor_id.jsp  # from EasyPrivacy
+/visitoridentification.js$important  # is in Adguard and EasyPrivacy
+/visitor-js/?  # from EasyPrivacy
+/visitor-params.  # from EasyPrivacy
+/visitors/screencount?  # from EasyPrivacy
+/visitortrack
+    ! /visitortrack?  # from EasyPrivacy
+    ! /visitortracker.pl?  # from EasyPrivacy
+/visits?aff_  # from EasyPrivacy
+/visits_contor.  # from EasyPrivacy
+/visitsite.js  # from EasyPrivacy
+/visit-tag?  # from EasyPrivacy
+/visit-tracker.js  # from EasyPrivacy
+/visit_tracking.  # from EasyPrivacy
+/visittracking?  # from EasyPrivacy
+/visitweb.php  # from Ru AdList
+/visitwebpage?_  # from EasyPrivacy
+/visscore.  # from EasyPrivacy
+/visual_revenue.  # from EasyPrivacy
+/visualdna-  # from EasyPrivacy
+/visualdna.  # from EasyPrivacy
+/visualrevenue.js  # from EasyPrivacy
+/visualsciences.  # from EasyPrivacy
+/visualsciences_  # from EasyPrivacy
+/visualstat/stat.php  # from EasyPrivacy
+/vjslog?  # from EasyPrivacy
+/vmtracking.  # from EasyPrivacy
+/vpstats.  # from EasyPrivacy
+/vptrack_  # from EasyPrivacy
+/vs-track.js  # from EasyPrivacy
+/vs.gif?  # from EasyPrivacy
+/vs/track.  # from EasyPrivacy
+/vs_track.  # from EasyPrivacy
+/vsl/imp?  # from EasyPrivacy
+/vstat.php  # from EasyPrivacy
+/vstats/counter.php  # from EasyPrivacy
+/vstrack.  # from EasyPrivacy
+/vtrack.
+    ! /vtrack.aspx  # from EasyPrivacy
+    ! /vtrack.php?  # from EasyPrivacy
+/vtracker_  # from EasyPrivacy
+/vuukle-analytics.  # from EasyPrivacy
+/watch_ua.js$important
+/webanalytics/*$important  # is in EasyPrivacy
+/webanalytics.js$important
+/webanalytics3.  # from EasyPrivacy
+/WebAnalyticsInclude.  # from EasyPrivacy
+/webanalyticsssl.  # from EasyPrivacy
+_webanalytics.  # from EasyPrivacy
+.webmetrics.js  # from EasyPrivacy
+/web-pixel-shopify-app-pixel@  # is in EasyPrivacy
+/web-pixel-shopify-custom-pixel@  # is in EasyPrivacy
+.Webtrends.js  # from Fanboy's
+_WebTrends.js  # from Fanboy's
+_wtBase.js  # from Fanboy's
+_wtInit.js  # from Fanboy's
+/wherego_tracker.js  # from Adguard
+/wle_tracker.js
+/?wordfence
+/wp-slimstat/*  # is in 3 lists
+/wt?p=  # is in EasyPrivacy
+/ymap.heatmap.min.js
+!
+! cosmetic filters
+! general first, specific last
+! comments is in separate line(s) before the string (as uBlock Origin editor says, inline is not correct)
+!
+! from AdGuard Tracking Protection
+##img[src*="counter.yadro.ru"]
+##.article__meta__post-views
+##.article-views
+##.blog-views
+~yandex.*##.counter
+~turbopages.org,~yandex.*##.counters
+##.count_views
+##.count-visitor
+##.entry-meta__views
+##.entry-views
+##.footer-counters
+##.icon-views
+##.meta-views
+##.post-views
+##.product-views
+##.td-post-views
+##.views
+##.views-count
+
+
+!! Base64 reflinks
+! todo: doesn't work /goto/aHR0*
+/nojs/Base64.js
+
+
+
+!! ratings and surveys
+/rate.widget.js
+! generalized
+~aliexpress.com,~aliexpress.ru,~air-gun.ru,~backit.me,~epn.bz,~support.google.com,~trimble.com,~dobrodel.ru,~mosreg.ru,~mos.ru,~neorabote.net,~news2.ru,~wildberries.ru,~wildberries.co.il,~wildberries.fr,~yandex.ru##[class*="feedback"]:not(html):not(body):not(.deferredfeedback)
+    ! Exclusions:
+    ! .deferredfeedback - Moodle (edu platform)
+~alfabank.ru,~aliexpress.com,~aliexpress.ru,~disconnect.me,~trimble.com,~zen.yandex.ru##[id*="feedback"]:not(html):not(body)
+~aliexpress.com,~aliexpress.ru##[class*="Survey"]:not(html):not(body)
+~aliexpress.com,~aliexpress.ru##[id*="Survey"]:not(html):not(body)
+~aliexpress.com,~aliexpress.ru,~dbi-services.com,~notion.so,~pikabu.ru,~support.google.com##[class*="survey"]:not(html):not(body)
+    ! Exclusions:
+    ! notion.so - after-signup surveys, they are non-skippable
+~aliexpress.com,~aliexpress.ru##[id*="survey"]:not(html):not(body)
+!
+! other
+!
+##.ask
+##.ask_expert
+##.article-votes
+###button_mnenie
+##.democracy
+~medium.com,~betterprogramming.pub,~codeburst.io,~faun.pub,~jetruby.com,~itnext.io,~towardsdatascience.com,~ozon.ru,~ozon.by,~ozon.com##.er
+    ! Exclusions:
+    ! medium.com,betterprogramming.pub,faun.pub,jetruby.com,itnext.io,towardsdatascience.com - random two-letter classes, medium engine
+    ! ozon - random two-letter classes
+##.error_report_block
+##.expert-review-poll
+    ! alisale.by##.expert-review-poll
+    ! aliwow.ru##.expert-review-poll
+##.extravote
+##.fa-spin
+##.have-a-question
+##.helpful-vote_wrapper
+##.ipsRating
+##.kb-rate-article
+##.mistake
+##.mnenie_button
+##.onerror
+###orphus
+##.poll
+##.poll_form
+##.postvote_wrap
+##.post-ratings
+###question_widget
+~irecommend.ru,~luzhniki.ru,~obi.ru,~addons.opera.com##.rate
+    ! fooxybabes.com##.rate
+    ! mainbabes.com##.rate
+    ! sexybabesz.com##.rate
+##.rate-fivestar-processed
+##.rateit
+##.rating-helpful
+##.rating-helpful-active
+##.right_poll
+##.socvote
+##.splashWidget-askAQuestion
+##.survey-button-widget
+! Hmm.. Maybe it is not very good idea to block votes in general.. But this rule existed long time, about a year.
+!~castorama.ru##.vote
+##.vote_article
+##.widget_democracy
+##.widget-poll
+##.widget_polls-widget
+##.wp-polls
+/orphus.gif
+/smcsurvey
+
+
+
+!! up button (and down too, sometimes)
+! Ru AdList and Fanboy's rule
+##[aria-label="Back to top"]
+##[class$="-arrow-up"]:not(html):not(body)
+    archive.org##.ti-arrow-up
+##[id$="-arrow-up"]:not(html):not(body)
+    ##.arrow-up
+    ##.fa-arrow-up
+    ##.fa-long-arrow-up
+    ##.icon-arrow-up
+##[class$="-arrow_up"]:not(html):not(body)
+##[id$="-arrow_up"]:not(html):not(body)
+    !###arrow_up
+##[class$="button-up"]:not(html):not(body)
+##[id$="button-up"]:not(html):not(body)
+    !##.js-button-up
+    !##.button-up
+    !###button-up
+    !##.bxr-button-up
+    !##.js-button-up
+##[class$="chevron-down"]:not(html):not(body)
+##[id$="chevron-down"]:not(html):not(body)
+##[class$="chevron-up"]:not(html):not(body)
+##[id$="chevron-up"]:not(html):not(body)
+##[class$="-icon-up"]:not(html):not(body)
+##[id$="-icon-up"]:not(html):not(body)
+##[class*="scrolldown"]:not(html):not(body)
+##[id*="scrolldown"]:not(html):not(body)
+##[class*="scroll-top"]:not(html):not(body)
+##[id*="scroll-top"]:not(html):not(body):not(.row)
+##[class*="scroll_top"]:not(html):not(body):not(article):not(header):not(.mfixed_view_scroll_top)
+    ! former exlusion sites (later made addition - :not(.mfixed_view_scroll_top)):
+    ! 1hunting.ru: wrapper1  front_page basket_normal basket_fill_DARK side_LEFT catalog_icons_N banner_auto with_fast_view mheader-v2 header-v11 regions_N fill_Y footer-v4 front-vindex1 mfixed_Y mfixed_view_scroll_top title-v1 with_phones with_lazy
+    ! karabin69.ru: wrapper1  header_bgcolored long_header colored_header with_left_block  basket_fly fly2 basket_fill_WHITE side_LEFT block_side_NORMAL catalog_icons_N banner_auto with_fast_view mheader-v1 header-v1 header-font-lower_N regions_Y title_position_LEFT fill_ footer-vcustom front-vindex1 mfixed_Y mfixed_view_scroll_top title-v3 lazy_Y with_phones compact-catalog dark-hover-overlay normal-catalog-img landing-normal big-banners-mobile-slider bottom-icons-panel-Y compact-breadcrumbs-N catalog-delayed-btn-Y
+    ! larsenal.ru: wrapper1 with_left_block front_page basket_normal basket_fill_DARK side_LEFT catalog_icons_Y banner_auto  mheader-v1 header-v3 regions_N fill_N footer-v2 front-vindex3 mfixed_Y mfixed_view_scroll_top title-v1 with_phones
+    ! orel-shop.ru: main_page_custom wrapper1  header_bgcolored long_header2 colored_header front_page basket_normal basket_fill_WHITE side_LEFT block_side_NORMAL catalog_icons_Y banner_auto with_fast_view header-font-lower_N regions_N title_position_LEFT fill_ footer-v1 front-vindex1 mfixed_Y mfixed_view_scroll_top title-v3 lazy_Y with_phones compact-catalog normal-catalog-img landing-normal big-banners-mobile-normal
+    ! stalkersafe.ru: wrapper1  header_bgcolored front_page basket_normal basket_fill_DARK side_LEFT catalog_icons_N banner_auto with_fast_view mheader-v2 header-vcustom regions_Y fill_Y footer-v1 front-vindex1 mfixed_Y mfixed_view_scroll_top title-v3 with_phones ce_cmp with_lazy store_COMBINE_AMOUNT
+    ! vsemtoy.ru: wrapper1  front_page basket_fly basket_fill_DARK side_LEFT catalog_icons_Y banner_auto with_fast_view mheader-v1 header-v3 regions_N fill_N footer-v2 front-vindex2 mfixed_Y mfixed_view_always title-v2 with_phones ce_cmp with_lazy
+##[id*="scroll_top"]:not(html):not(body)
+##[class*="scrolltop"]:not(html):not(body)
+    ##.icons-scrolltop-black
+~europa.eu##[id*="scrolltop"]:not(html):not(body)
+    ! is in Fanboy's
+    !##.scrolltop:not(body):not(html)
+    !europa.eu: #scrollTopAnchorOfTheStep
+##[class*="ScrollTop"]:not(html):not(body)
+##[id*="ScrollTop"]:not(html):not(body)
+##[class*="scrollTop"]:not(html):not(body)
+~europa.eu##[id*="scrollTop"]:not(html):not(body)
+##[id*="scroll-up"]:not(html):not(body)
+~ikea.com##[class*="scroll-up"]:not(html):not(body)
+    !##.btn-scroll-up
+    !##.c-scroll-up_shown
+    !##.c-scroll-up
+    !##.o-scroll-up-icon
+    !##.o-scroll-up
+    !###scroll-up
+    ! is in Fanboy's
+    !##.scroll-up:not(body):not(html)
+    !##.scroll-up-button
+    !##.scroll-up-button-wrapper
+    ! is in Fanboy's
+    !##.td-scroll-up
+##[id*="scrollup"]:not(html):not(body)
+##[class*="scrollup"]:not(html):not(body)
+    ##.hc_scrollup
+    ###mt-scrollup
+    ! from Fanboy's
+    ###scrollup:not(body)
+    ##.scrollup
+    ##.scrollup-btn
+##[id*="scroll_up"]:not(html):not(body)
+##[class*="scroll_up"]:not(html):not(body)
+    ##.js_desktop_button_scroll_up
+    ##.scroll_up
+##[id*="_to_top"]:not(html):not(body)
+! Оказывается, глюки с картами были связаны именно с этим правилом - на встраиваемых яндекс-картах попапы подпадают под раздачу. Пробуем аккуратно отключить через ymaps (возможно, сработает не везде). Update: да, отлично работает
+~dobrodel.ru,~dobrodel.mosreg.ru,~wildberries.ru,~wildberries.co.il,~wildberries.fr##[class*="_to_top"]:not(html):not(body):not(ymaps)
+##[class*="-to-top"]:not([class*="sticked-to-top"]):not(html):not(body)
+~weeek.net##[id*="-to-top"]:not(html):not(body)
+    ! Exclusions:
+    ! weeek.net - main section
+    ! 
+    ! ###back-to-top
+    ! ##.back-to-top
+    ! is in Fanboy's
+    ! ###go-to-top
+    ! is in Fanboy's
+    ! ##.go-to-top-button
+    ! ##.icon-back-to-top
+    ! ##.scroll-to-top
+    ! is in Fanboy's
+    ! ###scroll-to-top
+##[class*="ToTop"]:not(html):not(body)
+##[id*="ToTop"]:not(html):not(body)
+    !is in Fanboy's
+    !##.scrollToTop
+    !is in Fanboy's
+    !###scrollToTop
+    !##.scrollToTopButton
+    !##.scrollToTopText
+    !###SlideToTop
+    !###WidgetScrollToTop
+##[class*="-totop"]:not(html):not(body)
+##[id*="-totop"]:not(html):not(body)
+##[class$="totop"]:not(html):not(body)
+##[id$="totop"]:not(html):not(body)
+    !###backtotop
+    !##.btn-totop
+    !##.b-totop
+    !###fImgtotop
+    !##.j-scrolltotop
+    !###meltotop
+    !###mvtotop
+    !##.scrolltotop
+    !##.sp-totop
+    !###tg-btnbacktotop
+    !##.tg-btnbacktotop
+    !###totop
+##[id*="up-arrow"]:not(html):not(body)
+##[class*="up-arrow"]:not(html):not(body)
+    ##.b-up-arrow_pos_left
+    ##.b-up-arrow
+    ##.media-infinity-footer__up
+    ##.media-infinity-footer__up-arrow
+    ##.x-page-up-arrow
+!
+! other
+!
+! many js totops
+##a[href$="scrollToTop()"]
+    ! cov.su##[href="javascript:t190_scrollToTop()"]
+    ! kinky-party.com##[href$="scrollToTop()"]
+    ! mos.ru##[href*="scrollToTop()"]
+    ! orelexpo.com##[href="javascript:t190_scrollToTop()"]
+    ! sestroretsk-arms.ru##[href="javascript:t190_scrollToTop()"]
+    ! sntclub.ru##[href="javascript:t190_scrollToTop()"]
+! from Fanboy's
+##a[title="Back to top"]
+###arrow
+~yandex.ru##.arrow
+    ! Exclusions:
+    ! yandex.ru: search form. Also included on mail.ru and other sites (iframe, still yandex.ru domain)
+##.arrow_carrot-up
+~9gag.com,~obi.ru##.arrow-down
+##.arrow-only
+##.arrow-rollup
+##.arrowTop
+###arrow-top
+##.arrow-top
+###arrowUp
+##.arrowUp
+##.arrowup
+##.article__button_up
+###alx_up_page_button
+##.alx_up_page_button
+! is in Ru AdList and Fanboy's
+##.arrow_up
+##.article__button_up
+###b2
+###b2t
+~mobzon.ru###back
+###back2top
+###back2Top
+###back-bottom
+###backgroundPopup
+###backgroundPopup2
+##.back-home
+##.back-to-down
+##.backtohome
+##.back_top
+###backtop
+! is in Fanboy's
+##.backtop
+###BackTop
+##.backTop
+###back-top
+###back_top
+###back-top
+##.back-top-up
+###back-top-x
+###back-to-the-top
+##.back_to_top
+###back_to_top
+! from Fanboy's
+###backtoTop
+###backtotopbutton
+###backtotoplink
+###backtotop-scroll
+###backUp
+##.b-button-up
+##.bounceInup.ta_upscr
+    ! awaqa.com##.bounceInup.ta_upscr
+    ! glagol.press##.bounceInup.ta_upscr
+##.b-scroller-up
+###btnBack
+##.btn-back-top
+##.btn-gotop
+###btn-gotop
+###btn-goTop
+###btn-home
+##.btn-home
+##.btn-on-top
+##.btn-scroll
+##.btn_scroll
+##.btn--top
+##.btn-top
+###btntop
+###btnTop
+##.btn-up
+##.btn_up
+##.btn--up
+##.btn__up
+###btn-up
+##.b-top-but
+##.bt_up
+##.bt_up_scroll
+##.but-scroll
+##button[aria-label="Наверх"]
+###button_down
+##.button_down
+###button-go-up
+###buttonontop
+##.buttonontop
+##.button--scroll
+##.button-scroll
+##.button-scroll__up
+##.button_to_comments
+    ! there were several sites. At least:
+    ! alisale.by##.button_to_comments
+    ! aliwow.ru##.button_to_comments
+##.button_to_down
+##.buttonTop
+###buttonUp
+##.buttonUp
+##.button-up
+###button_up
+##.button_up
+##.button__up
+##.but-top
+###butt_up
+##.bxr-button-up
+##.cd-top
+##.common-desktop-back-button
+##.c-up-button
+##.docBackTop
+##.fa-arrow-circle-up
+##.fa-arrow-down
+##.fa-angle-up
+##.fa-angle-double-up
+##.fa-chevron-up
+##.fastBack
+###fast-back-top
+##.fixed-goto-top
+##.floating-bottom
+##.floating-top
+###float_top
+##.float_totop
+##.f_ontop
+    ! iohotnik.ru##.f_ontop
+    ! plenkananomer.ru##.f_ontop
+###f_up
+    ! 7-62.ru###f_up
+    ! mobiclon.ru###f_up
+    ! stickhunt.ru###f_up
+    ! top-knife.ru###f_up
+    ! vanna-rum.ru###f_up
+##.get-up
+###Go_Bottom
+##.go-down
+###GoTop
+###goTop
+###gotop
+##.gotop
+###Go_Top
+##.go_top
+! is in Ru AdList and Fanboy's
+###go-top
+! is in Ru AdList and Fanboy's
+##.go-top
+###goTopBtn
+##.gotopbtn
+##.go_top_button
+##.gotoTop
+###goto-top-link
+##.gotoUp
+##.go-to-up
+###goup
+##.goup
+##.goUp
+##.go-up
+##.go_up_btn
+##.go-up-button
+###GoUpButton
+###GoUpClickZone
+###GoUpWrapper
+###GOWrapper
+##.icon-angle-up
+##.icon_moveup
+##.icon-top
+##.icon-up
+##.icon-up-small
+##.im-angle-double-up
+##.in_top
+##.johannes-goto-top
+###johannes-goto-top
+    ! gunsfriend.ru##.johannes-goto-top
+    ! ledsshop.ru##.johannes-goto-top
+    ! odstroy.ru###johannes-goto-top.johannes-goto-top
+    ! venturelessons.com###johannes-goto-top.johannes-goto-top
+##.js_goTop
+##.js-scrl2top
+##.js_up
+###jump-top
+##.js-page_up
+##.js-page-up
+##.kc__gotop
+##.kc-gotop
+##.kleo-go-top
+##.label_up_scroll
+##.link_top
+##.media-infinity-footer__up
+###move_up
+##.move_up
+##.nav-icon-home
+##.nav-icon-top
+###navup
+##.navup
+###nav_up
+##.nav_up
+###nav_down
+##.nav_down
+###onTop
+###on-top
+~dns-shop.ru##.on-top
+###page-locate-up
+##.page-scroller
+##.pageup
+##.page-up
+##.page-up-button
+##.page-up-link
+##.quick-scroll
+##.quick-scroll-scrolling
+##.quickScroll-toBottom
+##.quickScroll-toTop
+##.s-btn-gotop
+###scroll2Top
+##.scroll2top_button
+##.scroll_arrow
+###scroll-arrow
+##.scrollback
+###scrollBtm
+##.scroll__btn
+##.scroll_down
+###scroller
+    ! alfaplan.ru###scroller
+    ! texterra.ru###scroller
+~intickets.ru##.scroller
+    ! chatrating.ru##.active.scroller
+    ! itsyourip.com##.scroller.fixed-goto-top
+##.scroll-fix-btn
+##.scroll-icon
+###scroll_page
+###scrollTo
+    ! gb.ru###scrollTo
+##.scroll-to-fixed-fixed
+##.scroll-top-btn
+###Scroll_Top_Button
+##.scroll-top-link
+##.scrollTo_top
+##.scrollto_top
+##.scrolltotopbutton
+###scrollup
+###scrollUp
+##.scrollUp
+##.ScrollUpButton__Container
+##.scrollUp-child
+##.scroolTop
+##.s-gotop-wrap
+##.show_scroll
+###takeMeToTheTopOfPagePlease
+###ToBottom
+###to-bottom
+##.to-bottom
+###toolbar_scrollup
+##.toolbar-scrollup
+~fss.ru,~hashdork.com,~onlinesim.io,~scat.kz,~thestrad.com,~ugona.net,~urban3p.ru###top:not(html):not(body):not(article):not(table):not(.p-pageWrapper):not(.btPageWrap):not(.wrapper):not(.wrap):not(.main-page-wrapper):not(.global-wrapper):not(.site):not(.page-wrapper)
+    ! Exclusions:
+    ! fss.ru - #top is a header (.wrapper > #top)
+    ! hashdork.com - #top is a main div (body > #top.site-container)
+    ! onlinesim.io - #top is a main div (#__layout > #top)
+    ! scat.kz - #top is a main div
+    ! thestrad.com - #top is a main div
+    ! ugona.net - ul .pagination #top
+    ! urban3p.ru - top menu (body > #top .top > top-container)
+~gnu.org,~nano-editor.org,~planetazdorovo.ru,~urban3p.ru##.top:not(html):not(body):not(article):not(table):not(ul)
+    ! Exclusions:
+    ! gnu.org - .top is a main div ()
+    ! planetazdorovo.ru - not totop button, useful map popups
+    ! urban3p.ru - top menu (body > #top .top > top-container)
+##.top-btn
+###top-but
+##.top_button
+###todown
+##.top_btn
+##.toplink
+! is in RuAdList and Fanboy's
+##.tothetop
+##.top-button
+###topButton
+##.top-link
+##.top-scroll
+##.toptop
+###topup
+##.topup
+##.totop
+##.toTop
+###toTop
+###to-top
+##.to-top
+    ! general rule doesn't work
+    yandex.ru##.to-top
+##.to_top
+! is in Ru AdList and Fanboy's
+###to_top:not(body)
+##.to-top__arrow
+##.totop-btn
+##.totop-button
+###to-top-button
+##.to-top-button
+##.to_top_custom
+##.totop_div
+##.to-top-nav
+! is in Fanboy's
+###totop-scroller
+##.totop-wrapper
+##.to-up
+##.to_up
+###toup
+##.toup
+~medium.com,~betterprogramming.pub,~codeburst.io,~faun.pub,~jetruby.com,~itnext.io,~towardsdatascience.com,~9gag.com,~obi.ru,~ozon.ru,~ozon.by,~ozon.com##.up
+    ! Exclusions:
+    ! medium.com,betterprogramming.pub,faun.pub,jetruby.com,itnext.io,towardsdatascience.com - random two-letter classes, medium engine
+    ! ozon - part of the main div in some scenarions (random two-letters classes)
+~bookvoed.ru###up
+	! Exclusions:
+	! bookvoed.ru - main div
+##.up_arr
+##.uparrow
+###up_arrow
+##.up-arrow
+###up_bt
+###up-btn
+##.up-btn
+###up_btn
+##.upBtn
+###upbtn
+###upbut
+###up_but
+###upButton
+##.upButton
+###upbutton
+##.upbutton
+###up-button
+###up_button
+! is in Fanboy's
+##.up_button
+##.up-button
+##.up-button_js
+##.up-button-page
+###updown
+###upDown
+##.upDown
+##.updown
+##.updown--shown
+##.uplink
+##.up_link
+###up-link
+##.uppage
+##.up-page
+###up-page
+###up_to
+##.uptop
+##.v-moveup__wrap
+##.vverh
+##.webnavoz_button_action_up
+    ! pcpro100.info##.webnavoz_button_action_up
+    ! vashnozh.ru##.webnavoz_button_action_up
+! is in Fanboy's
+##.yjscroll
+/appbacktotop
+    ! /appbacktotop/*  # from Ru AdList
+    ! /appbacktotop_  # from Ru AdList
+/arrow-top.svg
+/arrow-up.png
+/avada-to-top.*$important  # in Ru AdList and Fanboy's
+/back-top-btn.  # from Ru AdList
+/back-top-top-arrow.png
+_backtotop.  # from Ru AdList
+/backtotop.  # is in Fanboy's
+/back-to-top.  # from Fanboy's
+/back_to_top_  # is in Fanboy's and Ru AdList
+/back-to-top-  # from Ru AdList
+/bg_scrollup_button.  # from Ru AdList
+/btn_back2top
+    ! /btn_back2top.  # from Ru AdList
+    ! /btn_back2top_  # from Ru AdList
+/btn_gotop.  # from Ru AdList
+/btn-gotop.
+    ! /btn-gotop.svg
+/btn_pagetop.  # from Ru AdList
+/btnup.js
+/bt_pagetop.  # from Ru AdList
+/button_to_top.  # from Ru AdList
+/button-totop.svg
+/chevron-up.png
+/csbacktotop.js  # from Ru AdList
+/down.png
+/go-top.png
+/gotop.svg
+/go_to_top.  # from Ru AdList
+/gototop.  # from Ru AdList
+/go_up.png
+/goup.png
+/hs.go-to.js  # from Ru AdList
+/hs.go-to.min.js  # from Ru AdList
+/ic_pagetop.  # from Ru AdList
+/icon_gototop.  # from Ru AdList
+/icon_scrollup.  # from Ru AdList
+/jquery.scrollTo.min.js
+/jquery.scrollUp.min.js
+/jquery.tooltipster.min.js
+/jquery.toTop.js
+/jump_to_top.*$image
+/top-link.svg
+/ontop.png
+/sbtt.js  # from Ru AdList
+/scrollbtntop.  # from Ru AdList
+/scrollto/*
+/scroll-top.  # from Fanboy's
+/scroll_top.  # from Ru AdList
+/scrolltop.
+/scroll-top-and-bottom/*  # from Ru AdList
+/scrolltopcontrol.  # is in RU AdList and Fanboy's
+    !/js/scrolltopcontrol.js
+/scrolltoplugin.  # from Fanboy’s Annoyance List
+/scrolltoplugin.min.js$important
+-scroll-to-top/  # from Ru AdList
+/scroll-to-top.  # from Ru AdList
+/scroll-to-top/*  # from Ru AdList
+/scrolltotop/*  # from Ru AdList
+/scrolltotop.js
+/scrolltotop.min.  # from Ru AdList
+/scrolltotopconcat.  # from Ru AdList
+/scrollup.svg
+/scrollup_button.  # from Ru AdList
+/simple-back-to-top/*  # from Ru AdList
+_site/gotop.  # from Ru AdList
+/top.jpg
+/top.png
+/top.svg
+    ! ||autocamper.ru/sites/autocamper.ru/themes/d1theme/img/top.png
+    ! ||bugaga.ru/*/top.png
+    ! ||miniso.com/*/top.png
+/to_pagetop.  # from Ru AdList
+/top-arrow.*$image
+/top_arrow.*$image
+/top-bg.svg
+/topbutton.js  # is in Fanboy's
+/torna-su.  # from Ru AdList
+/to-top.
+    ! /to-top.js
+    ! /to-top.png
+/totop*$image
+    ! /totop.png
+    ! /totop.svg
+    ! /totop-btn.png
+/ui.totop_  # from Ru AdList
+.ui.totop.  # from Fanboy's
+/up.png
+/up.svg
+/uparrow.png
+    ! Exclusions:
+    @@/phpvirtualbox/images/upArrow.png  # phpVirtualBox instances
+/up_arrow.svg
+/up_btn.
+/up-button.png
+/widget/buttontop/*
+
+
+
+!! cookies
+! generalized
+##[class*="Cookie"]:not(html):not(body):not(article)
+##[id*="Cookie"]:not(html):not(body):not(article)
+! exception is from AdGuard Annoyances filter
+~101hotels.com,~1plus1.ua,~cookiedatabase.org,~intel.com,~metro-cc.ru##[class*="cookie"]:not(html):not(body):not(article)
+    ! Exclusions:
+    ! 101hotels.com - "cookie-data-js" in the form
+    ! cookiedatabase.org - just information about, not popups
+    !
+    ! the list is not full, just _some_ rules
+    ! is in EasyList, AdGuard and Fanboy's
+    !##.acceptcookies
+    ! is in 3 lists
+    !##.clearfy-cookie
+    ! is in EasyList, AdGuard and Fanboys
+    !##.cookie-notice-container
+    ! is in Adguard, Fanboy's, EasyList
+    !##.cookies-wrapper
+    ! from Adguard
+    !##.cookiewall:not(body):not(html)
+    ! is in EasyList, Adguard and Fanboy's
+    !###div_cookie
+    ! is in Fanboy's
+    !##.eu-cookie-compliance-banner
+    ! is in Fanboy's    
+    !##.eu-cookie-compliance-banner-info
+    ! is in EasyList and Fanboy's
+    !##.header__cookie
+    ! is in EasyList and Fanboy’s
+    !##.widget_eu_cookie_law_widget
+##[id*="cookie"]:not(html):not(body):not(article)
+    ! the list is not full, just _some_ rules
+    !
+    ! from Fanboy's
+    !###accept-cookie:not(.btn):not(.btn-primary)
+    ! is in 3 lists
+    !##.alert-cookie
+    ! is in 3 lists 
+    !###catapult-cookie-bar
+    ! is in 2 lists
+    !###clearfy-cookie
+    ! in 3 lists
+    !###cookieBar
+    !##.cookies.msg
+    ! in 3 lists
+    !###cookies-msg
+    ! is in 3 lists
+    !###eu-cookie-law
+    ! is in EasyList and Fanboy's
+    !###w-cookies-notice
+##[class*="coockie"]:not(html):not(body):not(article)
+##[id*="coockie"]:not(html):not(body):not(article)
+    ! the list is not full, just _some_ rules
+    ! from Adguard
+    !##.coockie
+    ! from EasyList
+    !###coockie
+    ! from Adguard
+    !###coockieAPContainer
+    !##.coockie_down
+    ! from EasyList
+    !###coockie-message    
+    ! from Adguard
+    !###coockie-mex
+    !##.coockie-notification-block
+    ! from EasyList
+    !###datenschutzcoockie
+    ! from EasyList
+    !##.fluv-eu-coockies-wrapper
+    ! from EasyList
+    !###header-coockie
+    !##.ibx-coockie-agree
+    ! from EasyList
+    !###overlay-coockie    
+    ! from EasyList
+    !##.p-coockie
+    ! from EasyList
+    !##.popupcoockie
+    ! from Adguard
+    !der-ersatzteile-profi.de###coockiePoliy
+    ! from Adguard
+    !eduonix.com###coockieGDPR
+    ! from Adguard
+    !euroakademie.de###coockiehinweis
+    ! from Adguard
+    !grandgames.net###coockie_mes
+    !ogk2.ru###coockie-rules
+    ! from Fanboy's
+    !##.p-coockie
+    ! from Adguard
+    !shopenauer.com##.polcoder_coockie_block
+    ! from Adguard
+    !tabletka.by##.js-coockie
+##[class*="Coockie"]:not(html):not(body):not(article)
+##[id*="Coockie"]:not(html):not(body):not(article)
+    ! the list is not full, just _some_ rules
+    !
+    ! from Fanboy's
+    !###CoockiesPage
+    ! from Fanboy's
+    !###cnilCoockies
+##[class*="Coockie"]:not(html):not(body):not(article)
+##[id*="Coockie"]:not(html):not(body):not(article)
+!
+! GDPR is EU's data protection law. Popups about it are very, very often present on sites
+!
+-gdpr-min.js  # from EasyList
+/dist/gdpr-*$domain=~express.co.uk  # from EasyList
+/gdpr/native-message  # from EasyList
+/gdpr/pdcc.  # from Fanboy's
+/gdpr/tracker-loaders.js  # from EasyList
+/gdprcookie/*  # from Fanboy's
+/gdprDialog.  # from Fanboy's
+/nanoGDPR.  # from Fanboy's
+/util/gdpr/*  # from Fanboy's and EasyList
+##[class*="GDPR"]:not(html):not(body):not(article)
+##[id*="GDPR"]:not(html):not(body):not(article)
+##[class*="Gdpr"]:not(html):not(body):not(article)
+##[id*="Gdpr"]:not(html):not(body):not(article)
+##[class*="gdpr"]:not(html):not(body):not(article):not(input):not(.main-layout)
+##[id*="gdpr"]:not(html):not(body):not(article):not(input)
+    ! the list is not full, just _some_ rules
+    !
+    ! is in EasyList and Fanboy's
+    !###gdpr:not(body):not(html):not(input)
+!
+! LGPD is Brazil's data protection law. Not so ubiquitous as GDPR, but still presents
+!
+##[class*="lgpd"]:not(html):not(body):not(article)
+##[id*="lgpd"]:not(html):not(body):not(article)
+    ! the list is not full, just _some_ rules
+    !
+    ! from Fanboy's
+    !##.banner-lgpd-consent
+    ! from Fanboy's
+    !##.card-lgpd
+    ! from Fanboy's
+    !##.card-lgpd-overlay
+    ! from Fanboy's
+    !###footer-lgpd
+    ! from Fanboy's
+    !catracalivre.com.br###lgpd-box
+    ! from Fanboy's
+    !##.lgpd-message
+    ! from Fanboy's
+    !##.lgpd-modal-content
+    ! from Fanboy's
+    !###lgpd_optall
+    ! from Fanboy's
+    !###lgpd-wrapper
+    ! from Fanboy's
+    !##.informativo-lgpd
+    ! from EasyList
+    !##.upsd__lgpd__render
+    ! from Fanboy's
+    !concursosnobrasil.com.br###lgpd
+!
+! RGPD is Spain's Reglamento General de Protección de datos
+!
+/ik-rgpd.  # from Fanboy's
+/iticonseil-rgpd/*  # from Fanboy's
+/nc-rgpd-cookies.  # from Fanboy's
+/ob_rgpd/*  # from Fanboy's
+/onpc-rgpd/*  # from Fanboy's
+/rgpd.js  # from Fanboy's
+/rgpd/iab/*  # from Fanboy's
+/rgpd/js/*  # from Fanboy's
+/rgpd_cookie_  # from Fanboy's
+/rgpd/discreto.min.js  # from Fanboy's
+
+/module-rgpd.  # from Fanboy's
+@@||santepubliquefrance.fr/rgpd/smarttag.js  # from EasyList
+
+##[class*="rgpd"]:not(html):not(body):not(article)
+##[id*="rgpd"]:not(html):not(body):not(article)
+    ! the list is not full, just _some_ rules
+    !
+    ! from Fanboy's
+    !###ban_rgpd
+    ! from Fanboy's
+    !###bandeau-rgpd
+    ! from Fanboy's
+    !###banner_rgpd
+    ! from EasyList
+    !###block-rgpd-bandeau
+    ! from EasyList
+    !###bloc_rgpd
+    ! from EasyList
+    !###pop_rgpd
+    ! from Fanboy's
+    !###rgpd
+    ! from Fanboy's
+    !##.rgpd
+    ! from EasyList
+    !##.rgpd-data-control-banner
+    ! from Fanboy's
+    !##.rgpd-content
+    ! from EasyList
+    !##.rgpd-layer
+    ! from Fanboy's
+    !###rgpd-notice
+    ! from Fanboy's
+    !##.rgpd-overlay
+    ! from EasyList
+    !##.rgpd-wrapper
+    ! from Fanboy's
+    !parrot.com##.RgpdDrawer_rgpd_drawer__2VCU0
+    ! from Adguard
+    !receitanatureba.com###myModalrgpd
+!
+! Let's not to make general rules for such form
+! from EasyList
+###LGPDdisclaimer
+! from EasyList
+###BannerLGPD
+!
+##[class*="Privacy"]:not(html):not(body):not(article)
+##[id*="Privacy"]:not(html):not(body):not(article)
+~reddit.com,sardu.pro##[class*="privacy"]:not(html):not(body):not(article)
+~sardu.pro,trakt.tv##[id*="privacy"]:not(html):not(body):not(article)
+!
+##div[data-storage-item*="cookiename"]
+    ! baydaroshnaya.ru##div[data-storage-item*="cookiename"]
+    ! mytravelbar.ru##div[data-storage-item*="cookiename"]
+!
+! other
+!
+###__agreementBar
+! from Fanboy's
+##app-aviso-cookies
+! from Fanboy's
+##[aria-label="Consent Banner"]
+! is in EasyList and Fanboy's
+##.akismet_comment_form_privacy_notice
+! from Fanboy's
+###avis_cockies
+! is in EasyList and Fanboy's
+##.cm-notification-container
+! is in EasyList and Fanboy's
+###consent_blackbar
+! is in EasyList and Fanboy's
+##.consent-popup
+! from Fanboy's
+##[data-cy="cookiebar"]
+! from Fanboy's
+##[data-popmake*="cookie_"]
+! from Fanboy's
+##[data-role="cookie-notice"]
+! from Fanboy's
+##[data-test="gdpr-cookies-popup"]
+! from Fanboy's
+##[data-testid="cookie-policy"]
+###easy-cookies-policy-main-wrapper
+##.footer_bottom_politics
+##.footer__popup-agreement
+! is in Adguard and EasyList
+##.fusion-privacy-bar
+##.gdrp-popup-content
+##.law__footer
+###legalbar
+###legal-notice
+##.message-cockies
+! from Fanboy's
+##ofi-cookie-box-widget
+##.personal-data-warning
+! from Fanboy's
+##proactua-cookie-consent
+! is in EasyList and Fanboy's
+##.pum[data-popmake*="cookie-consent"]
+! is in EasyList and Fanboy's
+##.pum[data-popmake*="cookies"]
+##.pum-overlay[data-popmake*="cookies"]
+! is in Fanboy's and EasyList
+###teconsent
+! is in EasyList and Fanboy's
+##.tracking-consent
+!
+/ajax/dataconsentcookies  # ad tracking image  # is in EasyList and Fanboy's
+/angular-cookie-law$important  # from Adguard
+    ! /angular-cookie-law/*$important  # from Adguard
+    ! /angular-cookie-law.js$important  # from Adguard
+    ! /angular-cookie-law.min.js$important  # from Adguard
+/avia-snippet-cookieconsent.js  # from Adguard: /js/avia-snippet-cookieconsent.js
+/aviso_cookies.  # from EasyList
+/booster_eu_cookie*$important
+/cmp/*  # "consent manager policy"
+    ! /cmp/heycookie.js  # from Adguard
+    ! /cmp/int_cmp.  # from Adguard
+/cmp_shim.js  # from Adguard
+-cnil-popup-  # from EasyList
+/consent*$important
+    ! /consent.js
+    ! /consent/*
+    ! /consentbanner-fragment/*  # from EasyList
+    ! /consentbar/consent-bar.min.js  # from EasyList
+    ! /consent-mapping/*
+    ! ||bigcommerce.com/shared/js/storefront/consent-manager-  # from Adguard
+/coockiealert.  # from EasyList
+/cookiealert.$important  # from Adguard
+/cookiebanner/*$important
+/cookie-banner$important  # is in EasyList, Fanboy’s, Adguard
+-cookie-banner-$~image  # from EasyList
+/cookiebar.$important  # from AdGuard
+/cookiebar/*
+/cookie-cnil/*  # from EasyList
+/cookie-consent/*$important  # from Adguard
+/cookie-consent.$important
+    ! /cookie-consent.js$important
+    ! /cookie-consent.*.min.js  # from Adguard
+/cookie_consent.js$important
+/cookie-consent?  # from Adguard
+-cookie-consent.js  # from EasyList
+_CookieConsent.js  # from EasyList
+/cookieconsent$important
+    ! /cookieconsent.*$important  # from AdGuard
+        ! /cookieconsent.min.js$important
+    ! /cookieconsent/*$important
+    ! /cookieconsent2/*$important
+        ! ||cloudflare.com/ajax/libs/cookieconsent2/  # from EasyList
+    ! /cookieconsentbar.  # from EasyList
+    ! /cookieconsentpub/*$important  # from Fanboy's, modified
+/cookie-consent-*$script
+    ! /cookie-consent-manager.js  # from Adguard
+    ! /scripts/cookie-consent-  # from Adguard, modified
+-cookie-consent/$stylesheet  # from Fanboy's
+/cookiecontrol$important
+.cookiecuttr. # is in Fanboy's and EasyList
+/cookieDSVGo.  # from EasyList
+/cookiefly/*  # from EasyList
+-cookie-form.lib.  # from EasyList
+/cookieinfo.  # is in EasyList, AdGuard and Fanboy's
+/cookie-info.$important  # from Adguard
+/cookie_law/*$script,important  # from Adguard
+-cookie-law.js  # from Adguard
+_cookie_law.js  # from EasyList
+.cookielaw.js  # from Adguard
+.cookielaw.min.  # from EasyList
+/cookie-law-$~stylesheet  # from Adguard: /cookie-law-$~script,~stylesheet
+/cookie-law-generator/*  # from Adguard
+/cookie-law-info-public.js  # from Adguard
+/cookielayover.  # from EasyList
+/cookielex/*$important  # from Adguard
+
+/cookie-line.  # from EasyList
+-cookie-message.js  # from Adguard and EasyList
+/cookie-notice/*$script,important  # from AdGuard and Fanboy's
+/cookienotice.$important  # is in EasyList, AdGuard and Fanboy's
+/cookienotification.$important  # from Adguard
+/cookie_notification.js
+/cookie.policy.  # from SecurityEntire CookieFilter
+/cookie-policy.js$important  # from Adguard
+_cookie_policy_  # from Fanboy's and AdGuard
+.cookie.policy.  # from EasyList
+/cookiesbanner.js  # from EasyList
+.cookiesdirective.  # from AdGuard
+    !/jquery.cookiesdirective.js
+    !.cookiesdirective.js  # from EasyList
+/cookies-enabler.  # is in EasyList, Fanboy's, AdGuard
+    ! /wp-content/plugins/ginger/front/js/cookies-enabler.min.js
+    ! also see /plugins/ginger/*
+/cookies_policy.  # is in Fanboy's and EasyList
+/cookies-policy.
+/cookie-widget/*  # from Adguard
+/cmp_didomi.js  # from Adguard  # see didomi.io
+/didomi.js  # from Adguard  # see didomi.io
+/emh_cookiebanner/*  # from Adguard
+/eucookie/*  # is in 2 lists
+/eu-cookie-*$script,important  # from Adguard, modified
+/eu_cookie_*$script,important  # is in 3 lists
+/eu_cookie_compliance.$important  # from Adguard
+/eu-cookie-law*$important
+    ! /eu-cookie-law/*$important
+    ! /eu-cookie-law.js$important
+    ! /eu-cookie-law.min.js$important
+/evercookie.  # from EasyPrivacy
+/evercookie_*$important  # tracking imgs and xhrs  # is in EasyPrivacy and Adguard
+/evercookie/*  # from EasyPrivacy
+/gdpr/*$important
+/gdpr.js$important  # from Fanboy's and Adguard
+.gdpr.$script
+    ! .gdpr.js  # from EasyList
+    ! .gdpr.min  # from EasyList
+    ! .javascript.gdpr.  # from EasyList
+/gdpr-compliance.js  # from EasyList
+/gdpr-consent/*$important
+.GdprCookieBanner.  # from EasyList
+/gdprcookiepolicy.js  # from EasyList
+/jquery.cookieconsent.min.js$important
+/jquery.ihavecookies.  # from EasyList
+/nli-cookie-banner/*$important
+/popupcookies.  # from EasyList
+/privacy-consent-$script  # EasyList rule
+/privacy-consent/*$domain=~seek.com.au
+    ! seek.com.au: root redirects to seek.com.au/privacy-consent/ and that's all
+/qc-consent.js  # from EasyList and Fanboy's
+/referrer-cookie.js
+/rodo.js$important  # is in EasyList and Fanboy’s
+-rodo.min.js  # from EasyList
+/setcookie?  # from EasyPrivacy
+/sibbo-cmp-core.js  # from EasyList
+/simplyflex_cookies.  # from EasyList
+/smart-eu-cookies.  # from EasyList
+/sncmp.min.js  # from Adguard
+/track-cookies.js$important
+/trackingcookiecheck?  # from EasyPrivacy
+/um-gdpr.*$important  # is in Fanboy's and EasyList
+/warncookies.  # is in EasyList, Adguard, Fanboy's
+/wecoma-lite.js  # from EasyList
+/wrappermessagingwithoutdetection.js$important  # is in Fanboy's, EasyList, Adguard
+/ws5_eucookie/*  # from EasyList
+
+
+
+!! snowflakes
+-christmasification-  # from Ru AdList
+_christmaslights.js  # from Ru AdList
+/christmas-snow.js  # from Ru AdList
+/jquery.snow.js  # from Ru AdList
+/let-it-snow.  # from Ru AdList
+/let-it-snow/*  # from Ru AdList
+/snow.js
+/snow.min.js
+/snow2.js  # from Ru AdList
+/snow-fall.js  # from Ru AdList
+/snow-falling.js  # from Ru AdList
+/snowfall.jquery.  # from Ru AdList
+/snowfall.min.js  # from Ru AdList
+/snowfall-master.min.js  # from Ru AdList
+/snowflakes.min.js  # not from cdnjs.cloudflare.com/ajax/libs/snowstorm/, but similar annoyance
+/snow-storm/*$script  # from Ru AdList
+/snowstorm.js  # from Ru AdList
+/snowstorm/lights/  # from Ru AdList
+/snowstorm.min.js  # from Ru AdList
+/snow-storm-*$script  # from Ru AdList
+/snowstorm-min.js  # cdnjs.cloudflare.com/ajax/libs/snowstorm/
+_snowstorm-min.js  # from Ru AdList
+/snoweffect.js
+/snowplow/*$script  # from EasyPrivacy  # https://a.trellocdn.com/lib/snowplow/2.9.0.js
+/wp-snow-effect/*  # from Ru AdList
+/wp-snow-effect-pro/*  # from Ru AdList
+||cdnjs.cloudflare.com/ajax/libs/snowstorm/$script,important  # from uBlock
+##.snowflake
+
+
+
+!! age notices
+/16.png$domain=~codingame.com
+/16+.png
+/16plus.png
+!/18.jpg - don't, it's too wide with jpg
+/18.png$domain=~codingame.com
+/18.svg
+/18+.png
+/18+.svg
+/18plus.png
+/age.svg
+/age-18-plus.png
+/age-rating.png
+/icon_18.png
+/icon-age.png
+/plus-18.png
+##.age
+##.age-0
+##.agelimit
+##.age-limit
+##.age-limitation
+##.age_rate
+##.age-rating
+##.age-restriction
+##.age-warning
+##.contacts-age
+##.eighteen
+##.field-name-field-age-rating
+##.footer__age
+##.footer__age-limit
+##.footer__agelimit
+##.footer18
+##.legal__age
+##.min-age
+##.nui-pg18
+##.plus18
+##.plus-18
+##.rating-18
+##.ww-18-plus
+
+
+
+!! register alert
+##.cGuestTeaser
+###elGuestTerms
+###greeting_section
+##.guestMessage
+###guestMessage
+###guestwelcome
+###hello-pop-up
+##.hello-pop-up
+##.hello-pop-up--not-top
+##.join-footer
+###join-login_alt-modal
+##.join-now-block
+###jointNew
+##.must-log-in
+!##.not-logged
+###popup-bounce-from
+##.popup_register
+###RegCCO
+###registration-widget
+###register-banner
+##.signup-prompt
+##.signup-prompt-bg
+! from Adguard
+##wecoma-lite
+~adguard.com,~aliexpress.com,~aliexpress.ru,~atom-editor.cc,~degoo.com,~ozon.ru,~ozon.by,~ozon.com,~sud.ua,~trakt.tv##.welcome
+###welcome
+##.welcome1
+##.welcome-msg
+###welcome_widget
+
+
+
+!! apps
+/applestore.png
+/app__app-store.png
+/app-icon-app-store.svg
+/app-icon-google-play.svg
+/appgallery*$image
+/app-gallery.*$image
+-app-gallery.*$image
+/app-google.svg
+/app__google-play.png
+/app_store*$image
+/app-store*$image
+-app-store.*$image
+/appstore*$image
+    !/img/appstore
+/appstore-footer.png
+/btn-appstore.svg
+/btn-googleplay.svg
+/footer-app-store.png
+/googleplay*$image
+    !/googleplay-footer.png
+/google-play*$image
+-google-play.*$image
+/google_play*$image
+    !/google-play.png
+    !/google-play.svg
+    !/google_play.svg
+    !/img/google-play
+/gplay.jpg
+/huawei-store.svg
+/itunes.svg
+/play_market*$image
+||play.google.com/intl/en_us/badges/*$3p
+##a[href^="https://appgallery.huawei.com"]
+###apple-icon
+###apple-store
+##.applic
+##.application-btn
+##.application-btn_appstore
+##.application-btn_googleplay
+##.app-links
+##.apps_buttons
+##._appstore
+##.app-store
+##.appstore-icon
+##.but-applic
+##.desktop-footer__apps-icon
+##.fa-apple
+##.fa-google
+##.footer-app
+##.footer__apps
+##.footer-apps
+###footer-apps
+##.footer-app-store
+###google-store
+##.itunes
+##.login-footer__apps
+##.main-page-app
+##.mobapp-links-wrapper
+##.mobile_app
+##.mobile-app
+##.mobile-applications
+##.mobile-app-links
+##.play_store
+##.sidebar-block-links__apps
+##.site-footer_menu--mobile-app-links
+##.t-appdownload
+
+
+
+!! signatures on forums
+||steamsignature.com^$third-party  # from RU Adlist
+##.author-signature
+##.comment-signiture
+##.forum-user-signature
+###gpt-1stPostSig
+##.lia-message-signature
+##.message-signature
+##.msg_signature
+##.mysignature
+##.postsignature
+##.post-signature
+##.post-signature__social
+##.sig-body
+##.sig-content
+##.sig-fonts
+##.signature
+    ! @@||gamespot.com^$generichide in uBlock filters
+    gamespot.com##.signature
+    ! workaround to disable whitelisted exceptions
+    ##[class=signature]
+##.signatureView
+##.user_signature
+##.UserSignature
+##.yafsignature
+
+
+
+!! subscribe forms
+/ico_subscribe.png
+/newsletter/*  # ||nitrocdn.com/*/newsletter/
+/newsletterwidget/*
+/subscribe.*$image
+/subscribe.quick.form/*  # /bitrix/*/subscribe.quick.form/
+! generalized
+~domclick.ru,~eff.org,~mail.ru,~sberbank.ru,~mail.yandex.ru##[class*="Letter"]:not(html):not(body):not(article):not(.post_content):not(.wp_content)
+~domclick.ru,~eff.org,~mail.ru,~sberbank.ru,~mail.yandex.ru##[id*="Letter"]:not(html):not(body):not(article):not(.post_content):not(.wp_content):not(input)
+~101hotels.com,~domclick.ru,~eff.org,~loveread.ec,~mail.ru,~sardu.pro,~sberbank.ru,~xhamster.com,~mail.yandex.ru##[class*="letter"]:not(html):not(body):not(article):not(.post_content):not(.wp_content):not(.js-first-letter)
+    ! Exclusions:
+    ! 101hotels.com - ".onlyletters" in the name of guest form
+    ! xhamster.com - ".with-letter" is the search results
+    ! loveread.ec - ".letter_nav_bg"
+    !
+~domclick.ru,~eff.org,~mail.ru,~sardu.pro,~sberbank.ru,~mail.yandex.ru##[id*="letter"]:not(html):not(body):not(article):not(.post_content):not(.wp_content):not(input)
+    ! is in Fanboy's
+    ##div[class*="newsletter-signup_"]
+    ! is in Fanboy's
+    ##.newsletter.box
+    ! is in Fanboy's
+    ##.newsletter-popup
+    ! from Fanboy's
+    ###newsletters-1-form
+    ! from Fanboy's
+    ###newsletters-1-form-wrapper
+    ! is in Fanboy's
+    ##.newsletter-signup
+##[class*="morning_email"]:not(html):not(body):not(article)
+##[id*="morning_email"]:not(html):not(body):not(article)
+##[class*="Subscr"]:not(html):not(body):not(article)
+~beeonline.ru,~senler.ru,~vk.com##[id*="Subscr"]:not(html):not(body):not(article)
+! disabled !~adblockplus.org##[class*="subscr"]:not(html):not(body):not(article)
+~beeonline.ru,~senler.ru,~tgstat.ru,~vk.com##[id*="subscr"]:not(html):not(body):not(article)
+! other
+###dgit-daily-form
+###cooking-email-signup
+##.cw-subscribe-window
+! is in Fanboy's
+###email-popup
+###email-signup
+! is in Fanboy's
+##.emailSubscribe
+##.fixed-subscribe
+! is in Fanboy's
+##.footer__subscribe
+! is in Fanboy's
+##.footer-subscribe
+##.frm_subs_fllscrn
+! from Fanboy's and Web Annoyances Ultralist
+##.jetpack_subscription_widget
+##.maillist-form-view
+###podpiska
+##.right_mail
+###sub-blog
+###sub-recipe
+###sub-review
+##.subscr
+~belarus2020.org##.subscribe
+    !chilibros.co##.subscribe
+    !kinopoisk.ru##.subscribe
+    !mybellaria.ru##.subscribe
+    !ohota.guru##.subscribe
+    !popadiv10.ru##.subscribe.module
+    !sports.ru##.subscribe
+    !uberdeal.ru##.subscribe
+    !utkonos.ru##.subscribe
+! is in Fanboy's
+##.subscribe-button
+! from Fanboy's
+###subscribe-email
+##.subscribe-footer
+! is in Fanboy's
+##.subscribe-form
+##.subscribe-form__modal
+! is in Fanboy's
+##.subscribe__title
+##.subscribe_wrap
+    !tempgun.ru##.subscribe_wrap
+    !volveter.ru##.subscribe_wrap
+##.subscribe-wrap
+    !nozhikov.ru##.subscribe-wrap
+~autoreview.ru##.subscription
+    ! Exclusions:
+    ! autoreview.ru: .subscription - no, this is not social, yes, it is a paywall, but let's describe this more descriptively. See specific rules about it in _sites
+    !
+    !cosmopolitantv.es##.subscription
+    !dixy.ru##.subscription
+    !just.ru##.subscription
+    !m-strana.ru##.subscription
+    !warhead.su##.subscription
+~odoo.com##.subscription-widget
+    ! Exclusions:
+    ! odoo.com - registration form
+! from Fanboy's
+##.widget_blog_subscription
+! from Fanboy's
+##.widget_newsletters
+
+
+
+!! js off
+##.javascriptoff
+##.no-jscript
+###noscript-warning
+
+
+
+!! scripts
+! scripts in uploads folder are highly suspicious
+! Not ideal Adguard rule, but 99%+ sites are covered well
+/wp-content/uploads/*/*.js$domain=~linode.com  # initially from Adguard
+    ! on linode.com: /wp-content/uploads/bb-plugin/cache/*.js
+
+
+!! viewed products
+/recently-viewed/*
+##.catalog-products-viewed
+    ! 338lm.ru##.catalog-products-viewed
+    ! ordom.ru##.catalog-products-viewed
+###count-viewed
+###js-recommend-viewed
+###j-youViewed
+##.last-goods
+##.last-viewed-items
+###productViewed
+###recently_viewed
+##.recently-viewed
+###recently-viewed-wrap
+###recentlyViewed
+##.recentlyViewedBlock
+##.recently-watched
+###recently_watched
+##.viewed_block
+##.viewed-products
+##.viewed-products-slider
+##.viewed-products-widget
+##.viewed-products-widget-wrapper
+##.i-visited-goods
+###visitedGoodsContanier
+##.widget-part-products-viewed
+
+
+
+!! payment methods
+! С 2022-02 правила по платежным системам морально устарели... По крайней мере, в России и Беларуси.
+!/applepay.*$image
+!/googlepay.*$image
+!/google_pay.svg
+!/footer-icon-apple*$image
+!/footer-icon-gpay*$image
+!/footer-icon-mastercard*$image
+!/footer-icon-mir*$image
+!/footer-icon-pay*$image
+!/footer-icon-visa*$image
+/halva.gif
+/halva.svg
+/home_credit.svg
+!/icon_paysystems.png
+!/images/payments/*
+! /m-logo.png  # -logo.$image rule
+!/maestro.png
+!/mast2.png
+!/mastercard.*$image
+    !/mastercard.jpg
+    !/mastercard.png
+    !/mastercard.svg
+    !/mastercard.webp
+!/master_card*$image
+!/master-card*$image
+!/master-card-big.svg
+! /mastercard_logo.png  # _logo.$image rule
+!/master-visa.svg
+!/mir.jpg
+!/mir.png
+!/mir.svg
+!/mir.webp
+!/mir2.png
+!/pay_icons/*
+!/pay_icons.png
+!/payment.png
+    ! ||goodprice4you.ru/*/payment.png
+    ! ||santehmarka.ru/image/catalog/modern/payment.png
+!/payment_icons/*
+!/payment-icons/*$domain=~digiseller.com
+!/payment_icons.png
+!/payment_logos/*
+!/payment_logos.png
+!/payment/logo*$image
+!/paypal.png
+!/peace-card*$image
+!/qiwi.png$domain=~qiwi.com
+!/samsungpay*$image
+!/sberbank.jpg
+!/sberbank.svg
+!/sber-pokupay.svg
+/sovest.svg
+!/visa*$image
+!/visa.jpg
+!/visa.png
+!/visa.svg
+!/visa.webp
+!/visa2.png
+!/visa-big.svg
+!/visa-electron.jpg
+! /visa_logo.png  # -logo-$image rule
+! /visa-logo.png  # -logo.$image rule
+!/visa-mastercard.png
+!/visa-mc.png
+!/visa_mc_maestro.gif
+!/webmoney.gif
+!/webmoney.jpg
+!/webmoney.png
+!/webmoney.webp
+!/yandexmoney.png
+! generalized
+!##[class*="footer__payment"]:not(html):not(body):not(article)
+!##[id*="footer__payment"]:not(html):not(body):not(article)
+!##[class*="footer_payment"]:not(html):not(body):not(article)
+!##[id*="footer_payment"]:not(html):not(body):not(article)
+!##[class*="footer-payment"]:not(html):not(body):not(article)
+!##[id*="footer-payment"]:not(html):not(body):not(article)
+! other
+!##.card-payment-options
+!##.fa-cc-mastercard
+!##.fa-cc-visa
+!##.f-buy-methods
+!##.footer__area-pay
+!##.footer-bottom__icons
+!##.footer__cards
+!##.footer_cards
+!##.footer-cards
+!###footer-info-paysystems
+!##.g-icon-credit-card
+!##.icon-apple-pay
+!##.maestro
+!##.main_products_list_items_info_pay_types
+!##.master-card
+!##.mastercard
+!##.pay-cards
+!##.pay-footer
+!###pay_icons
+!##.payment
+!##.payment-cards
+!~strelkapay.ru##.payment-footer
+!##.payment-footer-block
+!##.paymenticons
+!##.payment_icons
+!##.payment-icons
+!##.payment-links
+!##.payment-list-images
+!##.payment-logo
+!##.payment-logos
+!##.payment_methods
+!##.payment-options
+!##.pay_system_icons
+!~justclick.ru##.payments
+!##.payments-block
+!##.payments-img
+!##.payment-systems
+!###payment-variants
+!##.pay-methods
+!##.pay-systems-block
+!##.pl-sys-footer
+!##.product-payment-cards
+!##.product-payment__item
+!##.spasibo-sberbank__logo
+!##.spasibo-sberbank__text
+!##.tcp-payment-info
+##.thawte
+!##.v-footer__pays
+!##.visa
+!##.visae
+
+
+
+!! countdowns
+~bizon365.ru,~clickmeeting.com,~worknf.ru##[class*="Countdown"]:not(html):not(body):not(article)
+##[id*="Countdown"]:not(html):not(body):not(article)
+~bizon365.ru,~clickmeeting.com,~pornolab.net,~worknf.ru##[class*="countdown"]:not(html):not(body):not(article)
+##[id*="countdown"]:not(html):not(body):not(article)
+##[class^="timer"]:not(html):not(body):not(article)
+~tomato-timer.com##[id^="timer"]:not(html):not(body):not(article)
+! ad countdowns
+###county
+/county.js
+/countdown.js
+/countdown.min.js
+/hurrify/
+/hurrify.js
+/jquery.countdown*$important,domain=~advance24.ru
+    ! /jquery.countdown.min.js$important
+    ! /jquery.countdown-en.js
+    ! /jquery.countdown-ru2.js
+/jquery-countdown/*
+/sales-countdown-timer/*
+/ultimate-countdown-timer*$important
+
+
+
+!! quickorder buttons
+/buyoneclick/
+/buyoneclick.js
+/singleclick.js
+! generalized
+##[class*="buy1click"]:not(html):not(body):not(article)
+##[id*="buy1click"]:not(html):not(body):not(article)
+##[class*="buy1click"]:not(html):not(body):not(article)
+##[id*="buy1click"]:not(html):not(body):not(article)
+    ! ##.buy-one-click
+    ! ##.details-buy-one-click
+    ! ##.js-buy-one-click
+    ! ##.js__buy-one-click-show-form
+~pro-spec.ru##[class*="quickorder"]:not(html):not(body):not(article)
+##[id*="quickorder"]:not(html):not(body):not(article)
+! other
+##.btn-buy-one
+##.btn-1-click
+##.btn-1click
+##.btn-one-click
+##.button1click
+##.button-common_mod_one-click
+##.button-one-click
+##.button_one_click
+##.button_one-click-order
+##.buy-in-click
+##.byoneclick
+###buy_one_click
+##.buy_one_click
+##.buy_one_click-btn
+###buyOneClickButton
+##.bxr-one-click-buy
+##.click-order-fast
+##.fast-buy
+##.fast_buy
+##.fastorder
+##.fast_order
+###fast_order
+##.fast-order-send-button
+##.fast_purchase
+##.item1click-block
+##.js-fast-buy
+##.j-one-click__button
+###oneclick
+##.oneclick
+##.one-click
+##.one_click
+##.one-click-button
+##.one-click-button-wrap
+##.oneclickbutton
+##.one-click-buy
+##.one-click-buy-section
+##.oneClickBuy
+###oneclick_form
+##.one-click-order-btn
+##.one-click-wrap
+~smartrecruiters.com##.oneclick-wrapper
+###order_one_click
+##.productButtonBuy1click
+###pay_oneclick
+##.product-buy__one-click
+##.product__fast-order-btn
+##.product-info__b1c
+##.product-quick_checkout
+##.quick_order
+##.quick-order
+##.singleclick
+##.wrapp_one_click
+
+
+!! quickviews
+##.catalog-fast-view
+##.fast-view
+##.fast_view_block
+##.getFastView
+##.products-view-quickview
+##.quickoverview
+##.quickview
+##.quick-view
+##.quick-view-btn
+
+
+!! brands list
+###all_brands
+##.b-brands
+~carsguru.net##.brand
+##.brand-list
+##.brand_picture
+##.brand-slider
+~ugona.net##.brands
+    ! Exclusions:
+    ! ugona.net - useful wizard, sort of main content
+##.brands-carousel
+##.brands_section
+##.brands-slider
+##.brands_slider
+##.clients-slider-box
+##.footer__brand
+##.homepage-brands-of-week-wrapper
+##.pop-brands-block
+##.producers_list
+##.section-brand
+##.vendors
+###vendors-slider
+/brand/*$image
+/branding*$all,important,domain=~livejournal.com
+    ! many, many rules from different lists
+    ! /branding/*
+/brands/*$image,domain=~google.com|~zabbix.com
+    ! Exclusions:
+    ! google.com - don't remember, but suppose, third-party site icons in search results
+    ! zabbix.com - icons of monitored systems. Yes, they are logos, but 1) purpose is not marketing, and 2) it really needs for GUI because of absense of alternate text names
+    ! 
+    ! ||devapps.ru/img/brand/*$image  # 4pda banners
+    ! ||megaobzor.com/images/brand/*$image
+    ! ||shopsirop.ru/uploads/images/Brands/*$image
+/images/brand*$image
+/logos/*$domain=~vse.fm
+
+
+
+!! modals - was experimental, disabled
+!~calc.ytong.ru,~forumhouse.ru,~dns-shop.ru,~pass.rzd.ru,~sketchup.com,~bonus-spasibo.ru,~spasibosberbank.ru##.fade
+!~forumhouse.ru,~dns-shop.ru,~pass.rzd.ru##.modal
+!~forumhouse.ru,~dns-shop.ru,~pass.rzd.ru##.modal-body
+!~forumhouse.ru,~dns-shop.ru,~pass.rzd.ru##.modal-content
+!~forumhouse.ru,~dns-shop.ru,~pass.rzd.ru##.modal-dialog
+!##.modal-overlay
+!##.modal-padding
+!##.modal-prompt-half-page
+!##.modal-push
+!##.modals
+!##.modal-scrollable
+!##.modal-trigger
+!##.modal-window
+!##.modal-wrapper
+!##.mc-modal
+!##.mc-modal-bg
+!##.interceptBackgroundBlocker
+!##.interceptContainer
+!##.slds-backdrop
+!##.slds-backdrop--open
+!##.slds-fade-in-open
+!##.slds-modal
+!~drupal.org###cboxOverlay
+!~drupal.org###colorbox
+!##.b-visitModal2_popup
+
+!! modals v2
+turboimagehost.com##.fade
+turboimagehost.com##.modal
+turboimagehost.com##.modal-footer
+###background-overlay
+~drupal.org###cboxOverlay
+    ! from v1
+/fancybox_overlay.png
+~air-gun.ru##.fancybox-overlay
+###fancybox-overlay
+~air-gun.ru##.fancybox-overlay-fixed
+    ! academyit.ru##.fancybox-overlay-fixed.fancybox-overlay
+    ! davitamebel.ru##.fancybox-overlay
+    ! stvol.ua##.fancybox-overlay
+    ! top-hammam.ru###fancybox-overlay
+    ! travelbird.be##.fancybox-overlay
+    ! vodoparad.ru##.fancybox-overlay-fixed.fancybox-overlay
+    ! yamart.ru##.fancybox-overlay-fixed.fancybox-overlay
+##.mc-modal-bg
+    ! from v1
+##.modal-backdrop
+    ! from v1: ~forumhouse.ru,~github.com,~pass.rzd.ru##.modal-backdrop
+    ! 3dprint.com##.modal-backdrop
+    ! careerist.ru##.in.modal-backdrop
+    ! devteam.space##.modal-backdrop
+    ! galamart.ru##.modal-backdrop
+    ! gunshub.ru##.modal-backdrop
+    ! hipdir.com##.modal-backdrop
+    ! hkrtrainings.com##.modal-backdrop
+    ! ipc.be##.show.fade.modal-backdrop
+    ! kuponika.ru##.in.fade.modal-backdrop
+    ! leatherman.com##.modal-backdrop
+    ! litlife.club##.modal-backdrop
+    ! medsovet.info##.modal-backdrop
+    ! mindmajix.com##.modal-backdrop
+    ! ofsant.ru##.fv-modal-stack.in.fade.modal-backdrop
+    ! ohotnik.com##.fade.modal-backdrop
+    ! pppkazan.com##.in.modal-backdrop
+    ! profteh.com##.modal-backdrop
+    ! ratingoff-schools.com##.modal-backdrop
+    ! sana-med.com.ua##.modal-backdrop
+    ! silagrupp.ru##.modal-backdrop
+    ! smartnator.com##.modal-backdrop
+    ! statstool.com##.in.fade.modal-backdrop
+    ! theinpaint.com##.modal-backdrop
+    ! turboimagehost.com##.modal-backdrop
+    ! vdyoutube.com##.in.fade.modal-backdrop
+    ! vkusvill.ru##.modal-backdrop
+    ! wiley.com##.in.fade.modal-backdrop
+    ! yakaboo.ua##.in.modal-backdrop
+    ! zestmoney.in##.modal-backdrop
+    ! zhartun.me##.modal-backdrop
+    ! ztedevices.com##.fade.modal-backdrop
+##.modal-overlay
+    ! from v1
+##.overlay-wrapper
+    ! is in Fanboy's
+    !howtogeek.com##.overlay-wrapper
+    ! is in Adguard
+    !howtogeek.com##.email-overlay + .overlay-wrapper
+    ! from uBlock filters
+    !mlb66.ir##.overlay-wrapper
+##.slds-backdrop
+    ! from v1
+/announcement-bar.min.js
+
+! strange ad scripts  # Update: ezoic ads
+/beardeddragon/*
+    ! /beardeddragon/drake.js  # is in EasyList
+    ! /beardeddragon/gilamonster.js
+    ! /beardeddragon/iguana.js
+    ! /beardeddragon/tortoise.js  # is in EasyList
+    ! /beardeddragon/wyvern.js
+! hacked: https://webmasters.stackexchange.com/questions/136399/strange-variations-of-url-showing-up-in-google-search-console
+/detroitchicago/*$script,important
+    ! /detroitchicago/augusta.js  # is in EasyList
+    ! /detroitchicago/boise.js  # is in EasyList
+    ! /detroitchicago/cmbdv2.js  # is in EasyList
+    ! /detroitchicago/houston.js  # is in EasyList
+    ! /detroitchicago/kenai.js  # is in EasyList
+    ! /detroitchicago/minneapolis.js  # from uBlock filters
+    ! /detroitchicago/reportads.js  # is in EasyList
+    ! /detroitchicago/rochester.js  # is in EasyList
+    ! /detroitchicago/sidebarwall.js  # is in EasyList
+    ! /detroitchicago/stickyfix.js
+    ! /detroitchicago/tulsa.js
+    ! cookies scripts
+    !||techgenix.com/detroitchicago/anaheim.js
+    !||techgenix.com/detroitchicago/boise.js
+    ! is in EasyList
+    !||thewindowsclub.com/detroitchicago/
+    !https://www.thewindowsclub.com/detroitchicago/rochester.js
+    /jellyfish.webp$script  # from EasyList  # https://webmasters.stackexchange.com/questions/136399/strange-variations-of-url-showing-up-in-google-search-console
+    ! also: https://ezodn.com/detroitchicago/consentsettings.js
+/edmontonalberta/*  
+    ! /edmontonalberta/calgary.js
+/parsonsmaize/*
+    ! /parsonsmaize/abilene.js
+    ! /parsonsmaize/olathe.js  # is in EasyList
+/porpoiseant/*$important  # ad scripts  # is in EasyList
+    ! /porpoiseant/banger.js
+    ! /porpoiseant/et.js
+    ! /porpoiseant/fads.js
+/tardisrocinante/*  # detroitchicago, porpoiseant  # also: https://sf.ezoiccdn.com/tardisrocinante/cash.js
+    ! /tardisrocinante/css_onload.js
+    ! /tardisrocinante/screx.js
+    ! /tardisrocinante/script_delay.js
+
+
+! noisy gifs and smiles
+! (some sites use not only *.gif there)
+!
+! annoying gifs rules
+!
+/avatars/*.gif
+/awards/*.gif
+    ! ||gunforum.com.ua/awards/*.gif
+/board/*.gif
+    ! ||forum.ru-board.com/board/s/ruboard.gif
+    ! ||forum.ru-board.com/board/s/beer.gif
+    ! ||forum.ru-board.com/board/s/biglaugh.gif
+    ! ||forum.ru-board.com/board/s/off.gif
+    ! ||forum.ru-board.com/board/images/lastpost.gif
+    ! ||forum.ru-board.com/board/images/ru-board_ny_new.gif
+/customavatars/*.gif
+    ! ||bvf.ru/forum/customavatars/*.gif
+    ! ||sevenforums.com/customavatars/avatar*.gif
+    ! ||tenforums.com/customavatars/avatar*.gif
+/files/*.gif
+    ! ||billiardworld.ru/files/*.gif
+    ! ||fermer.ru/files/stimulink.gif
+    ! ||izhguns.ru/sites/default/files/menu_icons/menu_icon_228.gif
+/flags/*.gif
+    ! ||reboot.pro/flags/*.gif
+/forum/*.gif
+    ! ||dverizamki.org/forum/*.gif
+    ! ||mbell.info/forum/download/file.php?avatar=*.gif$image
+    ! ||nnmclub.to/forum/images/icon_arrow.gif
+    ! ||rsdn.org/Forum/Images/*.gif
+    ! ||xbmc.ru/forum/images/icons/icon1.gif
+/forums/*.gif
+    ! ||forum.guns.ru/forums/icons/icon*.gif
+    ! ||forum.guns.ru/forums/notround/*.gif  # smiles
+    ! ||forum.guns.ru/forums/bbtitle_200607.gif
+    ! ||forum.guns.ru/forums/frown.gif
+    ! ||forum.guns.ru/forums/hotclosed.gif
+    ! ||forum.guns.ru/forums/icons/icon*.gif
+/groups/*.gif
+    ! ||piratbit.org/images/groups/*.gif
+    ! ||pb.wtf/images/groups/*.gif
+/i/*.gif
+    ! Exclusions:
+    @@||static.wbstatic.net/i/blank.gif  # static placeholder
+    @@||wbbasket.ru/*/i/blank.gif  # update 2024: they moved to wbbasket.ru
+    !
+    ! ||chuvaz.ru/i/text.gif
+    ! ||fishing-price.ru/i/best.gif
+    ! ||funkyimg.com/i/2YTU5.gif
+    ! ||funkyimg.com/i/2YTU6.gif
+    ! ||hobbyportal.ru/i/delaempokupki.gif
+    ! ||nemzetisport.hu//style/nso/i/betclic.gif  # from Hufilter
+    ! ||ohotniki.ru/i/menu_top_fon.gif
+    ! ||relook.ru/i/a/signup.gif
+/icon/*.gif
+    ! ||lvrach.ru/lvrach/images/icon/16plus.gif
+    ! ||xbmc.ru/forum/images/icons/icon1.gif
+/icons/*.gif
+    ! ||4pna.com/images/icons/icon1.gif
+    ! ||forum.fonarevka.ru/images/icons/*.gif
+    ! ||forum.guns.ru/forums/icons/icon*.gif
+/images/*.gif$domain=~amazon.com|~4tests.com|~google.*|~locks.ru|~sphinx-soft.com|~steampowered.com
+    ! Exclusions:
+    @@/phpvirtualbox/images/*.gif  # phpVirtualBox instances - static interface elements
+    ! 4tests.com: /images/buttons/*.gif (static gifs for interface buttons)
+    ! google.com: some interface buttons
+    ! locks.ru: useful gifs
+    ! sphinx-soft.com: /images/*.gif  (static gifs for interface buttons)
+    ! steampowered.com: graphics on Steam
+    !
+    ! ||alltorrents.net/images/*.gif
+    ! ||bonestv.ru/images/hand.gif
+    ! ||cin-24.com/templates/cinema-24/images/*.gif
+    ! ||cinemaxx.tv/templates/VadaboomEffekt/images/bottom.gif$image
+    ! ? ||cinemaxx.tv/templates/VadaboomEffekt/images/footerCenter.gif$image
+    ! ? ||cinemaxx.tv/templates/VadaboomEffekt/images/footerRight.jpg$image
+    ! ? ||cinemaxx.tv/templates/VadaboomEffekt/images/footerLeft.jpg$image
+    ! ? ||cinemaxx.tv/templates/VadaboomEffekt/images/footerBackground.jpg$image
+    ! ||dba-oracle.com/images/header_new.gif
+    ! ||dba-oracle.com/images/header-new-1px.gif
+    ! ||dba-oracle.com/images/wise-ad.gif
+    ! ||dh-online.ru/templates/housetheme/images/dh-shop.gif
+    ! ||fishki.net/images/orphus.gif
+    ! ||forum.fonarevka.ru/images/icons/*.gif
+    ! ||grand-oxota.ru/images/*.gif
+    ! ||guns.ru/images/button3.gif
+    ! ||httpmaster.ru/images/admn.gif
+    ! ||huntset.com/images/2222080.gif
+    ! ||huntset.com/images/567.gif
+    ! ||huntset.com/images/e.gif
+    ! ||huntset.com/images/hunting.gif
+    ! ||kiniska.com/templates/kiniska/images/kinn.gif
+    ! ||libo.ru/images/16.gif
+    ! ||lvrach.ru/lvrach/images/icon/16plus.gif
+    ! ||magazinbytovok.ru/images/*.gif  # animations
+    ! ||medicalj.ru/images/knopka.gif
+    ! ||milanpizza.ru/images/bottom_fill.gif
+    ! ||milanpizza.ru/images/bottom_right.gif
+    ! ||mobiset.ru/images/mainbg.gif
+    ! ||mobiset.ru/images/bgdot.gif
+    ! ||musictarget.com/images/*.gif
+    ! ||new-team.org/images/rg_nto.gif
+    ! ||nnmclub.to/forum/images/icon_arrow.gif
+    ! ||oidview.com/images/missing_something.gif
+    ! ||oidview.com/images/mibs/wanted.gif
+    ! ||ohotniki.com/images/top3.gif
+    ! ||pb.wtf/assets/images/*.gif
+    ! ||pb.wtf/images/groups/*.gif
+    ! ||piratbit.org/assets/images/*.gif
+    ! ||piratbit.org/images/groups/*.gif
+    ! ||programming4.us/images/blockdefault.gif
+    ! ||ramayoga.ru/images/160.gif
+    ! ||ramayoga.ru/images/160bg.gif
+    ! ||royallib.com/images/inscription.gif
+    ! ||rsdn.org/Forum/Images/*.gif
+    ! ||forum.ru-board.com/board/images/remake1.gif  # logo
+    ! ||forum.ru-board.com/board/s/ruboard.gif
+    ! ||forum.ru-board.com/board/s/beer.gif
+    ! ||forum.ru-board.com/board/s/biglaugh.gif
+    ! ||forum.ru-board.com/board/s/off.gif
+    ! ||forum.ru-board.com/board/images/lastpost.gif
+    ! ||forum.ru-board.com/board/images/ru-board_ny_new.gif
+    ! ||safemarket.ru/images/callback.gif
+    ! ||santeh-t.ru/css/css_santehnika/images/lable.gif
+    ! ||scarabey.org/images/hqclub.gif
+    ! ||sysadmins.ru/images/*.gif
+    ! ||sysadmins.ru/templates/subSilver/images/cellpic1.gif
+    ! ||thg.ru/images/ttl_redbox.gif
+    ! ||usedguns.ru/images/*.gif
+    ! ||u-tools.com/images/u-tools.gif
+    ! ||v-zoom.ru/Zoom/images/style/rek_link.gif
+    ! ||xbmc.ru/forum/images/icons/icon1.gif
+    ! ||yarea.ru/images/18plus.gif
+    ! ||zevka.com/images/prosmotr_kino.gif
+    ! ||рефераты-и-сочинения.рф/images/hosting.gif  # from Adguard
+/images/*.js$domain=~amazon.*|~media-amazon.com|~domaintools.com|~mail.ru|~imgsmail.ru|~ruskeala.ru  # strange, but Amazon has js in images dir, as well as domaintools.com
+    ! The rule was created to disable scripts on hacked sites. But it turned out that some sites strangely use scripts from images folder. All such found sites added to exlusions
+/img/*.gif,domain=~drebedengi.ru
+    ! ||1wt.eu/img/ipv6ok.gif
+    ! ||autocamper.ru/sites/autocamper.ru/themes/d1theme/img/h-1.gif
+    ! ||comnews.ru/img/1/loader.gif
+    ! ||cyfral.ru/img/cyfral.gif
+    ! ||kuban.ru/img/*.gif
+    ! ||kulturologia.ru/img/wanna-write.gif
+    ! ||meddaily.ru/img/cross.gif
+    ! ||meddaily.ru/img/cross_big.gif
+    ! ||meddaily.ru/img/cross_green.gif
+    ! ||meddaily.ru/img/cross_spiegel.gif
+    ! ||meddaily.ru/img/cross_small.gif
+    ! ||restaurants.infcdn.net/img/siclient.gif
+    ! ||iphone-caviar.ru/img/gif-banner.gif
+    ! ||json.org/img/json160.gif
+    ! ||lostpix.com/img/*.gif
+    ! ||otzovik.com/static/img/footer/liru.gif
+    ! ||safegun.ru/img/tbti.gif
+    ! ||selteq.com/img/fsp_discount.gif
+    ! ||smile-net.ru/img/*.gif$image  # banners
+    ! ||tuchkovo.com/templates/tuchkovo/img/x.gif
+    ! ||uk.ru/img/enline.gif
+    ! ||veslo.ru/img/komp_s.gif
+    ! ||veslo.ru/img/shapka.gif
+    ! ||assets.webinfcdn.net/img/sponsored.gif
+/img/*.js
+/medals/*.gif
+    ! ||gecid.com/data/medals/tested_250x250_en.gif
+/media/*.gif
+    ! ||exam4collection.com/template/exam4collection.com/media/learnmore.gif
+    ! ||exam4collection.com/template/exam4collection.com/media/new_icon.gif
+    ! ||media.giphy.com/media/*.gif
+/pic/*.gif$domain=~kinozal.guru|~kinozal.tv
+    ! Exclusions:
+    ! kinozal.tv: interface buttons
+    !
+    ! ||exkinoray.org/pic/ExKinoRay.org.gif
+    ! ||exkinoray.tv/pic/ExKinoRay.org.gif
+    ! ||izhguns.ru/sites/default/pic/arrow.gif
+    ! ||izhguns.ru/sites/default/pic/info32_anim.gif
+    ! ||kinozal.tv/pic/bgmn.gif
+    ! ||kinozal.tv/pic/knz_love.gif
+    ! ||megapeer.ru/pic/megapeer.gif
+    ! ||pornolab.net/pic/screenshots.gif
+    ! ||pornolab.net/pic/screenshots2.gif
+/pics/*.gif
+    ! ||yaplakal.com/pics/userpic/*.gif$image
+    ! ||yap.ru/pics/userpic/*.gif$image
+/pictures/*.gif
+    ! ||diynews.ru/pictures/*.gif
+    ! ||diynews.ru/pictures/diynews.gif
+    ! ||diynews.ru/pictures/_map_mini.gif
+    ! ||diynews.ru/pictures/__fb.gif
+    ! ||diynews.ru/pictures/__vk.gif
+    ! ||habrastorage.org/getpro/tmtm/pictures/*.gif$image
+/s/*.gif
+    ! ||forum.ru-board.com/board/s/ruboard.gif
+    ! ||forum.ru-board.com/board/s/beer.gif
+    ! ||forum.ru-board.com/board/s/biglaugh.gif
+    ! ||forum.ru-board.com/board/s/off.gif
+    ! ||forum.ru-board.com/board/images/lastpost.gif
+    ! ||forum.ru-board.com/board/images/ru-board_ny_new.gif
+/sites/*.gif
+    ! ||belpravo.by/sites/default/files/mikgraf.gif  # from Adguard
+    ! ||flashsiberia.com/sites/default/files/uploads/gallery/china122016.gif  # from Adguard
+    ! ||footballtop.ru/sites/default/files/ft_banners/*.gif  # from Adguard
+    ! ||krlife.com.ua/sites/default/files/vkik-vk.gif  # from Adguard
+    ! ||kyiv.media/wp-content/uploads/sites/*/w1-min-baner.gif  # from Adguard
+    ! ||magnolia-tv.com/sites/default/files/patron.gif  # from Adguard
+    ! ||pirate-party.ru/sites/default/files/pictures/sim-networks.gif  # from Adguard
+    ! ||reporter-ua.com/sites/default/files/300x240_vek.gif  # from Adguard
+    ! ||rifey.ru/sites/default/files/unnamed_1.gif  # from Adguard
+/static/*.gif
+    ! ||civic-club.ru/static/civic-club.gif
+    ! ||otzovik.com/static/img/footer/liru.gif
+    ! ||yaplakal.com/html/static/noavatar.gif
+    ! ||yap.ru/html/static/noavatar.gif
+/templates/*.gif
+    ! ||hdreactor.club/templates/hdkino.gif
+    ! ||hdreactor.net/templates/hdkino.gif
+/upload/*.gif
+    ! ||3dtoday.ru/upload/mediakit/*.gif  # from Adguard
+    ! ||pravdu.ru/upload/*/banner*.gif  # from Adguard
+    ! ||rgfootball.net/upload/banner1900.gif  # from Adguard
+    ! ||rgfootball.net/upload/liderstavki.gif  # from Adguard
+    ! ||rgfootball.net/upload/olymp_*.  # from Adguard
+    ! ||sarnovosti.ru/upload/iblock/*/*.gif  # from Adguard
+/uploads/*.gif
+    ! ||cin-24.com/uploads/*.gif$image
+    ! ||land-cruiser.ru/uploads/pip_Icon_new.gif
+    ! ||msexchangeguru.com/wp-content/uploads/EveryCloud/EveryCloud.gif
+    ! ||nsaneforums.com/uploads/*.gif
+    ! ||root-nation.com/wp-content/uploads/2019/06/rootcast-gif-home-2.gif
+    ! ||rsload.net/uploads/fotos/foto_*.gif
+    ! ||techieshelp.com/wp-content/uploads/2015/04/leawo-bluray-ripper-techieshelp.gif
+    ! ||uft.me/wp-content/uploads/2013/06/88x31-3.gif
+    ! ||xbit.money/wp-content/uploads/*.gif  # ads
+/wp-content/*.gif
+    ! ||root-nation.com/wp-content/uploads/2019/06/rootcast-gif-home-2.gif
+    ! ||techieshelp.com/wp-content/uploads/2015/04/leawo-bluray-ripper-techieshelp.gif
+    ! ||xbit.money/wp-content/uploads/*.gif  # ads
+!
+! smiles sites
+!
+bestsmileys.ru$third-party
+smiles.dolf.ru$third-party
+gfycat.com$third-party
+gifer.com$third-party
+giphy.com$third-party
+smiles2k.net$third-party
+kolobok.us$3p
+    ! smiles.kolobok.us
+yoursmileys.ru$image,third-party
+!
+! sites - smiles and animated banners on root
+!
+||4kids.com.ua/img/*.gif
+||4pda.to/*.gif
+    @@4pda.to/s/*.gif  # captcha images. Banners, as well, yes, but this (/img/*.gif) rule is against forum smiles
+    !||s.4pda.to/*/*.gif
+        ! Update 2024: раньше картинки шли с домена s.4pda.to, сейчас с 4pda.to
+    ||4pda.to/*/blink.gif
+    ||4pda.to/*/blush.gif
+    ||4pda.to/*/butcher.gif
+    ||4pda.to/*/clapping.gif
+    ||4pda.to/*/daisy.gif
+    ||4pda.to/*/dancer.gif
+    ||4pda.to/*/heart.gif
+    ||4pda.to/*/help.gif
+    ||4pda.to/*/love_4PDA.gif
+    ||4pda.to/*/rofl.gif
+    ||4pda.to/*/roll.gif
+    ||4pda.to/*/rolleyes.gif
+    ||4pda.to/*/scratch_one-s_head.gif
+    ||4pda.to/*/search.gif
+    ||4pda.to/*/smile_good.gif
+    ||4pda.to/*/sveta.gif
+    ||4pda.to/*/thank_you.gif
+    ||4pda.to/*/unsure.gif
+    ||4pda.to/*/wink.gif
+    ||4pda.to/*/yes.gif
+    !||4pda.to/BmZHgiyag3bcTxu62IKShYnYz1TSrIz1lfBz1GAvPoIOT1WW6ahXa.gif
+    !||4pda.to/pyjXz1Pz1WGAiL1L7Lk6cCz2QeE2Bz2vts8O1tIZxUGEZiz0ytZ2.gif
+    !||4pda.to/r6Z4aGEMni1yolmEAXhc8F4QlAsDgz2PPj86sXfvxwHIBkz0OTMAcUp2g1.gif
+    !||4pda.to/r6Z4jBbUJhKIWEKfPvTykZcz2B3FJn57GLJni8ohqEbLDEz1KZryHgXl7i.gif
+    !||4pda.to/r6Z4lVVz2qOOa5dz2UYbHM0E9QlZ2GlYLiiYNvwz2wCByGiF1z1Yswz1YLTQP.gif
+||60-fps.org/*.gif
+||img.allzip.org/*.gif  # smilies
+||animedia.online/*.gif  # ||animedia.online/animedia3.gif
+||web.archive.org/*.gif  # many cached ad gifs on different sites
+||blogspot.com/*.gif  # ad banners
+||ds-assets.cdn.devapps.ru/*.gif  # 4pda gif banners
+discordemoji.com$3p
+||fastmarksman.ru/*.gif  # banners
+||fastpic.ru/big/*.gif
+||fastpic.org/big/*.gif$3p  # update: 3p
+    ! ||fastpic.org/big/2021/0120/80/1104291c5353ba0e125b5a5035828f80.gif
+    ! ||fastpic.org/big/2021/1005/d6/a659ea9fbdd0eb8e73d8d8661f6775d6.gif
+||firebit.net/data/firebit.gif
+||games-lib.com/*.gif
+||getapic.me/*.gif
+||goodlooker.ru/*.gif
+||hepsiburada.net/*.gif
+||imageban.ru/out/*.gif
+||imgix.net/*.gif
+||imgur.com/*.gif
+||lleo.me/*.gif
+||lostpic.net/*.gif
+||lostpix.com/*.gif
+||liubavyshka.ru/*.gif
+||ic.pics.livejournal.com/*.gif  # it seems, there are no useful (=interface) gifs there.
+||nnmclub.ch/*.gif
+||popgun.ru/*.gif  # smiles
+||postimg.cc/*.gif
+||radikal.ru/*.gif
+||rimg.info/*.gif
+||selezen.net/*.gif  # ||selezen.net/slz.gif
+||selezen.org/*.gif  # ||selezen.org/tgslz.gif
+||turboimg.net/*.gif
+||ucoz.net/*.gif
+||xaxatyxa.ru/*.gif  # ||xaxatyxa.ru/xaxatyxa.gif
+||yaplakal.com/*.gif
+||youpic.su/*.gif
+||yourfish.ru/*.gif  # ||yourfish.ru/boatbanner.gif
+!
+!
+/biggrin.gif
+/emoji/*$image,important,domain=~github.com|~githubassets.com|~vk.com
+/emoticons/*$image
+    ! !||yaplakal.com/html/emoticons/*.gif$image
+    ! ||yap.ru/html/emoticons/*.gif$image
+/favicon.gif$important
+    ! ||garant.ru/images/favicon.gif
+    ! ||mdex-nn.ru/application/maxsite/templates/easy/img/favicon.gif
+/gifplayer/*  # /jquery.gifplayer.js
+/jquery.gifplayer.js
+/kolobki/*.gif  # ||seopirat.club/styles/kolobki/*.gif
+/laugh.gif
+/new.gif  # ||xn----etbhjjtcfb7b.net/new.gif
+/smile.gif
+/smile.png
+/smile/*$image
+/smiles/*$image
+/smiles2/*$image
+/smiles_s/*$image
+/smiley/*$image
+/smileys/*$image
+/smilies/*$image
+/style_emoticons/*$image
+/wink.gif
+/wp-emoji-release.min.js$important
+##.ac-emoji
+##.bbc_emoticon
+~appadmintools.com,~bibrary.com,~freebook.co,~github.com,~miped.ru##.emoji:not(html):not(body):not(article)
+    ! audi-club.ru#@#.emoji
+##.dle_emote_block
+    ! lordfilm.film##.dle_emote_block
+    ! erfilm.cfd##.dle_emote_block
+##.emoji-item
+##.kws-smiley
+##.rating-emoji
+##.reaction-items
+###reactions
+    ! smiles in disqus comments
+##.reactions
+    ! popmech.ru##.reactions
+###t_smiles
+
+! emoji remove block from https://raw.githubusercontent.com/lassekongo83/Frellwits-filter-lists/master/emoji-filter.txt
+||twemoji.maxcdn.com^
+||emoji.redditmedia.com^
+/emoji.$script,stylesheet,image,domain=~vk.com
+/emojiarea.$script
+/emojify.$script
+/emojione.$script,stylesheet
+/emojiFace.$script
+/lsxemojipicker.$script
+/images/*emoji/*$domain=~github.com
+/twemoji.js
+/wp-emoji*$script,stylesheet
+    ! /wp-emoji.js
+
+
+
+!! tickers and marquees
+/news-ticker/*
+/jquery.jconveyorticker.min.js
+/jquery.marquee
+/jquery.newsticker.min.js
+/ticker.min.js
+##.fadeOutRightNewsTicker
+##.hp-ticker
+##marquee
+###marquee
+##.marquee
+##.mh-header-ticker
+    ! notizie.it##.mh-header-ticker
+    ! stroychik.ru##.mh-header-ticker
+##.news-ticker
+##.newsticker
+###newsTicker
+###newsTicker1
+###newsTicker2
+###newsTicker3
+###newsTicker4
+###newsTicker5
+##.penci-news_ticker
+###showticker
+##.the_ticker
+###ticker
+##.ticker
+###ticker-container
+##.ticker-text
+##.ticker-wrapper
+3dnews.ru###toggle_currencyTicker
+moiobzor.su###webticker
+prosud24.ru###showticker
+tarif-24.ru##.mh-ticker-bottom
+
+
+
+!! popups about "wrong browser"
+/browser-updater/*  # is in Adguard, modified
+/browser-update-toolbar/*
+/browser-update-toolbar.js
+/old_browsers.js
+/outdated-browser
+/outdatedbrowser/*
+/outdatedbrowser.min.js
+
+
+
+!! seo and copyrights
+/copirate.js
+/copy.js  # from Ru AdList
+/copy.min.js
+/copyright.js
+/copyright.min.js
+/nocopy.js
+/seohide/*
+/seoHiddenLink/*
+~irecommend.ru,~livemaster.ru##[class*="copyright"]:not(html):not(body):not(article):not(header):not(.article-content)
+    ! Exclusions:
+    ! irecommend.ru: "photo imagecache-copyright pswp_item svg-background photoswipe-processed"
+    !
+##[id*="copyright"]:not(html):not(body):not(article)
+##[class*="Disclaimer"]:not(html):not(body):not(article)
+##[id*="Disclaimer"]:not(html):not(body):not(article)
+~gosuslugi.ru,~panorama.pub,~panorama.wtf##[class*="disclaimer"]:not(html):not(body):not(article):not(form)
+~gosuslugi.ru,~panorama.pub,~panorama.wtf##[id*="disclaimer"]:not(html):not(body):not(article):not(form)
+##.about_copy
+###block-seonet-0--2
+##.catalog__seo
+##.copir
+~poweradmin.com##.copy
+##.copyr
+    ! kino-fs.me##.copyr
+    ! kinoprostor.com##.copyr
+##.copyrate
+! is in EasyList and Fanboy's
+##.disclame_block
+##.disclamer
+##.footer_counters
+##.footer_copy
+##.footer__copy
+##.footer__copy18
+##.footer-copywrite
+##.sectseo
+##.seo
+    ! biglion.ru##.seo
+    ! nakanune.ru##.seo
+    ! spaces.im##.seo
+##.seo-block-container
+##.seoBlock
+##.seoButtons
+##.seoButtons-block
+##.seo-box
+##.seo-h2
+##.seo-info
+##.seo-item
+##.seo-item__text
+##.seo_text
+##.seo-text
+##.seoText
+##.seotop
+
+
+!! add to favorites
+##[href="javascript:bookmark()"]
+##.add2fav
+##.add_fav
+##.add-fav
+##.add-fav2
+##.addFavorite
+##.add_favorite
+###add-favorites
+##.add-favorite-un
+##.add-to-bookmarks
+##.add_to_favorites
+###addtofav
+##.b-favorite__button
+##.bookmark.favorite
+##.bookmark
+###browser-fav
+##.browser-fav
+##.browser-fav-container
+##.ffav
+    ! hdkinoup.online##.ffav
+    ! lordfilm.lu##.ffav
+    ! lordfilms-s.art##.ffav
+    ! zetserial.online##.ffav
+
+
+
+
+!! forum engines elements
+/avatar/*.gif  # many noisy forum gifs
+/file.php?avatar=*.gif  # many noisy forum gifs
+/folder_hot.gif
+/footer_book.gif  # libraries
+/header_center.jpg  # libraries
+/header_fon.jpg  # libraries
+/horoscope.js  # gocitysites.ru network
+/icon_user_offline.gif
+/images/ranks/*$image  # forum ranks images
+/noavatar.jpg  # ugly default avatar
+/noavatar.png  # ugly default avatar
+/no-image.jpg$domain=~splav.ru  # libraries
+    ! Exclusions:
+    ! splav.ru: no-image.jpg dynamically(js) changes to real photo
+/np_l.gif  # libraries
+/np_r.gif  # libraries
+/razdel_in.gif  # libraries
+/razdel_rb.gif  # libraries
+/topic_read.gif  # PhpBB gifs
+/topic_read_hot.gif  # PhpBB gifs
+/user_offline.gif
+!##.bbcodeblock - old incorrect rule. On vbulletin forums it is a codeblock(##pre.bbcodeblock). See linuxquestions.org for instance
+! vbulletin forum "you can't do" block (one of)
+###collapseobj_forumrules
+    !samforum.org###collapseobj_forumrules
+    !forum.fonarevka.ru###collapseobj_forumrules
+! fixed blocks on libraries
+##.fixed_block1
+##.fixed_block2
+###fixed_toolbar
+    ! 7-62.ru###fixed_toolbar
+    ! mobiclon.ru###fixed_toolbar
+    ! poxodniki.ru###fixed_toolbar
+    ! stickhunt.ru###fixed_toolbar
+    ! top-knife.ru###fixed_toolbar
+###forumrules
+##.topic-timeline
+##.Header.widget
+##.Image.widget
+##.Stats.widget
+##.Label.widget
+##.Text.widget
+##.widget_activity_list
+###widgetButton
+##.widget_fseo_comm_widget
+##.widget_links
+##.widget-notice
+##.widget_recent_entries
+
+! There rarely can be search forms and some links (most of them to paid or ads). But many, many sites on blog engines use such widgets for placing ads
+##.widget_text
+##.textwidget
+##.HTML.widget
+##.custom-html-widget
+##.execphpwidget
+    alp.org.ua##.execphpwidget
+    texnoblogger.com##.execphpwidget
+    climateexchangeplc.com##.execphpwidget
+##.widgettext
+    !4sysops.com##.widget_text.widget:has-text(Follow 4sysops)
+    !4sysops.com##.widget_text.widget:has-text(Subscribe to Newsletter)
+    !activedirectorypro.com##.widget_text:has-text(Download Admin Bundle)
+    !adsecurity.org##.widget_text:has-text(Trimarc Active Directory Security Services)
+    !anoopcnair.com##aside.widget_text.widget
+    !avforums.ru##.widget_text
+    !nizaury.blogspot.com###HTML4.HTML.widget
+    !bogachev.ru##.textwidget
+    !buchatech.com##.widget_text:has(.caption:has-text(Sponsors))
+    !camerondwyer.com##.custom-html-widget.textwidget
+    !carsharik.ru##.widget_text:has-text(ВКонтакте)
+    !cookdok.space##.widget_text
+    !detalsystem.online##.widget_text:has-text(Об авторе)
+    !domnomore.com##.textwidget:style(position:static !important)
+    !ghacks.net##.widget_text.widget:has-text(Newsletter Sign Up)
+    !gunnalag.com##.textwidget
+    !hostenko.com##.custom-html-widget.textwidget
+    !iseptick.ru##.textwidget > form
+    !itsecforu.ru##.textwidget
+    !kevingreeneitblog.blogspot.com##.HTML.widget
+    !lastday.club##.textwidget
+    !learn-powershell.net##.widget_text
+    !lik-o-dil-es.blogspot.com##.HTML.widget
+    !lumpics.ru##.widget_text:has-text(Не забудь обновить браузер)
+    !microsoftplatform.blogspot.com##.HTML.widget
+    !mikefrobbins.com##.widget_text:has-text(Disclaimer)
+    !moydrygpk.ru##.textwidget:has-text(AdBlock — вредоносная программа, блокирующая отображение части контента)
+    !mr-build.ru##.widget_text
+    !myfirstcomp.ru##div.widget_text.uk-panel-box.uk-panel
+    !nizaury.blogspot.com###Text1.Text.widget
+    !blog.orneling.se##.textwidget:has-text(with no warranties)
+    !blog.orneling.se##.textwidget
+    !pcmobitech.com##.textwidget > p
+    !pechenek.net##.widget_text
+    !polsdelat.ru##.textwidget > form
+    !pornoadvid.info##.textwidget
+    !pronetblog.by##.textwidget:has(#ginfo)
+    !pyatilistnik.org##.widget_custom_html.widget_text
+    !rlevchenko.com##.widget_text
+    !robvit.com##.textwidget
+    !robvit.com##.widget_text.widget
+    !rubulat.ru##.widget_text.widget
+    !ru-mi.com##aside.widget_text.widget
+    !sirlagz.net##.widget_text
+    !sterlingit.com.au##.widget_text.widget
+    !syloe.com##.widget_text
+    !system-center.me##.widget_text
+    !systemcenterautomation.com##.textwidget
+    !systemcenterautomation.com##.widget_text
+    !techgenix.com##.textwidget:has-text(/Featured Product|Featured Freeware/)
+    !techgenix.com##.widget_text:has-text(/Featured Freeware|Recommended/)
+    !techgenix.com##.textwidget:has-text(TechGenix reaches millions of IT Professionals)
+    !tecmint.com##.textwidget > .message
+    !texnoblogger.com##.textwidget:has-text(Поставь ссылку)
+    !thoughtsonopsmgr.blogspot.com##.HTML.widget:has-text(Why this blog)
+    !topqore.com##.widget_text
+    !troypoint.com##.textwidget
+    !tvoi-setevichok.ru##.custom-html-widget.textwidget
+    !vladan.fr##.textwidget
+    !webcusp.com##.widget_text
+    !xakinfo.ru##.textwidget
+    !xakinfo.ru##.widget_text
+    !znaesh-kak.com##.widget_text.widget    
+##.classic-text-widget
+##.classic-textwidget
+##.custom-classic-textwidget
+
+
+!! "Reading time" labels
+##[class*=reading-time]
+    ##.byline-reading-time
+        ! lakshmikanth.com##.byline-reading-time
+        ! sweepatic.com##.byline-reading-time
+    ! adamtheautomator.com##.rt-reading-time
+    ! adamtheautomator.com##.span-reading-time
+    ! dns-shop.ru##.reading-time__text
+    ! medium.com##.pw-reading-time
+        ! (and medium-like sites too)
+    ##.meta-reading-time
+        ! appuals.com##.meta-reading-time
+        ! evo-rus.com##.meta-reading-time
+    ##.reading-time
+        improvescripting.com##.reading-time
+        libreelec.tv##.reading-time
+##.entry-time
+    ! housejournal.ru##.entry-time
+    ! gam-kovid-vak.ru##.entry-time
+    ! iptvmaster.ru##.entry-time
+    ! kak-otteret.ru##.entry-time
+    ! tehnobzor.ru##.entry-time
+    ! vodatyt.ru##.entry-time
+##.readingTime
+
+! useless annoying fixed arrows
+##.previous-post
+##.next-post
+    ! flammlin.com##.previous-post
+    ! flammlin.com##.next-post
+    ! sam-turizm.ru##.next-post
+    ! sam-turizm.ru##.previous-post
+    ! teploguru.ru##.next-post
+    ! teploguru.ru##.prev-post
+
+! tag clouds
+##.tagcloud
+##.tagline
+    ! laurakokkarinen.com##.tagline
+    ! oxsy.ru##.tagline
+
+! large inline toc. Typically for small wp sites, annoying and useless
+##.open.table-of-contents
+    ! Some examples
+    ! armascot.ru##.open.table-of-contents
+    ! biznessrussia.ru##.table-of-contents
+    ! deepcloud.ru##.table-of-contents
+    ! helpdeskgeek.com##.table-of-contents
+    ! iletyou.ru##.table-of-contents
+    ! info-mitsubishi.ru##.open.table-of-contents
+    ! medwegonok.ru##.table-of-contents
+    ! mostech-group.ru##.open.table-of-contents
+    ! mozaiyka.ru##.table-of-contents
+    ! polsdelat.ru##.table-of-contents
+    ! rcpp19.ru##.table-of-contents
+    ! shop-modern.ru##.open.table-of-contents
+    ! status-list.ru##.table-of-contents
+    ! trip-together.ru##.table-of-contents
+    ! tsaristrussia.ru##.open.table-of-contents
+    ! vodorodgenerator.ru##.open.table-of-contents
+    ! zdorovieledy.ru##.table-of-contents
+
+! and annoying self-promotions, mostly on blogs
+##[class*="author-bio"]:not(html):not(body):not(article)
+##[id*="author-bio"]:not(html):not(body):not(article)
+    ! ###author-bio
+    ! ##.author-bio
+    ! ##.author-bio-content
+    ! ##.bp-author-bio
+    ! ###wifi-author-bio
+##[class*="author-box"]:not(html):not(body):not(article):not(.author-box-enabled)
+    ! ##.article-author-box
+    ! ##.ast-single-author-box
+    ! ##.author-box
+    ! ##.author-box-desc
+    ! ##.author-box__description
+    ! ##.author-box__rating
+    ! ##.entry-author-box
+    ! ##.kathmag-pro-author-box
+    ! ##.ty-author-box
+##.about-author
+##.aboutAuthor
+###about_the_author
+##.article-author
+    ! arstechnica.com##.article-author
+    ! m-strana.ru##.article-author
+##.article-author-infos
+    ! minitool.com##.article-author-infos
+    ! partitionwizard.com##.article-author-infos
+##.author-area
+##.author-avatar
+##.author_avatar
+##.author__avatar
+##.author-avatar-show
+##.author-block
+##.authorbox
+##.author_box
+##.author__bio
+##.author_bio
+##.author_bio_section
+##.author-desc
+##.author-description
+##.author_detail_box
+##.author-info
+###author-info
+##.author-info-description
+##.author-photo
+##.authors-bio
+##.bio-description
+##.bio-gravatar
+##.box_author
+##.mks_author_widget
+##.post-author
+!##.postauthor - don't, it is used in PhpBB
+! "author box"
+##.saboxplugin-wrap
+! blogspot widget "about author"
+##.Profile.widget
+##.uwp_widget_author_box
+##.widget-Author
+! gocitysites.ru network
+##.footer__arrow
+! gocitysites.ru network
+##.site-head__special-project
+
+! "Show other" popups on wordpress sites
+###show_other
+##.show_other
+##.show_other_show
+    ! 4okna.info##.show_other.show_other_show
+    ! aquacomm.ru##.show_other_show.show_other
+    ! ginekologdo.ru##.show_other_show
+    ! mir-zhkh.ru##.show_other_show
+    ! mir-zhkh.ru###show_other
+    ! moepravoo.ru###show_other.show_other
+    ! ordinartor.ru##.show_other_show
+    ! profibrus.ru###show_other
+    ! teh-beauty.ru##.show_other_show
+    ! teh-beauty.ru##.show_other
+    ! uteplenieplus.ru###show_other.show_other
+    ! uteplenieplus.ru##.show_other_show
+    ! vseprost.ru##.show_other_show
+    ! znaipravodo.ru##.show_other
+
+##.announcement-bar
+##.announcement-bar--link
+##.announcement-bar__message
+##.easy-notification-bar
+##.header-bar__message
+##.notification-bar
+###notification-bar
+
+
+
+! bottom bars
+###bottom-bar
+    !martijnbrant.net###bottom-bar
+##.bottom-bar
+    !santeh-snab.ru##.bottom-bar
+###bottom-panel
+    !elbor.ru###bottom-panel
+~plati.market##.bottom-panel
+    ! Exclusions:
+    ! plati.market - bottom-in-the-top panel with search
+    !
+    !bestblades.ru##.bottom-panel
+    !fcenter.ru##.bottom-panel
+    !nevilon.ru##.bottom-panel:style(position:static !important)
+###bottom_panel
+    !glavkniga.ru###bottom_panel
+##.herald-single-sticky
+##.sticky-bottom-bar
+    !cloudwards.net##.sticky-bottom-bar
+    !commquer.com##.sticky-bottom-bar
+
+
+
+##.footer-text
+    !fishingstore.ru##.footer-text
+    !iseptick.ru##.footer-text
+    !polsdelat.ru##.footer-text
+    !pravonasilu.ru##.footer-text
+    !sdelai-lestnicu.ru##.footer-text
+    !zk-fm.top##.footer-text
+
+###phpbb_alert
+###posting_rules
+! shortlink button on qsdb.ru engine forums
+###qpsContainer
+##.qpsButton
+##.youcandoblock
+
+
+
+!! discount badges and stickers
+~pikabu.monster,~vps.today##.badge
+    ! Exclusions:
+    ! pikabu.monter: analytical service, doesn't sell items
+    ! vps.today: just non-ad class
+    !
+    ! vanna-rum.ru##.badge-wrapper > .low-price.badge
+    ! vanna-rum.ru##.bestseller.badge
+##.badges
+    ! abc.ru##.badges
+##.sticker
+    ! hardsafe.ru##.sticker
+##.stickers
+    ! safe-buy.ru##.stickers
+    ! popadiv10.ru##.stickers
+    ! volveter.ru##.stickers
+
+
+
+!! "old prices" (marketing striked)
+##.old-price
+    ! air-gun.ru##.old-price
+    ! vseinstrumenti.ru##.old-price
+    ! wildberries.ru,wildberries.co.il,wildberries.fr##.old-price
+##.price-old
+    ! electrotown.ru##.price-old
+    ! kns.ru##.price-old
+    ! petrasport.ru##.price-old
+
+
+
+!! fonts
+! Block third-party fonts:  https://collinmbarrett.com/block-web-fonts/
+!*$font,third-party,domain=~aliexpress.com|~alicdn.com|~trello.com - don't. Many sites uses special icons from custom fonts.
+! Also see https://fanboy.co.nz/fanboy-antifonts.txt
+! is in Ru AdList
+!@@||fonts.gstatic.com^
+! exclusions from Fanboy's Anti-thirdparty Fonts
+! It seems it is not a good idea... Disabled
+!fonts.gstatic.com^$important,domain=floatplane.com|google.com|youtube.com|bloble.io|regexpal.com
+
+
+
+!! local resources
+||localhost^$3p,domain=~0.0.0.0|~127.0.0.1|~[::1]|~[::]|~local|~localhost  # Block Outsider Intrusion into LAN  # in the wild: didomi.io calls script http://localhost/web/tracking-hbspt-management-v2.js
+
+
+
+!! swf
+! swf is buggy, non-secure and deprecated
+! also see https://github.com/swfobject/swfobject : "SWFObject is no longer in active development. Flash Player is on the decline, and the authors of SWFObject have moved on to other projects."
+! update: from 2020-12-31 Adobe Flash is end of life. See https://www.adobe.com/products/flashplayer/end-of-life.html
+! some good projects still using this... At least, we should mention Phpvirtualbox (/phpvirtualbox/rdpweb/swfobject.js)
+! 
+.swf$important
+    ! .swf?*&link1=  # from Ru AdList
+    ! .swf?alink=  # from Ru AdList
+    ! .swf?banner_href=  # from Ru AdList
+    ! .swf?clicktag=  # from CJX's EasyList Lite
+    ! .swf?click_url=  # from Ru AdList
+    ! .swf?flash_link=  # from Ru AdList
+    ! .swf?flash_url=  # from Ru AdList
+    ! .swf?href=  # from Ru AdList
+    ! .swf?lnk=  # from Ru AdList
+    ! .swf?path=http  # from Ru AdList
+    ! .swf?pURL=  # from Ru AdList
+    ! .swf?superpreroll_url=  # from Ru AdList
+    ! .swf?target=_blank&  # from Ru AdList
+    ! .swf?target=_self&link  # from Ru AdList
+    ! .swf?targetURL=  # from Ru AdList
+    ! .swf?url=http  # from Ru AdList
+    ! /upload/*.swf
+    ! _175x250.swf  # from Adguard
+    ! _180x300.swf  # from Adguard
+    ! _240x350.swf  # from Adguard
+    ! /240_400_2.swf  # from Adguard
+    ! _600x90.swf  # from Adguard
+    ! /960x100.swf  # from Adguard
+    ! /aika.swf  # from Ru AdList
+    ! ban100x100.swf  # from Adguard
+    ! _banner.swf  # from Adguard
+    ! /handler_static/swf/cndr.swf  # from Ru AdList
+    ! /informer.swf
+    ! /mp3player.swf?file=*/bb1.mp3  # from Ru AdList
+    ! /mp3player.swf?file=*/bb2.mp3  # from Ru AdList
+    ! /mp3player.swf?file=*/vk.mp3  # from Ru AdList
+    ! _player_vpaid_as3.swf  # from Adguard
+    ! /tagcloud.swf  # from Ru AdList
+/swf/*$important
+/swfbin/*$important
+/swfs/*$important
+/swfobject/*$important
+! I cannot found solution for /phpvirtualbox/, but for private LAN IPs it works.
+/swfobject.js$important,domain=~roscosmos.ru|~172.16.*|~192.168.*|~10.*
+/swfobject.min.js$important
+
+
+
+!! disabling serice workers
+! https://developers.google.com/web/fundamentals/primers/service-workers/
+! https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API/Using_Service_Workers
+/offline-service-worker.js
+/serviceworker.js
+/service-worker.js
+    ||wordpress.com/service-worker.js
+/service_worker.js
+/sw.js$domain=~twitter.com
+    ||docviewer.yandex.*/sw.js  # from Adguard
+    ||gearbest.com/sw.js$important  # is in uBlock filters
+    ||lamoda.ru/sw.js
+    ||pikabu.ru/sw.js
+    ||yandex.ru/sw.js
+/sw-mobile.js  # from Adguard: ||auto.mail.ru/sw-mobile.js  # from Adguard
+/websocket.sw.js$domain=~hh.ru
+    ! Exclusions:
+    ! hh.ru: for their chatik
+
+
+
+!! sticky
+/advanced-hooks-sticky-header
+/carbon_sticky.js
+/carbon_sticky_ads.js
+/hc-sticky/*
+/hc-sticky.min.js
+/jquery.sticky$script,important
+    ! /jquery.sticky/*
+    ! /jquery.sticky2
+    ! /jquery.sticky.js$important
+    ! /jquery.sticky.min.js
+    ! /jquery.sticky-kit.min.js
+    ! /jquery.stickyPanel.min.js
+/sticky/*$domain=~twitter.com|~twimg.com
+/sticky.js
+/sticky.min.js
+/stickyads.  # is in EasyList
+/sticky-cart/*
+/stickyfill.min.js
+/sticky-header/*
+/stickynav.min.js
+/sticky-kit/*
+/sticky-kit.min.js
+/sticky-sidebar/*
+/sticky-sidebar.min.js
+/theia-sticky-sidebar/*
+/theia-sticky-sidebar.js
+##.cs-sticky-panel
+##.cs-sticky-panel__container
+    ! lodochnik.by##.cs-sticky-panel__container
+    ! ohotnik50.ru##.cs-sticky-panel
+    ! pricel.org##.cs-sticky-panel
+
+
+
+!! reading progress stripes
+/jquery.progressbar.min.js
+/nprogress/nprogress.js
+#.eb-reading-progress
+##.infinite__progress
+##progress
+###progress
+##.progress-amt
+###progressBar
+~xnxx.com##.progress-bar
+##.progress-container
+##.reading-progress
+##.scroll-bar
+###wtr-progress
+
+
+
+!! related articles in the miidle of the text (inline related)
+##.inlinemore
+
+
+
+!! other
+##[href="http://www.e-host.org.ua"]
+##[href^="https://www.paypal.me/"]
+###dmca_button
+    ! imag.one###dmca_button
+    ! usa.one###dmca_button
+###site-title
+##.site-title
+##.site_title
+###site_title
+    ! budapesht.net##.site-title
+    ! cyberciti.biz###site_title
+    ! kinointeres.ru##.site-title
+    ! sredaobitaniyatv.ru##.site_title
+    ! sumki.ru##.site_title
+    ! ventoy.net###site_title
+##.title-name
+/particles.min.js  # from Fanboy’s Annoyance List
+/post-attention.png
+~clickmeeting.com,~gameplay.tips,~siapress.ru###branding
+! is in EasyList
+###branding_click
+###__ic-notice
+###__ic-notice-container
+! mfp is not only ads, but mostly it is picture popups. Disabled in general
+!~dobrodel.ru,~dobrodel.mosreg.ru,~nalog.ru,~xda-developers.com##.mfp-bg
+!~dobrodel.ru,~dobrodel.mosreg.ru,~nalog.ru,~xda-developers.com##.mfp-content
+!~dobrodel.ru,~dobrodel.mosreg.ru,~nalog.ru,~xda-developers.com##.mfp-ready
+!~dobrodel.ru,~dobrodel.mosreg.ru,~nalog.ru,~xda-developers.com##.mfp-wrap
+!##.mfp-iframe-holder
+###milotree_box
+###milotree_box_wrap
+###my_web_push_app_box_confirm
+##.widget_google_translate_widget
+##.widget_gravatar
+##.widget_media_image
+    !ahasayen.com##.widget_media_image
+    !emeneye.wordpress.com##.widget_media_image
+    !fromreallife.wordpress.com##.widget_media_image
+    !techbro.ru##.widget_media_image
+##.widget_recent_comments
+/recent_comments_widget.js
+
+
+
+# франшиза citysites.ua / portal-goroda.ru / citysites.info
+# несколько десятков сайтов, ага. Днепропетровск, Севастополь - в одном флаконе
+/cap.jpg
+    ! ||056.ua/*/cap.jpg
+    ! ||8692.ru/*/cap.jpg
+##app-ads-teaser
+    ! 8692.ru##app-ads-teaser
+##app-companies-news
+##.article-card:has-text(/Гороскоп|зодиак/)
+
+
+
+! всякие библиотеки, большей частью подлитресовские
+##.stopcontent
+    ! (не всё)
+    ! knizki.com##.stopcontent
+    ! online-knizki.com##.stopcontent
+
+
+
+!! It is a sublist of Yet another small uBlock filter list
+! See https://github.com/mtxadmin/ublock for details
+!
+!
+!! Many fast general rules, compacting site headers to improve readability and minimize unnecessary scrolling
+! 
+! First: removing logos and images from top. 
+!
+! Second: unstick headers, top menus etc
+!
+! Third: removing annoying page backgrounds
+!
+!
+! See cosmetic rules policy at https://github.com/mtxadmin/ublock/blob/master/docs/policy_en.md
+!
+! Something doesn't work? Something is missing? Please, feel free to write about it here:
+! https://github.com/mtxadmin/ublock/issues/new

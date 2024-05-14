@@ -1,0 +1,1505 @@
+﻿!! It is a sublist of Yet another small uBlock filter list
+! See https://github.com/mtxadmin/ublock for details
+!
+!
+!! Many fast general rules, compacting site headers to improve readability and minimize unnecessary scrolling
+!! Yes, all these rules were based on in-the-wild sites and therefore they are very useful
+! 
+! First: removing logos and images from top. 
+!
+! Second: unstick headers, top menus etc
+!
+! Third: removing annoying page backgrounds
+! 
+! See some examples in _headers_examples (commented and not included in the whole list, just for information and backup)
+!
+! This is v2 version, more compact one. See v1 filterset in _headers_old - bulky, but working and time-proved
+!
+!
+! See cosmetic rules policy at https://github.com/mtxadmin/ublock/blob/master/docs/policy_en.md
+!
+! Something doesn't work? Something is missing? Please, feel free to write about it here:
+! https://github.com/mtxadmin/ublock/issues/new
+
+
+
+!! headers and header logos
+!   in general, do not block ###header, ###masthead, ##.site-branding or similar - they often contain search and menus
+!   of course, there may be some exclusions here (but it is unlikely)
+!   below there are some of old logo rules, just for information
+-logo-$image,domain=~opera.com
+    ! Exclusions:
+    ! opera - bad interface on opera.com, no alternative texts
+    !
+    ! -logo-line.$image
+-logo.$image,domain=~factorio.fandom.com|~opera.com
+    ! Exclusions:
+    ! Factorio wiki - useful interface elements
+    ! opera - bad interface on opera.com, no alternative texts
+    !
+    ! /-logo.gif/
+    ! /-logo.jpg/
+    ! /-logo.png/
+    ! /-logo.svg/
+/_logo_/$image
+    ! /vbulletin3_logo_white.png
+_logo_$image
+_logo.$image,domain=~factorio.fandom.com|~opera.com
+    ! Exclusions:
+    ! Factorio wiki - useful interface elements
+    ! opera - bad interface on opera.com, no alternative texts
+    !
+    ! /adaptive_logo.png
+    ! /_logo.gif/
+    !     !/site_logo.gif
+    !         ! PhpBB: /forum/styles/subsilver2/imageset/site_logo.gif
+    ! /_logo.jpg/
+    ! /_logo.png/
+    !     ! /site_logo.png
+    !     ! /small_logo.png
+    ! /_logo.svg/
+##[class*=head_logo]
+    ! Some examples removed. Old generalized (and not very) rules:
+    ! ##.b-head-logo
+    ! ##.b-head-logo__link
+    ! ##.head-logo
+##[class*=header-logo]:not(body)
+    ! Many examples removed. Old generalized (and not very) rules:
+    ! ##.b-header-logo
+    ! ##.c-header-logo
+    ! ##.c-header-logo--new
+    ! ##.cp-header-logo
+    ! ##.header-logo
+    ! ##.header-logo-big
+    ! ##.header-logo-full
+    ! ##.header-logo-title
+    ! ##.header-logo-wrap
+    ! ##.j-header-logo
+    ! ##.l-header-logo
+    ! ##.p-header-logo
+    ! ##.r-header-logo__img
+    ! ##.scaffold__region-header-logo
+    ! ##.site__header-logo
+    ! ##.site-header-logo
+    ! ##.td-header-logo
+    ! ##.td-header-logo-wrap
+##[class*=header_logo]
+    ! Many examples removed. Old generalized (and not very) rules:
+    ! ##.adaptive-header_logo
+    ! ##.custom_header_logos
+    ! ##.header_logo
+    ! ##.main_header_logo_container
+    ! ##.page-header_logo
+##[class*=header__logo]
+    ! Many examples removed. Old generalized (and not very) rules:
+    ! ##.alt-header__logo-img
+    ! ##.b-header__logo
+    ! ##.b-header__logotype
+    ! ##.big-header__logo
+    ! ##.c-header__logo
+    ! ##.consumer-header__logo-link
+    ! ##.d-header__logo
+    ! ##.fixed-header__logo
+    ! ##.header__logo
+    ! ##.header__logo-image
+    ! ##.header__logo-scroll
+    ! ##.header__logos-section
+    ! ##.header__logo-title
+    ! ##.header__logo-wrapper
+    ! ##.header__logotype
+    ! ##.hnf-header__logo
+    ! ##.ld-header__logo
+    ! ##.l-header__logo
+    ! ##.m-header__logo
+    ! ##.n-header__logo
+    ! ##.rd-header__logo
+    ! ##.site-header__logo-wrapper
+    ! ##.tm-header__logo
+    ! ##.top-header__logo
+    ! ##.xfnew-header__logo
+##[class*=footer-logo]
+    ! crb-otradnoe.ru##.footer-logo
+    ! mexiconewsdaily.com##.footer-logo
+    ! militaryarms.ru##.footer-logo__text
+    ! onko.guru##.footer-logo
+    ! perekrestok.ru##.xf-footer-logo__image
+    ! sanotes.ru##.footer-logo-wrap
+    ! techlist.top##.footer-logo-wrap
+    ! xn----8sbmnbjdi5acl5a.xn--p1ai##.footer-logo
+##a[aria-label=Homepage]
+    !   medium.com and medium-based blogs:
+    ! medium.com##a[aria-label=Homepage]
+    ! jetruby.com##a[aria-label=Homepage]
+    ! itnext.io##a[aria-label=Homepage]
+    ! towardsdatascience.com##a[aria-label=Homepage]
+##.custom-logo
+    ! cisoclub.ru##.custom-logo
+    ! pcmobitech.com##.custom-logo
+##.blog-logo
+    ! helpadmins.ru##.blog-logo
+    ! techjuice.pk##.blog-logo
+##.b-logo
+    ! agenti-shit.com##.b-logo
+    ! mebel-v-vannu.ru##.b-logo
+    ! remont-vann.ru##.b-logo
+##.branding__logo
+##.brand-logo
+##.brandlogo
+##.b-toplogo
+##.center_logo
+    ! dommdom.ru##.center_logo
+    ! teh-beauty.ru##.center_logo
+##.c-footer__logo
+    ! delo.ua##.c-footer__logo
+    ! focus.ua##.c-footer__logo
+##.c-logo
+    ! drive2.com,drive2.ru##.c-logo
+    ! hollywoodreporter.com##.c-logo
+    ! sheknows.com##.c-logo
+    ! variety.com##.c-logo
+##.custom-logo
+    ! otdelkadom-surgut.ru##.custom-logo
+    ! vseprotruby.ru##.custom-logo
+##.custom-logo-link
+    ! planirovkainfo.ru##.custom-logo-link
+! invision forums logo
+###elLogo
+    ! forum.kaspersky.com###elLogo
+~briefmenow.org##div.entry-header
+    ! flammlin.com##.entry-header
+    ! nsd-nastavlenie.ru##.entry-header
+    ! pro-ielts.ru##.entry-header
+    ! sam-turizm.ru##.entry-header
+    ! yourdailygirls.com##.entry-header
+##.fa-logo
+##.fa-phone    
+    ! cheap-safe.ru##.fa-phone
+    ! gurmanfresh.ru##.fa-phone
+    ! laminat-msc.ru##.fa-phone 
+##.flt_logo
+    ! hqsexonly.com##.flt_logo
+    ! tubeadult4k.com##.flt_logo
+##.footer__logo
+##.footer-text-wrap
+    ! gizmochina.com##.footer-text-wrap
+    ! priceboon.com##.footer-text-wrap
+##.forum-logo
+##.fusion-logo
+    ! raidrive.com##.fusion-logo
+    ! troypoint.com##.fusion-logo
+    ! raidrive.com##.fusion-logo:style(margin-top:14px !important; margin-bottom:14px !important)
+##.hat-logo
+    ! vip-trosti.ru##.hat-logo
+###header-date
+##.header-date
+    ! cry.ru###header-date
+    ! medscape.com##.header-date
+! some sites mark body with class .header-image . So here are exclusions
+##.header-image:not(html):not(body):not(article)
+    ! blog.bissquit.com##.header-image
+    ! falchionconsulting.com##.header-image
+    ! faqforge.com##.header-image
+    ! kagarlickij.com##.header-image
+    ! kurazhov.ru##.header-image
+    ! leopard-fil.ru##.header-image
+    ! opsman.co.za##.header-image
+    ! paweljarosz.wordpress.com##.header-image
+    ! randomtechminutia.wordpress.com##.header-image
+    ! sid-500.com##.header-image
+##.headerimg
+    ! kehidatermal.hu##.headerimg
+    ! win13.ru##.headerimg
+###headerlogo
+##.headerlogo
+###HeaderLogo
+##.headerLogo
+###header-logo
+##.header-logo
+    ! arstechnica.com###header-logo
+    ! makeuseof.com##.header-logo
+    ! obustroeno.com###header-logo
+    ! ocomp.info###header-logo
+    ! zeit.de##.header-logo
+###header_logo
+    ! 2emarket.ru###header_logo
+##.header__logo
+    ! zeit.de##.header__logo
+##.Header__logo
+    ! auto.ru is in the exclusions in Ru AdList
+    auto.ru##.Header__logo
+    ! yandex.ru##.Header__logo
+###HeaderLogoWrapper
+##.header-main__logo
+    ! leroymerlin.ru##.header-main__logo
+##.header__main-logo
+    ! it-world.ru##.header__main-logo
+###header-photo
+##.header-photo
+    ! avto-kul.ru##.header-photo
+    ! livejournal.com###header-photo
+##.header-text
+    ! avtobot.net##.header-text
+    ! blackview.hk##.header-text
+    ! fuckingbreak.com##.header-text
+    ! guitarmetrics.com##.header-text
+##.header__title
+    ! gorlor.com##.header__title
+    ! xn----7sbajpjolckn2o.xn--p1ai##.header__title
+##.header__title_name
+    ! ##.header__title_name
+##.header-topline__logo
+    ! forbes.ru##.header-topline__logo
+##.head_logo
+    ! santeh-opt.ru##.head_logo
+##.headlogo
+    ! proza.ru##.headlogo
+! is in Ru AdList and Fanboy's
+##.header-social-icons
+###header-text
+##.h_logo
+    ! vanna-rum.ru##.h_logo
+    ! warways.ru##.h_logo
+##.home-link
+    ! ibrahimsolimanblog.wordpress.com##.home-link
+    ! jonathanmedd.net##.home-link
+    ! onurdemirkilicitblog.wordpress.com##.home-link
+###hplogo
+! TrueNAS local instances
+##.ix-logo
+~jobs.cz,~specialist.ru,~xhamster.com##.logo
+    ! ##.logo is very, very common rule. See previous specific rules in _headers_examples
+    ! Exclusions:
+    ! jobs.cz: <section class="logo no-logo" id="company-logo">...main block...<>
+	! xhamster.com: thumbs
+##.Logo
+    ! doesn't hide
+    relax.by##.Logo
+###logo
+    ! also as ##.logo
+    ! some specific internal portals exclusions (IPs here)
+    10.*#@##logo
+    172.*#@##logo
+    192.*#@##logo
+###Logo
+##.logo3
+##.logo_area
+##.logo-banner
+###logoBlock
+    ! baniclub.ru###logoBlock
+    ! nulled.cc###logoBlock
+    ! technibble.com###logoBlock
+    ! zerocoolpro.biz###logoBlock
+##.logo-block
+    ! banyaspec.com##.logo-block
+    ! buh.ru##.logo-block
+    ! 1ab.ru##.logo-block
+    ! partnerkin.com##.logo-block
+    ! strelok42.ru##.logo-block
+    ! tiger-gun.ru##.logo-block
+##.logo-desc
+    ! berezka-butan.ru##.logo-desc
+##.logo-description
+    ! online812.ru##.logo-description
+##.logo_gallery
+    ! fooxybabes.com##.logo_gallery
+    ! mainbabes.com##.logo_gallery
+    ! sexybabesz.com##.logo_gallery
+    ! silkengirl.com,silkengirl.net##.logo_gallery
+###logo_header
+    ! santexmania.ru###logo_header
+##.logoheader
+    ! таёжный-дом.рф
+    ! xn----7sbngpudl3a7gxc.xn--p1ai##.logoheader
+##.logo-holder
+    ! ekipirovka4you.ru##.logo-holder
+    ! thefreedictionary.com##.logo-holder
+##.logo-image
+    ! gsmforum.ru##.logo-image
+    ! piterhunt.ru##.logo-image
+    ! some exclusion
+    sevenforums.com##.logo-image
+    ! veslo.ru##.logo-image
+###logoImage
+##.logo-img
+    ! rootmyandroid.org##.logo-img.navbar-brand
+##.logo_img
+###logo_img
+    ! 4sysops.com###logo_img
+##.logo_link
+    ! polov.ru##.logo_link
+##.logoLink
+    mail.ru##[class*=logoLink]
+    ! stigviewer.com##.logoLink
+##.logo_main
+    ! kinonews.ru##.logo_main
+##.logo-main
+##.logo_n
+    ! uptodown.com##.logo_n
+##.logo-new
+    ! huntportal.ru##.logo-new
+    ! xn----7sbajpjolckn2o.xn--p1ai##.logo-new
+##.logopic
+##.logo-pic
+    ! berezka-butan.ru##.logo-pic
+    ! huntfish.by##.logo-pic
+~winitpro.ru##.logotype
+    ! kino2018.club##.logotype
+    ! kinoa1080hd.com##.logotype
+    ! kinodoza.net##.logotype
+    ! kinoprostor.net##.logotype
+    ! kinoup.org##.logotype
+    ! leofilm.club##.logotype
+    ! lordfilm.pro##.logotype
+    ! x-film.top##.logotype
+##.logo-left
+    ! legal-alien.ru##.logo-left
+    ! tuning-ak.ru##.logo-left
+##.logo-link
+    ! homeli.ru##.logo-link
+    ! fountravel.ru##.logo-link
+    ! solarwinds.com##.logo-link
+###logo-main
+    ! newsru.com###logo-main
+##.logo-text
+    ! ktonanovenkogo.ru##.logo-text
+    ! petrasport.ru##.logo-text
+##.logo-text-wrap
+    ! berezka-butan.ru##.logo-text-wrap
+    ! huntfish.by##.logo-text-wrap
+##.logotip
+    ! 1000.menu##.logotip
+##.logo-wrap
+    ! freecoursesonline.me##.logo-wrap
+    ! pimpmymoney.net##.logo-wrap
+##.main_logo
+    ! medside.ru##.main_logo
+##.main-logo
+    ! playground.ru##.main-logo
+##.mainlogo
+    ! meless.ru##.mainlogo
+###mainLogo
+##.main_menu__logo
+    ! tjournal.ru##.main_menu__logo
+##.menu-logo
+    ! urban3p.ru##.menu-logo
+    ! vseovannoi.ru##.menu-logo
+##.mh-header-text
+##.mh-site-logo
+    ! autoexpertjournal.ru##.mh-site-logo
+    ! itigic.com##.mh-site-logo
+    ! travelindependent.ru##.mh-header-text
+    ! travelindependent.ru##.mh-site-logo
+##.mobile-header-logo:not(body)
+~telemetr.io##.navbar-brand
+    ! telemetr.io: ordinary menu
+    ! dailytechposts.com##.navbar-brand
+    ! glazdik.ru##.navbar-brand
+    ! imagevenue.com##.navbar-brand
+    ! krsn-forum.ru##.navbar-brand
+    ! letsocify.com##.navbar-brand
+    ! nictools.ru##.navbar-brand
+    ! pai-bx.com##.navbar-brand
+##.navbar__logo
+    ! isanteh.ru##.navbar__logo
+##.navbar-logo
+    ! 1plus1.video##.navbar-logo
+##.nav-logo
+###nav-logo
+~wikipedia.org###p-logo
+    ! rosettacode.org###p-logo
+    ! vetriks.ru###p-logo
+##.nav-logo-link
+    ! amazon.com##.nav-logo-link
+    ! startribune.com##.nav-logo-link
+##.sc_layouts_logo
+    ! kavkazweb.net##.sc_layouts_logo
+    ! zabbix.com##.sc_layouts_logo
+##.sidebar-logo
+    ! aliexpress.com##.sidebar-logo
+    ! spaces.im##.sidebar-logo
+! There rarely can be search forms and menus. But many, many sites has useless logo and slogans there
+##.site-branding
+##.site-branding-text
+    !14bytes.ru##.site-branding
+    !4bes.nl##.site-branding
+    !androproblem.ru##.site-branding
+    !aniko-gas.ru##.site-branding
+    !astgift.ru##.site-branding
+    !awaqa.com##.site-branding-text
+    !brakonyerov.net##.site-branding
+    !carsharovod.ru##.site-branding
+    !cloudenius.com##.site-branding
+    !detalsystem.online##.site-branding
+    !drongeek.ru##.site-branding
+    !expert-kachestva.ru##.site-branding
+    !ezar.ru##.site-branding
+    !financefuel.ru##.site-branding
+    !gigamaster.ru##.site-branding
+    !ip-calculator.ru##.site-branding
+    !knigindom.ru##.site-branding
+    !ky24.ru##.site-branding
+    !leopard-fil.ru##.site-branding
+    !lifehacki.ru##.site-branding
+    !logi.cc##.site-branding
+    !lovely-dog.ru##.site-branding
+    !msmetall.ru##.site-branding
+    !blogs.msmvps.com##.site-branding
+    !odveryah.ru##.site-branding
+    !osouce.ru##.site-branding
+    !pemato.de##.site-branding
+    !pokatashkin.com##.site-branding
+    !powershelladministrator.com##.site-branding
+    !procompy.ru##.site-branding
+    !rlevchenko.com##.site-branding
+    !russian-miracles.ru##.site-branding
+    !serverlab.ca##.site-branding
+    !sharetotest.com##.site-branding
+    !smart-droid.info##.site-branding
+    !tarifgid.info##.site-branding
+    !ternopilinkling.com##.site-branding
+    !undocumented-features.com##.site-branding
+    !vk-book.ru##.site-branding
+    !emeneye.wordpress.com##.site-branding
+    !newhelptech.wordpress.com##.site-branding
+    !okrylov.wordpress.com##.site-branding
+    !xakinfo.ru##.site-branding
+    !zen-top.ru##.site-branding
+    !zerozen.ru##.site-branding
+##.site-desc
+    ! 220.guru##.site-desc
+    ! 24video-sexy.com##.site-desc
+    ! apomusic.ru##.site-desc
+    ! fucktvchannel.com##.site-desc
+    ! kino2018.club##.site-desc
+    ! kinodoza.net##.site-desc
+    ! kino-fs.me##.site-desc
+    ! kinosky.org##.site-desc
+    ! kinoup.org##.site-desc
+    ! pornmult.one##.site-desc
+    ! vse-chasti-kino.ru##.site-desc
+    ! x-film.top##.site-desc
+##.site-description
+###site-description
+    ! apple-iphone.ru##.site-description
+    ! cisoclub.ru##.site-description
+    ! gunnalag.com##.site-description
+    ! itproguru.com##.site-description
+    ! netwild.ru###site-description
+    ! retractionwatch.com##.site-description
+    ! sarducd.it###site-description
+##.site-header-image
+##.site-header__logo
+    ! the-shaperfect.com##.site-header__logo
+##.site-info
+##.site__logo
+###site-logo
+    ! kindkino.ru###site-logo
+##.site-logo
+    ! aliexpress.com##.site-logo
+    ! digitalcitizen.life##.site-logo
+    ! huawei-helpers.ru##.site-logo
+    ! itproguru.com##.site-logo
+    ! netcraft.com##.site-logo
+    ! river-forum.ru##.site-logo
+    ! stroy-okey.ru##.site-logo
+    ! windows101tricks.com###site-logo
+    ! wintips.org###site-logo
+##.siteLogo
+##.sitelogo
+###siteLogo
+###sitelogo
+    ! finanz.ru##.sitelogo
+    ! loleknbolek.com##.siteLogo
+    ! mcpmag.com##.sitelogo
+    ! tek-tips.com###sitelogo
+    ! titlemax.com###siteLogo
+##.site-logotype
+    ! ilike.guru##.site-logotype
+    ! vodatyt.ru##.site-logotype
+###site-name
+##.site-name
+    ! 1fin-market.com##.site-name
+    ! pokupandex.ru##.site-name
+    ! pp.ru###site-name
+##.site-text-logo
+##.site-title
+    ! apple-iphone.ru##.site-title
+    ! gunnalag.com##.site-title
+    ! hackware.ru##.site-title
+    ! it-chainik.ru##.site-title
+    ! nanthrax.net##.site-title
+    ! otzyvua.net##.site-title
+    ! radugamaster.ru##.site-title
+    ! sayga12.ru##.site-title
+    ! skeletor.org.ua##.site-title
+    ! theurbanpenguin.com##.site-title
+    ! tweakhound.com##.site-title
+##[id*="slogan"]:not(html):not(body):not(article)
+~jobsdb.com##[class*="slogan"]:not(html):not(body):not(article)
+    !###logo-slogan
+    !###site-slogan
+    !bigmir.net##.header__slogan
+    !maksim-guns.ru##.text_slogan
+    !medside.ru##.main_slogan
+    !mts.ru##.page-login__header-slogan
+    !sportivator.ru##.header__logo__slogan
+    !superlor.ru##.header__site-slogan
+    !tarifkin.ru###tarif-slogan
+    !telekom.de##.navigation__slogan
+    !t-military.ru##.slogan-wrap
+    !sturmuniform.ru###header_slogan
+    !##.slogan
+    !avidreaders.ru##.slogan
+    !giveawayoftheday.com##.slogan
+    !nice.de##.slogan
+    !podgotoffka.ru##.slogan
+    !proftools.ru##.slogan
+    !world-sport.org##.slogan
+##.standard-logo
+##.store-logo
+##.td-header-sp-logo
+##.td-main-menu-logo
+    ! trubanet.ru##.td-main-menu-logo
+##.td-main-logo
+    ! geekon.media##.td-main-logo
+##.text-logo
+    ! fountravel.ru##.text-logo
+    ! pohodmsk.ru##.text-logo
+##.themonic-logo
+    ! gotoadm.ru##.themonic-logo
+    ! lemiro.ru##.themonic-logo
+##.title-logo
+    ! webtalk.ru##.title-logo
+###top-bar
+~atom-editor.cc##.top-bar
+    ! Exclusions:
+    ! atom-editor.cc - main menu
+    !
+    ! cisoclub.ru##.top-bar
+    ! clockks.com##.top-bar
+    ! cyxymu.info###top-bar
+    ! deccanchronicle.com###top-bar
+    ! elerus.ru###top-bar
+    ! forma-odezhda.ru###top-bar
+    ! gadgetvictims.com##.top-bar
+    ! krov-torg.ru###top-bar
+    ! kurazhov.ru##.top-bar
+    ! majornetwork.net###top-bar
+    ! mobilewithprices.com##.top-bar:style(position:static !important)
+    ! pornoadvid.info##.top-bar
+    ! stroyday.ru###top-bar
+    ! thecodebuzz.com##.top-bar
+    ! windowsreport.com###top-bar:style(position:static !important)
+    ! xn----7sbeemsdjlc1kud.xn--p1ai###top-bar:style(position:static !important)
+    ! yakadr.ru##.top-bar
+    ! weekly-news.ru##.top-bar
+*##.topbar:style(position:static !important)
+    ! ##.topbar in several cases contains menu and/or search. But in general, it should not be fixed
+    ! litnet.com##.topbar:style(position:static !important)
+    ! metricfire.com##.topbar:style(position:static !important) - seems old?
+    ! splitbrain.org##.topbar:style(position:static !important)
+    ! trekkingmania.ru##.topbar:style(position:static !important)
+##.topbar-date
+    ! appdividend.com##.topbar-date
+    ! hungarylife.ru##.topbar-date
+    ! migrantvisa.ru##.topbar-date
+###top-bar-wrap
+    ! medcentr-diana-spb.ru###top-bar-wrap
+    ! werdum-army.ru###top-bar-wrap
+##.top-logo
+    ! tvsok.ru##.top-logo
+    fantlab.ru#@#.top-logo
+###top_logo
+    ! zavtra.ru###top_logo
+##.top_logo
+    ! prosto-mariya.ru##.top_logo
+##.top-nav__logo
+    ! glavred.info##.top-nav__logo
+##.top-place-logo
+##.uix_logo
+    ! atvclub.ru##.uix_logo
+    ! automania.ru##.uix_logo
+##.uix-logo
+    ! seopirat.club##.uix-logo
+##a[href^="javascript:AddComplaint"]
+!
+! Initially, this intended to remove top-left logos.
+! in general, don't remove js links with pictures
+! update: there are some duplicate rules below... Maybe they need to combine, but the practice shows it is a very good generalization
+~diafilmy.su,~urlscan.io##[href="/"]:not(.sidemenu-link):not(:has(img)):not(.button)
+    ! Exclusions:
+    ! diafilmy.su - navigation buttons
+    !
+    ! androidinsider.ru##[href="/"]
+    ! bezboleznej.ru##[href="/"]
+    ! eventid.net##[href="/"]
+    ! gethuman.com##[href="/"]
+    ! infozuby.ru##[href="/"]
+    ! (svg inside)
+    iz.ru##a[href="/"]
+    ! jobfilter.ru##[href="/"]
+    ! mobcompany.info###masthead > [href="/"]
+    ! mosautoshina.ru##[href="/"]
+    ! mssqltips.com##[href="/"]
+    ! neotren.ru##[href="/"]
+    ! orabote.biz##[href="/"]
+    ! pingvinoff.net##[href="/"]
+    ! (todo?)
+    ! rightbag.ru##a[href="/"]
+    ! shoot-club.ru##[href="/"]
+    ! squaredup.com##[href="/"]
+    ! studopedia.info##a[href="/"]
+    ! tdsayany.ru##[href="/"]
+    ! thg.ru##[href="/"]
+    ! troitsk.org##a[href="/"]
+    !! vsetv.com##[href="/"]
+    ! worki.ru##[href="/"] > div > svg
+    ! zdorovayagolova.ru##[href="/"]  # 2022:parked
+! new version 2022-01 rules. Still targetting to site logos, but more specific
+~diafilmy.su##a[href="/"]:not(:has(img)):not(.sidemenu-link)
+##a[href="/"]:has([class*=logo])
+##a[href="/"]:has(svg)
+##a[href="/"]:has(img[src*="logo"])
+##a[href="/"]:has(img[src*="/i/"])
+    ! 1plus1.video##a[href="/"]:has(svg)
+    ! reddit.com##a[href="/"]:has(svg>g)
+! update 2022-02: don't know why, but it doesn't works. Ok, previous version
+~diafilmy.su,~telegram.org##a[href="/"]:not(.sidemenu-link)
+!
+! and other text(!) redirects. In general, do not remove image redirects
+##a[href^="/click/"]:not(:has(img))
+##a[href^="/out/"]:not(:has(img))
+##a[href^="/out2/"]:not(:has(img))
+##a[href^="/out3/"]:not(:has(img))
+##a[href^="/out4/"]:not(:has(img))
+/header$image
+    ! /header/*$image
+        ! ||4pda.biz/templates/yoo_catalyst/images/header/*.png
+    ! /header-images/*$image
+    ! /headers/*$image
+        ! /images/headers/*
+        ! ||itsketch.ru/images/headers/$image
+    ! /header.jpg
+    ! /header.webp
+        ! ||go68.ru/*/header.jpg
+        ! ||go68.ru/*/header.webp
+        ! ||militaryarms.ru/*/header.jpg
+        ! ||tropki.ru/*/header.jpg
+        ! ||xn----7sbaegss0bebjcb2g.xn--p1ai/styles/prosilver/theme/images/header.jpg  ! нахабино-новое.рф
+    ! /header2.jpg
+        ! ||rubulat.ru/wp-content/themes/rubulat/img/header2.jpg
+    ! /header.gif
+        ! ||forumfiles.ru/*/header.gif
+        ! ||gorposmos.ru/skript/forum/header.gif
+        ! ||sysadmins.ru/images/header.gif
+    ! /header.png
+        ! ||allo-santehnika.ru/templates/6_SANTEX/images/header.png
+        ! ||xn----ftbnafed0afniox8a.xn--p1ai/ico/header.png  ! троицкий-округ.рф
+    ! /header-background.jpg
+    ! /headerbg.jpg
+    ! /images/header$image
+    !
+    ! And my specific rules, now generalized as the current rule above
+    ! ||24ru.com/img/header$image
+    ! ||allrussian.info/wcf/images/edited/header_hintergrund.png
+    ! ||aquavivo.ru/bitrix/templates/aquavivo/images/header-bg.jpg
+    ! ||arsenal007.ru/local/templates/arsenal007/images/header_block4_button.png
+    ! ||art4x4.ru/*/header_mybg.jpg
+    ! ||boredpanda.com/*/header-panda-new.svg
+    ! ||crash-tests.net/*/header_r.jpg
+    ! ||dns-shop.ru/*/header*.png
+    ! ||dns-shop.kz/*/header*.png
+    ! ||rdrom.ru/js/bundles/header-mobile-app-promotion
+    ! ||firewall.cx/images/stories/header/firewallcx-logo
+    ! ||hisgun.ru/*/header-logo_big.png
+    ! ||izhguns.ru/sites/default/pic/header/header_bgr.png
+    ! ||izhguns.ru/sites/default/pic/header/header_gds.png
+    ! ||izhguns.ru/sites/default/pic/header_soc_panel.png
+    ! ||izhguns.ru/image/catalog/header/$image
+    ! ||littleone.com/*/header_resp_link.png
+    ! ||livelib.ru/img/headerunreg/*$image
+    ! ||lovchy.ru/i/headerBack.jpg
+    ! ||magizoo.ru/images/header_lion.png
+    ! ||maxidom.ru/*/header_01.png
+    ! ||militaryarticle.ru/templates/yoo_catalyst/images/header/grunge/header_glas.png
+    ! ||pescps.dl.mlsi.gov.cy/CPSWeb/common/images/header$image
+    ! ||mmgp.com/*/header/$image
+    ! ||mybellaria.ru/img/header/$image
+    ! ||netdna-ssl.com/*/header-*.jpg
+    ! ||ohotniki.ru/i/header_fon.jpg
+    ! ||platimzafoto.ru/html/img/header-bg.png
+    ! ||pic-money.ru/html/img/header-bg.png
+    ! ||push.eu/images/default-source/headers/$image
+    ! ||qiwi.com/img/qiwi_com/header/$image
+    ! ||regular-expressions.info/img/header100.png
+    ! ||rezbaderevo.ru/*/header-back.png
+    ! ||safari.bg/*/headerBgnd.jpg
+    ! ||santeh-opt.ru/images/header_*.jpg
+    ! ||santexmania.ru/wa-data/public/site/themes/santehmania/img/header_bg.jpg
+    ! ||snob.ru/images/header/$image
+    ! ||sobaka.ru/*/header_logos/
+    ! ||spec-army.ru/*/header$image
+    ! ||strike-active.ru/*/header-pattern.jpg
+    ! ||tek-tips.com/images/header-logo.png
+    ! ||theomegaproject.org/*/header_line.jpg
+    ! ||ticketland.ru/img2/header/page-1.svg
+    ! ||videoconverterfactory.com/*/header-r.png
+    ! ||vmware.com/*/header-redesign/  # vmware.com/etc.clientlibs/vmware-modernize-cms/componentlibrary/components/content/header-redesign/clientlibs.min.js
+    ! ||voenhronika.ru/pic/header-red.jpg
+    ! ||vooosoo.ru/*/header_background.jpg
+    ! ||vrazvedka.ru/*/header2_f.jpg
+    ! ||vsatke.ru/images/headerlogo.png
+    ! ||yadishu.com/wp-content/themes/yadishu/img/header2.png
+/header2$image  # don't know why previous rule doesn't catch /header2.png
+/images/footer$image
+/logo*$image,domain=~opera.com
+    ! Exclusions:
+    ! opera - bad interface on opera.com, no alternative texts
+    !
+    ! /logo*$image,$domain=~winitpro.ru  # don't know why, but with $domain this rule doesn't work. Weird.
+    ! /images/logo$image  # seems, more general rule sometimes doesn't work. Update: see above.
+! the idea is from EasyList China, modified
+!/logo/*$script
+! disable exclusions from Ru AdList (@@||business-gazeta.ru/stat/logo$image,domain=business-gazeta.ru)
+/logo/*$important,~stylesheet,domain=~opera.com
+    ! Exclusions:
+    ! ~stylesheet - on MS somewhere there are css at /logo/ path
+    ! opera - bad interface on opera.com, no alternative texts
+    !
+    ! ||9111.ru/img/logo/logo_at.png
+    ! ||e1.ru/static/build/img/logo/
+    ! ||kinohd.in/logo/$image
+/logo.gif
+    ! ||hardforum.ru/images/logo.gif
+/logo.jpg$domain=~xhamster.com
+	! Exclusions:
+	! xhamster.com - thumbs
+    ! ||vzhelezke.ru/templates/pink/images/logo.jpg
+/logo.png$domain=~winitpro.ru
+    ! ||4pna.com/images/logos/logo.png
+    ! ||9ban.ru/wp-content/themes/1brus/img/logo.png
+    ! ||land-cruiser.ru/uploads/monthly_2018_07/logo.png
+    ! ||santexsite.ru/images/logo.png
+    ! ||vannaiya.ru/assets/images/logo.png
+    ! ||vostok.ru/images/layout/logo.png
+/logo.svg
+    ! ||catalog-plans.ru/data/images/logo.svg
+/logo2.png
+/logo3.png
+/logo4.png
+/logo5.jpg
+/logo6.png
+/logo-$image,important,domain=~opera.com
+    ! Exclusions:
+    ! opera - bad interface on opera.com, no alternative texts
+    !
+    ! /logo-bg.jpg
+        ! ||banya-expert.com/wp-content/themes/septik/images/logo-bg.jpg
+    ! /logo-big.png
+    ! /logo-full.png
+    ! /logo-mobile.png
+    ! /logo-site.png
+        ! ||220-volt.ru/*/logo-site.png
+    ! /logo-white.svg
+    ! /logo-youtube.svg
+    ! ||4cheat.ru/images/Infusion/header/logo-finalb.png
+    ! ||butovo.com/images/butic-5/logo-butic5.gif
+    ! ||city-denta.ru/*/logo-wide2.png
+    ! ||dobrota.ru/*/logo-scroll.svg
+    ! ||dogsecrets.ru/*/logo-sobaki*.jpg.webp
+    ! ||mk.ru/*/logo-mk-index.png
+    ! ||radidomapro.ru/images/logo-radidoma*.png
+    ! ||selcdn.net/*/logo-wide.svg
+    ! ||shopsirop.ru/*/logo-shopsirop.png
+    ! ||tabasco.com.ru/images/logo-tabasco_header.png
+    ! ||tarifkin.ru/*/logo-front.png
+    ! ||vceplus.com/wp-content/uploads/2015/05/logo-pdf-telech.png
+    ! ||vodkomotornik.ru/*/logo-background.jpg
+/logo_$image,important
+    ! /logo_2.png
+    ! /logo_main.svg
+    ! /logo_phpBB.png
+        ! ||forum.garminych.ru/templates/subSilver/images/logo_phpBB.gif
+    ! /logo_white.png
+    ! ||allrussian.info/wcf/images/edited/logo_hintergrund.png
+    ! ||aporra.ru/*/logo_phone_email_new.png
+    ! ||aquavivo.ru/images/Document_aquavivo/Logo_1_1.png
+    ! ||baumarkt.ru/published/publicdata/BAUMARKT/attachments/SC/themes/BAUMARKT/img/logo_280.png
+    ! ||budetinteresno.info/logo_new.png
+    ! ||business-gazeta.ru/static/img/logo_BO_1.svg
+    ! ||cheap-safe.ru/*/logo_valberg.gif
+    ! ||cbsistatic.com/*/logo_192.png
+    ! ||ccmbg.com/*/logo_ccm.svg
+    ! ||cocoin.su/images/logo_h.png
+    ! ||e-katalog.ru/logo_shop/$image
+    ! ||eldorado.ru/static/images/birthday/logo_eldorado$image
+    ! ||forum-auto.ru/i/logo_fa.svg
+    ! ||globus.ru/*/logo_mini.png
+    ! ||irecommend.ru/*/images/Logo_*.png
+    ! ||kakpravilnosdelat.ru/*/logo_kak_prav.png
+    ! ||litmir.me/img/logo_litmir.png
+    ! ||myfreesoft.ru/picts/logo_*.png$image
+    ! ||overclockers.ru/assets/logo_text.png
+    ! ||prophotos.ru/assets/logo_prophotos_big$image
+/logobg.png
+    ! ||alisupport.ru/templates/web/images/logobg.png
+/logodesktop.png
+/logohead.gif
+/logosite.png
+/logotitle.png
+    ! ||teplokrepost.ru/wp-content/themes/templateadapt/img/logotitle.png
+/logotipe.png    
+/logotype.png
+/logotype.svg
+/logotype2.svg
+/sitelogo/*
+/sitelogo$image
+
+
+
+!! remove contacts in the head.
+! They should be in the footer only or in the contacts menu. Do not print them in the beginning of every page.
+##[class^="header_contact"]:not(html):not(body):not(article)
+##[class^="header-contact"]:not(html):not(body):not(article)
+##[class*="header-phone"]:not(html):not(body):not(article)
+##.b-company-header-phone
+!##.contacts - don't
+!###contacts - possible don't
+##.h_contacts
+##.head-contact
+##.hat-contacts
+##.header_address
+##.header-contacts
+##.header__contacts
+##.header-contacts-wrap
+##.header__phone
+##.header__phone-icon
+##.header__phones
+##.header_phone
+##.header_phones
+###header_phones
+###header-phones
+##.header-tel
+##.header_telephone
+##.i-header-call
+##.j-contacts
+##.main-header-contacts
+~cogmento.com##.phone:not(.builder-item):not(input)
+    ! Exclusions:
+    ! cogmento.com - phone icon in the menu
+##.phone-block
+##.phone-bottom
+##.phone-top
+###phone_top
+##.phone-widget
+##.phone_fixed
+##.phone_wrapper
+##.phones
+##.phones-block
+##.phones-wrap
+##.phonetop
+##.sidebar-contacts
+##.top-phone
+##.top_phone_list
+###top-phones
+###top-contact
+##.top-contact
+##.top-contacts
+##.top_contacts
+##.top_phones
+###top_phones
+    ! Despite of very long-term (about a year, I think) testing, I still doubt about some phones rules. So, old examples are here and not transferred to _headers_examples
+    ! 11tactical.ru##.phone
+    ! 1fin-market.com##.header-contacts-site-name
+    ! 1fin-market.com##.phone-top
+    ! 220-volt.ru##.phones
+    ! air-gun.ru##.phones-wrap
+    ! ardl.ru##.ardl-header-phone
+    ! balama.ru##.head-contact
+    ! bars-guns.ru##.phone
+    ! baza-v.com##.header-phones
+    ! begovie-dorogi.ru##.phone
+    ! berezka-butan.ru##.header_phones
+    ! bestsafe.ru##.header-mid > .phones
+    ! b-kredit.com##.phone > div
+    ! bready.ru##.header_contacts
+    ! catalog-plans.ru##.cp-header-phone
+    ! doctorhead.ru##.header-contacts
+    ! fuji-san.ru##.top-contact
+    ! goodprice4you.ru##.phone
+    ! gunsparts.ru##.contacts
+    ! holodilnik.ru###phone_top
+    ! integrus.ru##.header-contacts
+    ! izhohota.ru##.header-info > .contacts
+    ! izmerkon.ru##.header_phone
+    ! labaz.ru##.phone-block
+    ! line-f.ru##.header__phone
+    ! kamuflage.ru##.phones
+    ! kamukamu.ru###top-contact
+    ! kondicionershik.ru##.header-contacts
+    ! kosmetika-proff.ru##.phone
+    ! lorcabinet.ru##.phone
+    ! edu.ru##.main-header-contacts
+    ! medilife.com.ua###top_phones
+    ! medtehno.ru##.header_contacts
+    ! mir-sumok.ru##.phones
+    ! my-shop.ru##.phone
+    ! neopro.ru##.header_address
+    ! nobninsk.ru##.phone-block
+    ! oborontech.ru##.phone
+    ! moepravoo.ru##.phone-widget
+    ! papigun.ru##.phonetop
+    ! poisktrade.ru###contacts
+    ! polar-bags.ru##.phone_fixed
+    ! prfz.ru##.top-phone
+    ! prikladov.ru##.top_phones
+    ! pro-shooter.ru##.contacts
+    ! ratniksafe.ru##.phone
+    ! reloading.su##.j-contacts
+    ! rinnipool.ru##.phone-bottom
+    ! riogun.ru##.phone-block
+    ! rosmediy.ru##.phone-block
+    ! safe77.ru##.header-contact
+    ! safegun.ru##.header-contacts
+    ! santehnika-msk.ru##.phones
+    ! sledopit.moscow##.phone
+    ! sotosstore.ru##.sidebar-contacts
+    ! sportpremier.ru##.phone
+    ! steelsafeshop.ru##.header_contacts
+    ! steelsafeshop.ru##.phone
+    ! stich.su##.top_phone_list
+    ! sturmuniform.ru###header_phones
+    ! taktikatula.ru##.header_address
+    ! tdpresto.ru##.phone
+    ! tehnometal.ru##.b-company-header-phone
+    ! tempgun.ru##.phone-block
+    ! terra812.ru##.phones-block
+    ! tiger-gun.ru##.phone_wrapper
+    ! torex.ru##.header__phone-icon
+    ! vip-trosti.ru##.hat-contacts
+    ! vodoparad.ru##.header-phone-n
+    ! voensklad.su##.phone
+    ! voenteka.ru##.phone-block
+    ! volveter.ru##.phone-block
+    ! vseinstrumenti.ru##.header-phone
+    ! vseinstrumenti.ru##.header-phone-notice
+
+
+
+!! unblock page scrolling (overflow:visible !important)
+! unblock page scrolling when modal popup is opened (even if the popup was removed by uBlock)
+! in _headers_examples you can see some of the catched sites. But keep in mind that there are many, many more.
+!
+!! unfix page (position:static !important)
+!
+!! remove empty space from top and bottom (margin-top:0px !important; padding-top:0px !important; margin-bottom:0px !important; padding-bottom:0px !important)
+!
+!! remove annoying page backgrounds (background-image:none !important)
+!
+!! remove blurring (filter:none !important; -webkit-filter:none !important)
+!
+!
+~srg-it.ru,~yandex.*,~youtube.com,*##body:style(overflow:visible !important; position:static !important; margin-top:0px !important; padding-top:0px !important; margin-bottom:0px !important; padding-bottom:0px !important; padding-right:0px !important; background-image:none !important; filter:none !important; -webkit-filter:none !important)
+    ! just for information: in Adguard there are overflow:visible, but also overflow:auto rules
+!
+~pikabu.ru,~srg-it.ru,*##html:style(overflow:visible !important; position:static !important; margin-top:0px !important; padding-top:0px !important; margin-bottom:0px !important; padding-bottom:0px !important; padding-right:0px !important; margin-right:0px !important; background-image:none !important; filter:none !important; -webkit-filter:none !important)
+!
+*##.fancybox-enabled:style(overflow:visible !important)
+!
+*##.fancybox-lock:style(overflow:visible !important)
+    ! initially it was overflow:auto but the default is overflow:visible . Auto may add a parasite scrollbar sometimes. See https://www.w3schools.com/cssref/tryit.asp?filename=trycss_overflow
+
+
+!! unstick header
+! Many sites are using annoying sticky elements. Which also hide useful screenspace.
+! in _headers_examples you can see some of the catched sites. But keep in mind that there are many, many more.
+!
+! unstick header, top menu etc
+!
+*##.fixed-top:style(position:static !important)
+!
+*##.hdr:style(position:static !important)
+    ! repeating hdr and hdr20 blocks. See examples in _headers_examples
+!
+*##.hdr-20--big:style(height:auto !important)
+    ! repeating hdr and hdr20 blocks. See examples in _headers_examples
+!
+*##.hdr-20__inner:style(position:static !important)
+    ! repeating hdr and hdr20 blocks. See examples in _headers_examples
+!
+*##.hdr-20__side:style(position:static !important)
+    ! repeating hdr and hdr20 blocks. See examples in _headers_examples
+!
+~dns-shop.ru,~notepad-plus-plus.org,~pikabu.ru,~srg-it.ru,~themoviedb.org,~yandex.*,*##header:style(position:static !important; background-image:none !important; height:auto !important; min-height:0px !important)
+! Exclusions: mostly left menus
+! themoviedb.org - top menu
+!
+*##.header:style(position:static !important; background-image:none !important; height:auto !important; min-height:0px !important)
+!
+*###header:style(position:static !important; background-image:none !important; height:auto !important; min-height:0px !important)
+!
+!
+*##header::before:style(position:static !important; background-image:none !important; height:auto !important; min-height:0px !important)
+*##header::after:style(position:static !important; background-image:none !important; height:auto !important; min-height:0px !important)
+!
+*###header::before:style(position:static !important; background-image:none !important; height:auto !important; min-height:0px !important)
+*###header::after:style(position:static !important; background-image:none !important; height:auto !important; min-height:0px !important)
+!
+*##.header::before:style(position:static !important; background-image:none !important; height:auto !important; min-height:0px !important)
+*##.header::after:style(position:static !important; background-image:none !important; height:auto !important; min-height:0px !important)
+! also:
+*##footer::before:style(position:static !important; background-image:none !important; height:auto !important; min-height:0px !important)
+*##footer::after:style(position:static !important; background-image:none !important; height:auto !important; min-height:0px !important)
+!
+*###footer::before:style(position:static !important; background-image:none !important; height:auto !important; min-height:0px !important)
+*###footer::after:style(position:static !important; background-image:none !important; height:auto !important; min-height:0px !important)
+!
+*##.footer::before:style(position:static !important; background-image:none !important; height:auto !important; min-height:0px !important)
+*##.footer::after:style(position:static !important; background-image:none !important; height:auto !important; min-height:0px !important)
+
+*##body::before
+    ! bibimot.ru##body::before
+    ! firstbase-baseball.ru##body::before:style(background:none)
+    ! obsidian.md##body::before
+    ! tonygonzalez0379.com##body::before
+    ! zabbix.com##body::before:style(height:auto !important)
+
+! Maybe they should be removed instead?
+    abnews.ru##.header::after
+    airsoft-rus.ru##.main-nav::before
+    avtovzglyad.ru##footer::before
+    avtovzglyad.ru##footer::after
+    avtovzglyad.ru##nav::before
+    avtovzglyad.ru##nav::after
+    blokada.org##footer::before
+    britishcouncil.org##header::before
+    dimox.name##.header::after
+    firstlinesoftware.com##.footer::before
+    huihoo.com##.page-header::before
+    huihoo.com##.page-header::after
+    huihoo.com##.page-footer::before
+    huihoo.com##.page-footer::after
+    kde.org##.header::after
+    otkan.ru##article::before
+    otkan.ru##article::after
+    proxyway.com##footer::after
+    splav.ru##.navigation-header::after:style(background:none !important)
+    telegrator.ru##header::after
+    toolspond.com###content::before
+!
+!
+*###header-top:style(position:static !important; background-image:none !important; height:auto !important; min-height:0px !important)
+!
+*##.header-top:style(position:static !important; background-image:none !important; height:auto !important; min-height:0px !important)
+!
+*##.header-bottom:style(position:static !important; background-image:none !important; height:auto !important; min-height:0px !important)
+!
+*##.header-wrapper:style(position:static !important; background-image:none !important; height:auto !important; min-height:0px !important)
+!
+*##.b-header:style(position:static !important; background-image:none !important; height:auto !important; min-height:0px !important)
+!
+*##.b-header-fixed:style(position:static !important; background-image:none !important; height:auto !important; min-height:0px !important)
+!
+*###b-header-fixed:style(position:static !important; background-image:none !important; height:auto !important; min-height:0px !important)
+!
+*##.b-header__fixed:style(position:static !important; background-image:none !important; height:auto !important; min-height:0px !important)
+!
+*##.custom-header:style(position:static !important; background-image:none !important; height:auto !important; min-height:0px !important)
+!
+~pikabu.ru,*##.et-fixed-header:style(position:static !important; background-image:none !important; height:auto !important; min-height:0px !important)
+!
+~pikabu.ru,*##.fixed-header:style(position:static !important; background-image:none !important; height:auto !important; min-height:0px !important)
+!
+*###global-header:style(position:static !important; background-image:none !important; height:auto !important; min-height:0px !important)
+*##.global-header:style(position:static !important; background-image:none !important; height:auto !important; min-height:0px !important)
+!
+~pikabu.ru,*##.header-container:style(position:static !important; background-image:none !important; height:auto !important; min-height:0px !important)
+!
+*##.masthead:style(position:static !important; background-image:none !important; height:auto !important; min-height:0px !important)
+*###masthead:style(position:static !important; background-image:none !important; height:auto !important; min-height:0px !important)
+!
+*##.page-header:style(position:static !important; background-image:none !important; height:auto !important; min-height:0px !important; margin-top:0px !important; margin-bottom:0px !important; padding-top:0px !important; padding-bottom:0px !important)
+!
+!
+! As well as sidebars, menus can be set to static (more often) or absolute (less often)
+! Exclusions here are set to absolute - see in _sites
+!
+*##.fixed-menu:style(position:static !important)
+!
+*##.top_menu:style(position:static !important)
+!
+*##.bottom_menu:style(position:static !important)
+!
+*##.topline:style(position:static !important; padding-top:0px !important; margin-top:0px !important)
+!
+*##.top-menu:style(position:static !important)
+!
+~pikabu.ru,*##.header_fixed:style(position:static !important)
+!
+*##.header-sticky:style(position:static !important)
+!
+*##.sticky-header:style(position:static !important; background-image:none !important; height:auto !important; min-height:0px !important)
+!
+*##.main:style(position:static !important)
+!
+*##.mainhead:style(position:static !important)
+!
+*##.mainHeader:style(position:static !important; background-image:none !important; height:auto !important; min-height:0px !important)
+!
+*###main-header:style(position:static !important; background-image:none !important; height:auto !important; min-height:0px !important)
+*##.main-header:style(position:static !important; background-image:none !important; height:auto !important; min-height:0px !important)
+!
+*##.main_menu:style(position:static !important)
+!
+*##.main_nav:style(position:static !important)
+!
+*##.main-nav:style(position:static !important)
+!
+*###NavigationContainer:style(position:static !important)
+!
+*##.nav-menu:style(position:static !important)
+!
+*##.metabar--fixed:style(position:static !important)
+!
+~alexanderzobnin.github.io,*###nav:style(position:static !important)
+!
+*##.nav:style(position:static !important)
+!
+~fb.ru,~alexanderzobnin.github.io,~jetbrains.com,~wiki.mpstats.io,~uehali.com,*##nav:style(position:static !important; padding-top:0px !important; padding-bottom:0px !important)
+!
+*##.navbar:style(position:static !important)
+*##.navbar-container:style(position:static !important)
+*##.navbar-fixed:style(position:static !important)
+*##.navbar-fixed-bottom:style(position:static !important)
+*##.navbar-fixed-top:style(position:static !important)
+!
+*##.fixed-nav:style(position:static !important)
+!
+~haproxy.com,~uehali.com,*###navigation:style(position:static !important)
+!
+*##.p-navSticky:style(position:static !important)
+*##.p-navSticky--all:style(position:static !important)
+*##.p-navSticky--primary:style(position:static !important)
+!
+*##.site-header:style(position:static !important; background-image:none !important; height:auto !important; min-height:0px !important; margin-top:0px !important; margin-bottom:0px !important; padding-top:0px !important; padding-bottom:0px !important)
+*##.site-header-container:style(position:static !important; background-image:none !important; height:auto !important; min-height:0px !important; margin-top:0px !important; margin-bottom:0px !important; padding-top:0px !important; padding-bottom:0px !important)
+!
+*##.site-inner:style(margin-top:0px !important; padding-top:0px !important)
+    ! sconstantinou.com##.site-inner:style(margin-top:0px !important; padding-top:0px !important)
+    ! thewindowsclub.com##.site-inner:style(padding-top:0px !important)
+!
+*##.site-navigation-fixed:style(position:static !important)
+!
+*##.topnav:style(position:static !important)
+*###topnav:style(position:static !important)
+*###topNav:style(position:static !important)
+!
+
+*###site-navigation:style(position:static !important; background-image:none !important; padding-top:0px !important; margin-top: 0px !important; overflow:auto !important; border-top:0px !important)
+!
+*##.sticky-navigation:style(position:static !important)
+!
+*##.sticky-top:style(position:static !important)
+!
+*##.tocSticky:style(position:static !important)
+!
+*##.header-menu:style(position:static !important)
+!
+*##.td-header-menu-wrap:style(position:static !important)
+!
+*##.d-header-wrap:style(position:static !important)
+!
+*##.header-fixed:style(position:static !important)
+!
+*##.sub-header:style(position:static !important)
+!
+!
+! sticky sidebars can be set to static (more often) or absolute (less often)
+! exclusions here are set to absolute - see in _sites
+!
+~apptivo.com,~chilivesti.ru,~club.dns-shop.*,~gunsparts.ru,*##.sidebar:style(position:static !important)
+!
+*##.sidebar__sticky:style(position:static !important)
+!
+*##.td-ss-main-sidebar:style(position:static !important)
+!
+!
+*##.main-content:style(position:static !important; margin-top:0px !important; padding-top:0px !important; opacity:initial !important)
+!
+*##.sticky-bar:style(position:static !important)
+!
+*##.uix_stickyBar:style(position:static !important)
+!
+*##.wy-nav-side:style(position:absolute !important)
+!
+*##.x-navbar-fixed-top:style(position:static !important)
+    ! maybe ##.td-header-menu-wrap.td-affix:style(position:static !important) - usually they tend to be used together
+!
+!
+! unstick some elements
+*##.uix_stickyBodyElement:style(position:static !important)
+!
+*##.opener:style(position:static !important)
+!
+*##.page-wrapper:style(position:static !important; visibility:visible !important)
+    ! ovdinfo.org##.page-wrapper:style(visibility:visible !important)
+!
+*##.sidebar-sticky:style(position:static !important)
+!
+*###sticky-wrapper:style(position:static !important)
+*##.sticky-wrapper:style(position:static !important)
+*##.sticky_wrapper:style(position:static !important)
+!
+*##.theiaStickySidebar:style(position:static !important; padding-top:0px !important; transform:none !important)
+!
+*##.wrap:style(position:static !important; filter:none !important; -webkit-filter:none !important; padding-top:0px !important; margin-top:0px !important; padding-bottom:0px !important; margin-bottom:0px !important; )
+!
+*##.wrapper:style(position:static !important; filter:none !important; -webkit-filter:none !important; padding-top:0px !important; margin-top:0px !important; padding-bottom:0px !important; margin-bottom:0px !important; )
+!
+! unstick header, menu and possibly some buttons
+!
+*##.affix:style(position:static !important)
+!
+*##.fix:style(position:static !important)
+!
+~jetbrains.com,*##._fixed:style(position:static !important)
+!
+~cogmento.com,~facebook.com,~vk.com,~w3docs.com,*##.fixed:style(position:static !important)
+    ! Exclusions:
+    ! cogmento.com - left menu
+    ! facebook.com, vk.com - left menu, as far as I remember
+    ! w3docs.com - left menu (.left-aside) set to absolute, see the specific rule in _sites
+!
+~facebook.com,~vk.com,*##.fusion-is-sticky:style(position:static !important; height:auto !important)
+!
+*##.is-fixed:style(position:static !important)
+!
+*##.is-sticky:style(position:static !important)
+!
+*##.is_stuck:style(position:static !important)
+!
+*##.isStuck:style(position:static !important)
+!
+*##.pinned:style(position:static !important)
+!
+*##.stick:style(position:static !important)
+!
+*##.sticking:style(position:static !important)
+!
+*###sticky:style(position:static !important)
+!
+~qna.habr.com,~hostings.info,~zabbix.com,*##.sticky:style(position:static !important)
+!
+*##.sticky-mobile:style(position:static !important)
+!
+*##.stuck:style(position:static !important)
+!
+*##.td-affix:style(position:static !important)
+
+
+!! remove empty space from top and bottom (margin-top:0px !important; padding-top:0px !important; margin-bottom:0px !important; padding-bottom:0px !important)
+!
+~pikabu.ru,~srg-it.ru,*##header:style(padding-top:0px !important; padding-bottom:0px !important; margin-top:0px !important; margin-bottom:0px !important; filter:none !important; -webkit-filter:none !important)
+!
+*###header:style(padding-top:0px !important; padding-bottom:0px !important; margin-top:0px !important; margin-bottom:0px !important; filter:none !important; -webkit-filter:none !important)
+*##.header:style(padding-top:0px !important; padding-bottom:0px !important; margin-top:0px !important; margin-bottom:0px !important; filter:none !important; -webkit-filter:none !important)
+*##.Header:style(position:static ! important; padding-top:0px !important; padding-bottom:0px !important; margin-top:0px !important; margin-bottom:0px !important; filter:none !important; -webkit-filter:none !important)
+
+
+!
+*###page:style(background-image:none !important; margin-top:0px !important; padding-top:0px !important; margin-bottom:0px !important; padding-bottom:0px !important; margin-top:0px !important)
+
+!
+*##body:style(opacity:initial !important)
+
+!
+*##.fixed-panel:style(position:static !important)
+
+
+!
+~wikipedia.org,~kodi.wiki,*###content:style(padding-top:0px !important; padding-bottom:0px !important; margin-top:0px !important; margin-bottom:0px !important; filter:none !important; -webkit-filter:none !important)
+    ! Exclusions:
+    ! Sites on Mediawiki engine: 
+        ! wikipedia.org, kodi.wiki, ...
+!
+~technoavia.ru,*##.content:style(padding-top:0px !important; padding-bottom:0px !important; margin-top:0px !important; margin-bottom:0px !important; filter:none !important; -webkit-filter:none !important)
+!
+~srg-it.ru,*##main:style(padding-top:0px !important; padding-bottom:0px !important; margin-top:0px !important; margin-bottom:0px !important; filter:none !important; -webkit-filter:none !important)
+!
+*##.main:style(padding-top:0px !important; padding-bottom:0px !important; margin-top:0px !important; margin-bottom:0px !important; filter:none !important; -webkit-filter:none !important)
+!
+*###main:style(background-image:none !important; padding-top:0px !important; margin-top:0px !important)
+    ! background and padding-top/margin-top rules were in online_films. Also see _headers_examples
+
+
+! After successful approbation of unfixing headers let's unfix footers too.
+    ! Earlier:
+    !##.fixed_footer
+    ! from Fanboy's: manworldmedia sites
+    !##.h-fixed-footer
+! Now:
+*##.footer:style(position:static !important; background-image:none !important; height:auto !important; min-height:0px !important; margin-top:0px !important; padding-top:0px !important; margin-bottom:0px !important; padding-bottom:0px !important; visibility:visible)
+!
+*##footer:style(position:static !important; background-image:none !important; height:auto !important; min-height:0px !important; margin-top:0px !important; padding-top:0px !important; margin-bottom:0px !important; padding-bottom:0px !important; visibility:visible)
+    ! ovdinfo.org##footer:style(visibility:visible !important)
+!
+~mwave.com.au,*###footer:style(position:static !important; background-image:none !important; height:auto !important; min-height:0px !important; margin-top:0px !important; padding-top:0px !important; margin-bottom:0px !important; padding-bottom:0px !important; visibility:visible)
+    ! Exclusions:
+    ! mwave.com.au - ###footer position:relative breaks the display
+!
+*##.fixed_footer:style(position:static !important)
+!
+*##.fixed-footer:style(position:static !important)
+!
+*##.h-fixed-footer:style(position:static !important)
+!
+*##.site-footer-container:style(position:static !important)
+
+
+! possible todo
+budetinteresno.info##.wrapper:style(padding-top:0px !important)
+stigviewer.com##.wrapper:style(padding-top:0px !important)
+
+
+
+!! remove bottom bars and other sticky elements
+##.bottom-bar
+###fixbar
+##.fixed_panel
+##.fixed-support-links
+##.floating_badge
+##.footer-line
+##.sticky-box
+##.sticky-box__primary
+##.fa-stack
+##.fa-stack-1x
+##.fa-stack-2x
+##.float-bar
+##.float-button
+##.float-buttons
+##.float-calc
+##.float-mail
+##.float-phone
+##.floating-ai
+!##.js-stickyFooter
+!##.js-sticky-footer
+##.sticky-code-block
+! it seems, sticky-footer is not very good idea
+!~nalog.ru,~newstracker.ru,~techstronghold.com##.sticky-footer
+##.sticky-queue
+##.sticky-tagline
+~castorama.ru##.toolbar-bottom
+/avada-header.js
+/jquery.sticky-sidebar
+/jquery.sticky-kit.js
+
+
+
+!! backgrounds
+! remove annoying page backgrounds
+! (rules similar to "unblock page scrolling" block)
+!
+! ##body:style(background-image:none !important) - see above
+~srg-it.ru,*##body::before:style(background-image:none !important)
+!
+~srg-it.ru,*##html:style(background-image:none !important)
+!
+~srg-it.ru,*##.wrap:style(background-image:none !important)
+!
+*##.wrapper:style(background-image:none !important)
+    ! examples: many of the online movies sites and some others - see in _headers_examples
+!
+!
+! not exactly headers, but blockquotes also can be too "artsy-craftsy".
+*##blockquote:style(content:"" !important; background:none !important; position:static !important)
+*##blockquote::before:style(content:"" !important; background:none !important; position:static !important)
+*##blockquote::after
+    ! altay-news.ru##blockquote::after
+    ! militaryarms.ru##blockquote::after
+    ! m-strana.ru##blockquote::after
+!
+!
+/background.gif
+/background.jpg$domain=~codingame.com
+/background.png
+/background_bg.png
+/branding_bg.png
+/brand-logo/*$image
+/bg/*$image
+/bg-$image,important
+    ! /bg-header.gif
+    ! /bg-main.jpg
+    ! /bg-02.jpg
+    ! /bg-03.jpg
+    ! /bg-clouds-min.jpg
+    ! /bg-mn.jpg
+/bg_$image,important
+    ! /bg_02.jpg
+    ! /bg_3.png
+    ! /bg_container.jpg
+    ! /bg_footer.jpg
+    ! /bg_header.png
+    ! /bg_list.png
+    ! /bg_logo.png
+    ! /bg_search.png
+    ! ||overclockers.ru/static/img/bg_early.gif  # from Ru AdList
+    ! ||ptichka.ru/i/bg_*.png
+-bg.gif$image
+_bg.gif$image
+    ! /sidebar_bg.gif
+    ! /top_bg.gif
+-bg.jpg$image
+    ! /dark-bg.jpg
+    ! /footer-bg.png
+    ! /navi-bg.jpg
+_bg.jpg$image
+    ! /footer_bg.jpg
+    ! /header_bg.jpg
+-bg.png$image
+    ! /header-bg.png
+_bg.png$image$domain=~sberbank-ast.ru
+    ! /bq_bg.png
+    ! /top_bg.png
+-bg.svg$image
+_bg.svg$image
+    ! /header_bg.svg
+/bg.gif
+/bg.jpg$domain=~quantumgame.io
+/bg.png
+/bg01.png
+/bg1.png$domain=~vdocuments.site
+/bg1.svg
+/bg2.png$domain=~vdocuments.site
+/bg3.png$domain=~vdocuments.site
+/bg4.png$domain=~vdocuments.site
+/bg5.jpg
+/bg5.png
+/bg6.png
+/body-bg$image
+/fon.$image
+    ! /fon.jpg
+    ! /fon.png
+/fon_$image
+    ! /fon_girl2.png
+    ! /fon_top.jpg
+/fonbg.png
+/fonhead.jpg
+/footer.jpg
+/hdfon.jpg
+/head.jpg
+/head.png
+/headbg.$image
+/headbg2.$image
+! see /header$image rule above
+/pagebg.jpg
+
+
+! Disable css selection restrictions
+*##html,body,body *:style(user-select:auto !important; -webkit-user-select:auto !important; -webkit-touch-callout: auto !important; -moz-user-select:auto !important; -ms-user-select:auto !important; -o-user-select:auto !important; -khtml-user-select:auto !important)
+
+
+! There are many wordpress blogs with "inline related posts" blocks. It is really annoying. Here is solution to hide that [un]related blocks. It also cannot work as general rule, so - block:
+*##a[rel=nofollow]:has(.postTitle)
+
+
+#*$script,header=via  # https://github.com/gorhill/uBlock/wiki/Static-filter-syntax#header

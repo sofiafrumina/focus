@@ -1,0 +1,1662 @@
+! This file will be some sort of archive (or trashbin). It is not included in actual filters
+
+
+
+!! banners
+
+! ##[class$="-ad"]:not(html):not(body):not(article)
+! ##[id$="-ad"]:not(html):not(body):not(article)
+###admit-ad
+
+! ##[class$="_ad"]:not(html):not(body):not(article)
+! ##[id$="_ad"]:not(html):not(body):not(article)
+##.catalog__item_view_ad
+
+! ##[class^="AD_"]:not(html):not(body):not(article)
+! ##[id^="AD_"]:not(html):not(body):not(article)
+
+! ##[class^="Ad_"]:not(html):not(body):not(article)
+! ##[id^="Ad_"]:not(html):not(body):not(article)
+
+! ##[class^="ad_"]:not(html):not(body):not(article)
+! ##[id^="ad_"]:not(html):not(body):not(article)
+##.ad_after_post
+###ad_bigbox_within_articles_container
+###ad_big_left
+###ad-box-2
+###ad-box-newsletter
+###ad_comment_dummy
+###ad_container
+###ad_footer2
+###ad_global_below_navbar
+###ad_help_link
+###ad_hide_mask_ad_0
+###ad_hide_mask_ad_1
+###ad_left_all
+###ad_ph_1
+###ad_ph_2
+###ad_ph_3
+###ad_ph_4
+###ad_ph_8
+###ad_pos_targeted_in_article
+###ad_s
+###ad_space
+###ad_square
+###ad_sticky_wrap
+###ad-slides
+###ad_title
+##.ad_title_centered
+
+! ##[class^="ad-"]:not(html):not(body):not(article)
+! ##[id^="ad-"]:not(html):not(body):not(article)
+###ad-730
+###ad-share-friend-link
+##.ad-slot-full
+##.ad-text
+###ad-top
+
+! ##[class*="-ad-"]:not(html):not(body):not(article)
+! ##[id*="-ad-"]:not(html):not(body):not(article)
+
+! ##[class*="_ad_"]:not(html):not(body):not(article)
+! ##[id*="_ad_"]:not(html):not(body):not(article)
+
+! ##[class*="Adblock"]:not(html):not(body):not(article)
+! ##[id*="Adblock"]:not(html):not(body):not(article)
+! ##[class*="adblock"]:not(html):not(body):not(article)
+! ##[id*="adblock"]:not(html):not(body):not(article)
+##.ABD_display_adblock
+###adblock_dont_block_please
+###adblock_square
+###adblock-message
+##.b-adblock_small
+
+! ##[class*="adfox"]:not(html):not(body):not(article)
+! ##[id*="adfox"]:not(html):not(body):not(article)
+###adfox-billboard
+###adfox_replace
+###adfoxPromo
+###adfoxPromoBanner
+###adfox-wrapper
+
+! ##[class^="adMedia"]:not(html):not(body):not(article)
+! ##[id^="adMedia"]:not(html):not(body):not(article)
+! ##[class*="-admedia"]:not(html):not(body):not(article)
+! ##[id*="-admedia"]:not(html):not(body):not(article)
+
+! ##[class*="adriver"]:not(html):not(body):not(article)
+! ##[id*="adriver"]:not(html):not(body):not(article)
+###adriver_300x100_ukrnet~div
+###adriver_banner
+###adriver_ClickArea
+###adriver-240x120
+
+! ##[class^="ads]:not(html):not(body):not(article)
+! ##[id^="ads"]:not(html):not(body):not(article)
+###ads
+###ads-blogs
+##.adsbyfffs
+##.adsbygoogle
+##.adsbyyottos
+###adsClose
+###adsCSS
+###ads_dummy
+###ads_iframe
+###ads_left
+###ads_left_bottom
+###ads_page
+###ads_wide
+##.adsCategoryIcon
+##.adsCategoryTitleLink
+##.ads-container
+##.ads-default
+###ads-fix
+###ads-full-screen
+###adsincont
+###ads-internet-pharmacy-rest-panel
+###adsLeftZone
+###adslinks
+###adspace
+###adsPlace1
+###adsPlace2
+###adsPlace3
+###ads-row
+###adstickers
+###ads-top-leaderboard
+###adsWall-0
+###adsWall-1
+###adsWall-2
+###adsZone
+###adsZone1
+###adsZone2
+###adsZone3
+
+! ##[class$="-ads]:not(html):not(body):not(article)
+! ##[id$="-ads"]:not(html):not(body):not(article)
+
+! ##[class*="-ads-]:not(html):not(body):not(article)
+! ##[id*="-ads-"]:not(html):not(body):not(article)
+###better-ads-2
+###better-ads-3
+###better-ads-4
+###better-ads-5
+###better-ads-6
+###better-ads-7
+##.logo-ads-wrapper
+
+! ##[class*="_ads_]:not(html):not(body):not(article)
+! ##[id*="_ads_"]:not(html):not(body):not(article)
+
+! ##[class$="_ads]:not(html):not(body):not(article)
+! ##[id$="_ads"]:not(html):not(body):not(article)
+##.b-content__section_ads
+##.b-content__title_ads
+
+! ##[class*="adsense"]:not(html):not(body):not(article)
+! ##[id*="adsense"]:not(html):not(body):not(article)
+###adsense_firstpost
+###adsenseNiz
+##.adsense
+##.adsenseblock
+##.adsense_blok
+##.adsense_bot
+##.adsense_img
+
+! ##[class*="Advert"]:not(html):not(body):not(article)
+! ##[id*="Advert"]:not(html):not(body):not(article)
+! ##[class*="advert"]:not(html):not(body):not(article)
+! ##[id*="advert"]:not(html):not(body):not(article)
+##.advert
+##.Advert
+##.advertise-main
+##.nav__advert
+##.other-advertising
+##.right-advertising
+
+! ##[class*="Banner"]:not(html):not(body):not(article)
+! ##[id*="Banner"]:not(html):not(body):not(article)
+! ##[class*="banner"]:not(html):not(body):not(article)
+! ##[id*="banner"]:not(html):not(body):not(article)
+###Adfox_Banner
+##.alert-banner
+##.app-download-banner
+##.banner
+###banner
+###banner240x400
+###banner990
+###banner-87
+###banner-109
+###banner-61
+###banner-62
+###banner-115
+###banner-a1
+###bannerad
+##.banner_block
+##.banner_bottom
+###bannerBottom
+##.banner_catalog_head
+###banner-center-td
+###banner-container
+###banner_content
+###bannerCT-2
+###banner_full
+##.banner_large_product
+###banner-left-240x200-0
+##.banner_organiz
+###banner_place
+###banner-placeholder
+###banner-placement-
+###banner_position
+###banner_right_336_280
+###banners
+###banner_side
+###bannerSliderSidebar
+###bannerSmall
+###banner-social
+###banner_ss_all
+###banner-sterling
+##.banner-textbox-lg
+##.banner__top
+##.banner-top-wrapper
+##.banner-transparent
+##.bannergroup
+##.banner_item
+##.banner-rotate
+##.banner-slider-block
+###banners-slider-5cdc2373-717d-42a2-be77-5076dc57acd5
+##.banner-top
+###bannerXX
+##.bbanner
+##.b-banner
+##.b-banner__extra
+##.b-banner__wrap-out
+##.b-banner_600x90
+##.b-banner_slide
+##.b-banner_sm
+##.b-banner-240x400
+##.b-banner__background
+##.b-bannerBillboard
+##.b-banner-container
+##.b-banner-content
+##.b-bannered
+##.b-banner-fixed-left
+##.b-bannerRotate
+##.b-banners
+##.b-banner-sidebar-rtb
+##.b-banner-stickit
+##.b-banner-under-search
+##.b-banner__background
+##.b-content__banner
+##.beono-banner_slider
+##.between-card-banner_gtm-js
+##.between-card-banner_pageevents-js
+##.bgBanner
+##.bg_banner
+##.bg_banner_top
+##.big_banner
+##.bottom-banner
+##.bp-list-banner
+###center-banners
+##.cloudClassBannerMessage
+##.cloudClassTopBannerDevices
+##.cloudClassTopBannerCertsLink
+##.community-promo-banners
+##.community-content-banner
+##.cp-banners
+###ctl00_Main3_bannerDiv
+###divBannerTop
+##.drainagebanner
+##.forum-top-banners
+##.head-banner__img-loader
+##.head-banner__link
+##.head-promo-banner
+###homepage-banner-layout
+###html5_banner
+##.index-autocode-banner
+##.index-evaluation-banner
+##.js-banner-bottom
+##.js-banner-right-fixed
+##.leftbanner
+###leftColumnBannersBox
+##.listing-banner
+##.loyalty-credit-banner
+##.main-banner
+##.mainbanner_box
+###MegaBanner
+###mega-banner
+###meta_banner_center
+###meta_banner_top
+###mobileBanner
+##.mobile-banner__content
+##.msw-banner
+###news_bannerPlace
+###newsBannerView
+##.notice-banner
+###notification-banner
+###owl-small-top-banner
+##.page-header__banner
+##.post-banner
+##.rbanners
+###register-banner
+###sa_banner
+##.short-banner-hp
+##.sidebar-block__banner
+##.sidecol__banner
+##.sidecol__banner--right
+##.smart-banner
+##.top-banner
+##.top-banners
+##.toggling_banners
+###topHeaderBannerWrap
+##.uh-banner-wide
+##.user-dashboard-banner
+##.widget-banner
+##.ui-banner-slider-wrap
+
+! ##[class*="callback"]:not(html):not(body):not(article)
+! ##[id*="callback"]:not(html):not(body):not(article)
+##.callback
+###callback-popup
+
+! ##[class*="Chat"]:not(html):not(body):not(article)
+! ##[id*="Chat"]:not(html):not(body):not(article)
+! ##[class*="chat"]:not(html):not(body):not(article)
+! ##[id*="chat"]:not(html):not(body):not(article)
+###chatbotToronto
+###livechat-compact-container
+###ok_con_web_chat
+
+! ##[class*="copyright"]:not(html):not(body):not(article)
+! ##[id*="copyright"]:not(html):not(body):not(article)
+##.copyright
+##.copyright-inner
+###page_copyright
+##.ymaps-2-1-72-copyright
+##.ymaps-2-1-72-copyrights-pane
+
+! ##[class*="-cta-"]:not(html):not(body):not(article)
+! ##[id*="-cta-"]:not(html):not(body):not(article)
+
+! ##[class^="dfp"]:not(html):not(body):not(article)
+! ##[id^="dfp"]:not(html):not(body):not(article)
+##.dfp-slot
+##.dfp-slot_sticky-bottom
+##.dfp-slot_sticky-bottom
+##.dfp-slot_top
+    
+! ##[class$="dfp"]:not(html):not(body):not(article)
+! ##[id$="dfp"]:not(html):not(body):not(article)
+! ##[class*="-dfp"]:not(html):not(body):not(article)
+! ##[id*="-dfp"]:not(html):not(body):not(article)
+
+! ##[class*="fonbet"]:not(html):not(body):not(article)
+! ##[id*="fonbet"]:not(html):not(body):not(article)
+! ##[class*="leaderboard"]:not(html):not(body):not(article)
+! ##[id*="leaderboard"]:not(html):not(body):not(article)
+##.leaderboard
+##.leaderboard-ad
+##.leaderboard-ad-belt
+##.leaderboard-container
+##.leaderboard__wrapper
+##.leaderboards
+##.leaderboard-wrapper
+
+! ##[class*="Marketing"]:not(html):not(body):not(article)
+! ##[id*="Marketing"]:not(html):not(body):not(article)
+! ##[class*="marketing"]:not(html):not(body):not(article)
+! ##[id*="marketing"]:not(html):not(body):not(article)
+###marketing-slider
+##.marketing-vertical
+
+##[class*="motivation"]:not(html):not(body):not(article)
+##[id*="motivation"]:not(html):not(body):not(article)
+
+! ##[class*="partner"]:not(html):not(body):not(article)
+! ##[id*="partner"]:not(html):not(body):not(article)
+##.b-content__section_partners
+##.partners-bottom
+###partners-news
+##.partner_conteiner
+##.partner-link
+
+! ##[class*="paywall"]:not(html):not(body):not(article)
+! ##[id*="paywall"]:not(html):not(body):not(article)
+
+! ##[class*="Promo"]:not(html):not(body):not(article)
+! ##[id*="Promo"]:not(html):not(body):not(article)
+! ##[class*="promo"]:not(html):not(body):not(article)
+! ##[id*="promo"]:not(html):not(body):not(article)
+###category-promo
+##.join-promotion
+##.js-citypromoView
+###HPPromoBox
+##.island_type_city-promo
+##.join-promotion
+###lnn-promo
+##.menu-promo
+##.modal_promoted_content
+##.promo
+##.promo-block_freelansim-tasks
+##.promo-block_vacancies
+##.pricePromo
+##.promo_200
+##.promo-action_js
+###promo-banner
+##.promo_bdr
+##.PromoBlock
+##.promo-block
+##.promo_block
+##.promo-block_questions
+##.promo_credit
+##.promoEvent
+##.promo_label
+##.promo_line
+##.promotion
+##.promotion-layer-wrap
+##.promotion-timerbar
+###promoUnit
+###widgetPromoCarousel
+
+! ##[class*="reklam"]:not(html):not(body):not(article)
+! ##[id*="reklam"]:not(html):not(body):not(article)
+##bl_top_reklama
+
+! ##[class*="Sponsor"]:not(html):not(body):not(article)
+! ##[id*="Sponsor"]:not(html):not(body):not(article)
+! ##[class*="sponsor"]:not(html):not(body):not(article)
+! ##[id*="sponsor"]:not(html):not(body):not(article)
+##.bigsponsor
+##.sponsor-ad-embed
+##.sponsor-ad-slide
+
+! ##[class^="WNAd"]:not(html):not(body):not(article)
+! ##[id^="WNAd"]:not(html):not(body):not(article)
+
+
+!! social buttons
+! ##[class*="addthis"]:not(html):not(body):not(article)
+! ##[id*="addthis"]:not(html):not(body):not(article)
+##.icn-addthis
+
+! ##[class*="Facebook"]:not(html):not(body):not(article)
+! ##[id*="Facebook"]:not(html):not(body):not(article)
+! ##[class*="facebook"]:not(html):not(body):not(article)
+! ##[id*="facebook"]:not(html):not(body):not(article)
+###easy_facebook_page_plugin-1
+###easy_facebook_page_plugin-2
+###easy_facebook_page_plugin-3
+###easy_facebook_page_plugin-4
+###easy_facebook_page_plugin-5
+##.fa-facebook
+##.facebook
+##.facebook-icon
+###facebook_like_box
+###facebookpagewidget
+###facebookpagewidget-1
+###facebookpagewidget-2
+###facebookpagewidget-3
+##.ic_facebook
+##.ic-facebook
+##.icn_facebook
+##.icn_follow_facebook
+##.icn-facebook
+##.icn-footer-facebook
+##.ico__facebook
+##.ico_facebook
+##.ico-facebook
+##.ico-facebook-1
+##.icoFacebookBig
+##.ico-facebook-circle
+##.icomoon-facebook
+##.icomoon-facebook2
+##.icon__facebook
+##.icon__square--facebook
+##.icon_circle_facebook
+##.icon_facebook
+##.icon2-facebook
+##.icon-circle-facebook
+##.iconeFacebook
+##.iconFacebook
+##.iconfacebook
+##.icon-facebook
+##.icon-Facebook
+##.icon--facebook
+##.Icon--facebook
+##.icon--facebook__white
+##.icon-facebook_master
+##.icon-facebook16
+##.icon-facebook2
+##.icon-facebook-24
+##.icon-facebook-32
+##.icon-facebook-alt
+##.icon-facebook-bg
+##.icon-facebook-box
+##.icon-facebook-circle
+##.icon-facebook-circled
+##.icon-facebook-encircled
+##.icon-facebook-icon
+##.icon-facebook-official
+##.icon-facebook-rect
+##.icon-facebook-round
+##.icon-facebook-sign
+##.icon--facebook-simple
+##.icon-facebook-square
+##.icon-facebook-squared
+##.icon-facebook-sticky
+##.icon-facebook-white
+##.icon-footer-facebook
+##.icon-header-facebook
+##.icon-icon_facebook
+##.icon-inq-facebook
+##.icon-logo-facebook
+##.icon-p-facebook-m
+##.icon-sd-facebook
+##.icons-facebook
+##.icon-s-facebook
+##.icons-icon-facebook
+
+! ##[class^="FB"]:not(html):not(body):not(article)
+! ##[id^="FB"]:not(html):not(body):not(article)
+! ##[class$="FB"]:not(html):not(body):not(article)
+! ##[id$="FB"]:not(html):not(body):not(article)
+##.icon-FB
+
+! ~aliexpress.com##[class^="fb"]:not(html):not(body):not(article)
+! ~aliexpress.com##[id^="fb"]:not(html):not(body):not(article)
+##.fb-sign-in
+##.fb-widget-below-comments-mw
+
+! ##[class$="fb"]:not(html):not(body):not(article)
+! ##[id$="fb"]:not(html):not(body):not(article)
+! ##[class*="-fb"]:not(html):not(body):not(article)
+! ##[id*="-fb"]:not(html):not(body):not(article)
+##.icn-fb
+##.icn-fbuk
+##.ico-fb
+##.icon-fb
+
+##.icon-fb2
+##.icon-fb-footer
+##.icon-fb-small
+##.icon-fb-square
+##.icon-fb-white
+##.menu-icon-fb
+    
+! ##[class*="_fb"]:not(html):not(body):not(article)
+! ##[id*="_fb"]:not(html):not(body):not(article)
+##.ic_fb
+
+! ##[class*="FBLIKE"]:not(html):not(body):not(article)
+! ##[id*="FBLIKE"]:not(html):not(body):not(article)
+! ##[class*="FBLike"]:not(html):not(body):not(article)
+! ##[id*="FBLike"]:not(html):not(body):not(article)
+! ##[class*="FbLike"]:not(html):not(body):not(article)
+! ##[id*="FbLike"]:not(html):not(body):not(article)
+! ##[class*="fblike"]:not(html):not(body):not(article)
+! ##[id*="fblike"]:not(html):not(body):not(article)
+! ##[class*="Follow"]:not(html):not(body):not(article)
+! ##[id*="Follow"]:not(html):not(body):not(article)
+! ##[class*="follow"]:not(html):not(body):not(article)
+! ##[id*="follow"]:not(html):not(body):not(article)
+##.footer__follow-us
+##.hp_box-followus
+##.icn_follow_email
+##.icn_follow_mobile
+##.icn_follow_text
+##.icn_follow_twitter
+##.ico-follow-us
+##.icons-gplus_follow_small
+##.icons-twitter_follow_small
+
+! ##[class*="GooglePlus"]:not(html):not(body):not(article)
+! ##[id*="GooglePlus"]:not(html):not(body):not(article)
+! ##[class*="Googleplus"]:not(html):not(body):not(article)
+! ##[id*="Googleplus"]:not(html):not(body):not(article)
+! ##[class*="googlePlus"]:not(html):not(body):not(article)
+! ##[id*="googlePlus"]:not(html):not(body):not(article)
+! ##[class*="googleplus"]:not(html):not(body):not(article)
+! ##[id*="googleplus"]:not(html):not(body):not(article)
+##.ic_googleplus
+##.ico__googleplus
+##.ico-googleplus
+##.icons-googleplus
+
+! ##[class*="google_plus"]:not(html):not(body):not(article)
+! ##[id*="google_plus"]:not(html):not(body):not(article)
+##.icon_google_plus
+##.icon-google_plus
+
+! ##[class*="google-plus"]:not(html):not(body):not(article)
+! ##[id*="google-plus"]:not(html):not(body):not(article)
+##.fodicon-google-plus
+##.icn-google-plus
+##.ico-google-plus
+##.icomoon-google-plus
+##.icon_google-plus
+##.icon-google-plus
+
+
+! ##[class*="GPlus"]:not(html):not(body):not(article)
+! ##[id*="GPlus"]:not(html):not(body):not(article)
+##.customGPlusSignIn
+
+! ##[class*="gplus"]:not(html):not(body):not(article)
+! ##[id*="gplus"]:not(html):not(body):not(article)
+##.icn-gplus
+##.ico-gplus
+##.ico_gplus
+##.icon-gplus
+##.icon_gplus
+##.icons-gplus
+
+##.icongoogleplus
+##.icon-googlePlus
+##.icon-googleplus
+##.icon-GooglePlus
+##.icon--googleplus
+##.icon--google-plus
+##.icon--googleplus__white
+##.icon-googleplus16
+##.icon-google-plus2
+##.icon-google-plus-2
+##.icon-googleplus8
+##.icon-google-plus-circle
+##.icon-google-plus-icon
+##.icon-google-plus-round
+##.icon-google-plus-sign
+##.icon-googleplus-white
+##.icon-gplus-circled
+##.icon-gplusone
+##.icon-header-googleplus  
+##.icon-p-gplus-m
+##.icon-plusone
+##.icon-plusone-mini
+    
+! ##[class*="Instagram"]:not(html):not(body):not(article)
+! ##[id*="Instagram"]:not(html):not(body):not(article)
+! ##[class*="instagram"]:not(html):not(body):not(article)
+! ##[id*="instagram"]:not(html):not(body):not(article)
+##.icn-instagram
+##.ico-Instagram
+##.ico-instagram
+##.ico--instagram
+##.icomoon-instagram
+##.icon_circle_instagram
+##.icon_instagram
+##.icon-circle-instagram
+##.icon-instagram
+##.icon-Instagram
+##.Icon--instagram
+##.icon--instagram
+##.icon-instagram_master
+##.icon-instagram-box
+##.icon-instagram-circle
+##.icon-instagram-encircled
+##.icon-instagram-icon
+##.icon-instagramm
+##.icon-instagram-white
+##.icon-sd-instagram
+##.icons-instagram
+
+! ##[class*="linkedin"]:not(html):not(body):not(article)
+! ##[id*="linkedin"]:not(html):not(body):not(article)
+##.ico-linkedin
+##.icon_linkedin
+##.icon2-linkedin
+##.icon-linkedin
+##.icon--linkedin
+##.icon--linkedin__white
+##.icon-linkedin_box
+##.icon-linkedin2
+##.icon-linkedin-box
+##.icon-linkedin-circled
+##.icon-linkedin-sign
+##.icon-linkedin-square
+##.icon-linkedin-squared
+##.icon-logo-linkedin
+##.icon-p-linkedin-m
+##.icon-sd-linkedin
+##.icons-linkedin
+
+! ##[class*="pinterest"]:not(html):not(body):not(article)
+! ##[id*="pinterest"]:not(html):not(body):not(article)
+##.icn-pinterest
+##.icomoon-pinterest
+##.icon_circle_pinterest
+##.icon_pinterest
+##.icon-pinterest
+##.icon--pinterest
+##.icon-pinterest_master
+##.icon-pinterest16
+##.icon-pinterest3
+##.icon-pinterest-alt
+##.icon-pinterest-circle
+##.icon-pinterest-circled
+##.icon-pinterest-encircled
+##.icon-pinterest-p
+##.icon-pinterest-round
+##.icon-pinterest-sign
+##.icon-pinterest-sticky
+##.icon-pinterest-white
+##.icon-sd-pinterest
+##.icons-pinterest
+##.ico-pinterest
+    
+! ##[class*="plusone"]:not(html):not(body):not(article)
+! ##[id*="plusone"]:not(html):not(body):not(article)
+###___plusone_0
+###___plusone_1
+
+! ##[class*="Share"]:not(html):not(body):not(article)
+! ##[id*="Share"]:not(html):not(body):not(article)
+! ##[class*="share"]:not(html):not(body):not(article)
+! ##[id*="share"]:not(html):not(body):not(article)
+###addshare
+###addsharetop
+##.bottom-share-links
+##.entry-share
+##.dpsp-total-share-wrapper
+##.hpshareico
+##.hp_share
+##.hp-ss-share
+##.hp-ss-text-info-bar-share
+##.ic_share
+##.ic_share_sc
+##.icf--share
+##.icn-share
+##.ico_share
+##.icon_share
+##.iconeshare
+##.icon-icons_email-share
+##.icon-icons_email-top-share
+##.icon-icons_facebook-share
+##.icon-icons_twitter-share
+##.icon-icons_twitter-top-share
+##.icon-ion-android-share-alt
+##.iconochive-share
+##.icon-pinterest-share
+##.icon-post-share
+##.icons_share
+##.icons_share_footer
+##.icon-share
+##.icon-share2
+##.icon-share-2
+##.icon-share-alt
+##.icon-share-facebook
+##.icon-share-instagram
+##.icon-share-linkedin
+##.icon-share-tumblr
+##.icon-share-twitter
+##.icon-share-vine
+##.icon-sidebar-share
+##.icons-share
+##.ico-share
+##.jsShare
+##.js-share
+###js-share
+##.js-share_buttons
+##.js-shareButton
+##.js-share-button
+##.js-share-button-container
+##.js-sharebuttons
+##.js-share-button-twitter
+##.js-sharecount
+##.js-share-count
+##.js-share-email
+##.js-share-facebook
+###js-share-links
+###js-share-menu-wrap
+##.js-share-more
+##.js-share-pinterest
+##.js-share-popup
+##.js-shares_btn
+##.js-share-stumble
+##.js-share-to-facebook
+##.js-share-twitter
+##.js-twitter-share
+##.like-share
+##.post-share
+##.post_share_box
+##.post-share-buttons
+##.post-shares-wrap
+##.print_and_share
+##.share
+##.share-bar
+##.share-button
+##.shareButtons
+###share-buttons
+##.share_buttons
+##.sharedaddy
+##.share-icons
+##.shareLast
+##.shareon
+##.sharePage
+###share-title
+##.share-url
+##.story__share
+##top_share
+##.ww-post-share
+##.yashare
+##.ya-share2__badge
+##.ya-share2__item
+##.ya-share2__link
+
+! ##[class*="Sharing"]:not(html):not(body):not(article)
+! ##[id*="Sharing"]:not(html):not(body):not(article)
+! ##[class*="sharing"]:not(html):not(body):not(article)
+! ##[id*="sharing"]:not(html):not(body):not(article)
+##.icon-facebook-sharing
+##.icon-webplayer_ico_sharing2
+##.js-sharing-buttons
+##.js-sharing-popup-facebook
+##.js-sharing-popup-linkedin
+##.js-sharing-popup-twitter
+##.sd-sharing
+##.sd-sharing-enabled
+##.sharing
+
+! ##[class$="-soc"]:not(html):not(body):not(article)
+! ##[id$="-soc"]:not(html):not(body):not(article)
+##.b-footer-soc
+##.b-soc
+
+! ##[class$="_soc"]:not(html):not(body):not(article)
+! ##[id$="_soc"]:not(html):not(body):not(article)
+##.footer_soc
+
+! ##[class^="soc_"]:not(html):not(body):not(article)
+! ##[id^="soc_"]:not(html):not(body):not(article)
+##.soc_list
+
+! ##[class^="soc-"]:not(html):not(body):not(article)
+! ##[id^="soc-"]:not(html):not(body):not(article)
+##.soc-left
+##.soc-seti
+
+! ##[class*="-soc-"]:not(html):not(body):not(article)
+! ##[id*="-soc-"]:not(html):not(body):not(article)
+##.footer-soc-block
+
+    
+! ##[class*="_soc_"]:not(html):not(body):not(article)
+! ##[id*="_soc_"]:not(html):not(body):not(article)
+
+
+! ##[class*="Social"]:not(html):not(body):not(article)
+! ##[id*="Social"]:not(html):not(body):not(article)
+! ##[class*="social"]:not(html):not(body):not(article)
+! ##[id*="social"]:not(html):not(body):not(article)
+###acx-social-icons-widget
+###acx-social-icons-widget-1
+###acx-social-icons-widget-2
+###acx-social-icons-widget-3
+###adbl-social-container
+###adbl-social-icons
+##.article__assets-social
+##.b-button__social__wrapper
+##.b-button__social__wrapper--medium
+##.beacon-social
+##.bean-social-profiles
+##.bean-social-subscribers
+##.b-flatsocial
+##.b-flatsocial-button
+###blog_social
+##.b-social-icon
+###bs-social-share
+###bs-social-share-2
+###bs-social-share-3
+###bs-social-share-4
+###bs-social-share-5
+##.desktop-footer__social
+###essbsocialfollowerscounterwidget-1
+###essbsocialfollowerscounterwidget-2
+###essbsocialfollowerscounterwidget-3
+###essbsocialfollowerscounterwidget-4
+###essbsocialfollowerscounterwidget-5
+##.et_social_animated
+##.et_social_icons_container
+##.et_social_mobile_on
+##.et_social_rectangle
+##.et_social_slideright
+##.et_social_sidebar_slide
+##.et_social_sidebar_networks
+##.et_social_sidebar_grow
+##.et_social_space
+##.et_social_visible_sidebar
+##.footer-more--social
+##.footer__social-group
+##.footer-social_icon-item
+##.footer-social_icon-list
+##.fp-social
+###grand_news_social_profiles_posts-1
+###grand_news_social_profiles_posts-2
+###grand_news_social_profiles_posts-3
+###grand_news_social_profiles_posts-4
+###grand_news_social_profiles_posts-5
+###grand_news_social_profiles_posts-6
+###grand_news_social_profiles_posts-7
+##.g__signoff__social-link
+##.g__signoff__social-links
+##.gf__social
+##.gf__social__list
+##.headline-social
+##.hp-main-pane-social
+##.hp-right-pane-social
+##.hp-social
+##.hover-social-media-top
+##.hp_box-social
+##.hplayer-socials
+###hp_social_login
+##.ic_footer_social-share
+##.ic_socials
+##.icn-social
+##.IcnSocials
+##.icon_open_social_textedit
+##.icon_social
+##.icon_social-facebook
+##.icon_social-instagram
+##.icon_socialmedias
+##.icon_social-twitter
+##.icona-social
+##.icone-social
+##.icon-holder-social
+##.iconic-social-facebook
+##.iconic-social-google-plus
+##.iconic-social-twitter
+##.icon-list--social
+##.icons_social
+##.icons-circle-social
+##.iconsocial
+##.icon-social
+##.icon-social__link
+##.icon-social_facebook_bl
+##.icon-social_twitter_bl
+##.icon-social-facebook
+##.icon-social-facebook-circle
+##.icon-social-flickr
+##.icon-social-google-circle
+##.icon-social-googleplus
+##.icon-social-instagram
+##.icon-social-instagram-circle
+##.icon-social-linkedin
+##.icon-social-linkedin-green
+##.icon-social-mail-circle
+##.icon-social-mail-circle
+##.IconSocialMedia
+##.icon-social-pinterest
+##.icon-social-round-fb
+##.icon-social-round-google
+##.icon-social-round-twitch
+##.icon-social-round-twt
+##.icon-social-round-youtube
+##.icon-social-spotify
+##.icon-social-tumblr
+##.icon-social-twitter
+##.icon-social-twitter-circle
+##.icon-social-youtube
+##.icons-social
+##.icons-social_medium_facebook
+##.icons-social_medium_google
+##.icons-social_medium_twitter
+##.IcoSocial
+##.ico-social
+##.ic-social-fb
+##.ico_social_gruppo
+##.ico_social_main
+##.ic-social-wechat
+##.ic-social-weibo
+##.ic-social-yt
+##.item-socials-actions
+##.j-e-afterpost-randomsocial
+###js-dialog-social-overlay
+###js-dialog-social-overlay-1
+##.js-social
+##.js-social_share_buttonbar
+##.js-social-bar
+###js-social-btns
+##.js-social-facebook
+###js-social-link-button
+##.js-social-instagram
+##.js-socialise
+##.js-socialise-wrapper
+##.js-social-media-link
+##.jssocials
+##.js-socials
+##.js-social-share
+##.js-social-share-component
+##.js-social-share-list
+##.jssocials-share
+##.jssocials-share-facebook
+##.jssocials-share-link
+##.jssocials-share-logo
+##.jssocials-share-pinterest
+##.jssocials-shares
+##.js-social-toolbar
+##.js-social-twitter
+##.js-social-widgets
+###leftsocialize1
+###link_social
+###link_social
+##.ListSocial
+##.list-social
+##.list--social
+##.list-socials
+##.moduletablesocialbut
+##.mythemes-social
+##.nav-social-links
+###nav_social_links
+##.news_social_logo
+##.nn-nav-socials__link
+##.our-social
+##.our-social__header
+##.our-social__intro
+##.our-social__footer
+##.product-social-buttons
+###rightsocial
+###rightSocial
+###rightSocialFacebook
+###rightSocialGoogle
+###rightSocialLinkedin
+###rightSocialTwitter
+##.sd-social
+##.sd-social-icon
+##.sidebar-social-list
+##.site-footer_menu-item--social-feed
+##.site-footer_menu--social-link
+##.site-footer_menu--social-links
+##.social
+###social
+##.social-1_small
+##.social-2_small
+##.social-3_small
+##.social-4_small
+##.social-5_small
+##.social-6_small
+##.social-7_small
+##.social-accounts
+##.social-accounts__account
+##.social-accounts__account--google
+##.social-accounts__account--ok
+##.social-accounts__account--vk
+##.social-accounts--bgcolor
+##.social-accounts__offset
+##.social-bookmarks
+##.social__button
+##.social-buttons
+##.social-color
+##.social-icons
+###social-icons-desktop
+##.social-icons-wrap
+##.social-links
+##.social-line
+##.-social.menu-list
+###social-nav
+###socials
+##.social-search-icons
+##.social-sec
+##.social-section
+##.SocialSection
+##.socialSection
+##.social-section-links
+##.social-sendmail
+##.social-separator
+##.social-services
+##.socials-footer
+##.social-shadow
+##.social-shar-bar
+##.social--share
+##.social-share
+##.socialShare
+##.SocialShare
+##.socialshare
+##.socialshare2
+##.social-share-area
+##.social-share-articolo
+##.socialShareBar
+##.social-sharebar
+##.social-share-bar
+##.social-share-block
+##.social-share-bottom
+##.social-share-box
+##.socialsharebtm
+##.social--share_btn
+##.social-share-btn
+##.social-share-btns
+##.social-share__button
+##.social-share-button
+##.social-share-buttons
+##.socialShareButtons-container
+##.social_share_button_wrapper
+##.socialshare_inside
+##.social-share-list
+##.social-share__listitem--facebook
+##.social-share__listitem--twitter
+##.social_stick
+##.social_wrapper
+###td_social_sharing_article_bottom
+###td_social_sharing_article_top
+##.tm-footer__social
+###widget-social
+###widget-socials
+###zoom-social-icons-widget
+###zoom-social-icons-widget-1
+###zoom-social-icons-widget-2
+
+
+    
+! ##[class*="Sociaux"]:not(html):not(body):not(article)
+! ##[id*="Sociaux"]:not(html):not(body):not(article)
+! ##[class*="sociaux"]:not(html):not(body):not(article)
+! ##[id*="sociaux"]:not(html):not(body):not(article)
+
+! ##[class*="Tweet"]:not(html):not(body):not(article)
+! ##[id*="Tweet"]:not(html):not(body):not(article)
+! ##[class*="tweet"]:not(html):not(body):not(article)
+! ##[id*="tweet"]:not(html):not(body):not(article)
+###Celeb_Tweets
+##.icon-tweet
+##.js-tweet-button
+
+! ##[class*="Twitter"]:not(html):not(body):not(article)
+! ##[id*="Twitter"]:not(html):not(body):not(article)
+! ##[class*="twitter"]:not(html):not(body):not(article)
+! ##[id*="twitter"]:not(html):not(body):not(article)
+##.ic_twitter
+##.icn_twitter
+##.icn-twitter
+##.icn-footer-twitter
+##.ico__twitter
+##.ico_twitter
+##.icomoon-twitter
+##.icomoon-twitter2
+##.icon__square--twitter
+##.icon_circle_twitter
+##.icon_twitter
+##.icon2-twitter
+##.icon-circle-twitter
+##.iconeTwitter
+##.icon-footer-twitter
+##.icon-header-twitter
+##.icon-icon_twitter
+##.icon-inq-twitter
+##.icon-logo-twitter-bird
+##.icon-p-twitter-m
+##.icon-sd-twitter
+##.icons-icon-twitter
+##.icons-twitter
+##.icon-s-twitter
+##.iconTwitter
+##.icontwitter
+##.icon-Twitter
+##.icon-twitter
+##.icon--twitter
+##.Icon--twitter
+##.icon--twitter__white
+##.icon-twitter_master
+##.icon-twitter16
+##.icon-twitter2
+##.icon-twitter-2
+##.icon-twitter-24
+##.icon-twitter3
+##.icon-twitter-alt
+##.icon-twitter-bg
+##.icon-twitter-bird
+##.icon-twitter-circle
+##.icon-twitter-circled
+##.icon-twitter-encircled
+##.icon-twitter-icon
+##.icon-twitter-round
+##.icon-twitter-sign
+##.icon-twitter-small
+##.icon-twitter-squared
+##.icon-twitter-sticky
+##.icon-twitter-white
+##.ico-twitter
+##.ico-twitter-circle
+##.ic-twitter
+
+! ##[class$="-vk"]:not(html):not(body):not(article)
+! ##[id$="-vk"]:not(html):not(body):not(article)
+##.fa-vk
+##.icon-vk
+
+! ##[class*="zocial"]:not(html):not(body):not(article)
+! ##[id*="zocial"]:not(html):not(body):not(article)
+
+
+!! ratings and surveys
+! ~aliexpress.com##[class*="feedback"]:not(html):not(body)
+! ~aliexpress.com##[id*="feedback"]:not(html):not(body)
+##.allpages_feedback_container
+##.choose-feedback-type
+##.feedback
+##.feedback-block
+###feedback-form-block
+##.feedback-widget_blue
+##.open-feedback
+##.show-feedback
+##.wpr-link-to-feedbackbox
+##.wpr-link-to-feedbackbox-grey
+##.wpr-link-to-feedbackbox-top
+    
+! ##[class*="Survey"]:not(html):not(body)
+! ##[id*="Survey"]:not(html):not(body)
+! ##[class*="survey"]:not(html):not(body)
+! ##[id*="survey"]:not(html):not(body)
+###helpful-survey
+###js-user-survey-popup
+##.mysurvey
+##.survey-background
+##.survey-button-widget
+###survey-container
+##.survey-invite
+##.survey-invite-slide-in
+##.survey-tab
+
+!! up button
+!##[class*="chevron-up"]:not(html):not(body)
+!##[id*="chevron-up"]:not(html):not(body)
+##.glyphicon-chevron-up
+##.icon--ei-chevron-up
+
+! ##[class*="scroll-top"]:not(html):not(body)
+! ##[id*="scroll-top"]:not(html):not(body)
+##.hz-scroll-top__button
+##.scroll-top
+##.scroll-top-arrow
+##.scroll-top-btn
+##.scroll-top-button
+##.scroll_top_button
+###scroll-top-button
+##.scroll-top-inner
+##.scroll-top-wrapper
+
+! ##[class*="scroll_top"]:not(html):not(body)
+! ##[id*="scroll_top"]:not(html):not(body)
+
+! ##[class*="scrolltop"]:not(html):not(body)
+! ##[id*="scrolltop"]:not(html):not(body)
+##.scrolltop
+
+! ##[class*="ScrollTop"]:not(html):not(body)
+! ##[id*="ScrollTop"]:not(html):not(body)
+##.scrollTop
+###scrollTop
+
+! ##[class*="scrollTop"]:not(html):not(body)
+! ##[id*="scrollTop"]:not(html):not(body)
+
+! ##[class*="_to_top"]:not(html):not(body)
+! ##[id*="_to_top"]:not(html):not(body)
+###back_to_top
+###back_to_top_now
+##.button_to_top_area__btn
+##.link_to_top
+###scroll_to_top
+
+! ##[class*="-to-top"]:not(html):not(body)
+! ##[id*="-to-top"]:not(html):not(body)
+###back-to-top
+###back-to-top-arrow
+###back-to-top-btn
+###back-to-top-button
+###back-to-top-icon
+###back-to-top-scroll
+##.go-to-top
+###jump-to-top
+##.link-to-top
+##.scroll-to-top
+##.scroll-to-top-arrow
+##.scroll-to-top-btn
+##.scroll-to-top-button
+##.scroll-to-top-wrapper
+
+! ##[class*="ToTop"]:not(html):not(body)
+! ##[id*="ToTop"]:not(html):not(body)
+###BackToTop
+###backToTop
+
+
+!! cookies
+
+! ##[class*="Cookie"]:not(html):not(body):not(article)
+! ##[id*="Cookie"]:not(html):not(body):not(article)
+##.CookieNotifyWidget__text
+
+! exception is from AdGuard Annoyances filter
+! ~1plus1.ua##[class*="cookie"]:not(html):not(body):not(article)
+! ##[id*="cookie"]:not(html):not(body):not(article)
+###a8c-cookie-banner
+###ab1_cookie_bar
+###abb-cookie-banner
+###aboutCookieUsageBox
+###acceptcookie
+###accept_cookie
+###accept_cookie_box
+###accept_cookie_widget
+###accept_cookies
+###accept_cookies_cont_outer
+###accept_cookies_div
+###acceptance-cookie-modal
+###ac_cookiesvalidation
+###agree_cookie_id
+##.b-cookie-notification
+##.bottom__cookie-block
+###cadre_alert_cookies
+###ck-cookie-statement
+###clearfy-cookie
+##.clearfy-cookie
+##.cookie
+###cookie-agreement
+##.cookie-agreement
+##.cookiealert
+###cookie-alert
+##.cookie-announce
+###cookie_bar
+###cookie-bar
+###cookiebar
+###cookie-bottom
+##.cookie-bottom-layer
+##.cookieBox
+###cookieChoiceModalOverlay
+###cookieDisclaimerContainer
+##.cookieHide
+###cookie-law-info-bar
+##.cookie-message
+###__cookiemsg
+###cookiemsgbox
+###cookie-notice
+##.cookie-notification
+##.cookie-notify
+##.CookieNotifyWidget__wrapper
+##.cookie-overlay
+###cookie_policy
+##.CookiePopup__popup____KSqw
+###cookie-popup-rappler
+###cookie-prompt
+##.cookies
+###__cookies_
+###__cookies__
+###cookies-agree
+###cookiesBar
+###cookies-bar
+###cookiesBarAnnouncement
+###CookiesBox
+###cookies-box
+###cookies-box-inner
+###cookies-box-outer-layer
+###cookies-button-container
+###cookiesCapa
+###cookiesCard
+###cookies-charter
+###cookiescheck
+###cookiesCheck
+###cookiesChecker
+###cookieschoice
+###cookies-cnil-info
+###cookies-cnil-infos-content
+###cookiesck
+##.cookies-container
+###cookiescript_injected
+##.cookies-message
+##.cookies-notification
+###cookies_policy_wrap
+##.cookie-ui__cookieUI___3fxp1
+###cookieWarning
+###cookie-warning
+###cookie_warning
+###cookie_warning_container
+###CookieWrapper
+##.cookie-banner
+###cookieBanner
+##.cookieBanner
+##.cookies__banner
+##.cookies-banner
+###cookiesBannerContainer
+###cookies-cnil-banner
+###CybotCookiebotDialog
+##.devsite-notification-eu-cookie
+###dfx-cookies-notification
+##.ds2-cookie-disclaimer
+###eu-cookie-law
+###eucookie
+###euCookieDialog
+##.footer__cookie
+##.fi-cookie-banner
+##.gpm-cookie-accepted
+##.j-cookieContainer
+##.jix_acceptcookies_box
+##.jnews-cookie-law-policy
+##.js-cookie-bar
+##.js-cookie-notification-banner
+! exception is from AdGuard Annoyances filter
+##.js-cookie-compliance:not(html):not(body)
+##.js-cookieComply
+##.js-cookie-consent
+##.js-cookie-container
+##.js-cookie-disclaimer
+##.js-cookie-light
+##.js-cookie-message
+##.js-cookieMessage
+##.js-cookie-notice
+##.js-cookie-policy
+##.js-cookie-policy-header
+! exception is from AdGuard Annoyances filter
+~1plus1.ua##.js-cookies
+##.js-cookie-widget
+##.js-nocookies.warning
+###modalCookieContainer
+##.Navbar-cookieCompliance
+###nbcCookieChoice
+###oupcookiepolicy_message
+###pjAcceptCookieBar
+###qb_cookie_consent_main
+###rbiCookiePolicy_pushDownBoxWrapper
+###rdm-cookie-consent
+###section-cookie_notitication
+###stCookiebox
+###StCookieStyle-bar
+###stdCookie
+###stickycookiePolicy
+###sticky-cookies
+###stickynote4cookies
+###sticky-popup-cookies
+###stk-cookie-bar
+###stnc-cookiecontract
+###sto-cookieMessage
+###storefront_cookie_widget
+###storm-cookie
+###stormCookieMelding
+###stormCookiePopup
+###stormCookieWall
+###stormdigital-cookieWallId
+###strawberry-cookiebar
+###stripe-cookie
+###subserviceCookiesBar
+###sun-cookieMessage
+###sun-cookieMessageInner
+###sv-cookie-consent
+###SVDv3_cookie
+###svtCookieInfoContainer
+###svtCookieInformationContainer
+###SWCC3_CookieLawBanner
+###sw_cookies
+###swEUCookiesID
+###swl-cookie-wrapper
+###SwOverlayCookies
+###sysCookies
+###szCookiePolicy
+###szcookiewrp
+###szkCookieInfoBox
+###szoCookieBar
+###tid_cookieWarning
+###tify_cookie_policy
+###tiFy_CookieLaw
+###tins_cookie_bar
+###tipCookies
+###tiroir_cookie
+###_ubuntu-it_cookie_policy
+##.warning-cookie-block
+##.widget_eu_cookie_law_widget
+
+! ##[class*="GDPR"]:not(html):not(body):not(article)
+! ##[id*="GDPR"]:not(html):not(body):not(article)
+###__tealiumGDPRecModal
+
+! ##[class*="Gdpr"]:not(html):not(body):not(article)
+! ##[id*="Gdpr"]:not(html):not(body):not(article)
+
+! ##[class*="gdpr"]:not(html):not(body):not(article)
+! ##[id*="gdpr"]:not(html):not(body):not(article)
+###js-gdpr-consent-banner
+###abe-gdpr
+###gdprbar
+###sticky-bar-gdpr
+###stm_gdpr_popup-main
+
+
+! ##[class*="Privacy"]:not(html):not(body):not(article)
+! ##[id*="Privacy"]:not(html):not(body):not(article)
+! ##[class*="privacy"]:not(html):not(body):not(article)
+! ##[id*="privacy"]:not(html):not(body):not(article)
+###js-TosPrivacy
+
+
+!! register alert
+
+
+!! apps
+
+
+!! signatures on forums
+
+
+!! subscribe forms
+
+! ##[class*="Letter"]:not(html):not(body):not(article)
+! ##[id*="Letter"]:not(html):not(body):not(article)
+! ##[class*="letter"]:not(html):not(body):not(article)
+! ##[id*="letter"]:not(html):not(body):not(article)
+###daily-newsletter-signup
+##.hp-panel__newsletter-signup
+##.ic-alert-email-newsletter-signup
+##.icoNewsletterBig
+##.icon-newsletter
+###living-newsletter-promo
+##.mc-newsletter-alertes
+##.mc-newsletter-image
+##.mc-newsletter-signup
+###newsletter
+###newsletter_articles
+###newsletter_block
+###newsletter_block_left
+###newsletter_box
+###newsletter_box_sidebar
+###newsletter_button
+###newsletter_collection
+###newsletter_country
+###newsletter_div
+###newsletter_gen_v2
+###newsletter_holder
+###newsletter_holder
+###newsletter_link
+###newsletter_middle
+###newsletter_mod
+###newsletter_morning
+###newsletter_popup
+###newsletter_popup_overlay
+###newsletter_post
+###newsletter_promo
+###newsletter_reg
+###newsletter_ribbon
+###newsletter_sidebar_form
+###newsletter_sign_up_form
+###newsletter_sign_up_form
+###newsletter_signup
+###newsletter_signup_article
+###newsletter_signup_footer
+###newsletter_signup_form
+###newsletter_signup_ft
+###newsletter_signup_fullwidth
+###newsletter_signup_sb
+###newsletter_signup_side
+###newsletter_sub_form
+###newsletter_subscribe
+###newsletter_subscription
+###newsletter_subscription_box
+###newsletter_widget-2
+###widgetNewsletter
+###widget-newsletter-signup
+
+! ##[class*="morning_email"]:not(html):not(body):not(article)
+! ##[id*="morning_email"]:not(html):not(body):not(article)
+###dc_morning_email-53
+###dc_morning_email-60
+###dc_morning_email-66
+
+! ##[class*="Subscr"]:not(html):not(body):not(article)
+! ##[id*="Subscr"]:not(html):not(body):not(article)
+! ##[class*="subscr"]:not(html):not(body):not(article)
+! ##[id*="subscr"]:not(html):not(body):not(article)
+###aa-subscribe-widget
+###aa-subscribe-widget-wrap
+##.advice-subscribe
+###art-subscribe-unit-outer
+###art-subscribe-unit-outer-graphic
+###blog_subscription
+###blog_subscription-1
+###blog_subscription-2
+###blog_subscription-3
+###blog_subscription-4
+##.footer-subscribe-form-email
+##.jc-subscribe-form
+##.js-push-subscribe
+##.js--subscribe-form
+###j-subscribe-inputBox
+##.main-subscribe
+##.menu-icon-subscribe
+###popup-subscribe_short
+##.post_subscr
+###subscribe
+###subscribe-form-block
+##.subscribe-newsletter-block
+###subscribe_to_coupon
+##.subscribers-form
+##.subscribe-small
+##.subscribeSmall-form
+##.subscribe-small-wrapper
+##.subscription
+###subscription-widget
+##.telegram_subscribe_btn
+##.wp_subscribe
+###___ytsubscribe_0
+
+
+!! js off
+
+
+!! consultants
+
+
+!! modals
+
+
+!! payment methods
+##.footer_payment
+##.footer-payments
+##.footer-payments-details
+##.footer-payments-hint
+##.footer-payments-others
+##.layout-footer__payment-methods-list-desktop
+##.layout-footer__payment-methods-list
+##.sst-footer__payment
+
+
+!! quickorder buttons
+##.buy1click-open-button_init
+##.buy1click-button_type_item
+##.buy1click-button
+##.buy1click-open-button
+##.quickorder-button
+##.storequickorder-button
+##.storequickorder_product_button
+
+
+!! bottom bars and other sticky elements
+!skpro.ru##.fixed_footer
+!9ban.ru##.sticky-code-block
+!gidroguru.com##.sticky-code-block
+!obustroeno.com##.sticky-code-block
+
+
+!! seo and copyrights
+!gismeteo.*##.footer_copy
+!mezhdveri.ru##.copy
+!mrsanteh.ru##.copy
+!rbc.ru##.footer__copy18
+!winblog.ru##.copy
+
+
+!! countdowns
+##.countdown
+###countdown_dashboard
+###fixed-countdown-bar
+##.FixedCountdownBar_trigger
+##sp-fixed-countdown-bar
+!aquavivo.ru##.countdown
+!aquavivo.ru###countdown_dashboard
+!aliexpress.com##.marking-countdown
+!aliexpress.com##.promotion-timerbar
+
+
+!! seo and copyrights
+doma-karkas.ru##.footer_counters
+hp.com###disclaimer
+leroymerlin.ru##.product__disclaimer
+novayagazeta.ru/counter/
+obi.ru###Main-Content > .disclaimer
+serverwatch.com###footerDisclaimerText
+
+!!other
+doma-karkas.ru##.bookmark.favorite
+mysql.com##.login-callout

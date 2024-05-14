@@ -1,0 +1,214 @@
+﻿!! It is a sublist of Yet another small uBlock filter list
+! See https://github.com/mtxadmin/ublock for details
+!
+!
+
+microsoft.com##.sortable-control.bp3-col-1-1.bp2-col-1-1.bp1-col-1-1.bp0-col-1-1.span > section
+microsoft.com##.dlc_mwfbottom.m-hero
+microsoft.com##.row-fluid.end-social
+microsoft.com###epb
+microsoft.com###msccBanner
+microsoft.com##.epb-default-color.epb-container.f-information.c-uhfh-alert
+microsoft.com###standardRating
+microsoft.com##.dlc_highlight
+microsoft.com##.pad-hero
+microsoft.com##.c-sitewide-promo
+
+microsoft.com###persistent-header
+microsoft.com###headerArea:style(position:static !important)
+
+!! annoying signatures on MS forums
+microsoft.com##.body > .sig
+microsoft.com##.body > hr
+microsoft.com##.body > hr + p
+microsoft.com##.body > blockquote > hr
+microsoft.com##.body > blockquote > hr + p
+
+!! popups
+microsoft.com##.ui-widget-overlay
+microsoft.com###mobileappinterstitial1
+
+microsoft.com##+js(set-constant, platform, noopFunc)
+
+!! logos
+microsoft.com###BrandLogo.BrandLogo
+
+docs.microsoft.com###main > div.alert:has-text(Your detailed feedback is very important)
+docs.microsoft.com##.choose-feedback-type.alert:has-text("We'd love to hear your thoughts")
+docs.microsoft.com##.feedback-section:has-text(There is currently no feedback for this document. Submitted feedback will appear here)
+docs.microsoft.com##.toggle-theme
+docs.microsoft.com###footer
+docs.microsoft.com##.previous-version-disc.disclaimer.alert
+!broader main column. We remove right column (page actions) and set width of main to 95% 
+docs.microsoft.com###page-actions
+docs.microsoft.com##div.table-scroll-wrapper:style(overflow-x:visible !important)
+docs.microsoft.com###main-column:style(width:95% !important)
+! fix top of the left column on 3 strings level when minimized. 
+! when minimized, it shows an emply gap, but it is still visually better than fast scrolling contents
+microsoft.com###affixed-left-container:style(top:250px !important; bottom:auto !important)
+! headers of code citations
+docs.microsoft.com##.codeHeader
+docs.microsoft.com##.readingTime
+docs.microsoft.com##.header-holder > a[class^=skip-to-main-link]
+! from Web Annoyances Ultralist
+docs.microsoft.com###affixed-left-container, #affixed-right-container:style(position: static !important)
+
+support.microsoft.com##.skylight-entry
+support.microsoft.com##.right-rail.content-media
+
+msdn.microsoft.com##.stdr-content.stdr-vote
+msdn.microsoft.com##.skipnav
+msdn.microsoft.com###footerSock
+msdn.microsoft.com###navMain
+msdn.microsoft.com##.Bing
+blogs.msdn.microsoft.com###comments:has-text(Comments (0))
+blogs.msdn.microsoft.com###site-footer
+blogs.msdn.microsoft.com##.sfmsb-follow-social-buttons
+devblogs.microsoft.com##.jump-to-comments
+
+technet.microsoft.com###lib-footer
+technet.microsoft.com##.skipnav
+
+blogs.technet.microsoft.com###site-header-blog
+blogs.technet.microsoft.com##.back-to-top-wrap
+blogs.technet.microsoft.com###site-footer
+blogs.technet.microsoft.com##.rating-wrap
+! implemented by general regexp filter
+!blogs.technet.microsoft.com##.msdn-blogs-social-search
+! top link to comments
+technet.microsoft.com##.comments-link
+
+cloudblogs.microsoft.com##.nav-wrap
+
+microsoft.com##.sharepostcontent >.table-responsive
+
+social.technet.microsoft.com###topbar
+social.technet.microsoft.com###SearchBox
+social.technet.microsoft.com##.votinglabel
+! implemented by general regexp filter
+!social.technet.microsoft.com##.cc-banner
+!social.technet.microsoft.com###ux-banner
+microsoft.com###ux-banner
+    ! is in AdGuard
+    !technet.microsoft.com###ux-banner
+social.technet.microsoft.com##.header-fragments:style(height:100px !important)
+microsoft.com###banner-holder
+
+answers.microsoft.com##.message-voting-container
+answers.microsoft.com##.user-profile-image
+! implemented by general regexp filter
+!answers.microsoft.com##.site-survey-opener
+answers.microsoft.com###threadfooter
+answers.microsoft.com##.msgReplyBtn
+answers.microsoft.com##.message-action-container:has-text(Up vote (0))
+answers.microsoft.com##.thread-message-content-body-signature
+answers.microsoft.com##.message-voting-container
+
+    ! fix sticky nav bar
+techcommunity.microsoft.com,docs.microsoft.com##.is-fixed:style(position:static !important)
+techcommunity.microsoft.com##.lia-body:style(position:static !important)
+techcommunity.microsoft.com##.community-header-blank
+    ! media loader
+techcommunity.microsoft.com##.lia-component-message-view-widget-media-snippet
+techcommunity.microsoft.com##.lia-component-media-snippet
+techcommunity.microsoft.com##.lia-media-snippet-container
+techcommunity.microsoft.com##.lia-component-forums-widget-media-snippet-loader
+    ! views counter
+techcommunity.microsoft.com##.views
+microsoft.com##.ba-view-count
+    ! users online widget
+techcommunity.microsoft.com##.lia-component-users-widget-users-avatars-online
+techcommunity.microsoft.com##.custom-users-online
+    ! other
+techcommunity.microsoft.com###informationbox_6:has-text(You must be a registered user to add a comment)
+techcommunity.microsoft.com##.lia-quilt-row-footer
+! implemented by general regexp filter
+!techcommunity.microsoft.com##.custom-forum-banner
+techcommunity.microsoft.com###threadnavigator
+! marketing banner
+techcommunity.microsoft.com##.lia-quilt-column-hero-main-content.lia-quilt-column-single.lia-quilt-column-24.lia-quilt-column > .lia-quilt-column-alley-single.lia-quilt-column-alley
+
+! implemented by general regexp filter
+!azure.microsoft.com##.calculator-feedback-form
+
+! implemented by general regexp filter
+!microsoftpressstore.com##.strap-marketing
+
+||microsoft.com/_log?
+
+||i1.social.s-msft.com/profile/u/avatar.jpg$image
+
+||livefilestore.com/*/signature.jpg$image
+||windows.net/images/banners/
+
+||microsoft.com/static/third-party/adobe-target/
+
+! from EasyPrivacy
+||msecnd.net/scripts/jsll-
+
+! is in EasyList, AdGuard and Fanboy's
+||microsoft.com/mscc/
+! from EasyPrivacy
+||s-microsoft.com/mscc/
+
+||microsoft.com/*/wcp-consent.js$important
+
+! see MS telemetry domains in _telemetry_microsoft
+
+msn.com###precontent:style(padding-top:0px !important; margin-top:0px !important)
+msn.com##.head:style(padding-top:0px !important; margin-top:0px !important)
+msn.com##body:style(background-color:initial !important)
+
+||bing.com/mouselog  # from Adguard
+||bing.com/msnhomepagehistory.aspx
+! "is the answer helpful?"
+bing.com##.b-conclfb-wrapper
+
+pipe.aria.microsoft.com/collector  # from AdGuard
+
+azure.microsoft.com##section:style(position:static !important; top:0px !important)
+azure.microsoft.com##.logo-container
+azure.microsoft.com##.fix-copied
+
+!azure.microsoft.com##.azure-header.collapsed:style(height:auto !important; top:0px !important)
+!azure.microsoft.com##.animate:style(animation:none !important)
+!azure.microsoft.com##.azure-header:style(animation:none !important)
+!azure.microsoft.com##.nav-basic:style(animation:none !important)
+!azure.microsoft.com##.animate:style(animation:none !important)
+!azure.microsoft.com##.azure-header:style(visibility:visible !important)
+!azure.microsoft.com##.nav-basic:style(visibility:visible !important)
+
+||microsoft.com/library/svy/  # from EasyPrivacy
+
+! these don't work
+azure.microsoft.com##.section-floated:style(top:0px !important)
+azure.microsoft.com##.sticky:style(top:0px !important)
+
+||microsoft.com/en-us/media/event-banners/$image
+microsoft.com##.is-banner
+microsoft.com##.ignite-banner
+
+||microsoft.com/api/privacy/cookieconsent$important
+
+microsoft.com##.x-marketredirect
+
+microsoft.com##.vscom-usabilla-button
+
+technet.microsoft.com##.header-fragments:style(position:static !important)
+technet.microsoft.com##.navigation:style(position:static !important)
+
+microsoft.com##.m-highlight-feature > div:style(display:block !important; position:static !important)
+
+||office365.com/footprint/
+!||office.net/shellux/  # logging scripts, but it seems too hard
+||office.net/shellux/suiteux.shell.otellogging  # seems good now
+
+! don't block entirely, there are css here as well
+||microsoft.com/onerfstatics/marketingsites$script  # https://www.microsoft.com/onerfstatics/marketingsites-wcus-prod/shell/_scrf/js/....
+statics-marketingsites-neu-ms-com.akamaized.net$script
+statics-marketingsites-wcus-ms-com.akamaized.net$script
+
+||skypeassets.com/cdn/skype-tracking/
+/skype-tracking.min.js
+
+1app.blob.core.windows.net$third-party,script  # from Ru AdList

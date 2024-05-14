@@ -1,0 +1,445 @@
+﻿!! It is a sublist of Yet another small uBlock filter list
+! See https://github.com/mtxadmin/ublock for details
+!
+!
+! List of rules for Ozon and Wildberries
+! General rules were transferred to _rules . They are very important, do not use this file alone
+!
+! Sites sorted by a-z only, without _ and - (just for human convenience).
+! And please don't add subdomains here, add them to _marketing__subdomains file
+! 
+! See cosmetic rules policy at https://github.com/mtxadmin/ublock/blob/master/docs/policy_en.md
+!
+! Something doesn't work? Something is missing? Please, feel free to write about it here:
+! https://github.com/mtxadmin/ublock/issues/new
+
+!! domains
+
+    ! Ozon
+||ozon.ru/referral/
+||ozon.by/referral/
+||ozon.ru/tracker/  # from EasyPrivacy
+||ozon.by/tracker/  # from EasyPrivacy
+||ozone.ru/s3/blackfriday-widgets-api-images/$image
+||ozone.by/s3/blackfriday-widgets-api-images/$image
+||ozone.ru/s3/ozon-tag-manager/
+! see xapi.ozon.ru in _marketing__subdomains
+||ozon.ru/api/logs-gateway/
+!||ozon.ru/api/entrypoint-api.bx - don't
+||ozon.ru/v1/tracker-logs
+||ozon.ru/dlte/multi
+||ozon.ru/st/service-worker/
+||ozone.ru/s3/hotsale-api/$image
+||ozone.ru/assets/*/marketing-hotsale$script
+||ozone.ru/_nuxt/pdp-all-sharing-button*
+||ozone.ru/graphics/new_no_photo.png$redirect=2x2.png
+||ozone.ru/assets/cms-desktop-promo
+||ozone.ru/s3/sellerassets/
+! похоже, это попапы типа "добавьте в избранное"  # Update: нет, это вообще все попапы, в том числе нужные. At last, phone number listbox in login window
+!||ozone.ru/s3/shared-deps/%40bx-fe/ui-kit-popover/*/popper.js$redirect=noopjs
+!||ozone.ru/assets/vendors - don't, map blocked
+!||ozone.ru/assets/vendors-node_modules_bx - don't, map blocked
+!||ozone.ru/assets/*/vendor- - don't: vendor-core.js, vendor-vue.js
+!||ozone.ru/assets/cms-desktop-top-bar - don't
+!
+||v.ozone.ru/vod/*/tile.mp4  # видео в карточках: слегка подбешивает
+! Update: слишком радикально. Там иногда полезное. Плюс вроде видео в отзывах попадает
+! Update2: видео в отзывах отломалось независимо от этого. Не нашел причину, что-то со скриптами, но дело не в этом правиле. 
+! А мелькание в карточках всё же неприятно, плюс страницы подтормаживают на тонком канале - правило включено опять.
+! Чисто для истории: пробовал убирать косметическими правилами типа
+!ozon.ru##[data-widget="row"]:has-text(Похожие товары) video
+! Но они отрабатывают недостаточно быстро - там движок дергает карточки: картинка -> видео -> картинка -> видео, 
+! и по результату всё равно получается мелькание. С заблокированными видеокарточками всё постатичнее и поспокойнее выглядит.
+!
+||ozon.ru/cdn-cgi/challenge-platform/  # "outdated browser" script, blocks browser. Without it, all is working
+    ! Update: rarely it can block the page loading. Hmm..
+    @@||ozon.ru/cdn-cgi/challenge-platform/*/orchestrate/chl_page/v1
+    @@||ozon.ru/cdn-cgi/challenge-platform/*/flow/
+||ozone.ru/assets/*/pdp-all-marketing-labels-v3.js
+!||ozon.ru/api/entrypoint-api.bx/page/json/ - don't, it's reviews
+||ir.ozone.ru/*/doodles$image
+    ! top
+!ozon.ru##*:matches-css(position:fixed):style(position:static !important) - don't, flickers
+ozon.ru###stickyHeader:style(position:static !important)
+ozon.ru###stickyHeader::before
+ozon.ru##div[triggering-object-selector="#short-product-info-trigger-new"]
+ozon.ru##.white-bg:style(top:0px !important)
+ozon.ru##.white-bg:style(position:static !important)
+ozon.ru##section[data-widget="searchHistory"]
+ozon.ru##[data-widget="searchHistory"] ~ [data-widget="skuGrid"]
+ozon.ru###stickyHeader:style(padding:initial !important; margin:initial !important; height:auto !important)
+    ! popups
+||ozone.ru/_nuxt/marketing-all-adv_banner.  # from Ru AdList
+||ozone.ru/_nuxt/subscriptions-desktop-submit-email-pop-up*
+||ozone.ru/_nuxt/uw-*-atom-sku-shelf-goods.  # from Ru AdList
+!||ozone.ru/assets/*/bx-  # location popups  # don't, too broad, this breaks some ui elements. Instead:
+!||ozone.ru/assets/*/bx-fe-ui-kit-typography-helper.js  # location popups  # don't, it breaks json loading
+ozon.ru##.modal:has-text(город)
+ozon.ru##.bWarnPoup
+ozon.ru##*:matches-css(position:fixed):has-text(Не нашли):not(:has-text(Не нашли нужный фильтр))
+ozon.ru##div[data-widget=alertPopup]
+!ozon.ru##.vue-portal-target - don't, filters use it too
+ozon.ru##.vue-portal-target:has-text(/(^|\s)опрос/i)
+ozon.ru##.vue-portal-target:has-text(/Добавить адрес в .*\?/)
+ozon.ru##.vue-portal-target:has-text(Оцените ваши покупки)
+||ozone.ru/assets/*/cms-cookie-bubble.  # is in Ru AdList
+! is in Adguard
+ozon.ru##[data-widget="cookieBubble"]
+! fixed "?" button below. Is in Adguard.
+ozon.ru##div[data-widget="webFeedbackForm"]
+! "Добавьте в избранное" popup. 
+! Не влияет на, собственно, избранное, просто визуальная фигня, чтобы задолбать человека
+ozon.ru##[id^=state-webAddToFavorite]
+ozon.ru##ozpopover
+finance.ozon.ru###modal-container:has-text(Закажите)
+    ! banners and promos
+||ozone.ru/assets/*-banner$script
+||ozon.ru/graphics/img/  # from Ru AdList
+||ozon.ru/graphics/img_ban/  # from Ru AdList
+||ozone.ru/_nuxt/cms-all-banner*
+||ozone.ru/graphics/bx/
+||ozone.ru/s3/marketing-api/
+||ozonusercontent.com/s3/marketing-api/
+||ozone.ru/s3/fs-chat-api/$image  # banners
+!||ozone.ru/s3/cms/$image - don't, category icons
+||ozone.ru/assets/marketing
+!||ozone.ru/s3/video/cover/$image - hmmm...?
+ozon.ru##[data-widget="banner"]
+ozon.ru##a[href^="/travel/info/hotels-cashback/"]
+ozon.ru##[data-widget="objectBannerList"]
+ozon.ru##[data-widget="advVideoBannerMobile"]
+ozon.ru##a:has(>img[data-lcp-name*="advVideoBannerMobile"])
+ozon.ru##[data-widget="webPremiumPointsInfo"]
+ozon.ru##[data-widget="webMarketingLabels"]
+!
+!ozon.ru##[data-widget="skuGrid"] - too broad, there are useful recommendations there
+!ozon.ru##:not([data-widget="modalLayout"]) > * > [data-widget="skuGrid"] - Ru AdList rule, но тоже слишком широкое. Активное на 2024-03
+! Не, там неплохие рекомендации. Да, там заметно есть навязчивая реклама, но на удивление вменяемо (хотя несколько позиций достали, потом уберу их как делал с Али). 
+! Плюс, это всё сначала грузится и показывается, а потом резко исчезает - не нравится. Если бы отрабатывало быстрее, было бы приемлемо, а так не особо.
+ozon.ru#@#:not([data-widget="modalLayout"]) > * > [data-widget="skuGrid"]
+! Ладно, всё же поубираю особо надоедливые и незапрошенные.
+! вторые строки - блок картинок, пока адблок думает при обработке больших массивов карточек. Дубликаты для комфорта.
+! Вот это вот "средство от всего" вечно везде лезет. Не покупал я такое, это реклама. И выглядит неприятно.
+ozon.ru##[data-widget="skuGrid"] div:has(>a[href*="/product/kislorodnyy-ochistitel-brandfree"])
+||ozone.ru/s3/multimedia-s/wc250/6745816828.jpg
+! Скотч еще тоже задолбали подсовывать. Никогда не покупал и не смотрел.
+ozon.ru##[data-widget="skuGrid"] div:has(>a[href*="/product/dvustoronniy-skotch"])
+||ozone.ru/s3/multimedia-5/wc250/6847449125.jpg
+! Уксус какой-то вылез недавно
+ozon.ru##[data-widget="skuGrid"] div:has(>a[href*="/product/sabroza-yablochnyy-uksus"])
+! Туалетная бумага, тоже непонятно откуда. На картинку баннеров налепили, из принципа бы не взял такое
+ozon.ru##[data-widget="skuGrid"] div:has(>a[href*="/product/tualetnaya-bumaga-zewa"])
+||ozone.ru/s3/multimedia-1-a/wc500/6951584986.jpg
+! Бритвы какие-то, тоже не запрашивал
+ozon.ru##[data-widget="skuGrid"] div:has(>a[href*="/product/smennye-kassety-gillette"])
+||ozone.ru/s3/multimedia-1-2/wc250/6931309430.jpg
+!
+ozon.ru##[data-widget="skuGridSimple"]:has-text(Лучшие предложения)
+ozon.ru##[data-widget="skuShelfGoods"]
+! naggy inline related in mobile orders
+ozon.ru##[data-widget="skuScroll"]:matches-path(/orderlist)
+ozon.ru##[data-widget="objectGrid3"]:has-text(Ловите часы)
+! ads in the mobile menu
+ozon.ru##[data-widget=islandSeparator] ~ div[data-widget=objectGrid1]
+ozon.ru##[data-widget="container"]:has-text(Все товары Хот Сейл)
+ozon.ru##button:has-text(Premium)
+ozon.ru##.skeleton-banner
+ozon.ru##button:has-text(/Подарить|в один клик/)
+! strange, but repeat
+ozon.ru##button:has-text(Купить в один клик)
+ozon.ru##[data-widget="webTopStreams"]:has(a[href^="/live"])
+ozon.ru##[data-widget="setOfPreviews"]
+!ozon.ru##div:has(>a[href*="ozon.onelink.me"]) - don't, this breaks mobile product pages. General rule ##[href*=".onelink.me"] works well
+!
+! these two rules combined break catalog on mobile. Weird.
+! update: I got it. It is really a mobile catalog, and its div contains <a href="/highlight/"> and <a href="href="https://www.ozon.ru/travel/hotels/?mwc_campaign">
+!ozon.ru##div:has(> a[href^="/highlight/"])
+!ozon.ru##div:has(>a[href*=campaign])
+! v2:
+ozon.ru##[data-widget="stickyContainer"]:has-text(Открыть в приложении)
+ozon.ru##a[href^="/highlight/"]
+ozon.ru##a[href^="https://ozon.ru/highlight/"]
+ozon.ru##a[href^="https://www.ozon.ru/highlight/"]
+!
+! this one is a top banner. Also see erid in _removeparams
+ozon.ru##a[href*="?erid="]
+ozon.ru##a[href*="&erid="]
+! top banner 2024-03
+ozon.ru##div:matches-css(height:32px) img:matches-css(height:32px)
+!
+ozon.ru##li:has(> a[href^="/highlight/"])
+ozon.ru##a[href^="/highlight/"]
+ozon.ru##div:has(>p:has-text(Оформить подписку))
+!ozon.ru##[data-widget="webPrice"] button:has-text(Ozon Картой)
+ozon.ru##button span:has-text(Ozon Картой)
+! not aside column, but banner
+! update: there is an "real" aside there too
+!ozon.ru##aside
+ozon.ru##div > div:has-text(/Ozon\s*Картой$/):not(:matches-path(/\/product\//)):not(:matches-path(/gocheckout))
+ozon.ru##div:has(>div>svg):has(>div:has-text(/скидк(а|у) .* ₽ при оплате Ozon Картой/i))
+! fake notifications
+ozon.ru##span.tsCaptionBold:has-text(/^1$/)
+ozon.ru##[data-widget="webOzonAccountPrice"]
+ozon.ru##span:has-text("успейте купить")
+ozon.ru##div > a[href^="/product/podpiska"]
+!ozon.ru##div:matches-css(height:155px):has-text(Реклама) - todo: rigid sizes are not good practice
+! top banner
+ozon.ru##a[href^="https://www.ozon.ru/product/elektronnyy-lotereynyy-bilet"]
+    ozon.ru##div:matches-css(height:156px):has(a[href^="https://www.ozon.ru/product/elektronnyy-lotereynyy-bilet"])
+ozon.ru##[data-widget="container"]:has-text(Реклама):not(:matches-path(/\/(category|search)\//))
+ozon.ru##[data-widget=objectLine]:has-text(Ловите часы продажи)
+ozon.ru##[data-widget="row"]:has(div[data-widget="blackFridayCounter"])
+ozon.ru##div:has(>img[src*="/blackfriday-"])
+ozon.ru##[data-widget="skuLine"]:has-text(Лучшие предложения)
+ozon.ru##[data-widget="sellerCarousel"]
+ozon.ru##[data-widget="blackFridayStatus"]
+||ozone.ru/assets/*/marketing-black-friday
+	! ||ozone.ru/assets/*/marketing-black-friday-hammer
+	! ||ozone.ru/assets/*/marketing-black-friday-counter
+ozon.ru##[data-widget="hammers"]
+ozon.ru##[data-widget="hotsaleMain"]
+ozon.ru##[data-widget="container"]:has([data-widget="hotsaleMain"])
+! навязчивые предложения оценить, быстро задолбали. Разрешаем только из самого заказа или их списка 
+ozon.ru##[data-widget="rateBoughtItems"]:not(:matches-path(/my/orderdetails)):not(:matches-path(/my/orderlist))
+! inline related - полезно, но не надо сходу в нос совать. Ниже после отзывов там еще один такой же блок есть, тот оставлен
+ozon.ru##div:has-text(Вам помог этот отзыв) ~ [data-widget="skuGrid"]
+ozon.ru##[data-widget="webListReviews"] ~ [data-widget="skuGrid"]:not(:matches-path(/reviewVuuid/))
+! избранное захламляется посторонними вкраплениями. Оставляем только своё избранное.
+ozon.ru##[data-widget="caption"]:has-text(Подобрано для вас) ~ [data-widget="paginator"]:matches-path(/my/favorites)
+ozon.ru##[data-widget="actionCards"]
+ozon.ru##[data-widget="objectLine"]:has-text(/распродаж/i)
+ozon.ru##div[data-widget="skuGrid"]:matches-path(miniapp=)
+ozon.ru##[data-widget="cell"]:has-text(Время призов)
+ozon.ru##div:has(>a[href^="https://www.ozon.ru/product/elektronnyy-podarochnyy-sertifikat"])
+ozon.ru##a[href^="https://www.ozon.ru/landing/"]:has(img)
+    ! ozon.ru##a[href="https://www.ozon.ru/landing/giftcertificates/"]:has(img)
+ozon.ru##a[href^="/landing/"]
+ozon.ru##div:has(>a[href^="https://www.ozon.ru/special/care/"])
+ozon.ru##[data-widget="userAvatar"]
+ozon.ru##a[href="https://finance.ozon.ru/"]:has(img)
+finance.ozon.ru##.notification:has-text(подписку)
+finance.ozon.ru##.premium-benefit-card
+finance.ozon.ru###modal-container:has(button:has-text(Получить бесплатно))
+! и вот на это навязывание смотреть надоело. Иконку с топа убираем, пункт меню оставляем
+!ozon.ru##a[href="/travel/"]:has(img)  # v1
+ozon.ru##a[href^="/travel/"]:has(img)
+ozon.ru##a[href^="/brand/"]:has(img)
+ozon.ru##a[href^="https://www.ozon.ru/travel/promo/"]
+ozon.ru##[data-widget="seasonWidget"]
+! top banner 2023-11
+ozon.ru##div:matches-css(height:32px):has(img:matches-css(height:32px))
+! top banner 2024-02
+ozon.ru##div:has(>img[elementtiming*="lcp_eltiming_webToAppBanner"])
+! реклама в выпадающем списке при поиске
+ozon.ru##.type-brand.suggestions-item
+! при поиске автозапчастей навязчиво вылезает "гараж" - убираем его, при необходимости оно есть в меню
+||ozone.ru/graphics/automoto/garage_entry_point/image_add_car.webp$image
+ozon.ru##div[data-widget=webGarageEntryPoint] > div:style(margin-top:0px !important; margin-bottom:0px !important; padding-top:0px !important; padding-bottom:0px !important)
+    ! labels
+ozon.ru##section:has(span:has-text("Распродажа Зимы"))
+ozon.ru##section:has(span:has-text(/^[−-][0-9]+%$/))
+! обновленный вариант: не удаляет всё в категории, не удаляет все отзывы. Правило полезное, поэтому приходится править
+! 2024-05: опять цепляется, отключено
+!ozon.ru##div:has(>div:has-text(/^\s*Скидк(а|и)/i)):not([data-widget="webListReviews"]):not(:matches-path(//(search|category|my|gocheckout)/))
+!ozon.ru##div:has(>span:has-text(/^\s*\d+\s*(балл(а|ов|) за отзыв|бонус(а|ов|))/i))
+!ozon.ru##div:has(>span:has-text(/^\s*^(ХИТЫ НЕДЕЛИ|ХОТ СЕЙЛ|Новинка|Хит|Выбор покупателей|Распродажа|Ликвидация|Оригинал|Цена что надо|Купон на скидку|Ozon Promo|Подарок от мтс|Соц. сертификат|Рассрочка 0%)$/i))
+!ozon.ru##span:has-text(%) - sometimes hides comments (##span)
+! new version
+ozon.ru##div:has(>div:has-text(/^(Применили |)[-−][0-9]+%$/))
+ozon.ru##div:has(>div:has-text(/^Больше [0-9]+% выкуп/))
+ozon.ru##div:has(>div:has-text(/^[0-9]+% возвратов$/))
+ozon.ru##div:has(>div:has-text(/^\s*Доберите до скидки/i)):not(:matches-path(/\/my\//))
+ozon.ru##div:has(>div:has-text(/^\s*\d+\s*(балл(а|ов|) за отзыв|бонус(а|ов|))$/i))
+!
+ozon.ru##div:has(>div:has-text(/^\s*^(Осталось|Новинка)$/i)):matches-path(//(search|category)/)
+ozon.ru##section:has(>div:has-text(/^\s*^(Остал(о|а)сь (мало|[0-9]+ шт))$/i)):matches-path(//(search|category)/)
+!
+! хорошо, но в категориях цепляется, очищает описания. Может, пока тупо сделать два правила? Ладно, попробуем пока условие на путь
+ozon.ru##div:has(>div:has-text(/^\s*^(ХИТЫ НЕДЕЛИ|АКЦИЯ НЕДЕЛИ|ХОТ СЕЙЛ|Новинка|Хит|Выбор покупателей|Распродажа|Ликвидация|Оригинал|Цена что надо|Купон на скидку|Ozon Promo|PRE-SALE 11.11|ЧЁРНАЯ ПЯТНИЦА|Соц. сертификат|Рассрочка 0%|−[0-9]+% по промокоду)$/i)):matches-path(/product)
+ozon.ru##div:has(>div:has-text(/^Вам ещ(е|ё)/))
+! generanized
+ozon.ru##section > div:has(>div>svg[width][height]):has(>div)
+! аккуратнее, ранее выбор размера иногда попадал
+! "оплата после примерки" (для одежды) НЕ попадает, ну и отлично. А больше там ничего полезного и нету
+    ! loans
+ozon.ru##div[type="annotation"]:has-text(/(Р|р)ассрочк/)
+! тут ранее встречалась какая-то ошибка, но не была зафиксирована
+ozon.ru##[data-widget=webInstallmentPurchase]
+ozon.ru##div > a[href="https://www.ozon.ru/section/limit"]
+ozon.ru##div:has(>span:has-text(/^Частями по /))
+ozon.ru##span:has-text(/^Частями по /)
+ozon.ru##div:has(> span:has-text(В рассрочку))
+ozon.ru##a[href^="/modal/pdp_installment"]
+    ! seo
+ozon.ru##[data-widget="semanticText"]
+ozon.ru##[data-widget="tagList"]
+ozon.ru##div:has-text(/^\s*Товар куплен на OZON\s*$/)
+! not a button, but seo text
+ozon.ru##[data-widget="createReviewButton"]:has-text(честный рейтинг)
+ozon.ru###section-characteristics > small:has-text(Информация о технических характеристиках, комплекте поставки)
+    ! bottom
+ozon.ru##a:has(img[alt="Ozon Job"])
+    ! tracking
+!ozon.ru##div[trackinginfo] - payment methods fall in in (/gocheckout)
+ozon.ru##*:remove-attr(trackinginfo)
+    ! apps
+ozon.ru##p:has-text(Наведите камеру и скачайте)
+ozon.ru##p:has-text(Наведите камеру и скачайте) ~ div:has(img[src*="/group"])
+||ozone.ru/s3/cms/*/qr-code$image
+    ! socials
+ozon.ru##a[title="VK"]
+ozon.ru##a[title="Одноклассники"]
+ozon.ru##a[title="Telegram"]
+    ! other
+ozon.ru##.vacancy__actions:style(position:static !important)
+ozon.ru##.vacancy__benefits
+ozon.ru##h3
+!ozon.ru##.b4u0 - a random one, don't
+! footer icons
+!ozon.ru##svg:matches-css(width:24px):matches-css(height:24px) - don't, not only footer
+ozon.ru##[data-widget="separator"]
+! Update: it worked earlier, but now it hides full description and somehow orderlist.
+! Update2: no, that's not this rule. Seems to be site glitches, sometimes working and sometimes not. Weird.
+! Update3: temporary gliches with the site, now everything seems ok
+ozon.ru##[data-paginator-loader]
+! в правой колонке верстка чуть едет без этого, сама по себе - там зачем-то отступ
+ozon.ru##[data-widget=row]:style(margin-bottom:0px !important)
+! в правой колонке название продавца дважды. Верхнее явно лишнее
+ozon.ru##[data-widget="webBrand"]
+ozon.ru##[data-widget="objectThumbnailList"]:has-text(Популярные бренды)
+!
+ozon.ru##[data-widget="webSharingButton"]
+!
+! товары с долгой доставкой из Китая зрительно выделяем красным
+! Озон силён своей моментальной логистикой. Но вот это обычный алиэкспресс, ещё и с заморочками.
+! да, заказывать можно, но нужно, чтобы этот момент был виднее
+ozon.ru##span:has-text(Условия доставки из-за рубежа):style(color:red !important)
+! многие продавцы пишут полную фигню, тупую, однообразную и рекламную, в качестве ответов на отзывы. Задолбало.
+ozon.ru##div[data-review-uuid] ~ div:has(div[comments]:has(a:has-text(/^в ответ/)))
+! new design
+ozon.ru##div:has(>div>span:has-text(/0 комментариев|1 комментарий/))
+ozon.ru##div[celltrackinginfo]:not(:matches-path(/reviewVuuid/))
+! and also. Old design.
+! reviews without text are useless
+ozon.ru##div[data-review-uuid]:not(:has-text(/Вам помог этот отзыв\?|Показать весь отзыв/))
+! just img
+||ozone.ru/s3/my-account-api-img/*/OD-ok.png$image
+
+
+    ! Wildberries
+! their domains: wildberries.ru, wb.ru, paywb.com, paywb.ru, wb-bank.ru
+! old domains:
+! wildberries.co.il - now is redirect to global.wildberries.ru
+! wildberries.fr - now is redirect to wildberries.ru
+!
+||wildberries.ru/stats/
+!||wildberries.co.il/stats/
+!||wildberries.fr/stats/
+    ! visited goods
+||wildberries.ru/visitedgoods
+!||wildberries.co.il/visitedgoods
+!||wildberries.fr/visitedgoods
+wildberries.ru##.j-recent-items
+! don't edit, there are several divs named ".recently-watched", but only this is really "recently-watched"
+wildberries.ru##.j-recent-items > .recently-watched
+!
+||wildberries.ru/search/tagsbyurl
+!||wildberries.co.il/search/tagsbyurl
+!||wildberries.fr/search/tagsbyurl
+!
+||wb.ru/sdk/sdk.js$redirect=noop.js  # https://a.wb.ru/sdk/sdk.js and others
+||wbstatic.net/j/externalStat.min.js
+||wbstatic.net/i/fastSubscribe.png
+||wbstatic.net/marketing/
+||wildberries.ru/webapi/logging/
+    ! getting rid of js errors on mobile:
+!||wb.ru/sdk/sdk.js$redirect=noop.js
+||wb.ru/*/customTags/banners$redirect=noop.js
+||wildberries.ru/public/v1/banners$redirect=noop.js
+||wb.ru/vol0/data/banners$redirect=noop.js
+||wbstatic.net/data/banners$redirect=noop.js
+||wbbasket.ru/*/customTags/banners.min.$redirect=noopjs
+    !||wbbasket.ru/vol0/j/spa/customTags/banners.min.$redirect=noopjs
+    ! top
+wildberries.ru##.header-bg:style(top:0px !important)
+! проблема с поисковой формой. Если убрать класс, то хотя бы placeholder виден
+wildberries.ru##+js(remove-attr, class, .search-catalog__input)
+! sticky duplicate
+wildberries.ru##.product-line
+! floating filters
+wildberries.ru##.filters-block__wrap:style(position:static !important)
+! swiper has top margin below zero
+wildberries.ru##.product-page__slider-wrap:style(margin-top:0px !important)
+    ! quick view
+wildberries.ru##.preview-item
+wildberries.ru##.j-open-product-popup
+!wildberries.ru##.hover
+    ! popups
+wildberries.ru###vip-status-popup
+wildberries.ru##.i-vip-status-popup
+wildberries.ru##.j-vip-status-popup
+wildberries.ru##.tooltipster-content:has-text(Используйте разные размеры карточек)
+wildberries.ru##.tooltip-product-variant
+    ! promos and banners
+wildberries.ru##.i-spec-action
+wildberries.ru##.spec-action
+!wildberries.ru##.new-carousels-and-banners
+! top banner
+wildberries.ru##.hair
+wildberries.ru##[class^=banner_Container]
+! main page sliders - как-то они там странно грузятся. В остальных местах ок.
+wildberries.ru##.main-page__product
+    ! old (striked out) prices
+wildberries.ru##.price-last
+wildberries.ru##.price-old-block
+wildberries.ru##.product-card__sale
+wildberries.ru##.price-block__old-price
+    ! labels
+wildberries.ru##.product-card__tip-wrap
+wildberries.ru##.product-card__tip
+    ! credits
+wildberries.ru##.price-block__credit-payment
+wildberries.ru##.list-item__price-credit
+    ! up button
+wildberries.ru##.j-quicknav
+wildberries.ru##.quicknav-v1
+    ! footer
+wildberries.ru##.social
+wildberries.ru##.important-link
+wildberries.ru##[class^=Footer_AgeWarning]
+    ! apps
+wildberries.ru##.google-play
+wildberries.ru##.app-store
+wildberries.ru##.app-gallery
+    ! pay cards
+!wildberries.ru##.group
+!wildberries.ru##.masterCard
+!wildberries.ru##.mir
+!wildberries.ru##.toPay
+!wildberries.ru##.footer__pay-list
+    ! backgrounds
+wildberries.ru##.navbar-pc__link:style(color:#000 !important)
+wildberries.ru##.search-catalog__input:style(color:#000 !important)
+wildberries.ru##.lego-background
+    ! other
+!wildberries.ru##.tooltipster-content
+wildberries.ru##.suppliers-section
+wildberries.ru##.compatability
+wildberries.ru##.i-tags-group
+wildberries.ru##.also-buy-wrapper
+wildberries.ru##.scrolled-socials
+wildberries.ru##.general-preloader
+! oneclick
+wildberries.ru##.same-part-kt__btn-buy
+wildberries.ru##.error500
+! too large menu in the mobile mode
+wildberries.ru##.footer__nav
+! ответы продавцов, как и в Озоне, неинтересны, 99% из них - рекламная однотипная дичь
+wildberries.ru##.feedback__btn-block:has(.j-show-feedback-answer)
+! флажки в отзывах. Зачем?
+wildberries.ru##.feedback__country
+! аватары в отзывах. Парад уныния.
+wildberries.ru##.feedback__img
+
+!! todo
+

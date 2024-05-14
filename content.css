@@ -1,16 +1,27 @@
+/* content.css */
 body {
-    background-color: white;
-    color: black;
-    text-align: center;
-    line-height: 1.5;
-   }
-   
-   p, li, div {
-    text-indent: 1em;
-    font-size: 13px;
-   }
-   
-   h1, h2, h3, h4, h5, h6 {
-    font-size: 14px;
-    font-weight: bold;
-   }
+    background-color: #f0f0f0; /* Светло-синий фон */
+    color: #333; /* Темно-серый текст */
+    font-family: Arial, sans-serif; /* Шрифт Arial */
+    font-size: 14px; /* Размер шрифта 14px */
+    line-height: 1.5; /* Высота строки */
+    text-align: justify; /* Выравнивание текста */
+}
+
+p, li, div {
+    text-indent: 1em; /* Отступ первой строки абзаца */
+    font-size: 13px; /* Размер шрифта абзацев */
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-size: 20px; /* Увеличьте размер заголовков */
+    font-weight: bold; /* Жирный шрифт */
+    margin-bottom: 10px; /* Добавьте отступ под заголовки */
+}
+
+/* Добавьте стили для выделяния заголовков */
+h1, h2, h3, h4, h5, h6 {
+    background-color: #e0e0e0; /* Фон для заголовков */
+    padding: 5px 10px; /* Поля вокруг текста */
+    border-radius: 5px; /* Радиус границ */
+}
